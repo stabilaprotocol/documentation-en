@@ -1,9 +1,0 @@
-pluginManagement {
-
-}
-
-rootProject.name = 'java'
-
-include 'utils'
-include 'abi'
-include 'core'

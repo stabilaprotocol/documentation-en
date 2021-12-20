@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>TRC-10 - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>TRC-10 - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -167,7 +165,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -222,7 +220,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -249,7 +247,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -285,7 +283,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -304,7 +302,7 @@
     <li>TRC-10</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/mechanism-algorithm/trc10.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/mechanism-algorithm/trc10.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -315,17 +313,17 @@
             <div class="section">
               
                 <h1 id="trc-10">TRC-10<a class="headerlink" href="#trc-10" title="Permanent link">&para;</a></h1>
-<p>TRON network supports two types of tokens, one is TRC-20 token issued by smart contract, the other one is TRC-10 token issued by system contract.</p>
+<p>STABILA network supports two types of tokens, one is TRC-20 token issued by smart contract, the other one is TRC-10 token issued by system contract.</p>
 <h2 id="how-to-issue-a-trc-10-token">How to Issue a TRC-10 Token<a class="headerlink" href="#how-to-issue-a-trc-10-token" title="Permanent link">&para;</a></h2>
 <p>HTTP API:</p>
-<div class="highlight"><pre><span></span><code>wallet/createassetissue
+<div class="codehilite"><pre><span></span>wallet/createassetissue
 Description: Issue a token
 demo: curl -X POST http://127.0.0.1:8090/wallet/createassetissue -d &#39;{
   &quot;owner_address&quot;:&quot;41e552f6487585c2b58bc2c9bb4492bc1f17132cd0&quot;,
   &quot;name&quot;:&quot;0x6173736574497373756531353330383934333132313538&quot;,
   &quot;abbr&quot;: &quot;0x6162627231353330383934333132313538&quot;,
   &quot;total_supply&quot; :4321,
-  &quot;trx_num&quot;:1,
+  &quot;stb_num&quot;:1,
   &quot;num&quot;:1,
   &quot;start_time&quot; : 1530894315158,
   &quot;end_time&quot;:1533894312158,
@@ -333,29 +331,31 @@ demo: curl -X POST http://127.0.0.1:8090/wallet/createassetissue -d &#39;{
   &quot;url&quot;:&quot;007570646174654e616d6531353330363038383733343633&quot;,
   &quot;free_asset_net_limit&quot;:10000,
   &quot;public_free_asset_net_limit&quot;:10000,
-  &quot;frozen_supply&quot;:{&quot;frozen_amount&quot;:1, &quot;frozen_days&quot;:2}
+  &quot;cded_supply&quot;:{&quot;cded_amount&quot;:1, &quot;cded_days&quot;:2}
 }&#39;
 
 Parameter owner_address: Owner address, default hexString
 Parameter name: Token name, default hexString
 Parameter abbr: Token name abbreviation, default hexString
 Parameter total_supply: Token total supply
-Parameter trx_num: Define the price by the ratio of trx_num/num,
-Parameter num: Define the price by the ratio of trx_num/num
+Parameter stb_num: Define the price by the ratio of stb_num/num,
+Parameter num: Define the price by the ratio of stb_num/num
 Parameter start_time: ICO start time
 Parameter end_time: ICO end time
 Parameter description: Token description, default hexString
 Parameter url: Token official website url, default hexString
-Parameter free_asset_net_limit: The free bandwidth limit of each token holder 
+Parameter free_asset_net_limit: The free bandwidth limit of each token holder
 Parameter public_free_asset_net_limit: The total free bandwidth limit of the Token
-Parameter frozen_supply: Token staked supply
+Parameter cded_supply: Token staked supply
 Parameter permission_id: Optional, for multi-signature use
 Return: Transaction object
-Note: The unit of &#39;trx_num&#39; is SUN
-</code></pre></div>
+Note: The unit of &#39;stb_num&#39; is UNIT
+</pre></div>
+
+
 <h2 id="participate-trc-10-token-issuing">Participate TRC-10 Token Issuing<a class="headerlink" href="#participate-trc-10-token-issuing" title="Permanent link">&para;</a></h2>
 <p>HTTP API:</p>
-<div class="highlight"><pre><span></span><code>wallet/participateassetissue
+<div class="codehilite"><pre><span></span>wallet/participateassetissue
 Description: Participate a token issuing
 demo: curl -X POST http://127.0.0.1:8090/wallet/participateassetissue -d &#39;{
   &quot;to_address&quot;: &quot;41e552f6487585c2b58bc2c9bb4492bc1f17132cd0&quot;,
@@ -371,10 +371,12 @@ Parameter asset_name: Token id, default hexString
 Parameter permission_id: Optional, for multi-signature use
 Return: Transaction object
 Note: The unit of &#39;amount&#39; is the smallest unit of the token
-</code></pre></div>
+</pre></div>
+
+
 <h2 id="trc-10-token-transfer">TRC-10 Token Transfer<a class="headerlink" href="#trc-10-token-transfer" title="Permanent link">&para;</a></h2>
 <p>HTTP API:</p>
-<div class="highlight"><pre><span></span><code>wallet/transferasset
+<div class="codehilite"><pre><span></span>wallet/transferasset
 Description: Transfer token
 demo: curl -X POST http://127.0.0.1:8090/wallet/transferasset -d &#39;{
   &quot;owner_address&quot;:&quot;41d1e7a6bc354106cb410e65ff8b181c600ff14292&quot;,
@@ -390,7 +392,7 @@ Parameter amount: Token transfer amount
 Parameter permission_id: Optional, for multi-signature use
 Return: Transaction object
 Note: The unit of &#39;amount&#39; is the smallest unit of the token
-</code></pre></div>
+</pre></div>
               
             </div>
           </div>
@@ -426,7 +428,7 @@ Note: The unit of &#39;amount&#39; is the smallest unit of the token
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../sr/" style="color: #fcfcfc;">&laquo; Previous</a></span>

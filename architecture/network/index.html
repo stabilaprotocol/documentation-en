@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Network - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Network - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -135,7 +133,7 @@
     <a class="current" href="./">Network</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#tron-network-instructure">Tron Network Instructure</a></li>
+    <li class="toctree-l3"><a href="#stabila-network-instructure">Stabila Network Instructure</a></li>
     
         <ul>
         
@@ -169,7 +167,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -224,7 +222,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -251,7 +249,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -287,7 +285,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -306,7 +304,7 @@
     <li>Network</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/architecture/network.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/architecture/network.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -316,25 +314,29 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="tron-network-instructure">Tron Network Instructure<a class="headerlink" href="#tron-network-instructure" title="Permanent link">&para;</a></h1>
-<p>Tron network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: SuperNode, FullNode, SolidityNode. SuperNode produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-tron code can join Tron network as a node.</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/network.png" /></p>
+                <h1 id="stabila-network-instructure">Stabila Network Instructure<a class="headerlink" href="#stabila-network-instructure" title="Permanent link">&para;</a></h1>
+<p>Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: SuperNode, FullNode, SolidityNode. SuperNode produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png" /></p>
 <h2 id="supernode">SuperNode<a class="headerlink" href="#supernode" title="Permanent link">&para;</a></h2>
-<p>Super Representative(abbr: SR) is the block producer in TRON network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Tron network. The best way to browse is using <a href="https://tronscan.org/#/sr/representatives">Tronscan</a>.</p>
+<p>Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using <a href="https://stabilascan.org/#/sr/representatives">Stabilascan</a>.</p>
 <p>Recommended Hardware Configuration:</p>
-<div class="highlight"><pre><span></span><code>minimum requirement:
+<div class="codehilite"><pre><span></span>minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
 Recommended requirement:
 CPU: &gt; 64 cores RAM: &gt; 64G, Bandwidth: &gt; 500M, Disk: &gt; 2T
-</code></pre></div>
+</pre></div>
+
+
 <h2 id="fullnode">FullNode<a class="headerlink" href="#fullnode" title="Permanent link">&para;</a></h2>
 <p>FullNode has the complete block chain data, can update data in real time. It can broadcast the transactions and provide api service.</p>
 <p>Recommended Hardware Configuration:</p>
-<div class="highlight"><pre><span></span><code>minimum requirement:
+<div class="codehilite"><pre><span></span>minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
 Recommended requirement:
 CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
-</code></pre></div>
+</pre></div>
+
+
 <h2 id="soliditynode">SolidityNode<a class="headerlink" href="#soliditynode" title="Permanent link">&para;</a></h2>
 <p>SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provie api service.</p>
 <blockquote>
@@ -342,21 +344,23 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 New developers should deploy FullNode only.</p>
 </blockquote>
 <p>Recommended Hardware Configuration:</p>
-<div class="highlight"><pre><span></span><code>minimum requirement:
+<div class="codehilite"><pre><span></span>minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
 Recommended requirement:
 CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
-</code></pre></div>
+</pre></div>
+
+
 <h2 id="mainnet-testnet-and-privatenet">MainNet, TestNet and PrivateNet<a class="headerlink" href="#mainnet-testnet-and-privatenet" title="Permanent link">&para;</a></h2>
 <p>MainNet, TestNet, PrivateNet all use the same code, only the node start configuration varies.</p>
 <h3 id="mainnet">MainNet<a class="headerlink" href="#mainnet" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/tronprotocol/tron-deployment/blob/master/main_net_config.conf">MainNet configuration: main_net_config.conf</a></p>
+<p><a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf">MainNet configuration: main_net_config.conf</a></p>
 <h3 id="testnet">TestNet<a class="headerlink" href="#testnet" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/tronprotocol/tron-deployment/blob/master/test_net_config.conf">TestNet configuration: test_net_config.conf</a></p>
+<p><a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/test_net_config.conf">TestNet configuration: test_net_config.conf</a></p>
 <h3 id="privatenet">PrivateNet<a class="headerlink" href="#privatenet" title="Permanent link">&para;</a></h3>
 <h4 id="preconditions">Preconditions<a class="headerlink" href="#preconditions" title="Permanent link">&para;</a></h4>
 <ul>
-<li>at least two accounts <a href="https://tronscan.org/#/wallet/new">generate an account</a></li>
+<li>at least two accounts <a href="https://stabilascan.org/#/wallet/new">generate an account</a></li>
 <li>at least one SuperNode to produce blocks</li>
 <li>deploy serval FullNodes to synchronize blocks and broadcast transactions</li>
 <li>SuperNode and FullNode comprise the private network</li>
@@ -365,8 +369,11 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <ol>
 <li>
 <p>download private_net_config.conf</p>
-<div class="highlight"><pre><span></span><code><span class="go">&gt; wget https://raw.githubusercontent.com/tronprotocol/tron-deployment/master/private_net_config.conf</span>
-</code></pre></div>
+<p>```console</p>
+<blockquote>
+<p>wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
+```</p>
+</blockquote>
 </li>
 <li>
 <p>add your private key in <code>localwitness</code></p>
@@ -377,35 +384,39 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <li>set <code>node.discovery.enable = true</code></li>
 <li>
 <p>run the following command</p>
-<div class="highlight"><pre><span></span><code>&gt; nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar -c private_net_config.conf &lt;/dev/null &amp;&gt;/dev/null &amp;
-
-command line parameters introduction:
+<p>```text</p>
+<blockquote>
+<p>nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar -c private_net_config.conf </dev/null &>/dev/null &amp;</p>
+</blockquote>
+<p>command line parameters introduction:
 --witness: start witness function, i.e.: --witness YOUR_PRIVATE_KEY_IN_HEX
 --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
 -c: specify the configuration file path, i.e.: -c config.conf
-</code></pre></div>
+```</p>
 </li>
 </ol>
 <p>The usage of the log file:</p>
 <p>You can change the level of the module to control the log output. The default level of each module is INFO, for example: only print the message with the level higher than warn:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;net&quot;</span> <span class="na">level=</span><span class="s">&quot;WARN&quot;</span><span class="nt">/&gt;</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;net&quot;</span> <span class="na">level=</span><span class="s">&quot;WARN&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+
+
 <p>The parameters in configuration file that need to modify:</p>
 <p>localwitness:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/localwitness.jpg" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localwitness.jpg" /></p>
 </blockquote>
 <p>witnesses:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/witness.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/witness.png" /></p>
 </blockquote>
 <p>version:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/p2p_version.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png" /></p>
 </blockquote>
 <p>enable:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/discovery_enable.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/discovery_enable.png" /></p>
 </blockquote>
 <h4 id="deploy-the-fullnode">Deploy the FullNode<a class="headerlink" href="#deploy-the-fullnode" title="Permanent link">&para;</a></h4>
 <p>Same as above except for:</p>
@@ -418,23 +429,23 @@ command line parameters introduction:
 <p>The parameters in configuration file that need to modify:</p>
 <p>ip.list:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/ip_list.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/ip_list.png" /></p>
 </blockquote>
 <p>p2p.version:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/p2p_version.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png" /></p>
 </blockquote>
 <p>genesis.block:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/genesis_block.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/genesis_block.png" /></p>
 </blockquote>
 <p>needSyncCheck:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/need_sync_check.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/need_sync_check.png" /></p>
 </blockquote>
 <p>node.discovery.enable:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/tronprotocol/documentation-en/master/images/discovery_enable.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/discovery_enable.png" /></p>
 </blockquote>
               
             </div>
@@ -471,7 +482,7 @@ command line parameters introduction:
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../../mechanism-algorithm/system-contracts/" style="color: #fcfcfc;">&laquo; Previous</a></span>

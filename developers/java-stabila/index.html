@@ -8,18 +8,16 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Java-Tron - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Java-Stabila - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Java-Tron";
-    var mkdocs_page_input_path = "developers/java-tron.md";
-    var mkdocs_page_url = "/documentation-en/developers/java-tron/";
+    var mkdocs_page_name = "Java-Stabila";
+    var mkdocs_page_input_path = "developers/java-stabila.md";
+    var mkdocs_page_url = "/documentation-en/developers/java-stabila/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -206,10 +204,10 @@
                 </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Java-Tron</a>
+    <a class="current" href="./">Java-Stabila</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#java-tron">Java-tron</a></li>
+    <li class="toctree-l3"><a href="#java-stabila">Java-stabila</a></li>
     
 
     </ul>
@@ -239,7 +237,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -275,7 +273,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -291,10 +289,10 @@
         
       
     
-    <li>Java-Tron</li>
+    <li>Java-Stabila</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/java-tron.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/java-stabila.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -304,8 +302,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="java-tron">Java-tron<a class="headerlink" href="#java-tron" title="Permanent link">&para;</a></h1>
-<p>The java-tron repository is: <a href="https://github.com/tronprotocol/java-tron">https://github.com/tronprotocol/java-tron</a></p>
+                <h1 id="java-stabila">Java-stabila<a class="headerlink" href="#java-stabila" title="Permanent link">&para;</a></h1>
+<p>The java-stabila repository is: <a href="https://github.com/stabilaprotocol/java-stabila">https://github.com/stabilaprotocol/java-stabila</a></p>
 <h2>Branch Introduction</h2>
 
 <p><code>master</code> branch:
@@ -320,12 +318,14 @@ This is the branch that is going to be released. It is created based on <code>de
 This branch is used to fix a bug when an online bug is found. It is created based on <code>master</code> branch. When bug fix is done, it should be merged into <code>master</code> branch(as a new release) and <code>develop</code> and then delete the branch. branch.</p>
 <h2>Writing a new feature</h2>
 
-<p>When you start to develop a new feature, please create a feature branch from <code>develop</code> branch under <code>origin/feature</code>.
-<div class="highlight"><pre><span></span><code>$ git checkout -b feature/my-feature develop
+<p>When you start to develop a new feature, please create a feature branch from <code>develop</code> branch under <code>origin/feature</code>.</p>
+<div class="codehilite"><pre><span></span>$ git checkout -b feature/my-feature develop
 # switch to &#39;feature/my-feature&#39;
-</code></pre></div></p>
-<p>When you finish the development, the new feature should be merged into <code>develop</code> branch.
-<div class="highlight"><pre><span></span><code>$ git commit -m &quot;description&quot;
+</pre></div>
+
+
+<p>When you finish the development, the new feature should be merged into <code>develop</code> branch.</p>
+<div class="codehilite"><pre><span></span>$ git commit -m &quot;description&quot;
 # submit the code
 $ git checkout develop
 # switch to &#39;develop&#39;
@@ -340,17 +340,21 @@ $ git push
 # make a Pull Request to wait the core developers to check
 $ git branch -d feature/my-feature
 # once it is merged, delete &#39;feature/my-feature&#39;
-</code></pre></div></p>
+</pre></div>
+
+
 <h2>Fixing online bugs:</h2>
 
-<p>When you start to fix an online bug, please create a hotfix branch from <code>master</code> branch under <code>origin/hotfix</code>.
-<div class="highlight"><pre><span></span><code>$ git checkout -b hotfix/my-hotfix master
+<p>When you start to fix an online bug, please create a hotfix branch from <code>master</code> branch under <code>origin/hotfix</code>.</p>
+<div class="codehilite"><pre><span></span>$ git checkout -b hotfix/my-hotfix master
 # switch to &#39;hotfix/my-hotfix&#39;
 $ git commit -a -m &quot;Bumped version number to 3.1.4&quot;
 # submit and modify the version number
-</code></pre></div>
-When you finish the fix, it should be merged into <code>master</code> branch and <code>develop</code> branch.
-<div class="highlight"><pre><span></span><code>$ git commit -m &quot;description&quot;
+</pre></div>
+
+
+<p>When you finish the fix, it should be merged into <code>master</code> branch and <code>develop</code> branch.</p>
+<div class="codehilite"><pre><span></span>$ git commit -m &quot;description&quot;
 # submit the code
 $ git checkout master
 # switch to &#39;master&#39;
@@ -377,7 +381,9 @@ $ git push
 
 $ git branch -d hotfix/my-hotfix
 # once it is merged, delete &#39;my-hotfix&#39;
-</code></pre></div></p>
+</pre></div>
+
+
 <p>Your commit messages should detail why you made your change in addition to what you did (unless it is a tiny change).</p>
 <p>Finally, please make a PR.</p>
 <p>Additionally, if you are writing a new feature, please ensure you add appropriate test cases under <code>/src/test</code>.</p>
@@ -416,7 +422,7 @@ $ git branch -d hotfix/my-hotfix
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../incentives/" style="color: #fcfcfc;">&laquo; Previous</a></span>

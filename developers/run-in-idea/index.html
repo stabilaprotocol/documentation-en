@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Run FullNode in IDEA - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Run FullNode in IDEA - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +218,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../java-tron/">Java-Tron</a>
+    <a class="" href="../java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -247,7 +245,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -283,7 +281,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -302,7 +300,7 @@
     <li>Run FullNode in IDEA</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/run-in-idea.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/run-in-idea.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -314,7 +312,7 @@
               
                 <h1 id="run-the-fullnode-with-idea">Run the FullNode with IDEA<a class="headerlink" href="#run-the-fullnode-with-idea" title="Permanent link">&para;</a></h1>
 <p>This document aims to facilitate developers with some experience to run the FullNode with IDEA.</p>
-<p><strong>The following is for the master branch of java-tron.</strong></p>
+<p><strong>The following is for the master branch of java-stabila.</strong></p>
 <h2 id="configure-idea">Configure IDEA<a class="headerlink" href="#configure-idea" title="Permanent link">&para;</a></h2>
 <p><strong>The configuration of IDEA</strong></p>
 <ul>
@@ -333,30 +331,40 @@
 <h2 id="deployment-guide">Deployment guide<a class="headerlink" href="#deployment-guide" title="Permanent link">&para;</a></h2>
 <p><strong>1.Create a directory</strong>
 <em>/deploy</em></p>
-<div class="highlight"><pre><span></span><code>mkdir deploy
-</code></pre></div>
+<div class="codehilite"><pre><span></span>mkdir deploy
+</pre></div>
+
+
 <p><strong>2.Clone the latest code</strong></p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/tronprotocol/java-tron
-</code></pre></div>
+<div class="codehilite"><pre><span></span>git clone https://github.com/stabilaprotocol/java-stabila
+</pre></div>
+
+
 <p><strong>3.Switch to the master branch</strong></p>
-<div class="highlight"><pre><span></span><code>cd java-tron
+<div class="codehilite"><pre><span></span>cd java-stabila
 git checkout -t origin/master
-</code></pre></div>
+</pre></div>
+
+
 <p><strong>4.Compile the code</strong></p>
-<p><div class="highlight"><pre><span></span><code>./gradlew build
-</code></pre></div>
-The compilation process may take some time, please be patient.
+<div class="codehilite"><pre><span></span>./gradlew build
+</pre></div>
+
+
+<p>The compilation process may take some time, please be patient.
 If the compilation is successful, you can see the information similar to the following:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/build_success_test.png" /></p>
 <p>If you do not want to perform unit test tasks, you can run the following command:</p>
-<div class="highlight"><pre><span></span><code>./gradlew build -x test
-</code></pre></div>
+<div class="codehilite"><pre><span></span>./gradlew build -x test
+</pre></div>
+
+
 <p><strong>5.Start the FullNode</strong></p>
-<p>After compiling successfully, you can find the main function file through the path java-tron / src / main / java / org / tron / program / FullNode.java and then start a full node.</p>
+<p>After compiling successfully, you can find the main function file through the path java-stabila / src / main / java / org / stabila / program / FullNode.java and then start a full node.</p>
 <p><img alt="" src="https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start.png" /></p>
-<p>After starting, you can check the log to verify whether the startup is successful. The log path is: /deploy/java-tron/logs/tron.log. If the startup is successful, you can see the following logs:</p>
+<p>After starting, you can check the log to verify whether the startup is successful. The log path is: /deploy/java-stabila/logs/stabila.log. If the startup is successful, you can see the following logs:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start_success.png" /></p>
-<p>Also,you can use this command like tail -f /logs/tron.log to view the real-time log, as follows:</p>
+<p>Also,you can use this command like tail -f /logs/stabila.log to view the real-time log, as follows:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start_successed.png" /></p>
               
             </div>
@@ -393,7 +401,7 @@ If the compilation is successful, you can see the information similar to the fol
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../deployment/" style="color: #fcfcfc;">&laquo; Previous</a></span>

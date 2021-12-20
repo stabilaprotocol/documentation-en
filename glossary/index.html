@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Glossary - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Glossary - STABILA Documentation</title>
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> TRON Documentation</a>
+        <a href=".." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../contracts/tvm/">TVM</a>
+    <a class="" href="../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -206,7 +204,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -233,7 +231,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -275,7 +273,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">TRON Documentation</a>
+        <a href="..">STABILA Documentation</a>
       </nav>
 
       
@@ -290,7 +288,7 @@
     <li>Glossary</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/glossary.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/glossary.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -301,32 +299,32 @@
             <div class="section">
               
                 <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<p><strong>energyUsage</strong></p>
-<p>The Energy conumption of the contract caller in one contract trigger.</p>
-<p><strong>energyFee</strong></p>
-<p>The number of TRX burned from the contract caller for Energy conumption in one contract trigger.</p>
-<p><strong>originEnergyUsage</strong></p>
-<p>The total Energy conumption of the contract developer in one contract trigger.</p>
-<p><strong>energyUsageTotal</strong></p>
-<p>The total Energy conumption of the contract developer and the contract caller combined.</p>
+<p><strong>ucrUsage</strong></p>
+<p>The Ucr conumption of the contract caller in one contract trigger.</p>
+<p><strong>ucrFee</strong></p>
+<p>The number of STB burned from the contract caller for Ucr conumption in one contract trigger.</p>
+<p><strong>originUcrUsage</strong></p>
+<p>The total Ucr conumption of the contract developer in one contract trigger.</p>
+<p><strong>ucrUsageTotal</strong></p>
+<p>The total Ucr conumption of the contract developer and the contract caller combined.</p>
 <p><strong>Feelimit</strong></p>
-<p>When the user triggers or create the contract, this is used to set the usage limit of the Energy consumption got from burning TRX or staking TRX, Energy got from staking TRX will be used first.</p>
+<p>When the user triggers or create the contract, this is used to set the usage limit of the Ucr consumption got from burning STB or staking STB, Ucr got from staking STB will be used first.</p>
 <p><strong>CallValue</strong></p>
-<p>When the user triggers or create the contract, this can be used to send TRX to the contract.</p>
+<p>When the user triggers or create the contract, this can be used to send STB to the contract.</p>
 <p><strong>consume_user_resource_percent</strong></p>
 <p>For a contract, Resource consumption is composed of two parts, one part is afforded by contract developer and the other part is afforded by contract caller. This is the percentage of the two parts in the Resource consumption.</p>
-<p><strong>origin_energy_limit</strong></p>
-<p>The usage limit of the Energy consumption of the developer in one  contract trigger, should be greater than 0.</p>
+<p><strong>origin_ucr_limit</strong></p>
+<p>The usage limit of the Ucr consumption of the developer in one  contract trigger, should be greater than 0.</p>
 <p><strong>net_usage</strong></p>
 <p>The Bandwidth consumption in one contract trigger.  (NetFee not included)</p>
 <p><strong>net_fee</strong></p>
-<p>The TRX burned for Bandwidth consumption in one contract trigger.</p>
+<p>The STB burned for Bandwidth consumption in one contract trigger.</p>
 <p><strong>Bandwidth</strong></p>
 <p>The Bandwidth Points consumed by a transaction is the size of the byte array in this transaction. If the byte array length of a transaction is 100, then the transaction needs to consume 100 Bandwidth Points.</p>
-<p><strong>Energy</strong></p>
-<p>The creation and operation of a smart contract consume CPU resources. It takes time for smart contracts to operate in virtual machines (VMs), and the time consumed in the system is calculated in microseconds. CPU resources are consumed in energy, which means 1 Energy = 1 Microsecond (μs). If a contract takes 100 μs to execute in a VM, it needs to consume 100 Energy.</p>
-<p><strong>TRON Power(TP)</strong></p>
-<p>1 staked TRX = 1 TP, TP can be used to vote, 1 TP = 1 vote.</p>
+<p><strong>Ucr</strong></p>
+<p>The creation and operation of a smart contract consume CPU resources. It takes time for smart contracts to operate in virtual machines (VMs), and the time consumed in the system is calculated in microseconds. CPU resources are consumed in ucr, which means 1 Ucr = 1 Microsecond (μs). If a contract takes 100 μs to execute in a VM, it needs to consume 100 Ucr.</p>
+<p><strong>STABILA Power(TP)</strong></p>
+<p>1 staked STB = 1 TP, TP can be used to vote, 1 TP = 1 vote.</p>
 <p><strong>Super Representative(SR)</strong></p>
 <p>The current block producing Top 27 nodes.</p>
               
@@ -362,7 +360,7 @@
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../faq/" style="color: #fcfcfc;">&laquo; Previous</a></span>

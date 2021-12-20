@@ -1,192 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/introduction/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/introduction/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/introduction/dpos/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/introduction/dpos/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/introduction/overview/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/introduction/overview/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/api/http/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/api/http/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/api/rpc/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/api/rpc/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/sr/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/sr/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/trc10/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/trc10/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/account/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/account/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/resource/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/resource/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/dex/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/dex/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/multi-signatures/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/multi-signatures/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/shielded-TRC20-contract/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/shielded-TRC20-contract/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/mechanism-algorithm/system-contracts/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/system-contracts/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/architecture/network/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/architecture/network/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/architecture/database/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/architecture/database/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/architecture/event/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/architecture/event/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/contracts/tvm/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/svm/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/contracts/compiler/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/compiler/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/contracts/contract/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/contract/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/contracts/trc20/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/trc20/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/official-public-nodes/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/official-public-nodes/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/deployment/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/deployment/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/run-in-idea/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/run-in-idea/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/litefullnode/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/litefullnode/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/archive-manifest/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/archive-manifest/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/resources/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/resources/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/contribution/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/contribution/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/incentives/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/incentives/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/java-tron/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/java-stabila/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/tips/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/tips/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/advanced-configuration/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/advanced-configuration/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/developers/gpg/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/developers/gpg/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/clients/wallet-cli/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/clients/wallet-cli/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/clients/tron-grid/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/clients/stabila-grid/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/releases/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/releases/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/faq/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/faq/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tronprotocol.github.io/documentation-en/glossary/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/glossary/</loc>
      <lastmod>2021-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>

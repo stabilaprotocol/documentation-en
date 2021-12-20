@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Advanced Configuration - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Advanced Configuration - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -206,7 +204,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../java-tron/">Java-Tron</a>
+    <a class="" href="../java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -249,7 +247,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -285,7 +283,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -304,7 +302,7 @@
     <li>Advanced Configuration</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/advanced-configuration.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/advanced-configuration.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -319,7 +317,7 @@
 You may custom these items only if you have deep understanding on them, otherwise keep them as default.</p>
 <h2 id="leveldb">LevelDB<a class="headerlink" href="#leveldb" title="Permanent link">&para;</a></h2>
 <p>You can custom LevelDB options in the <code>storage</code> part of <code>config.conf</code>, which looks like:</p>
-<div class="highlight"><pre><span></span><code>storage {
+<div class="codehilite"><pre><span></span>storage {
   # Directory for storing persistent data
 
   db.directory = &quot;database&quot;,
@@ -351,11 +349,13 @@ You may custom these items only if you have deep understanding on them, otherwis
   ]
 
 }
-</code></pre></div>
+</pre></div>
+
+
 <p>As shown in the example above, the data of database <code>accout</code> will be stored in the path of <code>/path/to/accout/database</code> while the index be stored in <code>/path/to/accout/index</code>. And, the example also shows our default value of LevelDB options from <code>createIfMissing</code> to <code>maxOpenFiles</code>. You can just refer to the docs of <a href="https://github.com/google/leveldb/blob/master/doc/index.md#performance">LevelDB</a> to figure out details of these options.</p>
 <h2 id="grpc">gRPC<a class="headerlink" href="#grpc" title="Permanent link">&para;</a></h2>
 <p>You can custom gPRC options in the <code>node.rpc</code> part of <code>config.conf</code>, which looks like:</p>
-<div class="highlight"><pre><span></span><code>node {
+<div class="codehilite"><pre><span></span>node {
   rpc {
     port = 50051
 
@@ -381,10 +381,12 @@ You may custom these items only if you have deep understanding on them, otherwis
     # maxHeaderListSize =
   }
 }
-</code></pre></div>
+</pre></div>
+
+
 <h2 id="backup">backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h2>
-<p>You can custom backup options in the <code>node.backup</code> part of <code>config.conf</code>, which looks like:
-<div class="highlight"><pre><span></span><code>node.backup {
+<p>You can custom backup options in the <code>node.backup</code> part of <code>config.conf</code>, which looks like:</p>
+<div class="codehilite"><pre><span></span>node.backup {
     # my priority, each member should use different priority
     priority = 
     # members should use same port
@@ -392,29 +394,35 @@ You may custom these items only if you have deep understanding on them, otherwis
     # peer&#39;s ip list, can&#39;t contain mine
     members = []
 }
-</code></pre></div>
-policy: 
+</pre></div>
+
+
+<p>policy: 
 1. the one which synchronized first will become master.
 2. if synchronization is completed at the same time, the one which with big priority will become master.</p>
 <p>E.g. create backups for node A(192.168.0.100) and node B(192.168.0.100 ):
-node A's configuration:
-<div class="highlight"><pre><span></span><code>node.backup {
+node A's configuration:</p>
+<div class="codehilite"><pre><span></span>node.backup {
     priority = 8 
     port = 10001
     members = [
         &quot;192.168.0.101&quot;
     ]
 }
-</code></pre></div>
-node B's configuration:
-<div class="highlight"><pre><span></span><code>node.backup {
+</pre></div>
+
+
+<p>node B's configuration:</p>
+<div class="codehilite"><pre><span></span>node.backup {
     priority = 5
     port = 10001
     members = [
         &quot;192.168.0.100&quot;
     ]
 }
-</code></pre></div></p>
+</pre></div>
+
+
 <p>You may refer to the source code of <code>io.grpc.netty.NettyServerBuilder</code> class to see details or just make a decision according to the brief comments above.  </p>
               
             </div>
@@ -451,7 +459,7 @@ node B's configuration:
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../tips/" style="color: #fcfcfc;">&laquo; Previous</a></span>

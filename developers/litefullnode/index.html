@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Run Lite FullNode - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Run Lite FullNode - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +218,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../java-tron/">Java-Tron</a>
+    <a class="" href="../java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -247,7 +245,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -283,7 +281,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -302,7 +300,7 @@
     <li>Run Lite FullNode</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/litefullnode.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/litefullnode.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -322,7 +320,7 @@
 <p>Remember stop the FullNode process before any operation. This tool provides the ability to specify which dataset to split.
 The two datasets are split by the <code>latest_block_number</code>. Lite FullNode that startup by <code>Snapshot dataset</code> does not support query the historical data behind the <code>latest_block_number</code>,
 this tool also provides a merge function that can merge <code>History dataset</code> into the database of Lite FullNode. For more API details: <a href="#httpgrpc-apis">HTTP&amp;GRPC APIs</a></p>
-<p>For more design details, please refer to: <a href="https://github.com/tronprotocol/tips/issues/128">TIP128</a></p>
+<p>For more design details, please refer to: <a href="https://github.com/stabilaprotocol/tips/issues/128">TIP128</a></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
 <p>This tool provides independent cutting of <code>Snapshot Dataset</code> and <code>History Dataset</code> and a merge function.</p>
@@ -337,27 +335,33 @@ otherwise <code>dataset-path</code> should be the <code>History Dataset</code> p
 <p>Start a new FullNode using the default config, then an <code>output-directory</code> will be produced in the current directory.
 <code>output-directory</code> contains a sub-directory named <code>database</code> which is the database to be split.</p>
 <h4 id="split-and-get-a-snapshot">Split and get a <code>Snapshot</code><a class="headerlink" href="#split-and-get-a-snapshot" title="Permanent link">&para;</a></h4>
-<p>First, stop the FullNode and execute:
-<div class="highlight"><pre><span></span><code>// just for simplify, locate the snapshot into `/tmp` directory,
+<p>First, stop the FullNode and execute:</p>
+<div class="codehilite"><pre><span></span>// just for simplify, locate the snapshot into `/tmp` directory,
 java -jar LiteFullNodeTool.jar -o split -t snapshot --fn-data-path output-directory/database --dataset-path /tmp
-</code></pre></div>
-then a <code>snapshot</code> directory will be generated in <code>/tmp</code>, pack this directory and copy it to somewhere that is ready to run a Lite Fullnode.
+</pre></div>
+
+
+<p>then a <code>snapshot</code> directory will be generated in <code>/tmp</code>, pack this directory and copy it to somewhere that is ready to run a Lite Fullnode.
 Do not forget rename the directory from <code>snapshot</code> to <code>database</code>.
 (the default value of the storage.db.directory is <code>database</code>, make sure rename the snapshot to the specified value)</p>
 <h4 id="split-a-history">Split a <code>History</code><a class="headerlink" href="#split-a-history" title="Permanent link">&para;</a></h4>
-<p>If historical data query is needed, <code>History dataset</code> should be generated and merged into Lite FullNode.
-<div class="highlight"><pre><span></span><code>// just for simplify, locate the history into `/tmp` directory,
+<p>If historical data query is needed, <code>History dataset</code> should be generated and merged into Lite FullNode.</p>
+<div class="codehilite"><pre><span></span>// just for simplify, locate the history into `/tmp` directory,
 java -jar LiteFullNodeTool.jar -o split -t history --fn-data-path output-directory/database --dataset-path /tmp
-</code></pre></div>
-A <code>history</code> directory will be generated in <code>/tmp</code>, pack this directory and copy it to a Lite Fullnode.
+</pre></div>
+
+
+<p>A <code>history</code> directory will be generated in <code>/tmp</code>, pack this directory and copy it to a Lite Fullnode.
 <code>History dataset</code> always take a large storage, make sure the disk has enough volume to store the <code>History dataset</code>.</p>
 <h4 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
 <p>Both <code>History Dataset</code> and <code>Snapshot Dataset</code> have an info.properties file to identify the block height from which they are segmented.
 Make sure that the <code>split_block_num</code> in <code>History Dataset</code> is not less than the corresponding value in the <code>Snapshot Dataset</code>.</p>
-<p>After getting the <code>History dataset</code>, the Lite FullNode can merge the <code>History dataset</code> and become a real FullNode.
-<div class="highlight"><pre><span></span><code>// just for simplify, assume `History dataset` is locate in /tmp
+<p>After getting the <code>History dataset</code>, the Lite FullNode can merge the <code>History dataset</code> and become a real FullNode.</p>
+<div class="codehilite"><pre><span></span>// just for simplify, assume `History dataset` is locate in /tmp
 java -jar LiteFullNodeTool.jar -o merge --fn-data-path output-directory/database --dataset-path /tmp/history
-</code></pre></div></p>
+</pre></div>
+
+
 <h3 id="httpgrpc-apis">HTTP&amp;GRPC APIs<a class="headerlink" href="#httpgrpc-apis" title="Permanent link">&para;</a></h3>
 <p>Some APIs are not supported on lite fullnode, here is the list:</p>
 <h4 id="http">Http<a class="headerlink" href="#http" title="Permanent link">&para;</a></h4>
@@ -555,7 +559,7 @@ java -jar LiteFullNodeTool.jar -o merge --fn-data-path output-directory/database
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../run-in-idea/" style="color: #fcfcfc;">&laquo; Previous</a></span>

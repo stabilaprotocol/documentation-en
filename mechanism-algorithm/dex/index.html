@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Decentralized Exchange - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Decentralized Exchange - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -173,7 +171,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -228,7 +226,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -255,7 +253,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -291,7 +289,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -310,7 +308,7 @@
     <li>Decentralized Exchange</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/mechanism-algorithm/dex.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/mechanism-algorithm/dex.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -321,11 +319,11 @@
             <div class="section">
               
                 <h1 id="decentralized-exchangedex">Decentralized Exchange(DEX)<a class="headerlink" href="#decentralized-exchangedex" title="Permanent link">&para;</a></h1>
-<p>TRON network supports decentralized exchange(DEX) using Bancor protocol. DEX is composed of many exchange pairs. You can find the api below in <a href="../../api/http">HTTP API</a>.</p>
+<p>STABILA network supports decentralized exchange(DEX) using Bancor protocol. DEX is composed of many exchange pairs. You can find the api below in <a href="../../api/http">HTTP API</a>.</p>
 <h2 id="what-is-an-exchange-pair">What is an Exchange Pair<a class="headerlink" href="#what-is-an-exchange-pair" title="Permanent link">&para;</a></h2>
-<p>The term of 'Exchange Pair' describes a trade between one token with another, like A/B, A/TRX.</p>
+<p>The term of 'Exchange Pair' describes a trade between one token with another, like A/B, A/STB.</p>
 <h2 id="exchange-pair-creation">Exchange Pair Creation<a class="headerlink" href="#exchange-pair-creation" title="Permanent link">&para;</a></h2>
-<p>Any account can create an exchange pair, it burns 1024 TRX.</p>
+<p>Any account can create an exchange pair, it burns 1024 STB.</p>
 <p>Please refer to 'wallet/exchangecreate'.</p>
 <h2 id="exchange-pair-transaction">Exchange Pair Transaction<a class="headerlink" href="#exchange-pair-transaction" title="Permanent link">&para;</a></h2>
 <p>Any account can trade in the DEX. The trade follows Bancor protocol.</p>
@@ -346,12 +344,12 @@
 <h3 id="calculate-the-amount-of-token-you-can-get">Calculate the Amount of Token You Can Get<a class="headerlink" href="#calculate-the-amount-of-token-you-can-get" title="Permanent link">&para;</a></h3>
 <p><code>sellTokenQuant</code> is the amount of the <code>first_token</code> you want to sell.</p>
 <p><code>buyTokenQuant</code> is the amount of <code>second_token</code> you can get.</p>
-<div class="highlight"><pre><span></span><code><span class="n">supply</span> <span class="o">=</span> <span class="mi">1_000_000_000_000_000_000L</span>
+<div class="codehilite"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="mi">1_000_000_000_000_000_000L</span>
 
-<span class="n">supplyQuant</span> <span class="o">=</span> <span class="o">-</span><span class="n">supply</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="n">sellTokenQuant</span><span class="o">/</span><span class="p">(</span><span class="n">firstTokenBalance</span> <span class="o">+</span> <span class="n">sellTokenQuant</span><span class="p">,</span> <span class="mf">0.0005</span><span class="p">))</span>
+<span class="n">supplyQuant</span> <span class="o">=</span> <span class="o">-</span><span class="n">supply</span> <span class="o">*</span> <span class="o">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">sellTokenQuant</span><span class="o">/(</span><span class="n">firstTokenBalance</span> <span class="o">+</span> <span class="n">sellTokenQuant</span><span class="o">,</span> <span class="mf">0.0005</span><span class="o">))</span>
 
-<span class="n">buyTokenQuant</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">balance</span> <span class="o">*</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="n">supplyQuant</span> <span class="o">/</span> <span class="n">supply</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
-</code></pre></div>
+<span class="n">buyTokenQuant</span> <span class="o">=</span> <span class="o">(</span><span class="kt">long</span><span class="o">)</span><span class="n">balance</span> <span class="o">*</span> <span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">supplyQuant</span> <span class="o">/</span> <span class="n">supply</span><span class="o">,</span> <span class="mf">2000.0</span><span class="o">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">)</span>
+</pre></div>
               
             </div>
           </div>
@@ -387,7 +385,7 @@
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../resource/" style="color: #fcfcfc;">&laquo; Previous</a></span>

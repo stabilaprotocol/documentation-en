@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Event Subsystem - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Event Subsystem - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -143,7 +141,7 @@
     <a class="current" href="./">Event Subsystem</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#tron-event-subsystem">Tron Event Subsystem</a></li>
+    <li class="toctree-l3"><a href="#stabila-event-subsystem">Stabila Event Subsystem</a></li>
     
         <ul>
         
@@ -167,7 +165,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -222,7 +220,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -249,7 +247,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -285,7 +283,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -304,7 +302,7 @@
     <li>Event Subsystem</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/architecture/event.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/architecture/event.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -314,57 +312,67 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="tron-event-subsystem">Tron Event Subsystem<a class="headerlink" href="#tron-event-subsystem" title="Permanent link">&para;</a></h1>
+                <h1 id="stabila-event-subsystem">Stabila Event Subsystem<a class="headerlink" href="#stabila-event-subsystem" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>The TIP: <a href="https://github.com/tronprotocol/TIPs/blob/master/tip-12.md">TIP-12: Tron event subscribes model</a>.</p>
-<p>TRON Event Subscription supports 4 types of event:</p>
+<p>The TIP: <a href="https://github.com/stabilaprotocol/TIPs/blob/master/tip-12.md">TIP-12: Stabila event subscribes model</a>.</p>
+<p>STABILA Event Subscription supports 4 types of event:</p>
 <h3 id="transaction-event">Transaction Event<a class="headerlink" href="#transaction-event" title="Permanent link">&para;</a></h3>
 <p>The parameters passed to Subscriber:</p>
-<div class="highlight"><pre><span></span><code>transactionId: transaction hash
-blockHash: block hash
-blockNumber: block number
-energyUsage: energy usage
-energyFee: energy fee
-originEnergyUsage: origin energy usage
-energyUsageTotal: total energy usage total
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">transactionId</span><span class="o">:</span> <span class="n">transaction</span> <span class="n">hash</span>
+<span class="n">blockHash</span><span class="o">:</span> <span class="n">block</span> <span class="n">hash</span>
+<span class="n">blockNumber</span><span class="o">:</span> <span class="n">block</span> <span class="n">number</span>
+<span class="n">ucrUsage</span><span class="o">:</span> <span class="n">ucr</span> <span class="n">usage</span>
+<span class="n">ucrFee</span><span class="o">:</span> <span class="n">ucr</span> <span class="n">fee</span>
+<span class="n">originUcrUsage</span><span class="o">:</span> <span class="n">origin</span> <span class="n">ucr</span> <span class="n">usage</span>
+<span class="n">ucrUsageTotal</span><span class="o">:</span> <span class="n">total</span> <span class="n">ucr</span> <span class="n">usage</span> <span class="n">total</span>
+</pre></div>
+
+
 <h3 id="block-event">Block Event<a class="headerlink" href="#block-event" title="Permanent link">&para;</a></h3>
 <p>The parameters passed to Subscriber:</p>
-<div class="highlight"><pre><span></span><code>blockHash: block hash
-blockNumber: block number
-transactionSize: the number of transactions in a block
-latestSolidifiedBlockNumber: the latest solidified block number
-transactionList: the transactions hash list
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">blockHash</span><span class="o">:</span> <span class="n">block</span> <span class="n">hash</span>
+<span class="n">blockNumber</span><span class="o">:</span> <span class="n">block</span> <span class="n">number</span>
+<span class="n">transactionSize</span><span class="o">:</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">transactions</span> <span class="k">in</span> <span class="n">a</span> <span class="n">block</span>
+<span class="n">latestSolidifiedBlockNumber</span><span class="o">:</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">solidified</span> <span class="n">block</span> <span class="n">number</span>
+<span class="n">transactionList</span><span class="o">:</span> <span class="n">the</span> <span class="n">transactions</span> <span class="n">hash</span> <span class="n">list</span>
+</pre></div>
+
+
 <h3 id="contract-event">Contract Event<a class="headerlink" href="#contract-event" title="Permanent link">&para;</a></h3>
 <p>The parameters passed to Subscriber:</p>
-<div class="highlight"><pre><span></span><code>transactionId: transaction id
-contractAddress: contract address
-callerAddress: contract caller address
-blockNumber: the number of the block contract related events recorded
-blockTimestamp: the block time stamp
-eventSignature: event signature
-topicMap: the map of topic in solidity language
-data: the data information in solidity language
-removed: &#39;true&#39; means the log is removed
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">transactionId</span><span class="o">:</span> <span class="n">transaction</span> <span class="n">id</span>
+<span class="n">contractAddress</span><span class="o">:</span> <span class="n">contract</span> <span class="n">address</span>
+<span class="n">callerAddress</span><span class="o">:</span> <span class="n">contract</span> <span class="n">caller</span> <span class="n">address</span>
+<span class="n">blockNumber</span><span class="o">:</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span> <span class="n">contract</span> <span class="n">related</span> <span class="n">events</span> <span class="n">recorded</span>
+<span class="n">blockTimestamp</span><span class="o">:</span> <span class="n">the</span> <span class="n">block</span> <span class="n">time</span> <span class="n">stamp</span>
+<span class="n">eventSignature</span><span class="o">:</span> <span class="n">event</span> <span class="n">signature</span>
+<span class="n">topicMap</span><span class="o">:</span> <span class="n">the</span> <span class="n">map</span> <span class="n">of</span> <span class="n">topic</span> <span class="k">in</span> <span class="n">solidity</span> <span class="n">language</span>
+<span class="n">data</span><span class="o">:</span> <span class="n">the</span> <span class="n">data</span> <span class="n">information</span> <span class="k">in</span> <span class="n">solidity</span> <span class="n">language</span>
+<span class="n">removed</span><span class="o">:</span> <span class="s1">&#39;true&#39;</span> <span class="n">means</span> <span class="n">the</span> <span class="n">log</span> <span class="k">is</span> <span class="n">removed</span>
+</pre></div>
+
+
 <h3 id="contract-log-event">Contract Log Event<a class="headerlink" href="#contract-log-event" title="Permanent link">&para;</a></h3>
 <p>The parameters passed to Subscriber:</p>
-<div class="highlight"><pre><span></span><code>transactionId: transaction hash
-contractAddress: contract address
-callerAddress: contract caller address
-blockNumber: the number of the block contract related events recorded
-blockTimestamp: the block time stamp
-contractTopics: the list of topic in solidity language
-data: the data information in solidity language
-removed: &#39;true&#39; means the log is removed
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">transactionId</span><span class="o">:</span> <span class="n">transaction</span> <span class="n">hash</span>
+<span class="n">contractAddress</span><span class="o">:</span> <span class="n">contract</span> <span class="n">address</span>
+<span class="n">callerAddress</span><span class="o">:</span> <span class="n">contract</span> <span class="n">caller</span> <span class="n">address</span>
+<span class="n">blockNumber</span><span class="o">:</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">block</span> <span class="n">contract</span> <span class="n">related</span> <span class="n">events</span> <span class="n">recorded</span>
+<span class="n">blockTimestamp</span><span class="o">:</span> <span class="n">the</span> <span class="n">block</span> <span class="n">time</span> <span class="n">stamp</span>
+<span class="n">contractTopics</span><span class="o">:</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">topic</span> <span class="k">in</span> <span class="n">solidity</span> <span class="n">language</span>
+<span class="n">data</span><span class="o">:</span> <span class="n">the</span> <span class="n">data</span> <span class="n">information</span> <span class="k">in</span> <span class="n">solidity</span> <span class="n">language</span>
+<span class="n">removed</span><span class="o">:</span> <span class="s1">&#39;true&#39;</span> <span class="n">means</span> <span class="n">the</span> <span class="n">log</span> <span class="k">is</span> <span class="n">removed</span>
+</pre></div>
+
+
 <p>Contract Event and Contract Log Even support event filter function which includes:</p>
-<div class="highlight"><pre><span></span><code>fromBlock: the start block number
-toBlock: the end block number
-contractAddress: contract adsresses list
-contractTopics: contract topics list
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">fromBlock</span><span class="o">:</span> <span class="n">the</span> <span class="n">start</span> <span class="n">block</span> <span class="n">number</span>
+<span class="n">toBlock</span><span class="o">:</span> <span class="n">the</span> <span class="n">end</span> <span class="n">block</span> <span class="n">number</span>
+<span class="n">contractAddress</span><span class="o">:</span> <span class="n">contract</span> <span class="n">adsresses</span> <span class="n">list</span>
+<span class="n">contractTopics</span><span class="o">:</span> <span class="n">contract</span> <span class="n">topics</span> <span class="n">list</span>
+</pre></div>
+
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Historical data query is not supported.</p>
@@ -373,12 +381,12 @@ contractTopics: contract topics list
 <ol>
 <li>Supporting event plug-ins, kafka &amp; mongodb plug-ins have been released, developers can also customize their own plug-ins according to their own needs.</li>
 <li>Supporting subscription of chain data, such as block, transaction, contract log, contract event and so on. For transaction events, developers can get information such as internal transactions, contract info and so on; for contract events, developers could configure the contract addresses list or contract topic list to receive the specified events, and event subscription has a very low latency. The deployed fullnode can receive event information immediately after the contract is executed.</li>
-<li>Event query service tron-eventquery, online Event query service provided. Developers can query trigger information in the last seven days through https, and the query address is <a href="https://api.tronex.io">https://api.tronex.io</a>.</li>
+<li>Event query service stabila-eventquery, online Event query service provided. Developers can query trigger information in the last seven days through https, and the query address is <a href="https://api.stabilaex.io">https://api.stabilaex.io</a>.</li>
 </ol>
 <h2 id="github-project">Github project<a class="headerlink" href="#github-project" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/tronprotocol/event-plugin">tronprotocol/event-plugin</a></li>
-<li><a href="https://github.com/tronprotocol/tron-eventquery">tronprotocol/tron-eventquery</a></li>
+<li><a href="https://github.com/stabilaprotocol/event-plugin">stabilaprotocol/event-plugin</a></li>
+<li><a href="https://github.com/stabilaprotocol/stabila-eventquery">stabilaprotocol/stabila-eventquery</a></li>
 </ul>
 <h3 id="event-plugin">Event plugin<a class="headerlink" href="#event-plugin" title="Permanent link">&para;</a></h3>
 <ul>
@@ -386,12 +394,12 @@ contractTopics: contract topics list
 <li><a href="../../developers/deployment/#mongo">MongoDB deployment</a></li>
 </ul>
 <h3 id="event-query">Event query<a class="headerlink" href="#event-query" title="Permanent link">&para;</a></h3>
-<p>Tron Event Query Service</p>
-<p>TronEventQuery is implemented with Tron's new event subscribe model. It uses same query interface with Tron-Grid. Users can also subscribe block trigger, transaction trigger, contract log trigger, and contract event trigger. TronEvent is independent of a particular branch of java-tron, the new event subscribes model will be released on version 3.5 of java-tron.</p>
-<p>For more information of tron event subscribe model, please refer to <a href="https://github.com/tronprotocol/TIPs/issues/12">TIP-12</a>.</p>
+<p>Stabila Event Query Service</p>
+<p>StabilaEventQuery is implemented with Stabila's new event subscribe model. It uses same query interface with Stabila-Grid. Users can also subscribe block trigger, transaction trigger, contract log trigger, and contract event trigger. StabilaEvent is independent of a particular branch of java-stabila, the new event subscribes model will be released on version 3.5 of java-stabila.</p>
+<p>For more information of stabila event subscribe model, please refer to <a href="https://github.com/stabilaprotocol/TIPs/issues/12">TIP-12</a>.</p>
 <ul>
-<li><a href="https://tronprotocol.github.io/documentation-en/developers/deployment/#event-subscribe-plugin-deployment">Event query deployment</a></li>
-<li><a href="https://github.com/tronprotocol/documentation-en/tree/master/docs_without_index/plugin/event-query-http.md">Event query HTTP API</a></li>
+<li><a href="https://stabilaprotocol.github.io/documentation-en/developers/deployment/#event-subscribe-plugin-deployment">Event query deployment</a></li>
+<li><a href="https://github.com/stabilaprotocol/documentation-en/tree/master/docs_without_index/plugin/event-query-http.md">Event query HTTP API</a></li>
 </ul>
               
             </div>
@@ -400,7 +408,7 @@ contractTopics: contract topics list
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../contracts/tvm/" class="btn btn-neutral float-right" title="TVM">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../contracts/svm/" class="btn btn-neutral float-right" title="SVM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../database/" class="btn btn-neutral" title="Database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -428,13 +436,13 @@ contractTopics: contract topics list
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../database/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../contracts/tvm/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../contracts/svm/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

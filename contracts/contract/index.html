@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Contract - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Contract - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../tvm/">TVM</a>
+    <a class="" href="../svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +218,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -247,7 +245,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -283,7 +281,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -302,7 +300,7 @@
     <li>Contract</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/contracts/contract.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/contracts/contract.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -315,67 +313,69 @@
                 <h1 id="contract">Contract<a class="headerlink" href="#contract" title="Permanent link">&para;</a></h1>
 <h2 id="smart-contract-introduction">Smart Contract Introduction<a class="headerlink" href="#smart-contract-introduction" title="Permanent link">&para;</a></h2>
 <p>Smart contract is a computerized transaction protocol that automatically implements its terms. Smart contract is the same as common contract, they all define the terms and rules related to the participants. Once the contract is started, it can runs in the way it is designed.</p>
-<p>TRON smart contract support Solidity language in (Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to TRON network. When the smart contract is triggered, the corresponding function will be executed automatically.</p>
+<p>STABILA smart contract support Solidity language in (Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.</p>
 <h2 id="smart-contract-features">Smart Contract Features<a class="headerlink" href="#smart-contract-features" title="Permanent link">&para;</a></h2>
-<p>TRON virtual machine is based on Ethereum solidity language, it also has TRON's own features.</p>
+<p>STABILA virtual machine is based on Ethereum solidity language, it also has STABILA's own features.</p>
 <h3 id="1-smart-contract">1. Smart Contract<a class="headerlink" href="#1-smart-contract" title="Permanent link">&para;</a></h3>
-<p>TRON VM is compatible with Ethereum's smart contract, using protobuf to define the content of the contract:
-<div class="highlight"><pre><span></span><code>message<span class="w"> </span>SmartContract<span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span>message<span class="w"> </span>ABI<span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span>message<span class="w"> </span>Entry<span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="kt">enum</span><span class="w"> </span><span class="nv">EntryType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span>UnknownEntryType<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Constructor<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Function<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Event<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Fallback<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">4</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Receive<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">5</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Error<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span>message<span class="w"> </span>Param<span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="nv">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span><span class="kt">enum</span><span class="w"> </span><span class="nv">StateMutabilityType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span>UnknownMutabilityType<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Pure<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>View<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Nonpayable<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span>Payable<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">4</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<p>STABILA VM is compatible with Ethereum's smart contract, using protobuf to define the content of the contract:</p>
+<div class="codehilite"><pre><span></span>message SmartContract {
+  message ABI {
+    message Entry {
+      enum EntryType {
+        UnknownEntryType = 0;
+        Constructor = 1;
+        Function = 2;
+        Event = 3;
+        Fallback = 4;
+        Receive = 5;
+        Error = 6;
+      }
+      message Param {
+        bool indexed = 1;
+        string name = 2;
+        string type = 3;
+      }
+      enum StateMutabilityType {
+        UnknownMutabilityType = 0;
+        Pure = 1;
+        View = 2;
+        Nonpayable = 3;
+        Payable = 4;
+      }
 
-<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="nv">anonymous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="nv">constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span>repeated<span class="w"> </span>Param<span class="w"> </span>inputs<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">4</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span>repeated<span class="w"> </span>Param<span class="w"> </span>outputs<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">5</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span>EntryType<span class="w"> </span>type<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="nv">payable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">7</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span>StateMutabilityType<span class="w"> </span>stateMutability<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">8</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span>repeated<span class="w"> </span>Entry<span class="w"> </span>entrys<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">origin_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">contract_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span>ABI<span class="w"> </span>abi<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">bytecode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">4</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="nv">call_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">5</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="nv">consume_user_resource_percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">6</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">7</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="nv">origin_energy_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">8</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">code_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">9</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">trx_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-origin_address: smart contract creator address
+      bool anonymous = 1;
+      bool constant = 2;
+      string name = 3;
+      repeated Param inputs = 4;
+      repeated Param outputs = 5;
+      EntryType type = 6;
+      bool payable = 7;
+      StateMutabilityType stateMutability = 8;
+    }
+    repeated Entry entrys = 1;
+  }
+  bytes origin_address = 1;
+  bytes contract_address = 2;
+  ABI abi = 3;
+  bytes bytecode = 4;
+  int64 call_value = 5;
+  int64 consume_user_resource_percent = 6;
+  string name = 7;
+  int64 origin_ucr_limit = 8;
+  bytes code_hash = 9;
+  bytes stb_hash = 10;
+}
+</pre></div>
+
+
+<p>origin_address: smart contract creator address
 contract_address: smart contract address
 abi: the api information of the all the function of the smart contract
 bytecode: smart contract byte code
-call_value: TRX transferred into smart contract while call the contract
+call_value: STB transferred into smart contract while call the contract
 consume_user_resource_percent: resource consumption percentage set by the developer
 name: smart contract name
-origin_energy_limit: energy consumption of the developer limit in one call, must greater than 0. For the old contracts, if this parameter is not set, it will be set 0, developer can use updateEnergyLimit api to update this parameter (must greater than 0)</p>
+origin_ucr_limit: ucr consumption of the developer limit in one call, must greater than 0. For the old contracts, if this parameter is not set, it will be set 0, developer can use updateUcrLimit api to update this parameter (must greater than 0)</p>
 <p>Through other two grpc message types CreateSmartContract and TriggerSmartContract to create and use smart contract.</p>
 <h3 id="2-the-usage-of-the-function-of-smart-contract">2. The Usage of the Function of Smart Contract<a class="headerlink" href="#2-the-usage-of-the-function-of-smart-contract" title="Permanent link">&para;</a></h3>
 <ul>
@@ -388,7 +388,7 @@ Inconstant function will be broadcasted in the form of a transaction while be ca
 <ul>
 <li><strong>message calls</strong></li>
 </ul>
-<p>Message calls can call the functions of other contracts, also can transfer TRX to the accounts of contract and none-contract. Like the common TRON triggercontract, Message calls have initiator, recipient, data, transfer amount, fees and return attributes. Every message call can generate a new one recursively. Contract can define the distribution of the remaining energy in the internal message call. If it comes with OutOfEnergyException in the internal message call, it will return false, but not error. In the meanwhile, only the gas sent with the internal message call will be consumed, if energy is not specified in call.value(energy), all the remaining energy will be used.</p>
+<p>Message calls can call the functions of other contracts, also can transfer STB to the accounts of contract and none-contract. Like the common STABILA triggercontract, Message calls have initiator, recipient, data, transfer amount, fees and return attributes. Every message call can generate a new one recursively. Contract can define the distribution of the remaining ucr in the internal message call. If it comes with OutOfUcrException in the internal message call, it will return false, but not error. In the meanwhile, only the gas sent with the internal message call will be consumed, if ucr is not specified in call.value(ucr), all the remaining ucr will be used.</p>
 <ul>
 <li><strong>delegate call/call code/libary</strong></li>
 </ul>
@@ -396,85 +396,93 @@ Inconstant function will be broadcasted in the form of a transaction while be ca
 <ul>
 <li><strong>CREATE command</strong></li>
 </ul>
-<p>This command will create a new contract with a new address. The only difference with Ethereum is the newly generated TRON address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the defination of nonce is the comtract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
+<p>This command will create a new contract with a new address. The only difference with Ethereum is the newly generated STABILA address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the defination of nonce is the comtract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
 Note: Different from creating a contract by grpc's deploycontract, contract created by CREATE command does not store contract abi.</p>
 <ul>
-<li><strong>built-in function and built-in function attribute (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)</strong></li>
+<li><strong>built-in function and built-in function attribute (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)</strong></li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>1)TVM is compatible with solidity language&#39;s transfer format, including:
+<div class="codehilite"><pre><span></span>1)SVM is compatible with solidity language&#39;s transfer format, including:
 - accompany with constructor to call transfer
 - accompany with internal function to call transfer
 - use transfer/send/call/callcode/delegatecall to call transfer
 
-Note: TRON&#39;s smart contract is different from TRON&#39;s system contract, if the transfer to address does not exist it can not create an account by smart contract transfer.
+Note: STABILA&#39;s smart contract is different from STABILA&#39;s system contract, if the transfer to address does not exist it can not create an account by smart contract transfer.
 
-2)Different accouts vote for SuperNode (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+2)Different accouts vote for SuperNode (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-3)SuperNode gets all the reward (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+3)SuperNode gets all the reward (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-4)SuperNode approves or disappoves the proposal (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+4)SuperNode approves or disappoves the proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-5)SuperNode proposes a proposal (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+5)SuperNode proposes a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-6)SuperNode deletes  a proposal (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+6)SuperNode deletes  a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-7)TRON byte address converts to solidity address (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+7)STABILA byte address converts to solidity address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-8)TRON string address converts to solidity address (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+8)STABILA string address converts to solidity address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-9)Send token to target address (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+9)Send token to target address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-10)Query token amount of target address (Since Odyssey-v3.1.1, TVM built-in function is not supported temporarily)
+10)Query token amount of target address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
 11)Compatible with all the built-in functions of Ethereum
-</code></pre></div>
-Note: Ethereum's RIPEMD160 function is not recommended, because the return of TRON is a hash result based on TRON's sha256, not an accurate Ethereum RIPEMD160.</p>
+</pre></div>
+
+
+<p>Note: Ethereum's RIPEMD160 function is not recommended, because the return of STABILA is a hash result based on STABILA's sha256, not an accurate Ethereum RIPEMD160.</p>
 <h3 id="3-contract-address-using-in-solidity-language">3. Contract Address Using in Solidity Language<a class="headerlink" href="#3-contract-address-using-in-solidity-language" title="Permanent link">&para;</a></h3>
-<p>Ethereum VM address is 20 bytes, but TRON's VM address is 21 bytes.</p>
+<p>Ethereum VM address is 20 bytes, but STABILA's VM address is 21 bytes.</p>
 <ul>
 <li><strong>address conversion</strong></li>
 </ul>
-<p>Need to convert TRON's address while using in solidity (recommended):
-<div class="highlight"><pre><span></span><code>/**
-     *  @dev    convert uint256 (HexString add 0x at beginning) tron address to solidity address type
-     *  @param  tronAddress uint256 tronAddress, begin with 0x, followed by HexString
+<p>Need to convert STABILA's address while using in solidity (recommended):</p>
+<div class="codehilite"><pre><span></span>/**
+     *  @dev    convert uint256 (HexString add 0x at beginning) stabila address to solidity address type
+     *  @param  stabilaAddress uint256 stabilaAddress, begin with 0x, followed by HexString
      *  @return Solidity address type
 */
 
-function convertFromTronInt(uint256 tronAddress) public view returns(address){
-        return address(tronAddress);
+function convertFromStabilaInt(uint256 stabilaAddress) public view returns(address){
+        return address(stabilaAddress);
 }
-</code></pre></div>
-This is similar with the grammar of the conversion from other types converted to address type in Ethereum.</p>
+</pre></div>
+
+
+<p>This is similar with the grammar of the conversion from other types converted to address type in Ethereum.</p>
 <ul>
 <li><strong>address judgement</strong></li>
 </ul>
-<p>Solidity has address constant judgement, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
-<div class="highlight"><pre><span></span><code>function compareAddress(address tronAddress) public view returns (uint256){
-        // if (tronAddress == 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
-        if (tronAddress == 0xca35b7d915458ef540ade6068dfe2f44e8fa733c) { // right
+<p>Solidity has address constant judgement, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:</p>
+<div class="codehilite"><pre><span></span>function compareAddress(address stabilaAddress) public view returns (uint256){
+        // if (stabilaAddress == 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
+        if (stabilaAddress == 0xca35b7d915458ef540ade6068dfe2f44e8fa733c) { // right
             return 1;
         } else {
             return 0;
         }
 }
-</code></pre></div>
-But if you are using wallet-cli, you can use 21 bytes address, like 0000000000000000000041ca35b7d915458ef540ade6068dfe2f44e8fa733c</p>
+</pre></div>
+
+
+<p>But if you are using wallet-cli, you can use 21 bytes address, like 0000000000000000000041ca35b7d915458ef540ade6068dfe2f44e8fa733c</p>
 <ul>
 <li><strong>variable assignment</strong></li>
 </ul>
-<p>Solidity has address constant assignment, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
-<div class="highlight"><pre><span></span><code>function assignAddress() public view {
+<p>Solidity has address constant assignment, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:</p>
+<div class="codehilite"><pre><span></span>function assignAddress() public view {
         // address newAddress = 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
         address newAddress = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
         // do something
 }
-</code></pre></div>
-If you want to use TRON address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).</p>
+</pre></div>
+
+
+<p>If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).</p>
 <h3 id="4-the-special-constants-differ-from-ethereum">4. The Special Constants Differ from Ethereum<a class="headerlink" href="#4-the-special-constants-differ-from-ethereum" title="Permanent link">&para;</a></h3>
 <p><strong>Currency</strong></p>
-<p>Like solidity supports ETH, TRON VM supports trx and sun, 1 trx = 1000000 sun, case sensitive, only support lower case. tron-studio supports trx and sun, remix does not support trx and sun.
-We recommend to use tron-studio instead of remix to build TRON smart contract.</p>
+<p>Like solidity supports ETH, STABILA VM supports stb and unit, 1 stb = 1000000 unit, case sensitive, only support lower case. stabila-studio supports stb and unit, remix does not support stb and unit.
+We recommend to use stabila-studio instead of remix to build STABILA smart contract.</p>
 <p><strong>Block</strong></p>
 <ul>
 <li>block.blockhash (uint blockNumber) returns (bytes32): specified block hash, can only apply to the latest 256 blocks and current block excluded</li>
@@ -488,12 +496,12 @@ We recommend to use tron-studio instead of remix to build TRON smart contract.</
 <li>msg.gas (uint): remaining gas - since 0.4.21, not recommended, replaced by gesleft()</li>
 <li>msg.sender (address): message sender (current call)</li>
 <li>msg.sig (bytes4): first 4 bytes of call data (function identifier)</li>
-<li>msg.value (uint): the amount of SUN send with message</li>
+<li>msg.value (uint): the amount of UNIT send with message</li>
 <li>now (uint): current block timestamp (block.timestamp)</li>
 <li>tx.gasprice (uint): the gas price of transaction, not recommended, set 0</li>
 <li>tx.origin (address): transaction initiator</li>
 </ul>
-<p>Each command of smart contract consume system resource while running, we use 'Energy' as the unit of the consumption of the resource.</p>
+<p>Each command of smart contract consume system resource while running, we use 'Ucr' as the unit of the consumption of the resource.</p>
               
             </div>
           </div>
@@ -529,7 +537,7 @@ We recommend to use tron-studio instead of remix to build TRON smart contract.</
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../compiler/" style="color: #fcfcfc;">&laquo; Previous</a></span>

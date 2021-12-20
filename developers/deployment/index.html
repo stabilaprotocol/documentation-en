@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Deployment - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Deployment - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -234,7 +232,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../java-tron/">Java-Tron</a>
+    <a class="" href="../java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -261,7 +259,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -297,7 +295,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -316,7 +314,7 @@
     <li>Deployment</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/deployment.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/deployment.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -333,27 +331,33 @@
 <p>NOTE: SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode.
 New developers should deploy FullNode only.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>/deploy/fullnode
+<div class="codehilite"><pre><span></span>/deploy/fullnode
 /deploy/soliditynode
-</code></pre></div>
+</pre></div>
+
+
 <p>Create two folders for fullnode and soliditynode.</p>
-<p>Clone the latest master branch of <a href="https://github.com/tronprotocol/java-tron">https://github.com/tronprotocol/java-tron</a> and extract it to
-<div class="highlight"><pre><span></span><code>/deploy/java-tron
-</code></pre></div></p>
+<p>Clone the latest master branch of <a href="https://github.com/stabilaprotocol/java-stabila">https://github.com/stabilaprotocol/java-stabila</a> and extract it to</p>
+<div class="codehilite"><pre><span></span>/deploy/java-stabila
+</pre></div>
+
+
 <p>Make sure you have the proper dependencies.</p>
 <ul>
 <li>JDK 1.8 (JDK 1.9+ is not supported yet)</li>
-<li>On Linux Ubuntu system (e.g. Ubuntu 16.04.4 LTS), ensure that the machine has <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04"><strong>Oracle JDK 8</strong></a>, instead of having <strong>Open JDK 8</strong> in the system. If you are building the source code by using <strong>Open JDK 8</strong>, you will get <a href="https://github.com/tronprotocol/java-tron/issues/337"><strong>Build Failed</strong></a> result.</li>
+<li>On Linux Ubuntu system (e.g. Ubuntu 16.04.4 LTS), ensure that the machine has <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04"><strong>Oracle JDK 8</strong></a>, instead of having <strong>Open JDK 8</strong> in the system. If you are building the source code by using <strong>Open JDK 8</strong>, you will get <a href="https://github.com/stabilaprotocol/java-stabila/issues/337"><strong>Build Failed</strong></a> result.</li>
 <li>Open <strong>UDP</strong> ports for connection to the network</li>
 <li><strong>MINIMUM</strong> 2 CPU Cores</li>
 </ul>
 <h2 id="deployment-guide">Deployment Guide<a class="headerlink" href="#deployment-guide" title="Permanent link">&para;</a></h2>
-<p>1.&nbsp;Build the java-tron project
-<div class="highlight"><pre><span></span><code>cd /deploy/java-tron
+<p>1.&nbsp;Build the java-stabila project</p>
+<div class="codehilite"><pre><span></span>cd /deploy/java-stabila
 ./gradlew build
-</code></pre></div></p>
-<p>2.&nbsp;Copy the FullNode.jar and SolidityNode.jar along with configuration files into the respective directories
-<div class="highlight"><pre><span></span><code>download your needed configuration file from https://github.com/tronprotocol/TronDeployment.
+</pre></div>
+
+
+<p>2.&nbsp;Copy the FullNode.jar and SolidityNode.jar along with configuration files into the respective directories</p>
+<div class="codehilite"><pre><span></span>download your needed configuration file from https://github.com/stabilaprotocol/StabilaDeployment.
 
 main_net_config.conf is the configuration for MainNet, and test_net_config.conf is the configuration for TestNet.
 
@@ -362,25 +366,35 @@ please rename the configuration file to `config.conf` and use this config.conf t
 cp build/libs/FullNode.jar ../fullnode
 
 cp build/libs/SolidityNode.jar ../soliditynode
-</code></pre></div></p>
-<p>3.&nbsp;You can now run your FullNode using the following command
-<div class="highlight"><pre><span></span><code>java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/tronprotocol/TronDeployment
-</code></pre></div></p>
+</pre></div>
+
+
+<p>3.&nbsp;You can now run your FullNode using the following command</p>
+<div class="codehilite"><pre><span></span>java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+</pre></div>
+
+
 <p>4.&nbsp;Configure the SolidityNode configuration file</p>
-<p>You need to edit <code>config.conf</code> to connect to your local FullNode. Change  <code>trustNode</code> in <code>node</code> to local <code>127.0.0.1:50051</code>, which is the default rpc port. Set <code>listen.port</code> to any number within the range of 1024-65535. Please don't use any ports between 0-1024 since you'll most likely hit conflicts with other system services. Also change <code>rpc port</code> to <code>50052</code> or something to avoid conflicts. <strong>Please forward the UDP port 18888 for FullNode.</strong>
-<div class="highlight"><pre><span></span><code>rpc {
+<p>You need to edit <code>config.conf</code> to connect to your local FullNode. Change  <code>trustNode</code> in <code>node</code> to local <code>127.0.0.1:50051</code>, which is the default rpc port. Set <code>listen.port</code> to any number within the range of 1024-65535. Please don't use any ports between 0-1024 since you'll most likely hit conflicts with other system services. Also change <code>rpc port</code> to <code>50052</code> or something to avoid conflicts. <strong>Please forward the UDP port 18888 for FullNode.</strong></p>
+<div class="codehilite"><pre><span></span>rpc {
       port = 50052
     }
-</code></pre></div></p>
-<p>5.&nbsp;You can now run your SolidityNode using the following command：
-<div class="highlight"><pre><span></span><code>java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/tronprotocol/TronDeployment
-</code></pre></div></p>
-<p>6.&nbsp;Running a Super Representative Node for mainnet
-<div class="highlight"><pre><span></span><code>java -jar FullNode.jar -p your private key --witness -c your config.conf(Example：/data/java-tron/config.conf)
+</pre></div>
+
+
+<p>5.&nbsp;You can now run your SolidityNode using the following command：</p>
+<div class="codehilite"><pre><span></span>java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+</pre></div>
+
+
+<p>6.&nbsp;Running a Super Representative Node for mainnet</p>
+<div class="codehilite"><pre><span></span>java -jar FullNode.jar -p your private key --witness -c your config.conf(Example：/data/java-stabila/config.conf)
 Example:
-java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-tron/config.conf
-</code></pre></div></p>
-<p>This is similar to running a private testnet, except that the IPs in the <code>config.conf</code> are officially declared by TRON.</p>
+java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-stabila/config.conf
+</pre></div>
+
+
+<p>This is similar to running a private testnet, except that the IPs in the <code>config.conf</code> are officially declared by STABILA.</p>
 <p>7.&nbsp;Running a Super Representative Node for private testnet</p>
 <p>You should modify the config.conf:</p>
 <ul>
@@ -389,36 +403,44 @@ java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F
 <li>The first Super Node start, needSyncCheck should be set false</li>
 <li>Set p2pversion to 61</li>
 </ul>
-<div class="highlight"><pre><span></span><code>cd build/libs
-java -jar FullNode.jar -p your private key --witness -c your config.conf (Example：/data/java-tron/config.conf)
+<div class="codehilite"><pre><span></span>cd build/libs
+java -jar FullNode.jar -p your private key --witness -c your config.conf (Example：/data/java-stabila/config.conf)
 Example:
-java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-tron/config.conf
-</code></pre></div>
+java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-stabila/config.conf
+</pre></div>
+
+
 <h2 id="logging-and-network-connection-verification">Logging and Network Connection Verification<a class="headerlink" href="#logging-and-network-connection-verification" title="Permanent link">&para;</a></h2>
-<p>Logs for both nodes are located in <code>/deploy/\*/logs/tron.log</code>. Use <code>tail -f /logs/tron.log/</code> to follow along with the block syncing.</p>
+<p>Logs for both nodes are located in <code>/deploy/\*/logs/stabila.log</code>. Use <code>tail -f /logs/stabila.log/</code> to follow along with the block syncing.</p>
 <p>You should see something similar to this in your logs for block synchronization:</p>
-<p><strong>FullNode</strong>
-<div class="highlight"><pre><span></span><code>12:00:57.658 INFO  [pool-7-thread-1] [o.t.c.n.n.NodeImpl](NodeImpl.java:830) Success handle block Num:236610,ID:0000000000039c427569efa27cc2493c1fff243cc1515aa6665c617c45d2e1bf
-</code></pre></div>
-<strong>SolidityNode</strong>
-<div class="highlight"><pre><span></span><code>12:00:40.691 INFO  [pool-17-thread-1] [o.t.p.SolidityNode](SolidityNode.java:88) sync solidity block, lastSolidityBlockNum:209671, remoteLastSolidityBlockNum:211823
-</code></pre></div></p>
+<p><strong>FullNode</strong></p>
+<div class="codehilite"><pre><span></span>12:00:57.658 INFO  [pool-7-thread-1] [o.t.c.n.n.NodeImpl](NodeImpl.java:830) Success handle block Num:236610,ID:0000000000039c427569efa27cc2493c1fff243cc1515aa6665c617c45d2e1bf
+</pre></div>
+
+
+<p><strong>SolidityNode</strong></p>
+<div class="codehilite"><pre><span></span>12:00:40.691 INFO  [pool-17-thread-1] [o.t.p.SolidityNode](SolidityNode.java:88) sync solidity block, lastSolidityBlockNum:209671, remoteLastSolidityBlockNum:211823
+</pre></div>
+
+
 <h2 id="stop-node-gracefully">Stop Node Gracefully<a class="headerlink" href="#stop-node-gracefully" title="Permanent link">&para;</a></h2>
 <p>Create file stop.sh，use kill -15 to close FullNode.jar(or SolidityNode.jar).
-You need to modify pid=<code>ps -ef |grep FullNode.jar |grep -v grep |awk '{print $2}'</code> to find the correct pid.
-<div class="highlight"><pre><span></span><code>#!/bin/bash
+You need to modify pid=<code>ps -ef |grep FullNode.jar |grep -v grep |awk '{print $2}'</code> to find the correct pid.</p>
+<div class="codehilite"><pre><span></span>#!/bin/bash
 while true; do
   pid=`ps -ef |grep FullNode.jar |grep -v grep |awk &#39;{print $2}&#39;`
   if [ -n &quot;$pid&quot; ]; then
     kill -15 $pid
-    echo &quot;The java-tron process is exiting, it may take some time, forcing the exit may cause damage to the database, please wait patiently...&quot;
+    echo &quot;The java-stabila process is exiting, it may take some time, forcing the exit may cause damage to the database, please wait patiently...&quot;
     sleep 1
   else
-    echo &quot;java-tron killed successfully!&quot;
+    echo &quot;java-stabila killed successfully!&quot;
     break
   fi
 done
-</code></pre></div></p>
+</pre></div>
+
+
 <h2 id="fullnode-and-soliditynode-fast-deployment">FullNode and SolidityNode Fast Deployment<a class="headerlink" href="#fullnode-and-soliditynode-fast-deployment" title="Permanent link">&para;</a></h2>
 <p>Download fast deployment script, run the script according to different types of node.</p>
 <h3>Scope of use</h3>
@@ -427,11 +449,13 @@ done
 Just Support FullNode and SolidityNode.</p>
 <h3>Download and run script</h3>
 
-<div class="highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/tronprotocol/TronDeployment/master/deploy_tron.sh -O deploy_tron.sh
-</code></pre></div>
+<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
+</pre></div>
+
+
 <h3>Parameter Illustration</h3>
 
-<div class="highlight"><pre><span></span><code>bash deploy_tron.sh --app <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="p">|</span>testnet<span class="p">|</span>privatenet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
+<div class="codehilite"><pre><span></span>bash deploy_stabila.sh --app <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="p">|</span>testnet<span class="p">|</span>privatenet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
 
 --app Optional, Running application. The default node is Fullnode and it could be FullNode or SolidityNode.
 --net Optional, Connecting network. The default network is mainnet and it could be mainnet, testnet.
@@ -442,65 +466,81 @@ Just Support FullNode and SolidityNode.</p>
 --branch  Optional, branch of project.  Mainnet default is latest release and Testnet default is master.
 --heap-size  Optional, jvm option: Xmx. The default heap-size is <span class="m">0</span>.8 * memory size.
 --work_space  Optional, default is current directory.
-</code></pre></div>
+</pre></div>
+
+
 <h3> Deployment of FullNode on the one host </h3>
 
-<div class="highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/tronprotocol/TronDeployment/master/deploy_tron.sh -O deploy_tron.sh
-bash deploy_tron.sh
-</code></pre></div>
+<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
+bash deploy_stabila.sh
+</pre></div>
+
+
 <h3> Deployment of SolidityNode on the one host </h3>
 
-<div class="highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/tronprotocol/TronDeployment/master/deploy_tron.sh -O deploy_tron.sh
+<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
 <span class="c1"># User can self-configure the IP and Port of GRPC service in the turst-node field of SolidityNode. trust-node is the fullnode you just deploy.</span>
-bash deploy_tron.sh --app SolidityNode --trust-node &lt;grpc-ip:grpc-port&gt;
-</code></pre></div>
+bash deploy_stabila.sh --app SolidityNode --trust-node &lt;grpc-ip:grpc-port&gt;
+</pre></div>
+
+
 <h3> Deployment of FullNode and SolidityNode on the same host </h3>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># You need to configure different gRPC ports on the same host because gRPC port is available on SolidityNode and FullNodeConfigure and it cannot be set as default value 50051. In this case the default value of rpc port is set as 50041.</span>
-wget https://raw.githubusercontent.com/tronprotocol/TronDeployment/master/deploy_tron.sh -O deploy_tron.sh
-bash deploy_tron.sh --app FullNode
-bash deploy_tron.sh --app SolidityNode --rpc-port <span class="m">50041</span>
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="c1"># You need to configure different gRPC ports on the same host because gRPC port is available on SolidityNode and FullNodeConfigure and it cannot be set as default value 50051. In this case the default value of rpc port is set as 50041.</span>
+wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
+bash deploy_stabila.sh --app FullNode
+bash deploy_stabila.sh --app SolidityNode --rpc-port <span class="m">50041</span>
+</pre></div>
+
+
 <h2 id="grpc-gateway-deployment">Grpc Gateway Deployment<a class="headerlink" href="#grpc-gateway-deployment" title="Permanent link">&para;</a></h2>
 <h3> Summary </h3>
 
-<p>This script helps you download the code from https://github.com/tronprotocol/grpc-gateway and deploy the code on your environment.</p>
+<p>This script helps you download the code from https://github.com/stabilaprotocol/grpc-gateway and deploy the code on your environment.</p>
 <h3> Pre-requests </h3>
 
-<p>Please follow the guide on https://github.com/tronprotocol/grpc-gateway
+<p>Please follow the guide on https://github.com/stabilaprotocol/grpc-gateway
 Install Golang, Protoc, and set $GOPATH environment variable according to your requirement.</p>
 <h3> Download and run script </h3>
 
-<div class="highlight"><pre><span></span><code>wget https://raw.githubusercontent.com/tronprotocol/TronDeployment/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
-</code></pre></div>
+<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
+</pre></div>
+
+
 <h3> Parameter Illustration </h3>
 
-<div class="highlight"><pre><span></span><code>bash deploy_grpc_gateway.sh --rpchost <span class="o">[</span>rpc host ip<span class="o">]</span> --rpcport <span class="o">[</span>rpc port number<span class="o">]</span> --httpport <span class="o">[</span>http port number<span class="o">]</span>
+<div class="codehilite"><pre><span></span>bash deploy_grpc_gateway.sh --rpchost <span class="o">[</span>rpc host ip<span class="o">]</span> --rpcport <span class="o">[</span>rpc port number<span class="o">]</span> --httpport <span class="o">[</span>http port number<span class="o">]</span>
 
 --rpchost The fullnode or soliditynode IP where the grpc service is provided. Default value is <span class="s2">&quot;localhost&quot;</span>.
 --rpcport The fullnode or soliditynode port number grpc service is consuming. Default value is <span class="m">50051</span>.
 --httpport The port intends to provide http service provided by grpc gateway. Default value is <span class="m">18890</span>.
-</code></pre></div>
+</pre></div>
+
+
 <h3> Example </h3>
 
-<p>Use default configuration：
-<div class="highlight"><pre><span></span><code>bash deploy_grpc_gateway.sh
-</code></pre></div>
-Use customized configuration：
-<div class="highlight"><pre><span></span><code>bash deploy_grpc_gateway.sh --rpchost <span class="m">127</span>.0.0.1 --rpcport <span class="m">50052</span> --httpport <span class="m">18891</span>
-</code></pre></div></p>
+<p>Use default configuration：</p>
+<div class="codehilite"><pre><span></span>bash deploy_grpc_gateway.sh
+</pre></div>
+
+
+<p>Use customized configuration：</p>
+<div class="codehilite"><pre><span></span>bash deploy_grpc_gateway.sh --rpchost <span class="m">127</span>.0.0.1 --rpcport <span class="m">50052</span> --httpport <span class="m">18891</span>
+</pre></div>
+
+
 <h2 id="event-subscribe-plugin-deployment">Event Subscribe plugin Deployment<a class="headerlink" href="#event-subscribe-plugin-deployment" title="Permanent link">&para;</a></h2>
-<p>This is an implementation of Tron eventsubscribe model.</p>
+<p>This is an implementation of Stabila eventsubscribe model.</p>
 <ul>
-<li><strong>api</strong> module defines IPluginEventListener, a protocol between Java-tron and event plugin.</li>
+<li><strong>api</strong> module defines IPluginEventListener, a protocol between Java-stabila and event plugin.</li>
 <li><strong>app</strong> module is an example for loading plugin, developers could use it for debugging.</li>
-<li><strong>kafkaplugin</strong> module is the implementation for kafka, it implements IPluginEventListener, it receives events subscribed from Java-tron and relay events to kafka server.</li>
+<li><strong>kafkaplugin</strong> module is the implementation for kafka, it implements IPluginEventListener, it receives events subscribed from Java-stabila and relay events to kafka server.</li>
 <li><strong>mongodbplugin</strong> mongodbplugin module is the implementation for mongodb.</li>
 </ul>
 <h3> Setup/Build </h3>
 
 <ol>
-<li>Clone the repo <code>git clone https://github.com/tronprotocol/event-plugin.git</code></li>
+<li>Clone the repo <code>git clone https://github.com/stabilaprotocol/event-plugin.git</code></li>
 <li>Go to eventplugin <code>cd event-plugin</code></li>
 <li>
 <p>run <code>./gradlew build</code></p>
@@ -509,9 +549,9 @@ Use customized configuration：
 <p>This will produce one plugin zip, named <code>plugin-kafka-1.0.0.zip</code>, located in the <code>event-plugin/build/plugins/</code> directory.</p>
 </li>
 </ol>
-<h3> Edit **config.conf** of Java-tron， add the following fileds:</h3>
+<h3> Edit **config.conf** of Java-stabila， add the following fileds:</h3>
 
-<p><div class="highlight"><pre><span></span><code>event.subscribe = {
+<div class="codehilite"><pre><span></span>event.subscribe = {
     path = &quot;&quot; // absolute path of plugin
     server = &quot;&quot; // target server address to receive event triggers
     dbconfig=&quot;&quot; // dbname|username|password
@@ -550,25 +590,31 @@ Use customized configuration：
        ]
     }
 }
-</code></pre></div>
- * <strong>path</strong>: is the absolute path of "plugin-kafka-1.0.0.zip"
- * <strong>server</strong>: Kafka server address
- * <strong>topics</strong>: each event type maps to one Kafka topic, we support four event types subscribing, block, transaction, contractlog and contractevent.
- * <strong>dbconfig</strong>: db configuration information for mongodb, if using kafka, delete this one; if using Mongodb, add like that dbname|username|password
- * <strong>triggerName</strong>: the trigger type, the value can't be modified.
- * <strong>enable</strong>: plugin can receive nothing if the value is false.
- * <strong>topic</strong>: the value is the kafka topic to receive events. Make sure it has been created and Kafka process is running
- * <strong>filter</strong>: filter condition for process trigger.
+</pre></div>
+
+
+<ul>
+<li><strong>path</strong>: is the absolute path of "plugin-kafka-1.0.0.zip"</li>
+<li><strong>server</strong>: Kafka server address</li>
+<li><strong>topics</strong>: each event type maps to one Kafka topic, we support four event types subscribing, block, transaction, contractlog and contractevent.</li>
+<li><strong>dbconfig</strong>: db configuration information for mongodb, if using kafka, delete this one; if using Mongodb, add like that dbname|username|password</li>
+<li><strong>triggerName</strong>: the trigger type, the value can't be modified.</li>
+<li><strong>enable</strong>: plugin can receive nothing if the value is false.</li>
+<li><strong>topic</strong>: the value is the kafka topic to receive events. Make sure it has been created and Kafka process is running</li>
+<li><strong>filter</strong>: filter condition for process trigger.
  <strong>note</strong>: if the server is not 127.0.0.1, pls set some properties in config/server.properties file
            remove comment and set listeners=PLAINTEXT://:9092
-           remove comment and set advertised.listeners to PLAINTEXT://host_ip:9092</p>
+           remove comment and set advertised.listeners to PLAINTEXT://host_ip:9092</li>
+</ul>
 <h3 id="kafka"> Install Kafka </h3>
 
-<p><strong>On Mac</strong>:
-<div class="highlight"><pre><span></span><code>brew install kafka
-</code></pre></div></p>
-<p><strong>On Linux</strong>:
-<div class="highlight"><pre><span></span><code>cd /usr/local
+<p><strong>On Mac</strong>:</p>
+<div class="codehilite"><pre><span></span>brew install kafka
+</pre></div>
+
+
+<p><strong>On Linux</strong>:</p>
+<div class="codehilite"><pre><span></span>cd /usr/local
 wget http://archive.apache.org/dist/kafka/0.10.2.2/kafka_2.10-0.10.2.2.tgz
 tar -xzvf kafka_2.10-0.10.2.2.tgz
 mv kafka_2.10-0.10.2.2 kafka
@@ -578,57 +624,73 @@ source /etc/profile
 
 
 kafka-server-start.sh /usr/local/kafka/config/server.properties &amp;
-</code></pre></div>
-<strong>Note</strong>: make sure the version of Kafka is the same as the version set in build.gradle of eventplugin project.(kafka_2.10-0.10.2.2 kafka)</p>
+</pre></div>
+
+
+<p><strong>Note</strong>: make sure the version of Kafka is the same as the version set in build.gradle of eventplugin project.(kafka_2.10-0.10.2.2 kafka)</p>
 <h3> Run Kafka </h3>
 
-<p><strong>On Mac</strong>:
-<div class="highlight"><pre><span></span><code>zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp; kafka-server-start /usr/local/etc/kafka/server.properties
-</code></pre></div></p>
-<p><strong>On Linux</strong>:
-<div class="highlight"><pre><span></span><code>zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties &amp;
+<p><strong>On Mac</strong>:</p>
+<div class="codehilite"><pre><span></span>zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &amp; kafka-server-start /usr/local/etc/kafka/server.properties
+</pre></div>
+
+
+<p><strong>On Linux</strong>:</p>
+<div class="codehilite"><pre><span></span>zookeeper-server-start.sh /usr/local/kafka/config/zookeeper.properties &amp;
 Sleep about 3 seconds
 kafka-server-start.sh /usr/local/kafka/config/server.properties &amp;
-</code></pre></div></p>
+</pre></div>
+
+
 <h3> Create topics to receive events, the topic is defined in config.conf </h3>
 
-<p><strong>On Mac</strong>:
-<div class="highlight"><pre><span></span><code>kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic block
+<p><strong>On Mac</strong>:</p>
+<div class="codehilite"><pre><span></span>kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic block
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic transaction
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic contractlog
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic contractevent
-</code></pre></div></p>
-<p><strong>On Linux</strong>:
-<div class="highlight"><pre><span></span><code>kafka-topics.sh  --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic block
+</pre></div>
+
+
+<p><strong>On Linux</strong>:</p>
+<div class="codehilite"><pre><span></span>kafka-topics.sh  --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic block
 kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic transaction
 kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic contractlog
 kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic contractevent
-</code></pre></div></p>
+</pre></div>
+
+
 <h3> Kafka consumer </h3>
 
-<p><strong>On Mac</strong>:
-<div class="highlight"><pre><span></span><code>kafka-console-consumer --bootstrap-server localhost:9092  --topic block
+<p><strong>On Mac</strong>:</p>
+<div class="codehilite"><pre><span></span>kafka-console-consumer --bootstrap-server localhost:9092  --topic block
 kafka-console-consumer --bootstrap-server localhost:9092  --topic transaction
 kafka-console-consumer --bootstrap-server localhost:9092  --topic contractlog
 kafka-console-consumer --bootstrap-server localhost:9092  --topic contractevent
-</code></pre></div></p>
-<p><strong>On Linux</strong>:
-<div class="highlight"><pre><span></span><code>kafka-console-consumer.sh --zookeeper localhost:2181 --topic block
+</pre></div>
+
+
+<p><strong>On Linux</strong>:</p>
+<div class="codehilite"><pre><span></span>kafka-console-consumer.sh --zookeeper localhost:2181 --topic block
 kafka-console-consumer.sh --zookeeper localhost:2181 --topic transaction
 kafka-console-consumer.sh --zookeeper localhost:2181 --topic contractlog
 kafka-console-consumer.sh --zookeeper localhost:2181 --topic contractevent
-</code></pre></div></p>
-<h3> Load plugin in Java-tron </h3>
+</pre></div>
+
+
+<h3> Load plugin in Java-stabila </h3>
 
 <ul>
-<li>add --es to command line, for example:
-<div class="highlight"><pre><span></span><code> java -jar FullNode.jar -p privatekey -c config.conf --es
-</code></pre></div></li>
+<li>add --es to command line, for example:</li>
 </ul>
+<div class="codehilite"><pre><span></span> java -jar FullNode.jar -p privatekey -c config.conf --es
+</pre></div>
+
+
 <h3> Event filter </h3>
 
-<p>which is defined in config.conf, path: event.subscribe
-<div class="highlight"><pre><span></span><code>filter = {
+<p>which is defined in config.conf, path: event.subscribe</p>
+<div class="codehilite"><pre><span></span>filter = {
        fromblock = &quot;&quot; // the value could be &quot;&quot;, &quot;earliest&quot; or a specified block number as the beginning of the queried range
        toblock = &quot;&quot; // the value could be &quot;&quot;, &quot;latest&quot; or a specified block number as end of the queried range
        contractAddress = [
@@ -639,7 +701,9 @@ kafka-console-consumer.sh --zookeeper localhost:2181 --topic contractevent
            &quot;f0f1e23ddce8a520eaa7502e02fa767cb24152e9a86a4bf02529637c4e57504b&quot; // contract topic you want to subscribe, if it&#39;s set to &quot;&quot;, you will receive contract logs/events with any contract topic.
        ]
     }
-</code></pre></div></p>
+</pre></div>
+
+
 <h3 id="mongo"> Download and install MongoDB </h3>
 
 <p><strong> Suggested Configuration </strong></p>
@@ -650,14 +714,14 @@ kafka-console-consumer.sh --zookeeper localhost:2181 --topic contractevent
 </ul>
 <p>The version of MongoDB is <strong>4.0.4</strong>, below is the command:</p>
 <ul>
-<li>cd /home/java-tron</li>
+<li>cd /home/java-stabila</li>
 <li>curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.4.tgz</li>
 <li>tar zxvf mongodb-linux-x86_64-4.0.4.tgz</li>
 <li>mv mongodb-linux-x86_64-4.0.4 mongodb</li>
 </ul>
 <p><strong> Set environment </strong>
-- export MONGOPATH=/home/java-tron/mongodb/
-- export PATH=<span class="arithmatex"><span class="MathJax_Preview">PATH:</span><script type="math/tex">PATH:</script></span>MONGOPATH/bin</p>
+- export MONGOPATH=/home/java-stabila/mongodb/
+- export PATH=$PATH:$MONGOPATH/bin</p>
 <p><strong> Create mongodb config </strong>
 The path is : /etc/mongodb/mgdb.conf</p>
 <ul>
@@ -668,8 +732,8 @@ The path is : /etc/mongodb/mgdb.conf</p>
 Create data, log subfolder in mongodb directory,  and add their absolute path to mgdb.conf</p>
 <p><strong> Example: </strong></p>
 <ul>
-<li>dbpath=/home/java-tron/mongodb/data</li>
-<li>logpath=/home/java-tron/mongodb/log/mongodb.log</li>
+<li>dbpath=/home/java-stabila/mongodb/data</li>
+<li>logpath=/home/java-stabila/mongodb/log/mongodb.log</li>
 <li>port=27017</li>
 <li>logappend=true</li>
 <li>fork=true</li>
@@ -690,10 +754,10 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 <ul>
 <li>db.auth("root", "admin")</li>
 <li>use eventlog</li>
-<li>db.createUser({user:"tron",pwd:"123456",roles:[{role:"dbOwner",db:"eventlog"}]})</li>
+<li>db.createUser({user:"stabila",pwd:"123456",roles:[{role:"dbOwner",db:"eventlog"}]})</li>
 </ul>
 <blockquote>
-<p>database: eventlog, username:tron, password: 123456</p>
+<p>database: eventlog, username:stabila, password: 123456</p>
 </blockquote>
 <p><strong> Firewall rule: </strong>
 - iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 27017 -j ACCEPT</p>
@@ -701,7 +765,7 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 <ul>
 <li>mongo 47.90.245.68:27017</li>
 <li>use eventlog</li>
-<li>db.auth("tron", "123456")</li>
+<li>db.auth("stabila", "123456")</li>
 <li>show collections</li>
 <li>db.block.find()</li>
 </ul>
@@ -716,22 +780,22 @@ sh insertIndex.sh</p>
 <h3>Download sourcecode</h3>
 
 <p>Download sourcecode</p>
-<p>git clone https://github.com/tronprotocol/tron-eventquery.git
-cd troneventquery</p>
+<p>git clone https://github.com/stabilaprotocol/stabila-eventquery.git
+cd stabilaeventquery</p>
 <h3> Build </h3>
 
 <ul>
 <li>mvn package</li>
 </ul>
-<p>After the build command is executed successfully, troneventquery jar to release will be generated under troneventquery/target directory.</p>
-<p>Configuration of mongodb "config.conf" should be created for storing mongodb configuration, such as database name, username, password, and so on. We provided an example in sourcecode, which is " troneventquery/config.conf ". Replace with your specified configuration if needed.</p>
+<p>After the build command is executed successfully, stabilaeventquery jar to release will be generated under stabilaeventquery/target directory.</p>
+<p>Configuration of mongodb "config.conf" should be created for storing mongodb configuration, such as database name, username, password, and so on. We provided an example in sourcecode, which is " stabilaeventquery/config.conf ". Replace with your specified configuration if needed.</p>
 <p><strong>Note</strong>:</p>
-<p>Make sure the relative path of config.conf and troneventquery jar. The config.conf 's path is the parent of troneventquery jar.</p>
+<p>Make sure the relative path of config.conf and stabilaeventquery jar. The config.conf 's path is the parent of stabilaeventquery jar.</p>
 <ul>
 <li>mongo.host=IP</li>
 <li>mongo.port=27017</li>
 <li>mongo.dbname=eventlog</li>
-<li>mongo.username=tron</li>
+<li>mongo.username=stabila</li>
 <li>mongo.password=123456</li>
 <li>mongo.connectionsPerHost=8</li>
 <li>mongo.threadsAllowedToBlockForConnectionMultiplier=4</li>
@@ -740,8 +804,8 @@ cd troneventquery</p>
 <h3> Run </h3>
 
 <ul>
-<li>troneventquery/deploy.sh is used to deploy troneventquery</li>
-<li>troneventquery/insertIndex.sh is used to setup mongodb index to speedup query.</li>
+<li>stabilaeventquery/deploy.sh is used to deploy stabilaeventquery</li>
+<li>stabilaeventquery/insertIndex.sh is used to setup mongodb index to speedup query.</li>
 </ul>
 <h2 id="advanced-configurations">Advanced Configurations<a class="headerlink" href="#advanced-configurations" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="../advanced-configuration/">Advanced Configuration</a></p>
@@ -780,7 +844,7 @@ cd troneventquery</p>
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../official-public-nodes/" style="color: #fcfcfc;">&laquo; Previous</a></span>

@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Leveldb Startup Optimization Plugins - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>Leveldb Startup Optimization Plugins - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -151,7 +149,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +218,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../java-tron/">Java-Tron</a>
+    <a class="" href="../java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -247,7 +245,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -283,7 +281,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -302,7 +300,7 @@
     <li>Leveldb Startup Optimization Plugins</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/developers/archive-manifest.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/developers/archive-manifest.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -317,7 +315,7 @@
 <p>With the operation of levelDB, manifest file will continue to grow, huge manifest file not only affects the node startup speed, but also may cause the problem of system exit with continuous memory growth.
 For this reason, leveldb startup optimization plugin is introduced since <code>GreatVoyage-v4.3.0(Bacon)</code>, which optimizes the file size of manifest and the startup process of LevelDB, reduces the memory occupation and improves the node startup speed.</p>
 <p>Remember stop the FullNode process before any operation. This tool provides the ability to reformat the manifest according to the current <code>database</code>.</p>
-<p>For more design details, please refer to: <a href="https://github.com/tronprotocol/tips/issues/298">TIP298</a>.</p>
+<p>For more design details, please refer to: <a href="https://github.com/stabilaprotocol/tips/issues/298">TIP298</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="options-for-plug-in">Options For Plug-in<a class="headerlink" href="#options-for-plug-in" title="Permanent link">&para;</a></h3>
 <ul>
@@ -329,9 +327,9 @@ For this reason, leveldb startup optimization plugin is introduced since <code>G
 <h3 id="how-to-get">How to get<a class="headerlink" href="#how-to-get" title="Permanent link">&para;</a></h3>
 <ul>
 <li>build by yourself.
-  Under java-tron, execute <code>. /gradlew build</code>, you can get ArchiveManifest.jar under <code>build/libs/</code>.</li>
+  Under java-stabila, execute <code>. /gradlew build</code>, you can get ArchiveManifest.jar under <code>build/libs/</code>.</li>
 <li>Download directly.
-  <a href="https://github.com/tronprotocol/java-tron/releases">Links</a></li>
+  <a href="https://github.com/stabilaprotocol/java-stabila/releases">Links</a></li>
 </ul>
 <h3 id="use-steps">Use Steps<a class="headerlink" href="#use-steps" title="Permanent link">&para;</a></h3>
 <ul>
@@ -362,14 +360,16 @@ Developers can choose one of the following two ways  according to actual situati
 <p>Use <code>kill -15</code> to shutdown the FullNode.jar .</p>
 <p>Query the pid: <code>ps -ef |grep FullNode.jar |grep -v grep |awk '{print $2}'</code></p>
 <h5 id="2execute-the-archivemanifest-plugin">2.Execute the ArchiveManifest plugin<a class="headerlink" href="#2execute-the-archivemanifest-plugin" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><span class="c1"># Full command</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Full command</span>
 java -jar ArchiveManifest.jar <span class="o">[</span>-b batchSize<span class="o">]</span> <span class="o">[</span>-d databaseDirectory<span class="o">]</span> <span class="o">[</span>-m manifestSize<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span>
 <span class="c1"># examples</span>
    java -jar ArchiveManifest.jar <span class="c1">#1. use default settings</span>
    java -jar ArchiveManifest.jar -d /tmp/db/database <span class="c1">#2. Specify the database directory as /tmp/db/database</span>
    java -jar ArchiveManifest.jar -b <span class="m">64000</span> <span class="c1">#3. Specify the batch size to 64000 when optimizing Manifest</span>
    java -jar ArchiveManifest.jar -m <span class="m">128</span> <span class="c1">#4. Specify optimization only when Manifest exceeds 128M</span>
-</code></pre></div>
+</pre></div>
+
+
 <p>After the command is executed, <code>archive.log</code> will be generated in the <code>./logs</code> directory, you can see the result.</p>
 <blockquote>
 <p>Note: After the command is executed，If successful, the log will display something similar to the following,
@@ -378,13 +378,15 @@ and if it fails there will be a corresponding error message</p>
 <p><code>[main] [archive](ArchiveManifest.java:144) DatabaseDirectory:output-directory/database, maxManifestSize:0, maxBatchSize:80000,database reopen use 80 seconds total.</code></p>
 </blockquote>
 <h5 id="3start-the-fullnode-service">3.Start the FullNode service<a class="headerlink" href="#3start-the-fullnode-service" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code> <span class="c1">#FullNode</span>
+<div class="codehilite"><pre><span></span> <span class="c1">#FullNode</span>
 nohup java -Xmx24g -XX:+UseConcMarkSweepGC -jar FullNode.jar -c main_net_config.conf &lt;/dev/null <span class="p">&amp;</span>&gt;/dev/null <span class="p">&amp;</span>
  <span class="c1">#SR Node</span>
 nohup java -Xmx24g -XX:+UseConcMarkSweepGC  -jar FullNode.jar  -p  private key --witness -c main_net_config.conf &lt;/dev/null <span class="p">&amp;</span>&gt;/dev/null <span class="p">&amp;</span>
-</code></pre></div>
+</pre></div>
+
+
 <h4 id="2-integrated-startup-script">2. Integrated startup script<a class="headerlink" href="#2-integrated-startup-script" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="nv">APP</span><span class="o">=</span><span class="nv">$1</span>
 
@@ -457,7 +459,7 @@ checkpid<span class="o">()</span> <span class="o">{</span>
 checkPath<span class="o">(){</span>
   <span class="nv">path</span><span class="o">=</span><span class="s1">&#39;output-directory/database&#39;</span>
   <span class="nv">flag</span><span class="o">=</span><span class="m">1</span>
-  <span class="k">for</span> p <span class="k">in</span> <span class="si">${</span><span class="nv">ALL_OPT</span><span class="si">}</span>
+  <span class="k">for</span> p in <span class="si">${</span><span class="nv">ALL_OPT</span><span class="si">}</span>
   <span class="k">do</span>
      <span class="k">if</span> <span class="o">[[</span> <span class="nv">$flag</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
         <span class="nv">path</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$p</span><span class="sb">`</span>
@@ -500,7 +502,7 @@ stopService<span class="o">()</span> <span class="o">{</span>
 
     <span class="k">else</span>
 
-       <span class="nb">echo</span> <span class="s2">&quot;java-tron stop&quot;</span>
+       <span class="nb">echo</span> <span class="s2">&quot;java-stabila stop&quot;</span>
 
        <span class="k">return</span>
 
@@ -539,7 +541,7 @@ startService<span class="o">()</span> <span class="o">{</span>
 
  <span class="nv">pid</span><span class="o">=</span><span class="sb">`</span>ps -ef <span class="p">|</span>grep <span class="nv">$JAR_NAME</span> <span class="p">|</span>grep -v grep <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
 
- <span class="nb">echo</span> <span class="s2">&quot;start java-tron with pid </span><span class="nv">$pid</span><span class="s2"> on </span><span class="nv">$HOSTNAME</span><span class="s2">&quot;</span>
+ <span class="nb">echo</span> <span class="s2">&quot;start java-stabila with pid </span><span class="nv">$pid</span><span class="s2"> on </span><span class="nv">$HOSTNAME</span><span class="s2">&quot;</span>
 
 <span class="o">}</span>
 
@@ -558,16 +560,19 @@ checkPath
 sleep <span class="m">5</span>
 <span class="c1"># Start the FullNode service</span>
 startService
-</code></pre></div>
- example</p>
+</pre></div>
+
+
+<p>example</p>
 <blockquote>
 <p>Note: Save above script as start.sh,  In the above script the <code>--rewrite--manifest</code> argument is fixed in the first or second argument.</p>
 <p>OPTIONS</p>
-<div class="codehilite"><pre><span></span><code>       --rewrite--manifest       enable leveldb startup optimization plugins，The above plug-in option `-d -m -b -h` will take effect iff this option(--rewrite--manifest) is turned on
-</code></pre></div>
+<div class="codehilite"><pre><span></span>       --rewrite--manifest       enable leveldb startup optimization plugins，The above plug-in option `-d -m -b -h` will take effect iff this option(--rewrite--manifest) is turned on
+</pre></div>
+
 
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1"># Full command</span>
+<div class="codehilite"><pre><span></span><span class="c1"># Full command</span>
 ./start.sh <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> <span class="o">[</span>--rewrite--manifest<span class="o">]</span> <span class="o">[</span>-b batchSize<span class="o">]</span> <span class="o">[</span>-d databaseDirectory<span class="o">]</span> <span class="o">[</span>-m manifestSize<span class="o">]</span>
 <span class="c1"># examples</span>
   ./start.sh <span class="c1">#1. Start the FullNode.jar service without the plugin</span>
@@ -576,7 +581,7 @@ startService
    ./start.sh --rewrite--manifest -d /tmp/db/database <span class="c1">#4. Specify the database directory as /tmp/db/database, execute the optimization plugin, and start the FullNode.jar service</span>
    ./start.sh --rewrite--manifest -b <span class="m">64000</span> <span class="c1">#5. Specify the batch size to 64000 when optimizing Manifest, and start the FullNode.jar service</span>
    ./start.sh --rewrite--manifest -m <span class="m">128</span> <span class="c1">#6. Specify that optimization is performed only when the Manifest exceeds 128M, and start the FullNode.jar service</span>
-</code></pre></div>
+</pre></div>
               
             </div>
           </div>
@@ -612,7 +617,7 @@ startService
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../litefullnode/" style="color: #fcfcfc;">&laquo; Previous</a></span>

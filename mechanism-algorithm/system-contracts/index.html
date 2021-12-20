@@ -8,9 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>System Contracts - TRON Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
+  <title>System Contracts - STABILA Documentation</title>
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
@@ -36,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> TRON Documentation</a>
+        <a href="../.." class="icon icon-home"> STABILA Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -146,13 +144,13 @@
         
             <li><a class="toctree-l4" href="#accountupdatecontract">AccountUpdateContract</a></li>
         
-            <li><a class="toctree-l4" href="#freezebalancecontract">FreezeBalanceContract</a></li>
+            <li><a class="toctree-l4" href="#cdbalancecontract">CdBalanceContract</a></li>
         
-            <li><a class="toctree-l4" href="#unfreezebalancecontract">UnfreezeBalanceContract</a></li>
+            <li><a class="toctree-l4" href="#uncdbalancecontract">UncdBalanceContract</a></li>
         
             <li><a class="toctree-l4" href="#withdrawbalancecontract">WithdrawBalanceContract</a></li>
         
-            <li><a class="toctree-l4" href="#unfreezeassetcontract">UnfreezeAssetContract</a></li>
+            <li><a class="toctree-l4" href="#uncdassetcontract">UncdAssetContract</a></li>
         
             <li><a class="toctree-l4" href="#updateassetcontract">UpdateAssetContract</a></li>
         
@@ -186,7 +184,7 @@
         
             <li><a class="toctree-l4" href="#updatebrokeragecontract">UpdateBrokerageContract</a></li>
         
-            <li><a class="toctree-l4" href="#updateenergylimitcontract">UpdateEnergyLimitContract</a></li>
+            <li><a class="toctree-l4" href="#updateucrlimitcontract">UpdateUcrLimitContract</a></li>
         
         </ul>
     
@@ -221,7 +219,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../contracts/tvm/">TVM</a>
+    <a class="" href="../../contracts/svm/">SVM</a>
                 </li>
                 <li class="">
                     
@@ -276,7 +274,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/java-tron/">Java-Tron</a>
+    <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
                 </li>
                 <li class="">
                     
@@ -303,7 +301,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../clients/tron-grid/">TronGrid</a>
+    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -339,7 +337,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">TRON Documentation</a>
+        <a href="../..">STABILA Documentation</a>
       </nav>
 
       
@@ -358,7 +356,7 @@
     <li>System Contracts</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/tronprotocol/documentation-en/edit/master/docs/mechanism-algorithm/system-contracts.md"
+        <a href="https://github.com/stabilaprotocol/documentation-en/edit/master/docs/mechanism-algorithm/system-contracts.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -370,12 +368,13 @@
               
                 <h1 id="system-contracts">System Contracts<a class="headerlink" href="#system-contracts" title="Permanent link">&para;</a></h1>
 <h2 id="accountcreatecontract">AccountCreateContract<a class="headerlink" href="#accountcreatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message AccountCreateContract {
+<div class="codehilite"><pre><span></span>message AccountCreateContract {
   bytes owner_address = 1;
   bytes account_address = 2;
   AccountType type = 3;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -383,26 +382,28 @@
 <li><code>type</code>: Account type. 0 means normal account; 1 means the Genesis account; 2 means smart contract account.</li>
 </ul>
 <h2 id="transfercontract">TransferContract<a class="headerlink" href="#transfercontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message TransferContract {
+<div class="codehilite"><pre><span></span>message TransferContract {
   bytes owner_address = 1;
   bytes to_address = 2;
   int64 amount = 3;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>to_address</code>: The target address to transfer.</li>
-<li><code>amount</code>: The amount of TRX to transfer.</li>
+<li><code>amount</code>: The amount of STB to transfer.</li>
 </ul>
 <h2 id="transferassetcontract">TransferAssetContract<a class="headerlink" href="#transferassetcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message TransferAssetContract {
+<div class="codehilite"><pre><span></span>message TransferAssetContract {
   bytes asset_name = 1;
   bytes owner_address = 2;
   bytes to_address = 3;
   int64 amount = 4;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>asset_name</code>: The token id to transfer.</li>
@@ -411,7 +412,7 @@
 <li><code>amount</code>: The amount of token to transfer.</li>
 </ul>
 <h2 id="votewitnesscontract">VoteWitnessContract<a class="headerlink" href="#votewitnesscontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message VoteWitnessContract {
+<div class="codehilite"><pre><span></span>message VoteWitnessContract {
   message Vote {
     bytes vote_address = 1;
     int64 vote_count = 2;
@@ -420,7 +421,8 @@
   repeated Vote votes = 2;
   bool support = 3;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -429,28 +431,29 @@
 <li><code>support</code>: Constant true, not used.</li>
 </ul>
 <h2 id="witnesscreatecontract">WitnessCreateContract<a class="headerlink" href="#witnesscreatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message WitnessCreateContract {
+<div class="codehilite"><pre><span></span>message WitnessCreateContract {
   bytes owner_address = 1;
   bytes url = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>url</code>: The website url of the witness.</li>
 </ul>
 <h2 id="assetissuecontract">AssetIssueContract<a class="headerlink" href="#assetissuecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message AssetIssueContract {
-  message FrozenSupply {
-    int64 frozen_amount = 1;
-    int64 frozen_days = 2;
+<div class="codehilite"><pre><span></span>message AssetIssueContract {
+  message CdedSupply {
+    int64 cded_amount = 1;
+    int64 cded_days = 2;
   }
   bytes owner_address = 1;
   bytes name = 2;
   bytes abbr = 3;
   int64 total_supply = 4;
-  repeated FrozenSupply frozen_supply = 5;
-  int32 trx_num = 6;
+  repeated CdedSupply cded_supply = 5;
+  int32 stb_num = 6;
   int32 num = 8;
   int64 start_time = 9;
   int64 end_time = 10;
@@ -463,16 +466,17 @@
   int64 public_free_asset_net_usage = 24;
   int64 public_latest_free_net_time = 25;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>name</code>: The token name to issue.</li>
 <li><code>abbr</code>: The abbreviation of the token name.</li>
 <li><code>total_supply</code>: The amount of token to issue.</li>
-<li><code>frozen_supply</code>: The amount of token and staked days to stake.</li>
-<li><code>trx_num</code>: trx_num/num defines the token price.</li>
-<li><code>num</code>: trx_num/num defines the token price.</li>
+<li><code>cded_supply</code>: The amount of token and staked days to stake.</li>
+<li><code>stb_num</code>: stb_num/num defines the token price.</li>
+<li><code>num</code>: stb_num/num defines the token price.</li>
 <li><code>start_time</code>: ICO starts time.</li>
 <li><code>end_time</code>: ICO ends time.</li>
 <li><code>order</code>: Deprecated.</li>
@@ -485,24 +489,26 @@
 <li><code>public_latest_free_net_time</code>: The latest bandwidth consumption time of token transfer.</li>
 </ul>
 <h2 id="witnessupdatecontract">WitnessUpdateContract<a class="headerlink" href="#witnessupdatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message WitnessUpdateContract {
+<div class="codehilite"><pre><span></span>message WitnessUpdateContract {
   bytes owner_address = 1;
   bytes update_url = 12;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>update_url</code>: The website url of the witness.</li>
 </ul>
 <h2 id="participateassetissuecontract">ParticipateAssetIssueContract<a class="headerlink" href="#participateassetissuecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ParticipateAssetIssueContract {
+<div class="codehilite"><pre><span></span>message ParticipateAssetIssueContract {
   bytes owner_address = 1;
   bytes to_address = 2;
   bytes asset_name = 3;
   int64 amount = 4;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -511,41 +517,44 @@
 <li><code>amount</code>: The amount of token to purchase.</li>
 </ul>
 <h2 id="accountupdatecontract">AccountUpdateContract<a class="headerlink" href="#accountupdatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>// Update account name. Account name is unique now.
+<div class="codehilite"><pre><span></span>// Update account name. Account name is unique now.
 message AccountUpdateContract {
   bytes account_name = 1;
   bytes owner_address = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>account_name</code>: Account name.</li>
 </ul>
-<h2 id="freezebalancecontract">FreezeBalanceContract<a class="headerlink" href="#freezebalancecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message FreezeBalanceContract {
+<h2 id="cdbalancecontract">CdBalanceContract<a class="headerlink" href="#cdbalancecontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message CdBalanceContract {
   bytes owner_address = 1;
-  int64 frozen_balance = 2;
-  int64 frozen_duration = 3;
+  int64 cded_balance = 2;
+  int64 cded_duration = 3;
   ResourceCode resource = 10;
   bytes receiver_address = 15;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
-<li><code>frozen_balance</code>: The amount of TRX to stake.</li>
-<li><code>frozen_duration</code>: The stake duration.</li>
-<li><code>resource</code>: The type of resource get by staking TRX.</li>
+<li><code>cded_balance</code>: The amount of STB to stake.</li>
+<li><code>cded_duration</code>: The stake duration.</li>
+<li><code>resource</code>: The type of resource get by staking STB.</li>
 <li><code>receiver_address</code>: The account address to receive resource.</li>
 </ul>
-<h2 id="unfreezebalancecontract">UnfreezeBalanceContract<a class="headerlink" href="#unfreezebalancecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UnfreezeBalanceContract {
+<h2 id="uncdbalancecontract">UncdBalanceContract<a class="headerlink" href="#uncdbalancecontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message UncdBalanceContract {
   bytes owner_address = 1;
   ResourceCode resource = 10;
   bytes receiver_address = 13;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -553,32 +562,35 @@ message AccountUpdateContract {
 <li><code>receiver_address</code>: The account address to receive resource.</li>
 </ul>
 <h2 id="withdrawbalancecontract">WithdrawBalanceContract<a class="headerlink" href="#withdrawbalancecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message WithdrawBalanceContract {
+<div class="codehilite"><pre><span></span>message WithdrawBalanceContract {
   bytes owner_address = 1;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 </ul>
-<h2 id="unfreezeassetcontract">UnfreezeAssetContract<a class="headerlink" href="#unfreezeassetcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UnfreezeAssetContract {
+<h2 id="uncdassetcontract">UncdAssetContract<a class="headerlink" href="#uncdassetcontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message UncdAssetContract {
   bytes owner_address = 1;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 </ul>
 <h2 id="updateassetcontract">UpdateAssetContract<a class="headerlink" href="#updateassetcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UpdateAssetContract {
+<div class="codehilite"><pre><span></span>message UpdateAssetContract {
   bytes owner_address = 1;
   bytes description = 2;
   bytes url = 3;
   int64 new_limit = 4;
   int64 new_public_limit = 5;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -588,23 +600,25 @@ message AccountUpdateContract {
 <li><code>new_public_limit</code>: The bandwidth consumption limit of the accounts.</li>
 </ul>
 <h2 id="proposalcreatecontract">ProposalCreateContract<a class="headerlink" href="#proposalcreatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ProposalCreateContract {
+<div class="codehilite"><pre><span></span>message ProposalCreateContract {
   bytes owner_address = 1;
   map&lt;int64, int64&gt; parameters = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>parameters</code>: The proposal.</li>
 </ul>
 <h2 id="proposalapprovecontract">ProposalApproveContract<a class="headerlink" href="#proposalapprovecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ProposalApproveContract {
+<div class="codehilite"><pre><span></span>message ProposalApproveContract {
   bytes owner_address = 1;
   int64 proposal_id = 2;
   bool is_add_approval = 3; // add or remove approval
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -612,36 +626,39 @@ message AccountUpdateContract {
 <li><code>is_add_approval</code>: Whether to approve.</li>
 </ul>
 <h2 id="proposaldeletecontract">ProposalDeleteContract<a class="headerlink" href="#proposaldeletecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ProposalDeleteContract {
+<div class="codehilite"><pre><span></span>message ProposalDeleteContract {
   bytes owner_address = 1;
   int64 proposal_id = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>proposal_id</code>: The proposal id.</li>
 </ul>
 <h2 id="setaccountidcontract">SetAccountIdContract<a class="headerlink" href="#setaccountidcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span> <span class="nv">Set</span> <span class="nv">account</span> <span class="nv">id</span> <span class="k">if</span> <span class="nv">the</span> <span class="nv">account</span> <span class="nv">has</span> <span class="nv">no</span> <span class="nv">id</span>. <span class="nv">Account</span> <span class="nv">id</span> <span class="nv">is</span> <span class="nv">unique</span> <span class="nv">and</span> <span class="nv">case</span> <span class="nv">insensitive</span>.
-<span class="nv">message</span> <span class="nv">SetAccountIdContract</span> {
-  <span class="nv">bytes</span> <span class="nv">account_id</span> <span class="o">=</span> <span class="mi">1</span><span class="c1">;</span>
-  <span class="nv">bytes</span> <span class="nv">owner_address</span> <span class="o">=</span> <span class="mi">2</span><span class="c1">;</span>
+<div class="codehilite"><pre><span></span>// Set account id if the account has no id. Account id is unique and case insensitive.
+message SetAccountIdContract {
+  bytes account_id = 1;
+  bytes owner_address = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>account_id</code>: The account id.</li>
 </ul>
 <h2 id="createsmartcontract">CreateSmartContract<a class="headerlink" href="#createsmartcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message CreateSmartContract {
+<div class="codehilite"><pre><span></span>message CreateSmartContract {
   bytes owner_address = 1;
   SmartContract new_contract = 2;
   int64 call_token_value = 5;
   int64 token_id = 6;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -650,7 +667,7 @@ message AccountUpdateContract {
 <li><code>token_id</code> : The id of the TRC-10 token to be sent to the contract.</li>
 </ul>
 <h2 id="triggersmartcontract">TriggerSmartContract<a class="headerlink" href="#triggersmartcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message TriggerSmartContract {
+<div class="codehilite"><pre><span></span>message TriggerSmartContract {
   bytes owner_address = 1;
   bytes contract_address = 2;
   int64 call_value = 3;
@@ -658,23 +675,25 @@ message AccountUpdateContract {
   int64 call_token_value = 5;
   int64 token_id = 6;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>contract_address</code>: The contract address.</li>
-<li><code>call_value</code>: The amount of TRX to send to the contract when triggers.</li>
+<li><code>call_value</code>: The amount of STB to send to the contract when triggers.</li>
 <li><code>data</code>: The parameters to trigger the contract.</li>
 <li><code>call_token_value</code> : The amount of TRC-10 token to send to the contract when triggers.</li>
 <li><code>token_id</code> : The id of the TRC-10 token to be sent to the contract.</li>
 </ul>
 <h2 id="updatesettingcontract">UpdateSettingContract<a class="headerlink" href="#updatesettingcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UpdateSettingContract {
+<div class="codehilite"><pre><span></span>message UpdateSettingContract {
   bytes owner_address = 1;
   bytes contract_address = 2;
   int64 consume_user_resource_percent = 3;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -682,14 +701,15 @@ message AccountUpdateContract {
 <li><code>consume_user_resource_percent</code>: The percentage of resource consumption ratio.</li>
 </ul>
 <h2 id="exchangecreatecontract">ExchangeCreateContract<a class="headerlink" href="#exchangecreatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ExchangeCreateContract {
+<div class="codehilite"><pre><span></span>message ExchangeCreateContract {
   bytes owner_address = 1;
   bytes first_token_id = 2;
   int64 first_token_balance = 3;
   bytes second_token_id = 4;
   int64 second_token_balance = 5;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -699,13 +719,14 @@ message AccountUpdateContract {
 <li><code>second_token_balance</code>: Second token balance.</li>
 </ul>
 <h2 id="exchangeinjectcontract">ExchangeInjectContract<a class="headerlink" href="#exchangeinjectcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ExchangeInjectContract {
+<div class="codehilite"><pre><span></span>message ExchangeInjectContract {
   bytes owner_address = 1;
   int64 exchange_id = 2;
   bytes token_id = 3;
   int64 quant = 4;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -714,13 +735,14 @@ message AccountUpdateContract {
 <li><code>quant</code>: The token amount to inject.</li>
 </ul>
 <h2 id="exchangewithdrawcontract">ExchangeWithdrawContract<a class="headerlink" href="#exchangewithdrawcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ExchangeWithdrawContract {
+<div class="codehilite"><pre><span></span>message ExchangeWithdrawContract {
   bytes owner_address = 1;
   int64 exchange_id = 2;
   bytes token_id = 3;
   int64 quant = 4;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -729,13 +751,14 @@ message AccountUpdateContract {
 <li><code>quant</code>: The token amount to withdraw.</li>
 </ul>
 <h2 id="exchangetransactioncontract">ExchangeTransactionContract<a class="headerlink" href="#exchangetransactioncontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ExchangeTransactionContract {
+<div class="codehilite"><pre><span></span>message ExchangeTransactionContract {
   bytes owner_address = 1;
   int64 exchange_id = 2;
   bytes token_id = 3;
   int64 quant = 4;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
@@ -744,7 +767,7 @@ message AccountUpdateContract {
 <li><code>quant</code>: The token amount to sell.</li>
 </ul>
 <h2 id="shieldedtransfercontract">ShieldedTransferContract<a class="headerlink" href="#shieldedtransfercontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ShieldedTransferContract {
+<div class="codehilite"><pre><span></span>message ShieldedTransferContract {
   bytes transparent_from_address = 1;
   int64 from_amount = 2;
   repeated SpendDescription spend_description = 3;
@@ -753,7 +776,8 @@ message AccountUpdateContract {
   bytes transparent_to_address = 6;
   int64 to_amount = 7;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>transparent_from_address</code>: The transparent address of the sender.</li>
@@ -764,7 +788,7 @@ message AccountUpdateContract {
 <li><code>transparent_to_address</code>: The transparent address of the receiver.</li>
 <li><code>to_amount</code>: The amount to receive.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>message SpendDescription {
+<div class="codehilite"><pre><span></span>message SpendDescription {
   bytes value_commitment = 1;
   bytes anchor = 2;
   bytes nullifier = 3;
@@ -772,7 +796,9 @@ message AccountUpdateContract {
   bytes zkproof = 5;
   bytes spend_authority_signature = 6;
 }
-</code></pre></div>
+</pre></div>
+
+
 <ul>
 <li><code>value_commitment</code>: <em>value commitment</em> of spender's transfer amount.</li>
 <li><code>anchor</code>: root of the note commitment Merkle tree at some block.</li>
@@ -781,7 +807,7 @@ message AccountUpdateContract {
 <li><code>zkproof</code>: zero-knowledge proof of spender's note, prove that this note exists and could be spent.</li>
 <li><code>spend_authority_signature</code>: the spender's <em>Spend Authorization Signature</em>.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>message ReceiveDescription {
+<div class="codehilite"><pre><span></span>message ReceiveDescription {
   bytes value_commitment = 1;
   bytes note_commitment = 2;
   bytes epk = 3;
@@ -789,7 +815,9 @@ message AccountUpdateContract {
   bytes c_out = 5;
   bytes zkproof = 6;
 }
-</code></pre></div>
+</pre></div>
+
+
 <ul>
 <li><code>value_commitment</code>: <em>value commitment</em> of receiver's transfer amount.</li>
 <li><code>note_commitment</code>: commitment of the receiver's not.</li>
@@ -801,39 +829,42 @@ message AccountUpdateContract {
 <h2 id="multi-signature">Multi Signature<a class="headerlink" href="#multi-signature" title="Permanent link">&para;</a></h2>
 <p><a href="../multi-signatures/">Multi-Signature</a></p>
 <h2 id="clearabicontract">ClearABIContract<a class="headerlink" href="#clearabicontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message ClearABIContract {
+<div class="codehilite"><pre><span></span>message ClearABIContract {
   bytes owner_address = 1;
   bytes contract_address = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>account_address</code>: The target contract address to clear ABI.</li>
 </ul>
 <h2 id="updatebrokeragecontract">UpdateBrokerageContract<a class="headerlink" href="#updatebrokeragecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UpdateBrokerageContract {
+<div class="codehilite"><pre><span></span>message UpdateBrokerageContract {
   bytes owner_address = 1;
   int32 brokerage = 2;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>brokerage</code>: Commission rate, from 0 to 100,1 mean 1%.</li>
 </ul>
-<h2 id="updateenergylimitcontract">UpdateEnergyLimitContract<a class="headerlink" href="#updateenergylimitcontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>message UpdateEnergyLimitContract {
+<h2 id="updateucrlimitcontract">UpdateUcrLimitContract<a class="headerlink" href="#updateucrlimitcontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message UpdateUcrLimitContract {
   bytes owner_address = 1;
   bytes contract_address = 2;
-  int64 origin_energy_limit = 3;
+  int64 origin_ucr_limit = 3;
 }
-</code></pre></div>
+</pre></div>
+
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>contract_address</code>: The contract address.</li>
-<li><code>origin_energy_limit</code>: The target energy limit to change.</li>
+<li><code>origin_ucr_limit</code>: The target ucr limit to change.</li>
 </ul>
               
             </div>
@@ -870,7 +901,7 @@ message AccountUpdateContract {
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/tronprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/stabilaprotocol/documentation-en/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../shielded-TRC20-contract/" style="color: #fcfcfc;">&laquo; Previous</a></span>

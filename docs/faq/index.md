@@ -80,7 +80,7 @@ You need to vote again, set your votes number to 0.
 
 ## Node Configuration
 
-### If I replace the field value of 'genesis.block.witnesses' with the address generated in [Stabilascan](https://stabilascan.org/) in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?
+### If I replace the field value of 'genesis.block.executives' with the address generated in [Stabilascan](https://stabilascan.org/) in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?
 
 No need to delete other addresses, these addresses will be a part of your net, but if you do not own the private keys of these addresses, they will act like abandoned addresses.
 Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be modified.
@@ -133,7 +133,7 @@ The log level is defined in logback.xml. Please set the root level to "ERROR" if
   <logger name="utils" level="ERROR"/>
   <logger name="actuator" level="ERROR"/>
   <logger name="API" level="ERROR"/>
-  <logger name="witness" level="ERROR"/>
+  <logger name="executive" level="ERROR"/>
   <logger name="DB" level="ERROR"/>
   <logger name="capsule" level="ERROR"/>
   <logger name="VM" level="ERROR"/>

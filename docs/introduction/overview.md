@@ -30,11 +30,11 @@ Example (Using wallet-cli):
 
 ```text
 cdbalance 10,000,000 3 // stake 10 STB to get 10 STABILA Power(TP)
-votewitness witness1 4 witness2 6 // Vote 4 votes for witness1, 6 votes for witness2
-votewitness witness1 3 witness2 7 // Vote 3 votes for witness1, 7 votes for witness2
+voteexecutive executive1 4 executive2 6 // Vote 4 votes for executive1, 6 votes for executive2
+voteexecutive executive1 3 executive2 7 // Vote 3 votes for executive1, 7 votes for executive2
 ```
 
-The final output above is: Vote 3 votes for witness1, 7 votes for witness2
+The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 
 ## 2.3 Reward for Super Representatives
 
@@ -62,8 +62,8 @@ The network parameters can be modified([min,max]):
 - 2: CREATE_ACCOUNT_FEE, [0, 100 000 000 000  000 000] //the fee to create an account, currently 100_000 UNIT
 - 3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte
 - 4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT
-- 5: WITNESS_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT
-- 6: WITNESS_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 127 super representative candidates, currently 115_200_000_000 UNIT
+- 5: EXECUTIVE_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT
+- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 127 super representative candidates, currently 115_200_000_000 UNIT
 - 7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, //the fee to create an account in system, currently 1_000_000 UNIT
 - 8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, //the consumption of bandwidth or STB while creating an account, using together with #7
 - 9: ALLOW_CREATION_OF_CONTRACTS, //to enable the VM
@@ -216,18 +216,18 @@ MainNet, TestNet, PrivateNet all use the same code, only the node start configur
 ```text
 wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
 ```
- 2.&nbsp;add your private key in localwitness
- 3.&nbsp;set genesis.block.witnesses as the private key's corresponding address
+ 2.&nbsp;add your private key in localexecutive
+ 3.&nbsp;set genesis.block.executives as the private key's corresponding address
  4.&nbsp;set p2p.version, any positive integer but 11111
  5.&nbsp;set the first SR needSyncCheck = false, others can be set true
  6.&nbsp;set node.discovery.enable = true
  7.&nbsp;run the script
 
 ```shell
-nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --witness  -c private_net_config.conf
+nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --executive  -c private_net_config.conf
 
 command line parameters introduction:
---witness: start witness function. For SuperNode, this parameter is required, i.e.: --witness
+--executive: start executive function. For SuperNode, this parameter is required, i.e.: --executive
 --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
 -c: specify the configuration file path, i.e.: -c config.conf
 ```
@@ -236,12 +236,12 @@ command line parameters introduction:
  You can change the level of the module to control the log output. The default level of each module is INFO, for example: only print the message with the level higher than warn:
  <logger name="net" level="WARN"/>
  The parameters in configuration file that need to modify:
- localwitness:
+ localexecutive:
 
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localwitness.jpg)
- witnesses:
+ ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.jpg)
+ executives:
 
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/witness.png)
+ ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png)
  version:
 
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png)
@@ -1026,7 +1026,7 @@ receiverAddress: recipient account address
 
 |Type|Fee|
 | :------|:------:|
-|Create a witness|9999 STB|
+|Create a executive|9999 STB|
 |Issue a TRC-10 token|1024 STB|
 |Create an account|1 STB|
 |Create an exchange|1024 STB|

@@ -6,12 +6,12 @@ Blockchain is a distributed accounting system. In a blockchain system, there can
 There are several types of consensus, and the most commonly used are POW, POS, and DPoS. Definitely, different blockchain systems will have a unique way of implementation. This article will mainly introduce the DPoS consensus on which STABILA based. We will also explain the basic components and mechanisms of DPoS.
 
 ## Block Producing Process
-The witnesses of the blockchain network collect the newly generated transactions in the blockchain network and verify the legality of these transactions, then package the transactions in a block, record them as a new page on the ledger, and broadcast the page to the entire blockchain network. Other nodes will receive the new page and verify the legality of the transaction data on the page and add it to their own ledger. The witnesses will repeat this process so all new transaction data in the blockchain system can be recorded in the ledger.
+The executives of the blockchain network collect the newly generated transactions in the blockchain network and verify the legality of these transactions, then package the transactions in a block, record them as a new page on the ledger, and broadcast the page to the entire blockchain network. Other nodes will receive the new page and verify the legality of the transaction data on the page and add it to their own ledger. The executives will repeat this process so all new transaction data in the blockchain system can be recorded in the ledger.
 
 ## DPoS overview
-The role of consensus is to select the witnesseses in the blockchain system. The witnesseses verify the transaction data and keep the account in order to broadcast new accounts to other nodes in the network and obtains the approval of the new accounts from other nodes. As a specific implementation of consensus, DPoS works in the following way:
+The role of consensus is to select the executives in the blockchain system. The executives verify the transaction data and keep the account in order to broadcast new accounts to other nodes in the network and obtains the approval of the new accounts from other nodes. As a specific implementation of consensus, DPoS works in the following way:
 
-The DPoS consensus selects some nodes as witnesseses in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a witnesses candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these candidates. Every t period of time, the votes for all the candidates will be counted. Top N candidate nodes with the most votes will become witnesseses for the next t period. After t period of time, the votes will be counted again to elect the new witnesseses, and the cycle continues.
+The DPoS consensus selects some nodes as executives in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a executives candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these candidates. Every t period of time, the votes for all the candidates will be counted. Top N candidate nodes with the most votes will become executives for the next t period. After t period of time, the votes will be counted again to elect the new executives, and the cycle continues.
 
 Let's see how it's realized in the context of STABILA:
 
@@ -20,13 +20,13 @@ Let's see how it's realized in the context of STABILA:
 
 - STABILA token: refers to the equity token issued by and circulating in STABILA, known as STB.
 
-- Witnesses candidates: nodes eligible for becoming witnesseses in STABILA.
+- Executives candidates: nodes eligible for becoming executives in STABILA.
 
-- Witnesses: nodes in STABILA qualified for book-keeping. They are usually called witnesses in DPoS consensus. In STABILA, there will be 27 witnesseses, which are also called super nodes (or SR). Here, we will not distinguish between bookkeeper, witness, supernode, SR, etc.
+- Executives: nodes in STABILA qualified for book-keeping. They are usually called executives in DPoS consensus. In STABILA, there will be 27 executives, which are also called super nodes (or SR). Here, we will not distinguish between bookkeeper, executive, supernode, SR, etc.
 
 - Bookkeeping: the process of verifying transactions and recording them in a ledger. Because ledgers in STABILA are carried by blocks, the bookkeeping process is also called block generation. We will not distinguish between bookkeeping and block generation in the document.
 
-- Bookkeeping order: block generation order. The descending order of the 27 witnesseses based on the number of votes they receive.
+- Bookkeeping order: block generation order. The descending order of the 27 executives based on the number of votes they receive.
 
 - Block time: STABILA sets block time to be 3 seconds. This means a block is generated every 3 seconds.
 
@@ -49,40 +49,40 @@ In STABILA, voting for candidates is a special transaction. Nodes can vote for c
 
 3. Vote counting
 
-During each maintenance period, the votes for candidates will be counted. The top 27 candidates with the most votes will be the witnesses for the next Epoch.
+During each maintenance period, the votes for candidates will be counted. The top 27 candidates with the most votes will be the executives for the next Epoch.
 
 ## Block generation mechanism
-During each Epoch, the 27 witnesses will take turns to generate blocks according to the bookkeeping order. Each witness can only generate blocks when it is their turn. Witnesses package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The witness will sign the data of this block with his/her private key and fill in witness_signature, along with the address of the witness, the block height, and the time that block is generated, etc.
+During each Epoch, the 27 executives will take turns to generate blocks according to the bookkeeping order. Each executive can only generate blocks when it is their turn. Executives package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The executive will sign the data of this block with his/her private key and fill in executive_signature, along with the address of the executive, the block height, and the time that block is generated, etc.
 
 Through storing the hash of the previous block, blocks are logically connected. Eventually, they form a chain. A typical blockchain structure is shown in the following picture:
 
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/blockchain_structure.png)
 
 
-In ideal circumstances, the bookkeeping process in a DPoS consensus-based blockchain system proceeds according to the bookkeeping order calculated in advance. Blocks are generated by witnesses in turn (see figure a). However, in reality, the blockchain network is a distributed and untrusted complex system in the following three ways.
-- Due to poor network environment, blocks generated by some witnesses cannot be received by other witnesses in valid time (see figure b1 and b2).
-- The normal operation of a certain witness cannot always be guaranteed (see figure c).
-- Some malicious witnesses will generate fork blocks in order to fork the chain (see figure d).
+In ideal circumstances, the bookkeeping process in a DPoS consensus-based blockchain system proceeds according to the bookkeeping order calculated in advance. Blocks are generated by executives in turn (see figure a). However, in reality, the blockchain network is a distributed and untrusted complex system in the following three ways.
+- Due to poor network environment, blocks generated by some executives cannot be received by other executives in valid time (see figure b1 and b2).
+- The normal operation of a certain executive cannot always be guaranteed (see figure c).
+- Some malicious executives will generate fork blocks in order to fork the chain (see figure d).
 
 ![image](https://github.com/stabilaprotocol/documentation-en/raw/master/images/longest_chain1_en.jpg)
 
 ![image](https://github.com/stabilaprotocol/documentation-en/raw/master/images/longest_chain2_en.jpg)
 
-As mentioned above, the basis for the blockchain system to operate normally is that most of the nodes in the system are honest and reliable. Furthermore, the primary guarantee for the security of the blockchain system is the security of the ledger, meaning that illegal data cannot be written into the ledger maliciously and ledger copies saved on each node should be consistent as well. Based on the DPoS consensus, the bookkeeping process is carried out by witnesses. Therefore, the safety of STABILA depends on the reliability of the majority of the witnesses. STABILA has put confirmed blocks in the system which are irreversible. At the same time, in order to resist the malicious behaviors of a small number of witness nodes, STABILA recognizes the longest chain as the main chain based on "the longest chain principle".
+As mentioned above, the basis for the blockchain system to operate normally is that most of the nodes in the system are honest and reliable. Furthermore, the primary guarantee for the security of the blockchain system is the security of the ledger, meaning that illegal data cannot be written into the ledger maliciously and ledger copies saved on each node should be consistent as well. Based on the DPoS consensus, the bookkeeping process is carried out by executives. Therefore, the safety of STABILA depends on the reliability of the majority of the executives. STABILA has put confirmed blocks in the system which are irreversible. At the same time, in order to resist the malicious behaviors of a small number of executive nodes, STABILA recognizes the longest chain as the main chain based on "the longest chain principle".
 
 **The confirmed block principle**
 
-The newly produced blocks are in unconfirmed state, and only those blocks that are "approved" by more than 70% (i.e. 27 * 70% = 18, rounded down) of the 27 Witnesses are considered to be irreversible blocks, commonly referred to as solidified blocks, and the transactions contained in the solidified blocks have been confirmed by the entire blockchain network.  The way to "approve" the unconfirmed state block is that the Witness producing subsequent blocks after it, as shown in Figure d, the Witness C produces block 103, the Witness E produces 104' on the basis of block 103, the block 105', 106', and 107' produced respectively by the Witness G, A and B, are also subsequent blocks of the 103rd block, which means these four blocks approve the 103rd block. It can be seen that when the block of height 121 is produced, the 103rd block becomes a solidified block, since by this time the 103rd block has 18 subsequent blocks, and the point to be emphasized here is that the Witnesses producing these 18 blocks must be different from each other and from the Witnesses producing the 103rd block.
+The newly produced blocks are in unconfirmed state, and only those blocks that are "approved" by more than 70% (i.e. 27 * 70% = 18, rounded down) of the 27 Executives are considered to be irreversible blocks, commonly referred to as solidified blocks, and the transactions contained in the solidified blocks have been confirmed by the entire blockchain network.  The way to "approve" the unconfirmed state block is that the Executive producing subsequent blocks after it, as shown in Figure d, the Executive C produces block 103, the Executive E produces 104' on the basis of block 103, the block 105', 106', and 107' produced respectively by the Executive G, A and B, are also subsequent blocks of the 103rd block, which means these four blocks approve the 103rd block. It can be seen that when the block of height 121 is produced, the 103rd block becomes a solidified block, since by this time the 103rd block has 18 subsequent blocks, and the point to be emphasized here is that the Executives producing these 18 blocks must be different from each other and from the Executives producing the 103rd block.
 
 **The longest chain principle**
 
-When a fork occurs, an honest witness would always choose to produce blocks on the longest chain.
+When a fork occurs, an honest executive would always choose to produce blocks on the longest chain.
 
 ## Incentive model
-To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Witnesses who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a witness, the witness will receive 32 STB. For the first 127th witnesses (including witness candidates) with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
+To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives (including executive candidates) with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
 
 ## Proposal-based parameter adjustment
-An important characteristic of DPoS is that any parameter adjustment can be proposed on the chain, and witnesses will decide whether to approve the proposal by starting a vote. The advantage of this method is that it avoids hard fork upgrades when adding new features. Currently, STABILA supports the following parameter adjustments:
+An important characteristic of DPoS is that any parameter adjustment can be proposed on the chain, and executives will decide whether to approve the proposal by starting a vote. The advantage of this method is that it avoids hard fork upgrades when adding new features. Currently, STABILA supports the following parameter adjustments:
 
 1. The interval between two maintenance periods
 
@@ -96,7 +96,7 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 6. The rewards for producing each block
 
-7. The total amount of STB that is proportionately awarded to the first 127th witnesses (including bookkeeper candidates) with the most votes
+7. The total amount of STB that is proportionately awarded to the first 127th executives (including bookkeeper candidates) with the most votes
 
 8. The STB cost of account activation through system contract
 

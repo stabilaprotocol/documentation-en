@@ -226,7 +226,7 @@ Url: SR's official website
 
 UpdateWitness Url
 
-To update the url of the witness account login
+To update the url of the executive account login
 
 - VoteWitness
 
@@ -244,9 +244,9 @@ UncdBalance [ResourceCode:0 BANDWIDTH, 1 UCR] [receiverAddress]
 
 WithdrawBalance
 
-- Listwitnesses
+- Listexecutives
 
-Listwitnesses
+Listexecutives
 
 - CreateProposal
 
@@ -280,7 +280,7 @@ GetProposal proposalId
 
 GetChainParameters
 
-Query the parameters of the blockchain used for witnessses to create a proposal.
+Query the parameters of the blockchain used for executiveses to create a proposal.
 
 - GetNextMaintenanceTime
 
@@ -542,12 +542,12 @@ VoteWitness Address0 Count0 ... AddressN CountN
 
 cdBalance 100000000 3 1 address  // stake 10 STB and acquire 10 units of shares
 
-votewitness witness1 4 witness2 6   // Cast 4 votes for witness1 and 6 votes for witness2 at the same time.
+voteexecutive executive1 4 executive2 6   // Cast 4 votes for executive1 and 6 votes for executive2 at the same time.
 
-votewitness witness1 10   // Voted 10 votes for witness1.
+voteexecutive executive1 10   // Voted 10 votes for executive1.
 ```
 
-The final result of the above command was 10 votes for witness1 and 0 votes for witness2.
+The final result of the above command was 10 votes for executive1 and 0 votes for executive2.
 
 <h3>How to issue TRC10 tokens</h3>
 
@@ -862,8 +862,8 @@ Multi-signature allows other users to access the account in order to better mana
 three types of accesses:
 owner: access to the owner of account
 active:	access to other features of accounts, and access that authorizes a certain feature
-. Block production authorization is not included if it's for witness purposes.
-witness: only for witness, block production authorization will be granted to one of the
+. Block production authorization is not included if it's for executive purposes.
+executive: only for executive, block production authorization will be granted to one of the
 other users.
 
 
@@ -872,7 +872,7 @@ The rest of the users will be granted:
 ```
 Updateaccountpermission TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ {"owner_permission":{"type":0,
 "permission_name":"owner","threshold":1,"keys":[{"address":"TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ",
-"weight":1}]},"witness_permission":{"type":1,"permission_name":"owner","threshold":1,
+"weight":1}]},"executive_permission":{"type":1,"permission_name":"owner","threshold":1,
 "keys":[{"address":"TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ","weight":1}]},
 "active_permissions":[{"type":2,"permission_name":"active12323","threshold":2,
 "operations":"7fff1fc0033e0000000000000000000000000000000000000000000000000000",
@@ -881,7 +881,7 @@ Updateaccountpermission TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ {"owner_permission":{
 The account TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ gives the owner access to itself, active access to
  TNhXo1GbRNCuorvYu5JFWN3m2NYr9QQpVR and TKwhcDup8L2PH5r6hxp5CQvQzZqJLmKvZP. Active access will
  need signatures from both accounts in order to take effect.
-If the account is not a witness, it's not necessary to set witness_permission, otherwise an error
+If the account is not a executive, it's not necessary to set executive_permission, otherwise an error
  will occur.
 ```
 

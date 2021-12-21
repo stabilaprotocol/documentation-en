@@ -63,7 +63,7 @@
     }
 
 - `owner_address`: The owner of the current account.
-- `url`: The website url of the witness.
+- `url`: The website url of the executive.
 
 ## AssetIssueContract
 
@@ -117,7 +117,7 @@
     }
 
 - `owner_address`: The owner of the current account.
-- `update_url`: The website url of the witness.
+- `update_url`: The website url of the executive.
 
 ## ParticipateAssetIssueContract
 

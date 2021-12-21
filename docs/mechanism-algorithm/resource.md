@@ -229,7 +229,7 @@ receiverAddress: recipient account address
 
 |Type|Fee|
 | :------|:------:|
-|Create a witness|9999 STB|
+|Create a executive|9999 STB|
 |Issue a token|1024 STB|
 |Create an account|1 STB|
 |Create an exchange|1024 STB|

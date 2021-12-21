@@ -75,7 +75,7 @@ After the command is executed, `archive.log` will be generated in the `./logs` d
  #FullNode
 nohup java -Xmx24g -XX:+UseConcMarkSweepGC -jar FullNode.jar -c main_net_config.conf </dev/null &>/dev/null &
  #SR Node
-nohup java -Xmx24g -XX:+UseConcMarkSweepGC  -jar FullNode.jar  -p  private key --witness -c main_net_config.conf </dev/null &>/dev/null &
+nohup java -Xmx24g -XX:+UseConcMarkSweepGC  -jar FullNode.jar  -p  private key --executive -c main_net_config.conf </dev/null &>/dev/null &
 ```
 
 #### 2. Integrated startup script

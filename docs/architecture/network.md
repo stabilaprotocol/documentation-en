@@ -75,8 +75,8 @@ MainNet, TestNet, PrivateNet all use the same code, only the node start configur
     > wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
     ```
 
-2. add your private key in `localwitness`
-3. set `genesis.block.witnesses` as the private key's corresponding address
+2. add your private key in `localexecutive`
+3. set `genesis.block.executives` as the private key's corresponding address
 4. set `p2p.version`, any positive integer except `11111`
 5. set for first SR `needSyncCheck = false`, others can be set true
 6. set `node.discovery.enable = true`
@@ -86,7 +86,7 @@ MainNet, TestNet, PrivateNet all use the same code, only the node start configur
     > nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar -c private_net_config.conf </dev/null &>/dev/null &
 
     command line parameters introduction:
-    --witness: start witness function, i.e.: --witness YOUR_PRIVATE_KEY_IN_HEX
+    --executive: start executive function, i.e.: --executive YOUR_PRIVATE_KEY_IN_HEX
     --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
     -c: specify the configuration file path, i.e.: -c config.conf
     ```
@@ -101,11 +101,11 @@ You can change the level of the module to control the log output. The default le
 
 The parameters in configuration file that need to modify:
 
-localwitness:
-> ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localwitness.jpg)
+localexecutive:
+> ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.jpg)
 
-witnesses:
-> ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/witness.png)
+executives:
+> ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png)
 
 version:
 > ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png)
@@ -120,7 +120,7 @@ Same as above except for:
 1. set `seed.node.ip.list` to SR's ip and port
 2. set `needSyncCheck` true
 3. modify `listen.port`, `http.port` and `rpc.port` if SuperNode and FullNode are deployed on the same server.
-4. do not need a private key in `localwitness`
+4. do not need a private key in `localexecutive`
 
 The parameters in configuration file that need to modify:
 

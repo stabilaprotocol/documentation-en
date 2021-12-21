@@ -68,9 +68,9 @@ java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is d
 
 6.&nbsp;Running a Super Representative Node for mainnet
 ```text
-java -jar FullNode.jar -p your private key --witness -c your config.conf(Example：/data/java-stabila/config.conf)
+java -jar FullNode.jar -p your private key --executive -c your config.conf(Example：/data/java-stabila/config.conf)
 Example:
-java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-stabila/config.conf
+java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --executive -c /data/java-stabila/config.conf
 ```
 
 This is similar to running a private testnet, except that the IPs in the `config.conf` are officially declared by STABILA.
@@ -79,16 +79,16 @@ This is similar to running a private testnet, except that the IPs in the `config
 
 You should modify the config.conf:
 
-- Replace existing entry in genesis.block.witnesses with your address
+- Replace existing entry in genesis.block.executives with your address
 - Replace existing entry in seed.node ip.list with your ip list
 - The first Super Node start, needSyncCheck should be set false
 - Set p2pversion to 61
 
 ```text
 cd build/libs
-java -jar FullNode.jar -p your private key --witness -c your config.conf (Example：/data/java-stabila/config.conf)
+java -jar FullNode.jar -p your private key --executive -c your config.conf (Example：/data/java-stabila/config.conf)
 Example:
-java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --witness -c /data/java-stabila/config.conf
+java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --executive -c /data/java-stabila/config.conf
 ```
 
 

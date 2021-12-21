@@ -2,9 +2,9 @@
 
 ## How to Become a Super Representative
 
-In STABILA network, any account can apply to become a witness. Every account can vote for witnesses.
+In STABILA network, any account can apply to become a executive. Every account can vote for executives.
 
-The top 27 witnesses are called SR, the witnesses from 28th to 127th are called Partner, the witnesses after 128th are called Candidates. Only SR can produce blocks.
+The top 27 executives are called SR, the executives from 28th to 127th are called Partner, the executives after 128th are called Candidates. Only SR can produce blocks.
 
 The votes will be counted every 6 hours, so super representatives may also change every 6 hours.
 
@@ -20,19 +20,19 @@ Example (Using wallet-cli):
 
 ```console
 > cdbalance 10,000,000 3 // Stake 10 STB to get 10 STABILA Power(TP)
-> votewitness witness1 4 witness2 6 // Vote 4 votes for witness1, 6 votes for witness2
-> votewitness witness1 3 witness2 7 // Vote 3 votes for witness1, 7 votes for witness2
+> voteexecutive executive1 4 executive2 6 // Vote 4 votes for executive1, 6 votes for executive2
+> voteexecutive executive1 3 executive2 7 // Vote 3 votes for executive1, 7 votes for executive2
 ```
 
-The final output above is: Vote 3 votes for witness1, 7 votes for witness2
+The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 
-### Witnesses Brokerage
+### Executives Brokerage
 
-The default ratio is 20%, which can be modified by the witnesses.
+The default ratio is 20%, which can be modified by the executives.
 
-If a witness get 20% of the reward, and the other 80% will be awarded to the voters. If the brokerage ratio is set to 100%, the rewards are all obtained by the witness; if set to 0, the rewards are all sent to the voters.
+If a executive get 20% of the reward, and the other 80% will be awarded to the voters. If the brokerage ratio is set to 100%, the rewards are all obtained by the executive; if set to 0, the rewards are all sent to the voters.
 
-## Reward for Witnesses
+## Reward for Executives
 
 ### Votes Reward
 
@@ -56,11 +56,11 @@ Reward may be less than the theoretical number due to missed blocks and maintena
 
 If you vote for a Super Representative:
 
-the daily Voter Rewards = (((the number of votes you vote to a witness) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a witness) / (the total number of votes a witness receives) STB
+the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB
 
 If you vote for a Partner:
 
-the daily Voter Rewards = (((the number of votes you vote to a witness) * 4,608,000 / total votes) * 80%) STB
+the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) STB
 
 ## Committee
 

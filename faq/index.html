@@ -352,7 +352,7 @@
 </ul>
 </li>
 <li><a href="#node-configuration">Node Configuration</a><ul>
-<li><a href="#if-i-replace-the-field-value-of-genesisblockwitnesses-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount">If I replace the field value of 'genesis.block.witnesses' with the address generated in Stabilascan in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?</a></li>
+<li><a href="#if-i-replace-the-field-value-of-genesisblockexecutives-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount">If I replace the field value of 'genesis.block.executives' with the address generated in Stabilascan in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?</a></li>
 <li><a href="#how-can-i-specify-the-data-storage-path-when-start-a-node">How can I specify the data storage path when start a node?</a></li>
 <li><a href="#is-there-any-config-file-option-which-i-can-use-for-sending-logs-to-stdout">Is there any config file option, which I can use for sending logs to stdout?</a></li>
 <li><a href="#how-to-change-log-level">How to change log level</a></li>
@@ -443,7 +443,7 @@
 <h3 id="how-to-reset-my-vote">How to reset my vote?<a class="headerlink" href="#how-to-reset-my-vote" title="Permanent link">&para;</a></h3>
 <p>You need to vote again, set your votes number to 0.</p>
 <h2 id="node-configuration">Node Configuration<a class="headerlink" href="#node-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="if-i-replace-the-field-value-of-genesisblockwitnesses-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount">If I replace the field value of 'genesis.block.witnesses' with the address generated in <a href="https://stabilascan.org/">Stabilascan</a> in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?<a class="headerlink" href="#if-i-replace-the-field-value-of-genesisblockwitnesses-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount" title="Permanent link">&para;</a></h3>
+<h3 id="if-i-replace-the-field-value-of-genesisblockexecutives-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount">If I replace the field value of 'genesis.block.executives' with the address generated in <a href="https://stabilascan.org/">Stabilascan</a> in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?<a class="headerlink" href="#if-i-replace-the-field-value-of-genesisblockexecutives-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount" title="Permanent link">&para;</a></h3>
 <p>No need to delete other addresses, these addresses will be a part of your net, but if you do not own the private keys of these addresses, they will act like abandoned addresses.
 Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be modified.</p>
 <h3 id="how-can-i-specify-the-data-storage-path-when-start-a-node">How can I specify the data storage path when start a node?<a class="headerlink" href="#how-can-i-specify-the-data-storage-path-when-start-a-node" title="Permanent link">&para;</a></h3>
@@ -481,7 +481,7 @@ comment the configuration: appender-ref ref="ASYNC"</p>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;utils&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;actuator&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;API&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;witness&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;executive&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;DB&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;capsule&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;VM&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
@@ -648,5 +648,5 @@ comment the configuration: appender-ref ref="ASYNC"</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2021-12-21 07:38:14
+Build Date UTC : 2021-12-21 09:10:38
 -->

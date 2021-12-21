@@ -376,9 +376,9 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 </blockquote>
 </li>
 <li>
-<p>add your private key in <code>localwitness</code></p>
+<p>add your private key in <code>localexecutive</code></p>
 </li>
-<li>set <code>genesis.block.witnesses</code> as the private key's corresponding address</li>
+<li>set <code>genesis.block.executives</code> as the private key's corresponding address</li>
 <li>set <code>p2p.version</code>, any positive integer except <code>11111</code></li>
 <li>set for first SR <code>needSyncCheck = false</code>, others can be set true</li>
 <li>set <code>node.discovery.enable = true</code></li>
@@ -389,7 +389,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <p>nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar -c private_net_config.conf </dev/null &>/dev/null &amp;</p>
 </blockquote>
 <p>command line parameters introduction:
---witness: start witness function, i.e.: --witness YOUR_PRIVATE_KEY_IN_HEX
+--executive: start executive function, i.e.: --executive YOUR_PRIVATE_KEY_IN_HEX
 --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
 -c: specify the configuration file path, i.e.: -c config.conf
 ```</p>
@@ -402,13 +402,13 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 
 
 <p>The parameters in configuration file that need to modify:</p>
-<p>localwitness:</p>
+<p>localexecutive:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localwitness.jpg" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.jpg" /></p>
 </blockquote>
-<p>witnesses:</p>
+<p>executives:</p>
 <blockquote>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/witness.png" /></p>
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png" /></p>
 </blockquote>
 <p>version:</p>
 <blockquote>
@@ -424,7 +424,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <li>set <code>seed.node.ip.list</code> to SR's ip and port</li>
 <li>set <code>needSyncCheck</code> true</li>
 <li>modify <code>listen.port</code>, <code>http.port</code> and <code>rpc.port</code> if SuperNode and FullNode are deployed on the same server.</li>
-<li>do not need a private key in <code>localwitness</code></li>
+<li>do not need a private key in <code>localexecutive</code></li>
 </ol>
 <p>The parameters in configuration file that need to modify:</p>
 <p>ip.list:</p>

@@ -102,7 +102,7 @@
         
             <li><a class="toctree-l4" href="#super-representative-election">Super Representative Election</a></li>
         
-            <li><a class="toctree-l4" href="#reward-for-witnesses">Reward for Witnesses</a></li>
+            <li><a class="toctree-l4" href="#reward-for-executives">Reward for Executives</a></li>
         
             <li><a class="toctree-l4" href="#reward-for-voters">Reward for Voters</a></li>
         
@@ -318,8 +318,8 @@
               
                 <h1 id="super-representative">Super Representative<a class="headerlink" href="#super-representative" title="Permanent link">&para;</a></h1>
 <h2 id="how-to-become-a-super-representative">How to Become a Super Representative<a class="headerlink" href="#how-to-become-a-super-representative" title="Permanent link">&para;</a></h2>
-<p>In STABILA network, any account can apply to become a witness. Every account can vote for witnesses.</p>
-<p>The top 27 witnesses are called SR, the witnesses from 28th to 127th are called Partner, the witnesses after 128th are called Candidates. Only SR can produce blocks.</p>
+<p>In STABILA network, any account can apply to become a executive. Every account can vote for executives.</p>
+<p>The top 27 executives are called SR, the executives from 28th to 127th are called Partner, the executives after 128th are called Candidates. Only SR can produce blocks.</p>
 <p>The votes will be counted every 6 hours, so super representatives may also change every 6 hours.</p>
 <p>To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a super representative candidate.</p>
 <h2 id="super-representative-election">Super Representative Election<a class="headerlink" href="#super-representative-election" title="Permanent link">&para;</a></h2>
@@ -327,16 +327,16 @@
 <p>Note: Only your latest vote will be counted in STABILA network which means your previous vote will be over written by your latest vote.</p>
 <p>Example (Using wallet-cli):</p>
 <div class="codehilite"><pre><span></span><span class="gp">&gt;</span> cdbalance <span class="m">10</span>,000,000 <span class="m">3</span> // Stake <span class="m">10</span> STB to get <span class="m">10</span> STABILA Power<span class="o">(</span>TP<span class="o">)</span>
-<span class="gp">&gt;</span> votewitness witness1 <span class="m">4</span> witness2 <span class="m">6</span> // Vote <span class="m">4</span> votes <span class="k">for</span> witness1, <span class="m">6</span> votes <span class="k">for</span> witness2
-<span class="gp">&gt;</span> votewitness witness1 <span class="m">3</span> witness2 <span class="m">7</span> // Vote <span class="m">3</span> votes <span class="k">for</span> witness1, <span class="m">7</span> votes <span class="k">for</span> witness2
+<span class="gp">&gt;</span> voteexecutive executive1 <span class="m">4</span> executive2 <span class="m">6</span> // Vote <span class="m">4</span> votes <span class="k">for</span> executive1, <span class="m">6</span> votes <span class="k">for</span> executive2
+<span class="gp">&gt;</span> voteexecutive executive1 <span class="m">3</span> executive2 <span class="m">7</span> // Vote <span class="m">3</span> votes <span class="k">for</span> executive1, <span class="m">7</span> votes <span class="k">for</span> executive2
 </pre></div>
 
 
-<p>The final output above is: Vote 3 votes for witness1, 7 votes for witness2</p>
-<h3 id="witnesses-brokerage">Witnesses Brokerage<a class="headerlink" href="#witnesses-brokerage" title="Permanent link">&para;</a></h3>
-<p>The default ratio is 20%, which can be modified by the witnesses.</p>
-<p>If a witness get 20% of the reward, and the other 80% will be awarded to the voters. If the brokerage ratio is set to 100%, the rewards are all obtained by the witness; if set to 0, the rewards are all sent to the voters.</p>
-<h2 id="reward-for-witnesses">Reward for Witnesses<a class="headerlink" href="#reward-for-witnesses" title="Permanent link">&para;</a></h2>
+<p>The final output above is: Vote 3 votes for executive1, 7 votes for executive2</p>
+<h3 id="executives-brokerage">Executives Brokerage<a class="headerlink" href="#executives-brokerage" title="Permanent link">&para;</a></h3>
+<p>The default ratio is 20%, which can be modified by the executives.</p>
+<p>If a executive get 20% of the reward, and the other 80% will be awarded to the voters. If the brokerage ratio is set to 100%, the rewards are all obtained by the executive; if set to 0, the rewards are all sent to the voters.</p>
+<h2 id="reward-for-executives">Reward for Executives<a class="headerlink" href="#reward-for-executives" title="Permanent link">&para;</a></h2>
 <h3 id="votes-reward">Votes Reward<a class="headerlink" href="#votes-reward" title="Permanent link">&para;</a></h3>
 <p>Vote rewards are 160 STB every block, with a block generated every 3 seconds, the total vote rewards per day is  4,608,000 STB.</p>
 <p>For each SR and Partner, the daily Vote Rewards = 4,608,000 * ( votes /  total votes) x 20%  STB</p>
@@ -348,9 +348,9 @@
 <p>Reward may be less than the theoretical number due to missed blocks and maintenance period.</p>
 <h2 id="reward-for-voters">Reward for Voters<a class="headerlink" href="#reward-for-voters" title="Permanent link">&para;</a></h2>
 <p>If you vote for a Super Representative:</p>
-<p>the daily Voter Rewards = (((the number of votes you vote to a witness) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a witness) / (the total number of votes a witness receives) STB</p>
+<p>the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB</p>
 <p>If you vote for a Partner:</p>
-<p>the daily Voter Rewards = (((the number of votes you vote to a witness) * 4,608,000 / total votes) * 80%) STB</p>
+<p>the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) STB</p>
 <h2 id="committee">Committee<a class="headerlink" href="#committee" title="Permanent link">&para;</a></h2>
 <h3 id="1-what-is-committee">1. What is Committee<a class="headerlink" href="#1-what-is-committee" title="Permanent link">&para;</a></h3>
 <p>Committee can modify the STABILA network parameters, like transacton fees, block producing reward amount, etc. Committee is composed of the current 27 super representatives. Every super representative has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the super representatives and will become valid in the next maintenance period.</p>

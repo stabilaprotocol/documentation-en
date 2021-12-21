@@ -515,7 +515,7 @@ limit: the amount of tokens per page</p>
 <li>UpdateWitness</li>
 </ul>
 <p>UpdateWitness Url</p>
-<p>To update the url of the witness account login</p>
+<p>To update the url of the executive account login</p>
 <ul>
 <li>VoteWitness</li>
 </ul>
@@ -533,9 +533,9 @@ limit: the amount of tokens per page</p>
 </ul>
 <p>WithdrawBalance</p>
 <ul>
-<li>Listwitnesses</li>
+<li>Listexecutives</li>
 </ul>
-<p>Listwitnesses</p>
+<p>Listexecutives</p>
 <ul>
 <li>CreateProposal</li>
 </ul>
@@ -567,7 +567,7 @@ limit: the amount of proposals per page</p>
 <li>GetChainParameters</li>
 </ul>
 <p>GetChainParameters</p>
-<p>Query the parameters of the blockchain used for witnessses to create a proposal.</p>
+<p>Query the parameters of the blockchain used for executiveses to create a proposal.</p>
 <ul>
 <li>GetNextMaintenanceTime</li>
 </ul>
@@ -805,13 +805,13 @@ The unstaked time is postponed until 3 days after the last stake operation</p>
 
 cdBalance 100000000 3 1 address  // stake 10 STB and acquire 10 units of shares
 
-votewitness witness1 4 witness2 6   // Cast 4 votes for witness1 and 6 votes for witness2 at the same time.
+voteexecutive executive1 4 executive2 6   // Cast 4 votes for executive1 and 6 votes for executive2 at the same time.
 
-votewitness witness1 10   // Voted 10 votes for witness1.
+voteexecutive executive1 10   // Voted 10 votes for executive1.
 </pre></div>
 
 
-<p>The final result of the above command was 10 votes for witness1 and 0 votes for witness2.</p>
+<p>The final result of the above command was 10 votes for executive1 and 0 votes for executive2.</p>
 <h3>How to issue TRC10 tokens</h3>
 
 <p>Each account can only issue one TRC10 token.</p>
@@ -1083,13 +1083,13 @@ List trading pairs by page</p>
 three types of accesses:
 owner: access to the owner of account
 active: access to other features of accounts, and access that authorizes a certain feature
-. Block production authorization is not included if it's for witness purposes.
-witness: only for witness, block production authorization will be granted to one of the
+. Block production authorization is not included if it's for executive purposes.
+executive: only for executive, block production authorization will be granted to one of the
 other users.</p>
 <p>The rest of the users will be granted:</p>
 <div class="codehilite"><pre><span></span>Updateaccountpermission TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ {&quot;owner_permission&quot;:{&quot;type&quot;:0,
 &quot;permission_name&quot;:&quot;owner&quot;,&quot;threshold&quot;:1,&quot;keys&quot;:[{&quot;address&quot;:&quot;TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ&quot;,
-&quot;weight&quot;:1}]},&quot;witness_permission&quot;:{&quot;type&quot;:1,&quot;permission_name&quot;:&quot;owner&quot;,&quot;threshold&quot;:1,
+&quot;weight&quot;:1}]},&quot;executive_permission&quot;:{&quot;type&quot;:1,&quot;permission_name&quot;:&quot;owner&quot;,&quot;threshold&quot;:1,
 &quot;keys&quot;:[{&quot;address&quot;:&quot;TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ&quot;,&quot;weight&quot;:1}]},
 &quot;active_permissions&quot;:[{&quot;type&quot;:2,&quot;permission_name&quot;:&quot;active12323&quot;,&quot;threshold&quot;:2,
 &quot;operations&quot;:&quot;7fff1fc0033e0000000000000000000000000000000000000000000000000000&quot;,
@@ -1098,7 +1098,7 @@ other users.</p>
 The account TRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ gives the owner access to itself, active access to
  TNhXo1GbRNCuorvYu5JFWN3m2NYr9QQpVR and TKwhcDup8L2PH5r6hxp5CQvQzZqJLmKvZP. Active access will
  need signatures from both accounts in order to take effect.
-If the account is not a witness, it&#39;s not necessary to set witness_permission, otherwise an error
+If the account is not a executive, it&#39;s not necessary to set executive_permission, otherwise an error
  will occur.
 </pre></div>
 

@@ -44,9 +44,9 @@ rpc UpdateAccount (AccountUpdateContract) returns (Transaction) {}
 ```
 Nodes: Fullnode
 
-**6.&nbsp;Vote for super representative candidates**
+**6.&nbsp;Vote for Governor candidates**
 ```protobuf
-rpc VoteWitnessAccount (VoteWitnessContract) returns (Transaction) {}
+rpc VoteExecutiveAccount (VoteExecutiveContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 
@@ -74,24 +74,24 @@ rpc CreateAssetIssue (AssetIssueContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 
-**11.&nbsp;Query of list of super representative candidates**
+**11.&nbsp;Query of list of executives**
 ```protobuf
-rpc ListWitnesses (EmptyMessage) returns (WitnessList) {}
+rpc ListExecutivees (EmptyMessage) returns (ExecutiveList) {}
 ```
 Nodes: FullNode and SolidityNode
 
 **12.&nbsp;Application for super representative**
 ```protobuf
-rpc CreateWitness (WitnessCreateContract) returns (Transaction) {}
+rpc CreateExecutive (ExecutiveCreateContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 
 Description:
 To apply to become STABILA’s Super Representative candidate.
 
-**13.&nbsp;Information update of Super Representative candidates**
+**13.&nbsp;Information update of executives**
 ```protobuf
-rpc UpdateWitness (WitnessUpdateContract) returns (Transaction) {}
+rpc UpdateExecutive (ExecutiveUpdateContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 

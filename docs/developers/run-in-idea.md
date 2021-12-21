@@ -10,11 +10,11 @@ This document aims to facilitate developers with some experience to run the Full
 
 - Install Lombok plugin
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/lombok.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/lombok.png)
 
 - Tick Enable annotation processing
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/annnotation.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/annnotation.png)
 
 ## Deployment guide
 **1.Create a directory**
@@ -45,7 +45,7 @@ git checkout -t origin/master
 The compilation process may take some time, please be patient.
 If the compilation is successful, you can see the information similar to the following:
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/build_success_test.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/build_success_test.png)
 
 If you do not want to perform unit test tasks, you can run the following command:
 
@@ -57,12 +57,12 @@ If you do not want to perform unit test tasks, you can run the following command
 
 After compiling successfully, you can find the main function file through the path java-stabila / src / main / java / org / stabila / program / FullNode.java and then start a full node.
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/start.png)
 
 After starting, you can check the log to verify whether the startup is successful. The log path is: /deploy/java-stabila/logs/stabila.log. If the startup is successful, you can see the following logs:
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start_success.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/start_success.png)
 
 Also,you can use this command like tail -f /logs/stabila.log to view the real-time log, as follows:
 
-![](https://raw.githubusercontent.com/cathy-lishipu/documentation-zh/idea_instruction/images/start_successed.png)
+![](https://github.com/stabilaprotocol/documentation-en/blob/master/images/start_successed.png)

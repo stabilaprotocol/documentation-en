@@ -2,9 +2,9 @@
 
 ## Smart Contract Introduction
 
-Smart contract is a computerized transaction protocol that automatically implements its terms. Smart contract is the same as common contract, they all define the terms and rules related to the participants. Once the contract is started, it can runs in the way it is designed.
+Smart contract is a computerized transaction protocol that automatically implements its terms. Smart contract is the same as common contract, they all define the terms and rules related to the participants. Once the contract is started, it can run in the way it is designed.
 
-STABILA smart contract support Solidity language in (Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
+STABILA smart contract support Solidity language (from Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
 
 ## Smart Contract Features
 STABILA virtual machine is based on Ethereum solidity language, it also has STABILA's own features.
@@ -104,15 +104,15 @@ Note: Different from creating a contract by grpc's deploycontract, contract crea
 
 Note: STABILA's smart contract is different from STABILA's system contract, if the transfer to address does not exist it can not create an account by smart contract transfer.
 
-2)Different accouts vote for SuperNode (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+2)Different accouts vote for Governor (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-3)SuperNode gets all the reward (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+3)Governor gets all the reward (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-4)SuperNode approves or disappoves the proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+4)Governor approves or disappoves the proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-5)SuperNode proposes a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+5)Governor proposes a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
-6)SuperNode deletes  a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+6)Governor deletes  a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
 7)STABILA byte address converts to solidity address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 
@@ -177,13 +177,12 @@ If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMj
 
 **Currency**
 
-Like solidity supports ETH, STABILA VM supports stb and unit, 1 stb = 1000000 unit, case sensitive, only support lower case. stabila-studio supports stb and unit, remix does not support stb and unit.
-We recommend to use stabila-studio instead of remix to build STABILA smart contract.
+Like solidity supports ETH, STABILA VM supports stb and unit, 1 stb = 1000000 unit, case sensitive, only support lower case.
 
 **Block**
 
 - block.blockhash (uint blockNumber) returns (bytes32): specified block hash, can only apply to the latest 256 blocks and current block excluded
-- block.coinbase (address): SuperNode address that produced the current block
+- block.coinbase (address): Governor address that produced the current block
 - block.difficulty (uint): current block difficulty, not recommended, set 0
 - block.gaslimit (uint): current block gas limit, not supported, set 0
 - block.number (uint): current block number

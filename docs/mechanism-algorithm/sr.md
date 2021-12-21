@@ -83,8 +83,8 @@ The network parameters can be modified([min,max]).
 |  2     | CreateAccountFee <br> (To modify the account creation fee) | 0.1  STB <br> [0, 100000000000] STB |
 |  3     | TransactionFee <br> (To modify the amount of STB used to gain extra bandwidth) | 1000  Unit/Byte <br> [0, 100000000000] STB |
 |  4     | AssetIssueFee <br> (To modify asset issuance fee) | 1024  STB <br> [0, 100000000000] STB|
-|  5     | WitnessPayPerBlock <br> (To modify SR block generation reward) | 16 STB <br> [0, 100000000000] STB |
-|  6     | WitnessStandbyAllowance <br> (To modify the rewards given to the top 27 SRs and <br> the following 100 partners) | 115200  STB <br> [0, 100000000000] STB |
+|  5     | ExecutivePayPerBlock <br> (To modify SR block generation reward) | 16 STB <br> [0, 100000000000] STB |
+|  6     | ExecutiveStandbyAllowance <br> (To modify the rewards given to the top 27 SRs and <br> the following 100 executives) | 115200  STB <br> [0, 100000000000] STB |
 |  7     | CreateNewAccountFeeInSystemContract <br> (To modify the cost of account creation) | 1 STB  |
 |  8     | CreateNewAccountBandwidthRate <br> (To modify the consumption of bandwidth of account creation) | 1&nbsp;Bandwidth/Byte |
 |  9     | AllowCreationOfContracts <br> (To activate the Virtual Machine (VM)) | 1 <br> {0, 1} |
@@ -107,7 +107,7 @@ The network parameters can be modified([min,max]).
 |  28   | ShieldedTransactionFee <br> (To modify shielded transaction fee) | 10 STB <br> [0, 10000] STB |
 |  29   | AdaptiveResourceLimitMultiplier <br> (To modify the adaptive ucr limit multiplier) | 1000 <br> [1, 10000] |
 |  30    | ChangeDelegation <br> (Propose to support the decentralized vote dividend) | 1 <br> {0, 1} |
-|  31    | Witness127PayPerBlock <br> (Propose to modify the block voting rewards given to <br> the top 27 SRs and the following 100 partners) | 160  STB <br> [0, 100000000000] STB |
+|  31    | Executive127PayPerBlock <br> (Propose to modify the block voting rewards given to <br> the top 27 SRs and the following 100 executives) | 160  STB <br> [0, 100000000000] STB |
 |  32    | AllowSvmSolidity059 <br> (To allow SVM to support solidity compiler 0.5.9) | 0 <br> {0, 1} |
 |  33    | AdaptiveResourceLimitTargetRatio <br> (To modify the target ucr limit) | 10 <br> [1, 1000] |
 

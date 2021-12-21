@@ -44,7 +44,6 @@ nav:
         - Contact Us (GPG Key): developers/gpg.md
     - Clients:
         - Wallet-cli: clients/wallet-cli.md
-        - StabilaGrid: clients/stabila-grid.md
     - Releases:
         - Binary Integrity Check: releases/index.md
     - FAQ: faq/index.md

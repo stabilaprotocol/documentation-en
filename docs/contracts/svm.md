@@ -2,7 +2,7 @@
 
 STABILA Virtual Machine (SVM) is a lightweight, Turing complete virtual machine developed for the STABILA's ecosystem. Its goal is to provide millions of global developers with a custom-built blockchain system that is efficient, convenient, stable, secure and scalable.
 
-SVM can connect seamlessly with existing development ecosystem and supports DPoS. SVM is able to be compatible with EVM environment in the beginning, so that instead of learning a new programming language, developers can develop, debug and compile smart contracts in a Remix environment with Solidity and other languages. Once you’ve built and uploaded your smart contract to STABILA’s mainnet, it will be executed on the SVM of the SR node to be isolated from external connections.
+SVM can connect seamlessly with existing development ecosystem and supports DPoS. SVM is able to be compatible with EVM environment in the beginning, so that instead of learning a new programming language, developers can develop, debug and compile smart contracts in a (Ethereum) Remix environment with Solidity and other languages. Once you’ve built and uploaded your smart contract to STABILA’s mainnet, it will be executed on the SVM of the SR node to be isolated from external connections.
 
 Furthermore, SVM employs the concept of Bandwidth. Different from the gas mechanism on Ethereum’s  EVM,  operations of transaction or smart contracts on SVM are free, with no tokens consumed. Technically, executable computation capacity on SVM is not restricted by total holding of tokens.
 
@@ -54,51 +54,4 @@ Different from gas consumption mechanism for every transaction on EVM, there is 
 
 Improving JIT compilation speed is conducive to faster interpretation and optimized compilation of local code. Meanwhile, Stabila is planning to further optimize its SVM based on WebAssembly (WASM). WebAssembly, spearheaded by Apple, Google, Microsoft and Mozilla, is designed to break bottlenecks of current Web browsers and can be generated through compiling C/C++ and other programming languages. Integrating WASM, SVM will be able to provide high performance and high throughput for blockchain to cope with complex scenarios.
 
-## Usage Guide to SVM
-
-1.&nbsp;Compile contract
-
-Contract compilation address: [https://remix.ethereum.org](https://remix.ethereum.org)
-
-2.&nbsp;Get ABI and bytecode
-```text
-pragma solidity^0.4.11;
-
-    contract Stabila {
-            uint256 stabila;
-            constructor() public { }
-
-
-            function set(uint256 number) public returns(bool){
-                stabila = number;
-                return true;
-            }
-        }
-
-    ABI: [{“constant":false,"inputs":[{"name":"number","type":"uint256"}],"name":"set","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
-
-    ByteCode: 608060405234801561001057600080fd5b5060c48061001f6000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b1146044575b600080fd5b348015604f57600080fd5b50606c600480360381019080803590602001909291905050506086565b604051808215151515815260200191505060405180910390f35b600081600081905550600190509190505600a165627a7a723058209791df3f67e9af451c35d7ae55bda5e352764f6a38ea23fa850b1c1fe1bc72e90029
-```
-3.&nbsp;Deploy contract
-
-Wallet-cli-vm branch: [https://github.com/stabilaprotocol/wallet-cli/tree/wallet-cli-vm](https://github.com/stabilaprotocol/wallet-cli/tree/wallet-cli-vm)
-Java-stabila-vm branch: [https://github.com/stabilaprotocol/java-stabila/tree/develop_vm](https://github.com/stabilaprotocol/java-stabila/tree/develop_vm)
-Password: password of client-end wallet
-ContractAddress: customized contract address (in Stabila’s required format)
-ABI: interface description
-Data: parameters of the initial function
-Value: reserved field
-deploycontract(Password, ContractAddress, ABI, Code, Data, Value)
-
-4.&nbsp;Invoke contract
-
-Selector: function selector
-Data: parameters
-triggercontract(Password, ContractAddress, Selector, Data, Value)
-
-5.&nbsp;Check contract
-```text
-    getcontract(ContractAddress)
-```
-
 The above is an introduction of Stabila Virtual Machine and a guide to deployment. We welcome everyone to check out SVM and give us your thoughts and suggestions. We will continue to perfect and update SVM for optimal performance on STABILA mainnet.

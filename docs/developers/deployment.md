@@ -36,7 +36,7 @@ cd /deploy/java-stabila
 
 2.&nbsp;Copy the FullNode.jar and SolidityNode.jar along with configuration files into the respective directories
 ```text
-download your needed configuration file from https://github.com/stabilaprotocol/StabilaDeployment.
+download your needed configuration file from https://github.com/stabilaprotocol/stabila-deployment.
 
 main_net_config.conf is the configuration for MainNet, and test_net_config.conf is the configuration for TestNet.
 
@@ -49,7 +49,7 @@ cp build/libs/SolidityNode.jar ../soliditynode
 
 3.&nbsp;You can now run your FullNode using the following command
 ```text
-java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
 ```
 
 4.&nbsp;Configure the SolidityNode configuration file
@@ -63,7 +63,7 @@ rpc {
 
 5.&nbsp;You can now run your SolidityNode using the following command：
 ```text
-java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
 ```
 
 6.&nbsp;Running a Super Representative Node for mainnet
@@ -136,7 +136,7 @@ Just Support FullNode and SolidityNode.
 <h3>Download and run script</h3>
 
 ```shell
-wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
+wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_stabila.sh -O deploy_stabila.sh
 ```
 
 <h3>Parameter Illustration</h3>
@@ -166,7 +166,7 @@ bash deploy_stabila.sh
 
 ```shell
 wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
-# User can self-configure the IP and Port of GRPC service in the turst-node field of SolidityNode. trust-node is the fullnode you just deploy.
+# User can self-configure the IP and Port of GRPC service in the trust-node field of SolidityNode. trust-node is the fullnode you just deploy.
 bash deploy_stabila.sh --app SolidityNode --trust-node <grpc-ip:grpc-port>
 ```
 
@@ -448,7 +448,7 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 - use eventlog
 - db.createUser({user:"stabila",pwd:"123456",roles:[{role:"dbOwner",db:"eventlog"}]})
 
-> database: eventlog, username:stabila, password: 123456
+> database: eventlog, username: stabila, password: 123456
 
 ** Firewall rule: **
 - iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 27017 -j ACCEPT
@@ -469,43 +469,6 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 
 cd /{projectPath}
 sh insertIndex.sh
-
-## Event query service deployment
-
-<h3>Download sourcecode</h3>
-
-Download sourcecode
-
-git clone https://github.com/stabilaprotocol/stabila-eventquery.git
-cd stabilaeventquery
-
-<h3> Build </h3>
-
-- mvn package
-
-After the build command is executed successfully, stabilaeventquery jar to release will be generated under stabilaeventquery/target directory.
-
-Configuration of mongodb "config.conf" should be created for storing mongodb configuration, such as database name, username, password, and so on. We provided an example in sourcecode, which is " stabilaeventquery/config.conf ". Replace with your specified configuration if needed.
-
-**Note**:
-
-Make sure the relative path of config.conf and stabilaeventquery jar. The config.conf 's path is the parent of stabilaeventquery jar.
-
- - mongo.host=IP
- - mongo.port=27017
- - mongo.dbname=eventlog
- - mongo.username=stabila
- - mongo.password=123456
- - mongo.connectionsPerHost=8
- - mongo.threadsAllowedToBlockForConnectionMultiplier=4
-
-Any configuration could be modified except **mongo.dbname**, "**eventlog**" is the specified database name for event subscribe.
-
-<h3> Run </h3>
-
-- stabilaeventquery/deploy.sh is used to deploy stabilaeventquery
-- stabilaeventquery/insertIndex.sh is used to setup mongodb index to speedup query.
-
 
 ## Advanced Configurations
 

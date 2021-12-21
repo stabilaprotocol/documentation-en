@@ -1,57 +1,88 @@
 # How to contribute
 
-## Getting Started as STABILA Community Developers
+java-stabila is an open source project.
 
-STABILA is a global, open-source platform for decentralized applications.
+It is the work of contributors. We appreciate your help!
 
-Thank you for considering to help out with the source code! We welcome contributions from anyone on the internet, and are grateful for even the smallest of fixes!
+Here are instructions to get you started. They are not perfect, so
+please let us know if anything feels wrong or incomplete.
 
-GitHub is used to track issues and contribute code, suggestions, feature requests or documentation.
+## Contribution guidelines
+First of all, java-stabila follows GitFlow, the branches description in the java-stabila project are listed as follow:
 
-If you'd like to contribute to STABILA, please fork, fix, commit and send a pull request (PR) for the maintainers to review and merge into the main base. If you wish to submit more complex changes though, please check up with the core developers first on our channel to ensure those changes are in line with the general philosophy of the project and/or get some early feedback which can make both your efforts much lighter as well as our review and merge procedures quick and simple.
+- ``master`` branch:
+  This branch contains the latest code released to the production environment. It can only be merged, and can not be modified directly in this branch.
 
-Your PR will be reviewed according to the Code Review Guidelines.
+- ``develop`` branch:
+  This branch is the main development branch. It contains the complete code that is going to release. It can only be merged, and can not be modified directly in this branch.
 
-We encourage a PR early approach, meaning you create the PR the earliest even without the fix/feature. This will let core developers and other volunteers know you picked up an issue. These early PRs should indicate 'in progress' status.
+- ``feature`` branch:
+  This branch is used to develop new features. It is created based on ``develop`` branch. Once the development is finished, it should be merged into ``develop`` branch, and then delete the branch.
 
-** Developer Community **
+- ``release`` branch:
+  This is the branch that is going to be released. It is created based on ``develop`` branch. In this branch, small fix and modification of final version of metadata is allowed. When the code is released, this branch should be merged into ``master`` branch (tag needed) and ``develop`` branch. The final test before release uses this branch.
 
-* [java-stabila gitter channel](https://gitter.im/stabilaprotocol/allcoredev)
-This channel is for STABILA network issues.
-* [wallet-cli gitter channel](https://gitter.im/stabilaprotocol/wallet-cli)
-This channel is for the client of STABILA network issues.
-* [documentation gitter channel](https://gitter.im/stabilaprotocol/documentation)
-This channel is for STABILA docunentation issues.
-* [tips gitter channel](https://gitter.im/stabilaprotocol/TIPs)
-This channel is for STABILA improment proposal issues.
+- ``hotfix`` branch:
+  This branch is used to fix a bug when an online bug is found. It is created based on ``master`` branch. When bug fix is done, it should be merged into ``master`` branch(as a new release) and ``develop`` and then delete the branch. branch.
 
-Check [STABILA Incentives Policy](incentives.md)
+### Pull requests
 
-## Submitting a TIP
+If you'd like to contribute to java-stabila, you should follow the steps below:
+- **Fork** a repository from **stabilaprotocol/java-stabila** allows you to freely experiment with changes without affecting the original project
+- **Fix** some code and **Commit** your modified code.
+- **Send** a Pull Request（PR）for the maintainers to review and merge into the main code base.
+  *notice*：When you create a new PR，please choose the **stabilaprotocol/java-stabila** as the base repository and choose **your fork/java-stabila** as the head repository.
+  And you must choose **develop** as the base repository branch, which means we will merge the PR into our **develop** branch when reviewed and approved.
+  Additionally, if you are writing a new feature, please ensure you add appropriate test cases under ``/src/test``.
 
-Please check [Submitting a TIP](./tips.md)
+After the PR is checked by our Sonar check procedure and Travis CI continuous-integration check procedure automaticly,
+we maintainers will review the code changed and give some advices for modifying if necessary.Once approved,
+we will close the PR and merge into the protocol/java-stabila's develop branch.
 
-## Coding java-stabila
+We are always happy to receive pull requests, and do our best to
+review them as fast as possible. Not sure if that typo is worth a pull
+request? Do it! We would appreciate it.
 
-Please check [Coding java-stabila](./java-stabila.md)
+If your pull request is not accepted on the first try, don't be
+discouraged as it can be a possible oversight. Please explain your code as
+detailed as possible to make it easier for us to understand.
 
-## Reporting Vulnerabilities
+Please make sure your contributions adhere to our coding guidelines:
 
-We think highly of all the security bugs in the STABILA project seriously. Thank you for improving the security of STABILA project. We really appreciate your efforts and responsible disclosure. We will make every effort to acknowledge your contributions.
+- Code must be documented adhering to the [Google Style](https://google.github.io/styleguide/javaguide.html)
+- Code must pass Sonar detection.
+- Pull requests need to be based on and opened against the develop branch.
+- Commit messages should be started with verb, and the first letter should be a lowercase.The length of commit message
+  must be limited in 50 words.
+### Create issues
 
-Report security bugs at [https://hackerone.com/stabilafoundation](https://hackerone.com/stabilafoundation)
+Any significant improvement should be documented as [a GitHub
+issue](https://github.com/stabilaprotocol/java-stabila/issues) before anyone
+starts working on it.
 
-A developer from the core devs will follow up the issue. Firstly, we will confirm the bug and determine the affected versions. Secondly, we will try to find any potential similar bugs. Then we will do the fix and prepare for the release.
+When filing an issue, make sure to answer these three questions:
 
-After the initial reply to your report is sent, we will try to keep you informed on the progress towards the fix. The core devs may ask you for additional information or guidance.
+- What did you do?
+- What did you expect to see?
+- What did you see instead?
 
-If you have suggestions on how this process could be improved, please submit a pull request.
+### Please check existing issues and docs first!
 
+Please take a moment to check that your bug report or improvement proposal
+doesn't already exist. If it does, please add a quick "+1" or "I have this problem too".
+This will help prioritize the most common problems and requests.
+
+## Community Developers Incentives Programme
+
+Bonus point applies in STABILA incentives programme. Developers can earn points by contributing to STABILA.
+
+You can find your points ranking at  [Stabilascan](https://stabilascan.org/#/developersreward).
+
+The Top 5 scored developers (for every month, quarter and year) can win a cash reward.
 ## Writing Documentation
 
-There are two documentation repositories:
+Documentation repository located at:
 [documentation-en](https://github.com/stabilaprotocol/documentation-en) is the English version.
-[documentation-zh](https://github.com/stabilaprotocol/documentation-zh) is the Chinese version.
 
 We use MkDocs to build documentation project. Documentation source files are written in Markdown, and configured with a single YAML configuration file.
 

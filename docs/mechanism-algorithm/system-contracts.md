@@ -38,9 +38,9 @@
 - `to_address`: The target address to transfer.
 - `amount`: The amount of token to transfer.
 
-## VoteWitnessContract
+## VoteExecutiveContract
 
-    message VoteWitnessContract {
+    message VoteExecutiveContract {
       message Vote {
         bytes vote_address = 1;
         int64 vote_count = 2;
@@ -55,9 +55,9 @@
 - `vote_count`: The votes number.
 - `support`: Constant true, not used.
 
-## WitnessCreateContract
+## ExecutiveCreateContract
 
-    message WitnessCreateContract {
+    message ExecutiveCreateContract {
       bytes owner_address = 1;
       bytes url = 2;
     }
@@ -109,9 +109,9 @@
 - `public_free_asset_net_usage`: The free bandwidth usage of all the accounts.
 - `public_latest_free_net_time`: The latest bandwidth consumption time of token transfer.
 
-## WitnessUpdateContract
+## ExecutiveUpdateContract
 
-    message WitnessUpdateContract {
+    message ExecutiveUpdateContract {
       bytes owner_address = 1;
       bytes update_url = 12;
     }

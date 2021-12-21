@@ -11,7 +11,7 @@ The executives of the blockchain network collect the newly generated transaction
 ## DPoS overview
 The role of consensus is to select the executives in the blockchain system. The executives verify the transaction data and keep the account in order to broadcast new accounts to other nodes in the network and obtains the approval of the new accounts from other nodes. As a specific implementation of consensus, DPoS works in the following way:
 
-The DPoS consensus selects some nodes as executives in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a executives candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these candidates. Every t period of time, the votes for all the candidates will be counted. Top N candidate nodes with the most votes will become executives for the next t period. After t period of time, the votes will be counted again to elect the new executives, and the cycle continues.
+The DPoS consensus selects some nodes as executives in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a executives candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these executives. Every t period of time, the votes for all the executives will be counted. Top N candidate nodes with the most votes will become executives for the next t period. After t period of time, the votes will be counted again to elect the new executives, and the cycle continues.
 
 Let's see how it's realized in the context of STABILA:
 
@@ -34,7 +34,7 @@ Let's see how it's realized in the context of STABILA:
 
 - Epoch: STABILA sets an Epoch to be 6 hours. The last 2 block time of an Epoch is the maintenance period, during which block generating order for the next Epoch will be decided.
 
-- The maintenance period: STABILA sets the period to be 2 block time, which is 6 seconds. This period of time is used to count the votes for candidates. There are 4 Epochs in 24 hours, and naturally, 4 maintenance periods. During the maintenance period, no block is generated and block generation order for the next Epoch is decided.
+- The maintenance period: STABILA sets the period to be 2 block time, which is 6 seconds. This period of time is used to count the votes for executives. There are 4 Epochs in 24 hours, and naturally, 4 maintenance periods. During the maintenance period, no block is generated and block generation order for the next Epoch is decided.
 
 ![image](https://github.com/stabilaprotocol/documentation-en/raw/master/images/sequence_en.jpg)
 
@@ -45,11 +45,11 @@ In STABILA, 1 STB equals 1 vote.
 
 2. Voting process
 
-In STABILA, voting for candidates is a special transaction. Nodes can vote for candidates through generating a voting transaction.
+In STABILA, voting for executives is a special transaction. Nodes can vote for executives through generating a voting transaction.
 
 3. Vote counting
 
-During each maintenance period, the votes for candidates will be counted. The top 27 candidates with the most votes will be the executives for the next Epoch.
+During each maintenance period, the votes for executives will be counted. The top 27 executives with the most votes will be the Governors for the next Epoch.
 
 ## Block generation mechanism
 During each Epoch, the 27 executives will take turns to generate blocks according to the bookkeeping order. Each executive can only generate blocks when it is their turn. Executives package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The executive will sign the data of this block with his/her private key and fill in executive_signature, along with the address of the executive, the block height, and the time that block is generated, etc.
@@ -79,7 +79,7 @@ The newly produced blocks are in unconfirmed state, and only those blocks that a
 When a fork occurs, an honest executive would always choose to produce blocks on the longest chain.
 
 ## Incentive model
-To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives (including executive candidates) with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
+To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
 
 ## Proposal-based parameter adjustment
 An important characteristic of DPoS is that any parameter adjustment can be proposed on the chain, and executives will decide whether to approve the proposal by starting a vote. The advantage of this method is that it avoids hard fork upgrades when adding new features. Currently, STABILA supports the following parameter adjustments:
@@ -96,7 +96,7 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 6. The rewards for producing each block
 
-7. The total amount of STB that is proportionately awarded to the first 127th executives (including bookkeeper candidates) with the most votes
+7. The total amount of STB that is proportionately awarded to the first 127th executives with the most votes
 
 8. The STB cost of account activation through system contract
 

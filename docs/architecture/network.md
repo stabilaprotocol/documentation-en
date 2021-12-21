@@ -1,10 +1,10 @@
 # Stabila Network Instructure
 
-Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: SuperNode, FullNode, SolidityNode. SuperNode produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.
+Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.
 
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png)
 
-## SuperNode
+## Governor
 
 Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using [Stabilascan](https://stabilascan.org/#/sr/representatives).
 
@@ -32,7 +32,7 @@ CPU: > 32 cores RAM: > 48G, Bandwidth: > 500M, Disk: > 2T
 
 ## SolidityNode
 
-SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provie api service.
+SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provides api service.
 
 > NOTE: SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode.
 > New developers should deploy FullNode only.
@@ -46,28 +46,24 @@ Recommended requirement:
 CPU: > 32 cores RAM: > 48G, Bandwidth: > 500M, Disk: > 2T
 ```
 
-## MainNet, TestNet and PrivateNet
+## MainNet and PrivateNet
 
-MainNet, TestNet, PrivateNet all use the same code, only the node start configuration varies.
+MainNet and PrivateNet all use the same code, only the node start configuration varies.
 
 ### MainNet
 
 [MainNet configuration: main_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
-
-### TestNet
-
-[TestNet configuration: test_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/test_net_config.conf)
 
 ### PrivateNet
 
 #### Preconditions
 
 - at least two accounts [generate an account](https://stabilascan.org/#/wallet/new)
-- at least one SuperNode to produce blocks
+- at least one Governor to produce blocks
 - deploy serval FullNodes to synchronize blocks and broadcast transactions
-- SuperNode and FullNode comprise the private network
+- Governor and FullNode comprise the private network
 
-#### Deploy the SuperNode
+#### Deploy the Governor
 
 1. download private_net_config.conf
 
@@ -119,7 +115,7 @@ Same as above except for:
 
 1. set `seed.node.ip.list` to SR's ip and port
 2. set `needSyncCheck` true
-3. modify `listen.port`, `http.port` and `rpc.port` if SuperNode and FullNode are deployed on the same server.
+3. modify `listen.port`, `http.port` and `rpc.port` if Governor and FullNode are deployed on the same server.
 4. do not need a private key in `localexecutive`
 
 The parameters in configuration file that need to modify:

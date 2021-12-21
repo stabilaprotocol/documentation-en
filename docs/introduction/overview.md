@@ -16,7 +16,7 @@ TestNet Configuration:
 
 ## 2.1 How to Become a Super Representative
 
- In STABILA network, any account can apply to become a super representative candidate. Every account can vote for super representative candidates. The top 27 candidates with the most votes are the super representatives. Super representatives can produce blocks. The votes will be counted every 6 hours, so super representatives may also change every 6 hours.
+ In STABILA network, any account can apply to become a super representative candidate. Every account can vote for executives. The top 27 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so super representatives may also change every 6 hours.
 
  To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a super representative candidate.
 
@@ -39,7 +39,7 @@ The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 ## 2.3 Reward for Super Representatives
 
 **Votes Reward:**
-Every 6 hours, the top 127 super representative candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
+Every 6 hours, the top 127 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
 
 **Block Producing Reward:**
 Every time after a super representative produces a block, it will be reward 32 STB. The 27 super representatives take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
@@ -63,7 +63,7 @@ The network parameters can be modified([min,max]):
 - 3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte
 - 4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT
 - 5: EXECUTIVE_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT
-- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 127 super representative candidates, currently 115_200_000_000 UNIT
+- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 127 Governor candidates, currently 115_200_000_000 UNIT
 - 7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, //the fee to create an account in system, currently 1_000_000 UNIT
 - 8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, //the consumption of bandwidth or STB while creating an account, using together with #7
 - 9: ALLOW_CREATION_OF_CONTRACTS, //to enable the VM
@@ -142,11 +142,11 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 [Signature introduction](https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/Procedures_of_transaction_signature_generation.md)
 
 # 4. Network Node
-## 4.1 SuperNode
-### 4.1.1 SuperNode Introduction
+## 4.1 Governor
+### 4.1.1 Governor Introduction
 Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The super Representatives' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/#/sr/representatives).
-### 4.1.2 SuperNode Deployment
-[SuperNode Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
+### 4.1.2 Governor Deployment
+[Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
 
 ### 4.1.3 Recommended Hardware Configuration
 
@@ -179,7 +179,7 @@ Recommended requirement:
 CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 20T
 
 ## 4.4 STABILA Network Instructure
-STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: SuperNode, FullNode, SolidityNode. SuperNode produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join STABILA network as a node.
+STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join STABILA network as a node.
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png)
 
 ## 4.5 FullNode and SolidityNode Fast Deployment
@@ -203,13 +203,13 @@ MainNet, TestNet, PrivateNet all use the same code, only the node start configur
 **4.6.3.1 Preconditions**
 
 - at least two accounts
-- at least deploy one SuperNode to produce blocks
+- at least deploy one Governor to produce blocks
 - deploy serval FullNodes to synchronize blocks and broadcast transactions
-- SuperNode and FullNode comprise the private network
+- Governor and FullNode comprise the private network
 
 **4.6.3.2 Deployment**
 
-**4.6.3.2.1 Step 1: SuperNode Deployment**
+**4.6.3.2.1 Step 1: Governor Deployment**
 
  1.&nbsp;download private_net_config.conf
 
@@ -227,7 +227,7 @@ wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master
 nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --executive  -c private_net_config.conf
 
 command line parameters introduction:
---executive: start executive function. For SuperNode, this parameter is required, i.e.: --executive
+--executive: start executive function. For Governor, this parameter is required, i.e.: --executive
 --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
 -c: specify the configuration file path, i.e.: -c config.conf
 ```
@@ -260,7 +260,7 @@ wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master
 
  2.&nbsp;set seed.node ip.list with SR's ip and port
 
- 3.&nbsp;set p2p.version the same as SuperNode's p2p.version
+ 3.&nbsp;set p2p.version the same as Governor's p2p.version
 
  4.&nbsp;set genesis.block the same as genesis.block
 
@@ -315,7 +315,7 @@ wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master
  Choose rocksdb to be the data storage engine, you can use it's data backup function while running
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/db_backup.png)
 
- Note: FullNode can use data backup function. In order not to affect SuperNode's block producing performance, SuperNode does not support backup service, but SuperNode's backup service node can use this function.
+ Note: FullNode can use data backup function. In order not to affect Governor's block producing performance, Governor does not support backup service, but Governor's backup service node can use this function.
 
 **4.7.1.3 Convert leveldb data to rocksdb data**
 
@@ -464,11 +464,11 @@ Note: Different from creating a contract by grpc's deploycontract, contract crea
 
 Note: STABILA's smart contract is different from STABILA's system contract, if the transfer to address does not exist it can not create an account by smart contract transfer.
 
-2)Different accounts vote for SuperNode (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
-3)SuperNode gets all the reward (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
-4)SuperNode approves or disapproves the proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
-5)SuperNode proposes a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
-6)SuperNode deletes  a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+2)Different accounts vote for Governor (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+3)Governor gets all the reward (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+4)Governor approves or disapproves the proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+5)Governor proposes a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
+6)Governor deletes  a proposal (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 7)STABILA byte address converts to solidity address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 8)STABILA string address converts to solidity address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
 9)Send token to target address (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
@@ -534,7 +534,7 @@ We recommend to use stabila-studio instead of remix to build STABILA smart contr
 **Block**
 
 - block.blockhash (uint blockNumber) returns (bytes32): specified block hash, can only apply to the latest 256 blocks and current block excluded
-- block.coinbase (address): SuperNode address that produced the current block
+- block.coinbase (address): Governor address that produced the current block
 - block.difficulty (uint): current block difficulty, not recommended, set 0
 - block.gaslimit (uint): current block gas limit, not supported, set 0
 - block.number (uint): current block number

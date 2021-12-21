@@ -142,11 +142,11 @@ Executive node configuration:
 
 // Optional.The default is empty.
 // It is used when the executive account has set the executivePermission.
-// When it is not empty, the localWitnessAccountAddress represents the address of the executive account,
+// When it is not empty, the localExecutiveAccountAddress represents the address of the executive account,
 // and the localexecutive is configured with the private key of the executivePermissionAddress in the executive account.
 // When it is empty,the localexecutive is configured with the private key of the executive account.
 
-//localWitnessAccountAddress =
+//localExecutiveAccountAddress =
 
 localexecutive = [
   f4df789d3210ac881cb900464dd30409453044d2777060a0c391cbdf4c6a4f57

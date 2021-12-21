@@ -18,7 +18,7 @@ Network flow depends on transaction volume. As a reference, the average size of 
 
 You need to wait till the time reaches the start time of participation you set when create a token. After a token is created, only the token url and description can be modified.
 
-### Is there a place to see if all the SuperNodes are producing blocks?
+### Is there a place to see if all the Governors are producing blocks?
 
 Please refer to [Stabilascan](https://stabilascan.org/#/sr/representatives)
 
@@ -30,7 +30,7 @@ The current block producing time interval is 3 seconds. In the future, it may be
 
 No.
 
-### If one of the top 27 SuperNodes goes wrong, will it be removed from the SRs list?
+### If one of the top 27 Governors goes wrong, will it be removed from the SRs list?
 
 If people stop voting for it, it will drop out of the top 27 SRs.
 
@@ -184,11 +184,11 @@ Java-stabila does not provide a default api to test. Once the service start, grp
 > tail -f logs/stabila.log |grep "MyheadBlockNumber"
 ```
 
-### When to deploy private environment, what's the relationship of SuperNode and FullNode? Should I firstly deploy a SuperNode, and then deploy a FullNode？
+### When to deploy private environment, what's the relationship of Governor and FullNode? Should I firstly deploy a Governor, and then deploy a FullNode？
 
-Under private environment, there should be at least one SuperNode, there is no amount limit for FullNode.
+Under private environment, there should be at least one Governor, there is no amount limit for FullNode.
 
-### How to know wether my test SuperNode is running or not?
+### How to know wether my test Governor is running or not?
 
 Using the following command
 
@@ -214,9 +214,9 @@ Ask：Which service port should be public to public network?
 
 Default port 18888, 50051
 
-### At the worst scenario, if the SuperNode can not be connected, the maximum time it allows the SuperNode to recover its service？
+### At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？
 
-The internet connection recovery time only depends on the recovery of SuperNode itself, has nothing to do with internet situation.
+The internet connection recovery time only depends on the recovery of Governor itself, has nothing to do with internet situation.
 
 ### Does SolidityNode sync data from FullNode?
 
@@ -232,7 +232,7 @@ Java-stabila need more RAM to process transactions.
 
 ## Test Net
 
-### We want to test our SuperNode's performance under test environment, do we need to be voted to become a SR under test environment?
+### We want to test our Governor's performance under test environment, do we need to be voted to become a SR under test environment?
 
 Yes. Under test environment, we can vote you to become SR.
 
@@ -282,8 +282,8 @@ triggercontract contractaddress balanceOf(address) "youraddress" false 0 0 0 #
 ### What does the following error message mean?
 
 ```text
-17:02:42.699 INFO [o.t.c.s.WitnessService] Try Produce Block
-17:02:42.699 INFO [o.t.c.s.WitnessService] Not sync
+17:02:42.699 INFO [o.t.c.s.ExecutiveService] Try Produce Block
+17:02:42.699 INFO [o.t.c.s.ExecutiveService] Not sync
 ```
 
 This message means your node does not sync with the network. Before producing blocks, it needs to sync data. You can use the following command to chek the block height.

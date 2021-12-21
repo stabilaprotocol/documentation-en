@@ -2,19 +2,19 @@
 
 **ucrUsage**
 
-The Ucr conumption of the contract caller in one contract trigger.
+The Ucr consumption of the contract caller in one contract trigger.
 
 **ucrFee**
 
-The number of STB burned from the contract caller for Ucr conumption in one contract trigger.
+The number of STB burned from the contract caller for Ucr consumption in one contract trigger.
 
 **originUcrUsage**
 
-The total Ucr conumption of the contract developer in one contract trigger.
+The total Ucr consumption of the contract developer in one contract trigger.
 
 **ucrUsageTotal**
 
-The total Ucr conumption of the contract developer and the contract caller combined.
+The total Ucr consumption of the contract developer and the contract caller combined.
 
 **Feelimit**
 

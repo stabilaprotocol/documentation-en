@@ -128,12 +128,8 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 22. Whether to verify block and transaction protobuf message
 
-## Bandwidth and ucr mechanism
-To be continued...
-
 ## Appendix: Reference Documentations
 
 - [Delegated Proof of Stake (DPoS) – Total Beginners Guide](https://www.coinbureau.com/education/delegated-proof-stake-dpos/)
 - [Consensus Algorithms: Proof-of-Stake & Cryptoeconomics](https://www.nichanank.com/blog/2018/6/4/consensus-algorithms-pos-dpos)
 - [Role of Delegates](http://docs.bitshares.org/en/master/technology/dpos.html#role-of-delegates)
-- [What is Delegated Proof of Stake?](https://hackernoon.com/what-is-delegated-proof-of-stake-897a2f0558f9)

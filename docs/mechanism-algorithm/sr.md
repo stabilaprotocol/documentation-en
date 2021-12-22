@@ -14,7 +14,7 @@ To prevent vicious attack, STABILA network burns 9999 STB from the account that 
 
 To vote, you need to have STABILA Power(TP). To get STABILA Power, you need to stake STB. Every 1 staked STB accounts for one STABILA Power(TP). Every account in STABILA network has the right to vote for a super representative candidate. After you unstake your staked STB, you will lose the responding STABILA Power(TP), so your previous vote will be invalid.
 
-Note: Only your latest vote will be counted in STABILA network which means your previous vote will be over written by your latest vote.
+Note: Only your latest vote will be counted in STABILA network which means your previous vote will be overwritten by your latest vote.
 
 Example (Using wallet-cli):
 
@@ -56,7 +56,7 @@ Reward may be less than the theoretical number due to missed blocks and maintena
 
 If you vote for a Super Representative:
 
-the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB
+the daily Voter Rewards = (((the number of votes you vote to an executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 27) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB
 
 If you vote for a Partner:
 
@@ -66,7 +66,7 @@ the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,60
 
 ### 1. What is Committee
 
-Committee can modify the STABILA network parameters, like transacton fees, block producing reward amount, etc. Committee is composed of the current 27 super representatives. Every super representative has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the super representatives and will become valid in the next maintenance period.
+Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 27 super representatives. Every super representative has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the super representatives and will become valid in the next maintenance period.
 
 ### 2. Create a Proposal
 

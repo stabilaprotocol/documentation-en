@@ -1,6 +1,6 @@
 # Decentralized Exchange(DEX)
 
-STABILA network supports decentralized exchange(DEX) using Bancor protocol. DEX is composed of many exchange pairs. You can find the api below in [HTTP API](../../api/http).
+STABILA network supports decentralized exchange(DEX) using Bancor protocol. DEX is composed of many exchange pairs.
 
 ## What is an Exchange Pair
 

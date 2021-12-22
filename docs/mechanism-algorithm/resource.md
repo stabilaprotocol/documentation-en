@@ -173,11 +173,9 @@ If fee limit is greater than the ucr obtained from staking STB, then it will bur
 
 Finally, in this call, the ucr A can use is (100000 + 200000) = 300000 ucr.
 
-If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far more less than the amount of ucr this trigger can use.
+If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far less than the amount of ucr this trigger can use.
 
 If Assert-style error come out, it will consume the whole number of ucr set for fee limit.
-
-Assert-style error introduction, refer to [Exception Handling(zh-cn)](https://github.com/stabilaprotocol/Documentation/blob/master/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.md)
 
 ** Example 2 **
 
@@ -192,7 +190,7 @@ A triggers C, the fee limit set is 200000000 (unit UNIT, 200 STB).
 So during this trigger the ucr A can use is from three parts:
 
 - A's ucr by staking STB -- X;
-- The ucr converted from the amount of STB bruning according to a fixed rate -- Y;
+- The ucr converted from the amount of STB burning according to a fixed rate -- Y;
 
     If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;
 
@@ -202,13 +200,11 @@ There are two situation:
 if (X + Y) / 40% >= Z / 60%, the ucr A can use is X + Y + Z
 if (X + Y) / 40% < Z / 60%, the ucr A can use is (X + Y) / 40%
 
-If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far more less than the amount of ucr this trigger can use.
+If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far less than the amount of ucr this trigger can use.
 
-If Assert-style error comes out, it will consume the whole number of ucr set for fee limit. Assert-style error introduction, refer to [Exception Handling(zh-cn)](https://github.com/stabilaprotocol/Documentation/blob/master/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.md).
+If Assert-style error comes out, it will consume the whole number of ucr set for fee limit.
 
-Note: when developer create a contract, do not set consume_user_resource_percent to 0, which means developer will undertake all the ucr consumption. If Assert-style error comes out, it will consume all ucr from the developer itsef.
-
-Assert-style error introduction, refer to [Exception Handling(zh-cn)](https://github.com/stabilaprotocol/Documentation/blob/master/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.md).
+Note: when developer create a contract, do not set consume_user_resource_percent to 0, which means developer will undertake all the ucr consumption. If Assert-style error comes out, it will consume all ucr from the developer itself.
 
 To avoid unnecessary lost, 10 - 100 is recommended for consume_user_resource_percent.
 
@@ -237,4 +233,4 @@ receiverAddress: recipient account address
 [^1]: The ucr consumption of each execution may fluctuate slightly due to the situation of all the nodes.
 [^2]: STABILA may change this policy.
 [^3]: The estimated ucr consumption limit for the next execution should be greater than the last one.
-[^4]: 4 STB = 10^5 ucr is a fixed number for burning STB to get ucr, STABILA may change it in future.
+[^4]: 4 STB = 10^5 ucr is a fixed number for burning STB to get ucr, STABILA may change it in the future.

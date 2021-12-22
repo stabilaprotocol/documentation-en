@@ -2,12 +2,12 @@
 
 ## Introduction
 
-TRC-20 token contract allows users to issue and transfer tokens, but it can not guarantee the privacy since it leaks the token ownership. When transferring the token, the source address, destination address, and the token amount are  public. The shielded TRC-20 contract ([TIP-135](https://github.com/stabilaprotocol/tips/blob/master/tip-135.md)) aims to solve this problem and provides users better privacy of token ownership and transactions.
+TRC-20 token contract allows users to issue and transfer tokens, but it can not guarantee the privacy since it leaks the token ownership. When transferring the token, the source address, destination address, and the token amount are  public. The shielded TRC-20 contract aims to solve this problem and provides users better privacy of token ownership and transactions.
 
 The shielded TRC-20 contract has three core functions: `mint`, `transfer` and `burn`.
 
--  `mint` is used to transform the public TRC-20 token to shielded token, which makes token ownership invisible. `mint` has only one transparent input and one shielded output.
--  `transfer` is used for shielded token transactions, which can hide the source address, the destination address, and the transaction amount. `transfer` has at most two shielded input and two shielded output.
+- `mint` is used to transform the public TRC-20 token to shielded token, which makes token ownership invisible. `mint` has only one transparent input and one shielded output.
+- `transfer` is used for shielded token transactions, which can hide the source address, the destination address, and the transaction amount. `transfer` has at most two shielded input and two shielded output.
 - `burn` is used to transform the shielded token to the public TRC-20 token. `burn` has only one shielded input, one transparent output and zero or one shielded output.
 
 The technical implementation is based on zk-SNARK(Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) proof system, which is secure and efficient.
@@ -18,13 +18,13 @@ The technical implementation is based on zk-SNARK(Zero-Knowledge Succinct Non-In
 
    Note: the deployed TRC-20 contract address of `TokenTRC20` on Nile Testnet is:  [TFUD8x3iAZ9dF7NDCGBtSjznemEomE5rP9](https://nile.stabilascan.org/#/contract/TFUD8x3iAZ9dF7NDCGBtSjznemEomE5rP9/code).
 
-2. Use the `deployContract` method to deploy the shielded TRC-20 contract. The shielded TRC-20 contract will bind the TRC-20 contract. The `scalingFactor` is also specified when deploying the the shielded TRC-20 contract. For more details about `scalingFactor`, please refer [TIP-135](https://github.com/stabilaprotocol/tips/blob/master/tip-135.md).
+2. Use the `deployContract` method to deploy the shielded TRC-20 contract. The shielded TRC-20 contract will bind the TRC-20 contract. The `scalingFactor` is also specified when deploying the the shielded TRC-20 contract. For more details about `scalingFactor`.
 
    Note: the deployed shielded TRC-20 contract address of `ShieldedTRC20` on Nile Testnet is:  [TPcKtz5TRfP4xUZSos81RmXB9K2DBqj2iu](https://nile.stabilascan.org/#/contract/TPcKtz5TRfP4xUZSos81RmXB9K2DBqj2iu/code) and the corresponding `scalingFactor` is set 10.
 
 ### Usage Guide
 
-1.&nbsp;The sender needs to create an ordianry account by api. The account is used to trigger the shielded TRC-20 contract, so it should has some stb to pay the transaction fee.
+1.&nbsp;The sender needs to create an ordinary account by api. The account is used to trigger the shielded TRC-20 contract, so it should have some stb to pay the transaction fee.
 
 2.&nbsp;The sender should create the shielded address, which is used to send and receive the shielded TRC-20 notes.
 

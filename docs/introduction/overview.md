@@ -8,10 +8,7 @@ Github Url: [https://github.com/stabilaprotocol](https://github.com/stabilaproto
 [wallet-cli](https://github.com/stabilaprotocol/wallet-cli) is the official command line wallet.
 
 MainNet Configuration:
-[https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf](https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf)
-TestNet Configuration:
-[https://github.com/stabilaprotocol/StabilaDeployment/blob/master/test_net_config.conf](https://github.com/stabilaprotocol/StabilaDeployment/blob/master/test_net_config.conf)
-
+[https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
 # 2. SRs and Committee
 
 ## 2.1 How to Become a Super Representative
@@ -144,7 +141,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 # 4. Network Node
 ## 4.1 Governor
 ### 4.1.1 Governor Introduction
-Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The super Representatives' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/#/sr/representatives).
+Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The super Representatives' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
 ### 4.1.2 Governor Deployment
 [Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
 
@@ -193,10 +190,6 @@ MainNet, TestNet, PrivateNet all use the same code, only the node start configur
 ### 4.6.1 MainNet
 
 [MainNet configuration](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
-
-### 4.6.2 TestNet
-
-[TestNet configuration](https://github.com/stabilaprotocol/stabila-deployment/blob/master/test_net_config.conf)
 
 ### 4.6.3 PrivateNet
 
@@ -342,7 +335,7 @@ Then, you should run DBConvert.jar this way:
 ```
  Note: You have to stop the running of the node, and then to run the data conversion script.
 
- If you do not want to stop the running of the node for too long, after node is shut down, you can copy leveldb's output-directory to the new directory, and then restart the node. Run DBConvert.jar in the previous directory of the new directory, and specify the parameters: `src_db_path`和`dst_db_path`.
+ If you do not want to stop the running of the node for too long, after node is shut down, you can copy leveldb's output-directory to the new directory, and then restart the node. Run DBConvert.jar in the previous directory of the new directory, and specify the parameters: `src_db_path` and `dst_db_path`.
 
 Example:
 ```text
@@ -353,9 +346,6 @@ Example:
  All the whole data conversion process may take 10 hours.
 
 **4.7.1.4 rocksdb vs leveldb**
-
-You can refer to:
-[ROCKSDB vs LEVELDB](https://github.com/stabilaprotocol/documentation/blob/master/STB/Rocksdb_vs_Leveldb.md)
 
 # 5. Smart Contract
 ## 5.1 STABILA Smart Contract Introduction
@@ -680,8 +670,6 @@ If contract executes successfully without any exception, the ucr needed for the 
 
 If Assert-style error come out, it will consume the whole number of ucr set for fee limit.
 
-Assert-style error introduction, refer to [https://developers.stabila.network/docs/vm-exception](https://developers.stabila.network/docs/vm-exception)
-
 **Example 2**
 
 A has an account with a balance of 90 STB(90000000 UNIT) and 10 STB staked for 100000 ucr.
@@ -704,33 +692,18 @@ if (X + Y) / 40% < Z / 60%, the ucr A can use is (X + Y) / 40%
 
 If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far more less than the amount of ucr this trigger can use.
 
-
-Assert-style error introduction, refer to [https://developers.stabila.network/docs/vm-exception](https://developers.stabila.network/docs/vm-exception)
-
 Note: when developer create a contract, do not set consume_user_resource_percent to 0, which means developer will undertake all the ucr consumption. If Assert-style error comes out, it will consume all ucr from the developer itsef.
 
 To avoid unnecessary lost, 10 - 100 is recommended for consume_user_resource_percent.
 
 ## 5.4 Smart Contract Development Tool
 
-### 5.4.1 StabilaBox
+**Start a Private Net**
 
-Support the build, deploy, transplant, etc. for solidity language written smart contract.
-[https://developers.stabila.network/docs/stabila-box-user-guide](https://developers.stabila.network/docs/stabila-box-user-guide)
+Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log
 
-### 5.4.2 StabilaWeb
-Provide http api service for the usage of smart contract.
-[https://developers.stabila.network/docs/stabila-web-intro](https://developers.stabila.network/docs/stabila-web-intro)
+** Write your first smart contract **
 
-### 5.4.3 StabilaGrid
-Provide smart contract event query service.
-[https://developers.stabila.network/docs/stabila-grid-intro](https://developers.stabila.network/docs/stabila-grid-intro)
-
-## 5.5 Using Command Lines Tool to Develop Smart Contract
-
-First you can use StabilaStudio to write, build and debug the smart contract. After you finish the development of the contract, you can copy it to [SimpleWebCompiler](https://github.com/stabilaprotocol/stabila-demo/tree/master/SmartContractTools/SimpleWebCompiler) to compile to get ABI and ByteCode. We provide a simple data read/write smart contract code example to demonstrate:
-
-```text
 pragma solidity ^0.4.0;
 contract DataStore {
 
@@ -744,27 +717,13 @@ contract DataStore {
         value = data[key];
     }
 }
-```
-
-**Start a Private Net**
-
-Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log
-
-**Develop a Smart Contract**
-
-Copy the code example above to remix to debug.
-
-**Compile in SimpleWebCompiler for ABI and ByteCode**
-
-Copy the code example above to SimpleWebCompiler to get ABI and ByteCode.
-Because STABILA's compiler is a little different from Ethereum, so you can not get ABI and ByteCode by using Remix. But it will soon be supported.
 
 **Using Wallet-cli to Deploy**
 
 Download Wallet-Cli and build
 
 ```shell
-# download cource code
+# download source code
 git clone https://github.com/stabilaprotocol/wallet-cli
 cd  wallet-cli
 # build
@@ -800,8 +759,8 @@ DeployContract contractName ABI byteCode constructor params isHex fee_limit cons
 
 # parameters
 contract_name: Contract name
-ABI: ABI from SimpleWebCompiler
-bytecode: ByteCode from SimpleWebCompiler
+ABI: ABI content from generated .abi file
+bytecode: ByteCode content from generated .bin file
 constructor: When deploy contract, this will be called. If is needed, write as constructor(uint256,string). If not, just write #
 params: The parameters of the constructor, use ',' to split, like  1, "test", if no constructor, just write #
 fee_limit: The STB consumption limit for the deployment, unit is UNIT(1 UNIT = 10^-6 STB)
@@ -857,23 +816,10 @@ If it contains library, before deploy the contract you need to deploy the librar
 The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
 When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.
 
-# 6. Built-in Contracts and API
-## 6.1 Built-in Contracts
-Please refer to:
-[https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/STABILA_Protocol/TX_ContractTypes_Update.MD](https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/STABILA_Protocol/TX_ContractTypes_Update.MD)
-
-## 6.2 GRPC API Introduction
-Please refer to:
-[https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/STABILA_Protocol/STABILA_Wallet_RPC-API.md](https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/STABILA_Protocol/STABILA_Wallet_RPC-API.md)
-
-## 6.3 Http API Introduction
-Please refer to:
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-# 7. TRC-10 Token Introduction
+# 6. TRC-10 Token Introduction
 STABILA network support two types of token, one is TRC-20 token issued by smart contract, the other one is TRC-10 token issued by system contract.
 
-## 7.1 How to Issue a TRC-10 Token
+## 6.1 How to Issue a TRC-10 Token
 HTTP API:
 
 ```text
@@ -912,7 +858,7 @@ Return: Transaction object
 Note: The unit of 'stb_num' is UNIT
 ```
 
-## 7.2 Participate TRC-10 Token
+## 6.2 Participate TRC-10 Token
 HTTP API:
 
 ```text
@@ -933,7 +879,7 @@ Return: Transaction object
 Note: The unit of 'amount' is the smallest unit of the token
 ```
 
-## 7.3 TRC-10 Token Transfer
+## 6.3 TRC-10 Token Transfer
 HTTP API:
 
 ```text
@@ -949,8 +895,8 @@ Return: Transaction object
 Note: The unit of 'amount' is the smallest unit of the token
 ```
 
-# 8. Resource Model
-## 8.1 Resource Model Introduction
+# 7. Resource Model
+## 7.1 Resource Model Introduction
 
 STABILA network has 4 types of resources: Bandwidth, CPU, Storage and RAM. Benefit by STABILA's exclusive RAM model, STABILA's RAM resource is almost infinite.
 
@@ -960,7 +906,7 @@ Note:
 - Ordinary transaction only consumes Bandwidth points
 - Smart contract related transaction not only consumes Bandwidth points, but also Ucr
 
-## 8.2 Bandwidth Points
+## 7.2 Bandwidth Points
 
 The transaction information is stored and transmitted in the form of byte array, Bandwidth Points consumed = the number of bytes of the transaction * Bandwidth Points rate. Currently Bandwidth Points rate = 1
 
@@ -968,13 +914,13 @@ Such as if the number of bytes of a transaction is 200, so this transaction cons
 
 Note: Due to the change of the total amount of the staked STB in the network and the self-staked STB amount, the Bandwidth Points an account possesses is not fixed.
 
-## 8.2.1 How to Get Bandwidth Points
+## 7.2.1 How to Get Bandwidth Points
 
 1.&nbsp;By staking STB to get Bandwidth Points, Bandwidth Points = the amount of STB self-staked / the total amount of STB staked for Bandwidth Points in the network * 43_200_000_000
 
-2.&nbsp;Every account has a fixed amount of free Bandwidth Points every day, it is defined in #61 network parameter, user can check the value on stabilascan(https://stabilascan.org/#/sr/committee).
+2.&nbsp;Every account has a fixed amount of free Bandwidth Points every day, it is defined in #61 network parameter, user can check the value on stabilascan(https://stabilascan.org/representatives).
 
-### 8.2.2 Bandwidth Points Consumption
+### 7.2.2 Bandwidth Points Consumption
 
 Transactions other than queries consume Bandwidth points.
 
@@ -1000,16 +946,12 @@ Bandwidth points consumption sequence for other transactions:
 
 3. Bandwidth points obtained by STB burning, the rate = the number of bytes of the transaction * 1_000 UNIT;
 
-### 8.2.3 Bandwidth Points Recovery
-Every 24 hours, the amount of the usage of Bandwidth points of an account will be reset to 0. For the specific formula:
-![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/bandwidthRestoreEqn.gif)
-
+### 7.2.3 Bandwidth Points Recovery
 Every 24 hours, the amount of the usage of Bandwidth points of an account will be reset to 0.
+## 7.3 Ucr
+[5.3 Ucr Introduction](#5.3-ucr-introduction)
 
-## 8.3 Ucr
-[5.3 Ucr Introduction](#53-ucr-introduction)
-
-## 8.4 Resource Delegation
+## 7.4 Resource Delegation
 In STABILA network, an account can stake STB for Bandwidth or Ucr for other accounts. The primary account owns the staked STB and STABILA power, the recipient account owns the Bandwidth or Ucr. Like ordinary staking, resource delegation staking is also at least 3 days.
 
 + Example(Using wallet-cli)
@@ -1022,7 +964,7 @@ ResourceCode: 0 for Bandwidth, 1 for Ucr
 receiverAddress: recipient account address
 ```
 
-## 8.5 Other Fees
+## 7.5 Other Fees
 
 |Type|Fee|
 | :------|:------:|
@@ -1031,77 +973,17 @@ receiverAddress: recipient account address
 |Create an account|1 STB|
 |Create an exchange|1024 STB|
 
-# 9. DEX Introduction
-
-STABILA network supports decentralized exchange(DEX) using Bancor protocol. DEX is composed of many exchange pairs.
-
-## 9.1 What is an Exchange Pair
-The term of 'Exchange Pair' describes a trade between one token with another, like A/B, A/STB.
-
-## 9.2 Exchange Pair Creation
-Any account can create an exchange pair, it burns 1024 STB.
-
-Please refer to 'wallet/exchangecreate':
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-## 9.3 Exchange Pair Transaction
-Any account can trade in the DEX. The trade follows Bancor protocol.
-
-Please refer to 'wallet/exchangetransaction':
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-## 9.4 Exchange Pair Injection
-The exchange pair creator can inject more tokens into the exchange pair. Injection can decrease the range of ratio fluctuation. If one token is injected, the other one will be injected automatically to keep the current ratio of the two tokens unchanged.
-
-Please refer to 'wallet/exchangeinject':
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-## 9.5 Exchange Pair Withdrawal
-The exchange pair creator can withdraw tokens from the exchange pair. Withdrawal can increase the range of ratio fluctuation. If one token is withdrawn, the other one will be withdrawn automatically to keep the current ratio of the two tokens unchanged.
-
-Please refer to 'wallet/exchangewithdraw':
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-## 9.6 Query
-
-### 9.6.1 Transaction Query
-ListExchanges: Query the list of all the exchange pairs
-GetPaginatedExchangeList: Query the list of all the exchange pairs by pagination
-GetExchangeById: Query an exchange pair by exchange pair id
-
-Please refer to:
-[https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md](https://github.com/stabilaprotocol/documentation/blob/master/STB/Stabila-http.md)
-
-### 9.6.2 Price Calculation
-The token price is determined by the ratio of the balance of the two tokens.
-
-### 9.6.3 Calculate the Amount of Token You Can Get
-sellTokenQuant is the amount of the first_token you want to sell;
-buyTokenQuant is the amount of second_token you can get;
-supply = 1_000_000_000_000_000_000L;
-supplyQuant = -supply * (1.0 - Math.pow(1.0 + (double) sellTokenQuant/(firstTokenBalance + sellTokenQuant, 0.0005));
-buyTokenQuant = (long)balance * (Math.pow(1.0 + (double) supplyQuant / supply, 2000.0) - 1.0);
-
-
-# 10. Multi-Signatures
-Please refer to:
-[Multi-signatures](../mechanism-algorithm/multi-signatures.md)
-
-# 11. Shielded Transaction
-Please refer to:
-[Shielded Transaction](../mechanism-algorithm/shielded-transaction.md)
-
-# 12. Wallet Introduction
-## 12.1 wallet-cli Introduction
+# 8. Wallet Introduction
+## 8.1 wallet-cli Introduction
 Please refer to:
 [https://github.com/stabilaprotocol/wallet-cli/blob/master/README.md](https://github.com/stabilaprotocol/wallet-cli/blob/master/README.md)
 
-## 12.2 Get Transaction ID
+## 8.2 Get Transaction ID
 
 ```text
 Hash.sha256(transaction.getRawData().toByteArray())
 ```
-## 12.3 Get Block ID
+## 8.3 Get Block ID
 
 ```text
 private byte[] generateBlockId(long blockNum, byte[] blockHash) {
@@ -1111,8 +993,8 @@ private byte[] generateBlockId(long blockNum, byte[] blockHash) {
   return hash;
  }
 ```
-## 12.4 How to Build a Transaction Locally
-According to the defination of the transaction, you need to fill up all the fields of the transaction.
+## 8.4 How to Build a Transaction Locally
+According to the definition of the transaction, you need to fill up all the fields of the transaction.
 
 You need to set reference block and expiration time information, so you need to connect to the Mainnet. We recommend to use the latest block on fullnode as the value of reference block, use the latest block time plus N minutes as the value of expiration time.
 
@@ -1160,9 +1042,3 @@ public static Transaction createTransaction(byte[] from, byte[] to, long amount)
      return refTransaction;
    }
 ```
-## 12.5 Related Demo
-
-Build transaction locally, signature demo, please refer to:
-[https://github.com/stabilaprotocol/wallet-cli/blob/master/src/main/java/org/stabila/demo/TransactionSignDemo.java](https://github.com/stabilaprotocol/wallet-cli/blob/master/src/main/java/org/stabila/demo/TransactionSignDemo.java)
-nodejs demo, please refer to:
-[https://github.com/stabilaprotocol/stabila-demo/tree/master/demo/nodejs](https://github.com/stabilaprotocol/stabila-demo/tree/master/demo/nodejs)

@@ -8,7 +8,7 @@
 
 ### How can I generate an account?
 
-You can use [wallet-cli](https://github.com/stabilaprotocol/wallet-cli) or [Stabilascan](https://stabilascan.org/#/wallet/new).
+You can use [wallet-cli](https://github.com/stabilaprotocol/wallet-cli) or [Stabilascan](https://stabilascan.org/signup).
 
 ### What is the network flow?
 
@@ -20,7 +20,7 @@ You need to wait till the time reaches the start time of participation you set w
 
 ### Is there a place to see if all the Governors are producing blocks?
 
-Please refer to [Stabilascan](https://stabilascan.org/#/sr/representatives)
+Please refer to [Stabilascan](https://stabilascan.org/representatives)
 
 ### Is the block producing time interval always remain the same?
 
@@ -62,10 +62,6 @@ Transaction hash.
 
 Staked duration must be 3 days now. It means you can not unstake until the 3 days duration expires. If you don't unstake after 3 days, the staked STB will remain in staked status until you unstake it.
 
-### How to watch my account for transactions
-
-To meet your needs, you can use STABILA event subscription plugin. For more detail, please refer to [https://stabilaprotocol.github.io/documentation-en/architecture/plugin/#stabila-event-subscription](https://stabilaprotocol.github.io/documentation-en/architecture/plugin/#stabila-event-subscription)
-
 ### How to calculate the transaction fee?
 
 please refer to [https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/resource/](https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/resource/)
@@ -91,52 +87,6 @@ You can add the data storage path when you start the node, like:
 
 ```text
 java -jar FullNode.jar -c config.conf -d /data/output
-```
-
-### Is there any config file option, which I can use for sending logs to stdout?
-
-Steps to send logs to stdout:
-
-Download [https://github.com/stabilaprotocol/java-stabila/blob/develop/src/main/resources/logback.xml](https://github.com/stabilaprotocol/java-stabila/blob/develop/src/main/resources/logback.xml)
-
-Uncomment the configuration:
-
-appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"
-
-Go to the configuration: root level="INFO"
-uncomment the configuration: appender-ref ref="STDOUT"
-comment the configuration: appender-ref ref="ASYNC"
-
-Move logback.xml to the same directory with FullNode.jar
-
-Launch FullNode.jar with additional parameter: --log-config logback.xml, for example:
-
-```text
-java -jar FullNode.jar --log-config logback.xml
-```
-
-### How to change log level
-
-The log level is defined in logback.xml. Please set the root level to "ERROR" if you want to filter only error logs. Please refer to the configuration below.
-
-```xml
-<root level="ERROR">
-    <!--<appender-ref ref="STDOUT"/>-->
-    <appender-ref ref="ASYNC"/>
-  </root>
-
-  <logger name="app" level="ERROR"/>
-  <logger name="net" level="ERROR"/>
-  <logger name="backup" level="ERROR"/>
-  <logger name="discover" level="ERROR"/>
-  <logger name="crypto" level="ERROR"/>
-  <logger name="utils" level="ERROR"/>
-  <logger name="actuator" level="ERROR"/>
-  <logger name="API" level="ERROR"/>
-  <logger name="executive" level="ERROR"/>
-  <logger name="DB" level="ERROR"/>
-  <logger name="capsule" level="ERROR"/>
-  <logger name="VM" level="ERROR"/>
 ```
 
 ### How can I get asset from private net?
@@ -188,7 +138,7 @@ Java-stabila does not provide a default api to test. Once the service start, grp
 
 Under private environment, there should be at least one Governor, there is no amount limit for FullNode.
 
-### How to know wether my test Governor is running or not?
+### How to know whether my test Governor is running or not?
 
 Using the following command
 
@@ -204,7 +154,7 @@ They can be deployed in one machine. You can specify the data storage path in co
 
 ### As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？
 
-If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash. If they are the same as MainNet or TestNet, and the computer is connected to internet, the node will sync data from public node.
+If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash.
 
 ### Under private environment, should I submit application information to STABILA to become a SR?
 
@@ -230,28 +180,10 @@ No, but the node provides wallet rpc api.
 
 Java-stabila need more RAM to process transactions.
 
-## Test Net
-
-### We want to test our Governor's performance under test environment, do we need to be voted to become a SR under test environment?
-
-Yes. Under test environment, we can vote you to become SR.
-
-### What is the defferent between Shasta and Test Net?
-
-to be answered
-
-### Where can I get the test STB?
-
-[http://testnet.stabilaex.io/join/getJoinPage](http://testnet.stabilaex.io/join/getJoinPage)
-
 ## Smart Contract
 
 
 ## RPC Client and API
-
-### How to sign transaction from offline node and broadcast to online node?
-
-You can use [stabilaweb](https://developers.stabila.network/docs/api-sign-flow)
 
 ### How to sync wallet-cli with wallet on Stabilascan?
 
@@ -286,7 +218,7 @@ triggercontract contractaddress balanceOf(address) "youraddress" false 0 0 0 #
 17:02:42.699 INFO [o.t.c.s.ExecutiveService] Not sync
 ```
 
-This message means your node does not sync with the network. Before producing blocks, it needs to sync data. You can use the following command to chek the block height.
+This message means your node does not sync with the network. Before producing blocks, it needs to sync data. You can use the following command to check the block height.
 
 ```text
 > tail -f logs/stabila.log |grep "MyheadBlockNumber"

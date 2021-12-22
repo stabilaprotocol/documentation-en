@@ -6,20 +6,20 @@ STABILA uses account model. An account's identity is address. It needs private k
 
 ## How to Create an Account
 
-1. Use a wallet to generate the address and private key. To active the account, you need to transfer STB or transfer token to the new created account. [Generate an account](https://stabilascan.org/#/wallet/new)
+1. Use a wallet to generate the address and private key. To activate the account, you need to transfer STB or transfer token to the new created account. [Generate an account](https://stabilascan.org/signup)
 2. Use an account already existed in STABILA network to create an account
 
 If you have enough staked BandWidth Points, creating an account only consume your staked BandWidth Points, otherwise, it burns 0.1 STB.
 
 ## Key-pair Generation
 
-Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random bumber, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then caculate P = d * G as the public key, G is the elliptic curve base point.
+Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random number, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then calculate P = d * G as the public key, G is the elliptic curve base point.
 
 ## Address Format
 
 Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x41 in front of it, then the address come out. Do basecheck to address, here is the final address. All addresses start with 'T'.
 
-basecheck process: first do sha256 caculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.
+basecheck process: first do sha256 calculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.
 
 character map:
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -28,8 +28,8 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
 ### Steps
 
-1. Get the rawdata of the transaction, then transfer it to `byte[]`
-2. Do sha256 calculation to the rawdata
+1. Get the raw data of the transaction, then transfer it to `byte[]`
+2. Do sha256 calculation to the raw data
 3. Use the private key to sign the result gained from step 2
 4. Add the signature back into the transaction
 

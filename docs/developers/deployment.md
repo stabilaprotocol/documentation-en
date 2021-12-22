@@ -38,7 +38,7 @@ cd /deploy/java-stabila
 ```text
 download your needed configuration file from https://github.com/stabilaprotocol/stabila-deployment.
 
-main_net_config.conf is the configuration for MainNet, and test_net_config.conf is the configuration for TestNet.
+main_net_config.conf is the configuration for MainNet.
 
 please rename the configuration file to `config.conf` and use this config.conf to start FullNode and SoliditNode.
 
@@ -193,7 +193,7 @@ Install Golang, Protoc, and set $GOPATH environment variable according to your r
 <h3> Download and run script </h3>
 
 ```shell
-wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
+wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
 ```
 
 <h3> Parameter Illustration </h3>

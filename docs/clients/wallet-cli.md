@@ -91,8 +91,6 @@ For more information on a specific command, just type the command on terminal wh
 | [UpdateBrokerage](#Brokerage) | [UpdateUcrLimit](#update-smart-contract-parameters) |[UpdateSetting](#update-smart-contract-parameters) | 
 | [UpdateAccountPermission](#How-to-use-the-multi-signature-feature-of-wallet-cli) | [VoteExecutive](#How-to-vote) |
 
-Type any one of the listed commands, to display how-to tips.
-
 ## How to cd/uncd balance
 
 After the funds are cded, the corresponding number of shares and bandwidth will be obtained.

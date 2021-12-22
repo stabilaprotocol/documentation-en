@@ -51,7 +51,7 @@
     }
 
 - `owner_address`: The owner of the current account.
-- `vote_address`: The SR or candidate's address.
+- `vote_address`: The Governor or candidate's address.
 - `vote_count`: The votes number.
 - `support`: Constant true, not used.
 

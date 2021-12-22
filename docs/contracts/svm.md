@@ -31,7 +31,7 @@ Developers can call these interfaces to deploy, trigger or check smart contracts
 
 ## How SVM Works
 
-![Flowchart of Stabila Virtual Machine](https://raw.githubusercontent.com/stabilaprotocol/documentation/master/images/Virtual_Machine/虚拟机.png)
+![Flowchart of Stabila Virtual Machine](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/virtual_machine.png)
 
 The above flowchart shows how SVM works:
 Compilation of Stabila smart contract→execution and computing engines of VM→Interoperation service layer for external interfaces.

@@ -21,10 +21,3 @@ Choose RocksDB to be the data storage engine, you can use its data backup functi
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/db_backup.png)
 
 Note: FullNode can use data backup function.
-
-### RocksDB vs LevelDB
-
-You can refer to:
-
-- [RocksDB vs LevelDB(en)](https://github.com/stabilaprotocol/documentation/blob/master/STB/Rocksdb_vs_Leveldb.md)
-- [RocksDB vs LevelDB(zh-cn)](https://github.com/stabilaprotocol/documentation/blob/master/STB_CN/Rocksdb_vs_Leveldb.md)

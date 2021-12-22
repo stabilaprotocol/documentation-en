@@ -11,51 +11,51 @@ MainNet Configuration:
 [https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
 # 2. SRs and Committee
 
-## 2.1 How to Become a Super Representative
+## 2.1 How to Become a Governor
 
- In STABILA network, any account can apply to become a super representative candidate. Every account can vote for executives. The top 27 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so super representatives may also change every 6 hours.
+ In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 27 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.
 
- To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a super representative candidate.
+ To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.
 
-## 2.2 Super Representatives Election
+## 2.2 Governors Election
 
- To vote, you need to have STABILA Power(TP). To get STABILA Power, you need to stake STB. Every 1 staked STB accounts for one STABILA Power(TP). Every account in STABILA network has the right to vote for a super representative candidate. After you unstake your staked STB, you will lose the responding STABILA Power(TP), so your previous vote will be invalid.
+ To vote, you need to have STABILA Power(SP). To get STABILA Power, you need to stake STB. Every 1 staked STB accounts for one STABILA Power(SP). Every account in STABILA network has the right to vote for a governor candidate. After you unstake your staked STB, you will lose the responding STABILA Power(SP), so your previous vote will be invalid.
 
  Note: Only your latest vote will be counted in STABILA network which means your previous vote will be over written by your latest vote.
 
 Example (Using wallet-cli):
 
 ```text
-cdbalance 10,000,000 3 // stake 10 STB to get 10 STABILA Power(TP)
+cdbalance 10,000,000 3 // stake 10 STB to get 10 STABILA Power(SP)
 voteexecutive executive1 4 executive2 6 // Vote 4 votes for executive1, 6 votes for executive2
 voteexecutive executive1 3 executive2 7 // Vote 3 votes for executive1, 7 votes for executive2
 ```
 
 The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 
-## 2.3 Reward for Super Representatives
+## 2.3 Reward for Governors
 
 **Votes Reward:**
 Every 6 hours, the top 127 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
 
 **Block Producing Reward:**
-Every time after a super representative produces a block, it will be reward 32 STB. The 27 super representatives take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
+Every time after a governor produces a block, it will be reward 32 STB. The 27 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
 
-Every time after a super representative produces a block, the 32 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to super representative account every 24 hours.
+Every time after a governor produces a block, the 32 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.
 
 ## 2.4 Committee
 
 ### 2.4.1 What is Committee
 
-Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 27 super representatives. Every super representative has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the super representatives and will become valid in the next maintenance period.
+Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 27 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the governors and will become valid in the next maintenance period.
 
 ### 2.4.2 Create a Proposal
 
-Only the account of a super representative can create a proposal.
+Only the account of a governor can create a proposal.
 The network parameters can be modified([min,max]):
 
-- 0: MAINTENANCE_TIME_INTERVAL, [3 * 27* 1000, 24 * 3600 * 1000] //super representative votes count time interval, currently 6 * 3600 * 1000 ms
-- 1: ACCOUNT_UPGRADE_COST, [0, 100 000 000 000 000 000]  //the fee to apply to become a super representative candidate, currently 9999_000_000 UNIT
+- 0: MAINTENANCE_TIME_INTERVAL, [3 * 27* 1000, 24 * 3600 * 1000] //governor votes count time interval, currently 6 * 3600 * 1000 ms
+- 1: ACCOUNT_UPGRADE_COST, [0, 100 000 000 000 000 000]  //the fee to apply to become a governor candidate, currently 9999_000_000 UNIT
 - 2: CREATE_ACCOUNT_FEE, [0, 100 000 000 000  000 000] //the fee to create an account, currently 100_000 UNIT
 - 3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte
 - 4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT
@@ -116,7 +116,7 @@ For more api detail, please refer to [Stabila HTTP API](../api/http.md)
 
 ## 3.1 Introduction
 
-STABILA uses account model. An account's identity is address, it needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transferred from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a super representative candidate, vote, etc. All STABILA's activities are based on account.
+STABILA uses account model. An account's identity is address, it needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transferred from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a governor candidate, vote, etc. All STABILA's activities are based on account.
 
 ## 3.2 How to Create an Account
 
@@ -141,7 +141,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 # 4. Network Node
 ## 4.1 Governor
 ### 4.1.1 Governor Introduction
-Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The super Representatives' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
+Governor(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
 ### 4.1.2 Governor Deployment
 [Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
 
@@ -183,9 +183,9 @@ STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equ
 Download fast deployment script, run the script according to different types of node.
 please refer to [Node Fast Deployment](https://github.com/stabilaprotocol/stabila-deployment#deployment-of-soliditynode-on-the-one-host)
 
-## 4.6 MainNet, TestNet, PrivateNet
+## 4.6 MainNet, PrivateNet
 
-MainNet, TestNet, PrivateNet all use the same code, only the node start configuration varies.
+MainNet, PrivateNet all use the same code, only the node start configuration varies.
 
 ### 4.6.1 MainNet
 
@@ -513,31 +513,6 @@ function assignAddress() public view {
 }
 ```
 If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).
-
-### 5.2.4 The Special Constants Differ from Ethereum
-
-**Currency**
-
-Like solidity supports ETH, STABILA VM supports stb and unit, 1 stb = 1000000 unit, case sensitive, only support lower case. stabila-studio supports stb and unit, remix does not support stb and unit.
-We recommend to use stabila-studio instead of remix to build STABILA smart contract.
-
-**Block**
-
-- block.blockhash (uint blockNumber) returns (bytes32): specified block hash, can only apply to the latest 256 blocks and current block excluded
-- block.coinbase (address): Governor address that produced the current block
-- block.difficulty (uint): current block difficulty, not recommended, set 0
-- block.gaslimit (uint): current block gas limit, not supported, set 0
-- block.number (uint): current block number
-- block.timestamp (uint): current block timestamp
-- gasleft() returns (uint256): remaining gas
-- msg.data (bytes): complete call data
-- msg.gas (uint): remaining gas - since 0.4.21, not recommended, replaced by gesleft()
-- msg.sender (address): message sender (current call)
-- msg.sig (bytes4): first 4 bytes of call data (function identifier)
-- msg.value (uint): the amount of UNIT send with message
-- now (uint): current block timestamp (block.timestamp)
-- tx.gasprice (uint): the gas price of transaction, not recommended, set 0
-- tx.origin (address): transaction initiator
 
 ## 5.3 Ucr Introduction
 Each command of smart contract consume system resource while running, we use 'Ucr' as the unit of the consumption of the resource.

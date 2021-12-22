@@ -2,7 +2,7 @@
 
 ## Introduction
 
-STABILA uses account model. An account's identity is address. It needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transfered from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a super representative candidate, vote, etc. All STABILA's activities are based on account.
+STABILA uses account model. An account's identity is address. It needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transfered from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a governor candidate, vote, etc. All STABILA's activities are based on account.
 
 ## How to Create an Account
 

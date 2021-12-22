@@ -172,30 +172,3 @@ function assignAddress() public view {
 }
 ```
 If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).
-
-### 4. The Special Constants Differ from Ethereum
-
-**Currency**
-
-Like solidity supports ETH, STABILA VM supports stb and unit, 1 stb = 1000000 unit, case sensitive, only support lower case.
-
-**Block**
-
-- block.blockhash (uint blockNumber) returns (bytes32): specified block hash, can only apply to the latest 256 blocks and current block excluded
-- block.coinbase (address): Governor address that produced the current block
-- block.difficulty (uint): current block difficulty, not recommended, set 0
-- block.gaslimit (uint): current block gas limit, not supported, set 0
-- block.number (uint): current block number
-- block.timestamp (uint): current block timestamp
-- gasleft() returns (uint256): remaining gas
-- msg.data (bytes): complete call data
-- msg.gas (uint): remaining gas - since 0.4.21, not recommended, replaced by gesleft()
-- msg.sender (address): message sender (current call)
-- msg.sig (bytes4): first 4 bytes of call data (function identifier)
-- msg.value (uint): the amount of UNIT send with message
-- now (uint): current block timestamp (block.timestamp)
-- tx.gasprice (uint): the gas price of transaction, not recommended, set 0
-- tx.origin (address): transaction initiator
-
-
-Each command of smart contract consume system resource while running, we use 'Ucr' as the unit of the consumption of the resource.

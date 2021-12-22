@@ -6,7 +6,7 @@
     **Since v3.5** In the past version, the transactions created in one account can only be signed by one private key, an account can only be managed by one private key. Since V3.5, an account can be managed by several private keys, and the transactions created in one account can be signed by several private keys.
 ## Concept
 
-There are three types of permission: owner、executive and active. Owner permission has the right to execute all the contracts. Executive permission is for SR. Active permission contains a set of contracts selected execution permissions.
+There are three types of permission: owner、executive and active. Owner permission has the right to execute all the contracts. Executive permission is for Governor. Active permission contains a set of contracts selected execution permissions.
 
 ### Protocol Definition
 
@@ -127,7 +127,7 @@ Owner permission's features:
 Super representatives can use this permission to manage block producing. Only executive account has this permission.
 
 Usage scenario example:
-A super representative deploys a executive node on cloud server. In order to keep the account on the cloud server safe, you can only give the block producing permission to the account you put on cloud server. Because this account only owns  block producing permission, no STB transfer permission, so even if the account on the cloud server is leaked, the STB will not be lost.
+A governor deploys a executive node on cloud server. In order to keep the account on the cloud server safe, you can only give the block producing permission to the account you put on cloud server. Because this account only owns  block producing permission, no STB transfer permission, so even if the account on the cloud server is leaked, the STB will not be lost.
 
 Executive node configuration:
 

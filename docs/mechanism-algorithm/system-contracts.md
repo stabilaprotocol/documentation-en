@@ -258,8 +258,8 @@
 
 - `owner_address`: The owner of the current account.
 - `new_contract`: the smart contract.
-- `call_token_value` : The amount of TRC-10 token to send to the contract when triggers.
-- `token_id` : The id of the TRC-10 token to be sent to the contract.
+- `call_token_value` : The amount of SRC-10 token to send to the contract when triggers.
+- `token_id` : The id of the SRC-10 token to be sent to the contract.
 
 ## TriggerSmartContract
 
@@ -276,8 +276,8 @@
 - `contract_address`: The contract address.
 - `call_value`: The amount of STB to send to the contract when triggers.
 - `data`: The parameters to trigger the contract.
-- `call_token_value` : The amount of TRC-10 token to send to the contract when triggers.
-- `token_id` : The id of the TRC-10 token to be sent to the contract.
+- `call_token_value` : The amount of SRC-10 token to send to the contract when triggers.
+- `token_id` : The id of the SRC-10 token to be sent to the contract.
 
 ## UpdateSettingContract
 

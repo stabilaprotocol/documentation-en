@@ -2,7 +2,7 @@
 
 ## Introduction
 
-STABILA shielded transaction uses zk-SNARK(Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) to implement a completely anonymous transaction. StabilaZ is the name of shielded trc10 token.
+STABILA shielded transaction uses zk-SNARK(Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) to implement a completely anonymous transaction. StabilaZ is the name of shielded src10 token.
 
 In shielded transaction of transfering StabilaZ, the sender and the receiver's address and transfer amount can both be completely confidential.
 

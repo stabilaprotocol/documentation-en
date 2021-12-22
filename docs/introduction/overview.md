@@ -72,7 +72,7 @@ The network parameters can be modified([min,max]):
 - 15: ALLOW_SAME_TOKEN_NAME, //to allow create a token with duplicate name, currently 1, means true
 - 16: ALLOW_DELEGATE_RESOURCE, //to enable the resource delegation
 - 17: TOTAL_UCR_LIMIT, //to modify the ucr limit
-- 18: ALLOW_SVM_TRANSFER_TRC10, //to allow smart contract to transfer TRC-10 token, currently 0, means false
+- 18: ALLOW_SVM_TRANSFER_SRC10, //to allow smart contract to transfer SRC-10 token, currently 0, means false
 
 Example (Using wallet-cli):
 ```text
@@ -816,10 +816,10 @@ If it contains library, before deploy the contract you need to deploy the librar
 The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
 When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.
 
-# 6. TRC-10 Token Introduction
-STABILA network support two types of token, one is TRC-20 token issued by smart contract, the other one is TRC-10 token issued by system contract.
+# 6. SRC-10 Token Introduction
+STABILA network support two types of token, one is SRC-20 token issued by smart contract, the other one is SRC-10 token issued by system contract.
 
-## 6.1 How to Issue a TRC-10 Token
+## 6.1 How to Issue a SRC-10 Token
 HTTP API:
 
 ```text
@@ -858,7 +858,7 @@ Return: Transaction object
 Note: The unit of 'stb_num' is UNIT
 ```
 
-## 6.2 Participate TRC-10 Token
+## 6.2 Participate SRC-10 Token
 HTTP API:
 
 ```text
@@ -879,7 +879,7 @@ Return: Transaction object
 Note: The unit of 'amount' is the smallest unit of the token
 ```
 
-## 6.3 TRC-10 Token Transfer
+## 6.3 SRC-10 Token Transfer
 HTTP API:
 
 ```text
@@ -924,15 +924,15 @@ Note: Due to the change of the total amount of the staked STB in the network and
 
 Transactions other than queries consume Bandwidth points.
 
-A special scenario: When transferring STB or TRC-10 tokens to an account that does not yet exist, this procedure creates the account prior to the transfer.
+A special scenario: When transferring STB or SRC-10 tokens to an account that does not yet exist, this procedure creates the account prior to the transfer.
 
 To create an account, a flat charge of 1 STB is required. If there are insufficient Bandwidth points obtained by STB staking, an additional 0.1 STB will be spent.
 
-Bandwidth points consumption sequence for TRC-10 transfer:
+Bandwidth points consumption sequence for SRC-10 transfer:
 
 1. Free Bandwidth points.
 
-2. TRC-10 issuer's Bandwidth points(if possible.)
+2. SRC-10 issuer's Bandwidth points(if possible.)
 
 3. Bandwidth points STB staking.
 
@@ -969,7 +969,7 @@ receiverAddress: recipient account address
 |Type|Fee|
 | :------|:------:|
 |Create a executive|9999 STB|
-|Issue a TRC-10 token|1024 STB|
+|Issue a SRC-10 token|1024 STB|
 |Create an account|1 STB|
 |Create an exchange|1024 STB|
 

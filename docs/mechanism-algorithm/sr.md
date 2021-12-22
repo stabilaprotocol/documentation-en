@@ -95,7 +95,7 @@ The network parameters can be modified([min,max]).
 |  14   | AllowUpdateAccountName <br> (To allow to change the account name) | 0 <br> {0, 1} |
 |  15   | AllowSameTokenName <br> (To allow the same token name) | 1 <br> {0, 1} |
 |  16   | AllowDelegateResource <br> (To allow resource delegation) | 1 <br> {0, 1} |
-|  18   | AllowSvmTransferTrc10 <br> (To allow the TRC-10 token transfer in smart contracts) | 1 <br> {0, 1} |
+|  18   | AllowSvmTransferSrc10 <br> (To allow the SRC-10 token transfer in smart contracts) | 1 <br> {0, 1} |
 |  19   | TotalUcrCurrentLimit <br> (To modify current total ucr limit) | 50000000000 |
 |  20   | AllowMultiSign <br> (To allow the initiation of multi-signature) | 1 <br> {0, 1} |
 |  21   | AllowAdaptiveUcr <br> (To allow adaptive adjustment for total Ucr) | 0 <br> {0, 1} |

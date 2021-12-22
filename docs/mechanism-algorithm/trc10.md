@@ -1,8 +1,8 @@
-# TRC-10
+# SRC-10
 
-STABILA network supports two types of tokens, one is TRC-20 token issued by smart contract, the other one is TRC-10 token issued by system contract.
+STABILA network supports two types of tokens, one is SRC-20 token issued by smart contract, the other one is SRC-10 token issued by system contract.
 
-## How to Issue a TRC-10 Token
+## How to Issue a SRC-10 Token
 
 HTTP API:
 
@@ -43,7 +43,7 @@ Return: Transaction object
 Note: The unit of 'stb_num' is UNIT
 ```
 
-## Participate TRC-10 Token Issuing
+## Participate SRC-10 Token Issuing
 
 HTTP API:
 
@@ -66,7 +66,7 @@ Return: Transaction object
 Note: The unit of 'amount' is the smallest unit of the token
 ```
 
-## TRC-10 Token Transfer
+## SRC-10 Token Transfer
 
 HTTP API:
 

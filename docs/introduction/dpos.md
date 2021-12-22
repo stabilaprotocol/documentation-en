@@ -104,7 +104,7 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 10. The exchange rate between Ucr and Unit
 
-11. The STB cost for building a TRC-10 token-based decentralized trading pair
+11. The STB cost for building a SRC-10 token-based decentralized trading pair
 
 12. The maximum CPU time allowed for a single transaction execution
 
@@ -116,7 +116,7 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 16. The upper limit for Ucr in STABILA blockchain
 
-17. Whether to allow TRC-10 asset transfer in smart contracts
+17. Whether to allow SRC-10 asset transfer in smart contracts
 
 18. Whether to allow adjustment to Ucr upper limit
 

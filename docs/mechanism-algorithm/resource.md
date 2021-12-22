@@ -32,11 +32,11 @@ There's another situation: When you transfer(STB or token) to an account that do
 
 To create an account, a flat charge of 1 STB is required. If there are insufficient Bandwidth points obtained by STB staking, an additional 0.1 STB will be spent.
 
-Bandwidth points consumption sequence for TRC-10 transfer:
+Bandwidth points consumption sequence for SRC-10 transfer:
 
 1. Free Bandwidth points.
 
-2. TRC-10 issuer's Bandwidth points(if possible.)
+2. SRC-10 issuer's Bandwidth points(if possible.)
 
 3. Bandwidth points STB staking.
 

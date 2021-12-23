@@ -6,7 +6,7 @@ Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equ
 
 ## Governor
 
-Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using [Stabilascan](https://stabilascan.org/representatives).
+Super Representative(abbr: SR) is the block producer in STABILA network, there are 21 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using [Stabilascan](https://stabilascan.org/representatives).
 
 Recommended Hardware Configuration:
 

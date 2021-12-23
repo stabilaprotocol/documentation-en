@@ -13,7 +13,7 @@ MainNet Configuration:
 
 ## 2.1 How to Become a Governor
 
- In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 27 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.
+ In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.
 
  To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.
 
@@ -36,10 +36,10 @@ The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 ## 2.3 Reward for Governors
 
 **Votes Reward:**
-Every 6 hours, the top 127 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
+Every 6 hours, the top 100 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
 
 **Block Producing Reward:**
-Every time after a governor produces a block, it will be reward 32 STB. The 27 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
+Every time after a governor produces a block, it will be reward 32 STB. The 21 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
 
 Every time after a governor produces a block, the 32 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.
 
@@ -47,20 +47,20 @@ Every time after a governor produces a block, the 32 STB block producing reward 
 
 ### 2.4.1 What is Committee
 
-Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 27 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the governors and will become valid in the next maintenance period.
+Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the governors and will become valid in the next maintenance period.
 
 ### 2.4.2 Create a Proposal
 
 Only the account of a governor can create a proposal.
 The network parameters can be modified([min,max]):
 
-- 0: MAINTENANCE_TIME_INTERVAL, [3 * 27* 1000, 24 * 3600 * 1000] //governor votes count time interval, currently 6 * 3600 * 1000 ms
+- 0: MAINTENANCE_TIME_INTERVAL, [3 * 21* 1000, 24 * 3600 * 1000] //governor votes count time interval, currently 6 * 3600 * 1000 ms
 - 1: ACCOUNT_UPGRADE_COST, [0, 100 000 000 000 000 000]  //the fee to apply to become a governor candidate, currently 9999_000_000 UNIT
 - 2: CREATE_ACCOUNT_FEE, [0, 100 000 000 000  000 000] //the fee to create an account, currently 100_000 UNIT
 - 3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte
 - 4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT
 - 5: EXECUTIVE_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT
-- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 127 Governor candidates, currently 115_200_000_000 UNIT
+- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 100 Governor candidates, currently 115_200_000_000 UNIT
 - 7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, //the fee to create an account in system, currently 1_000_000 UNIT
 - 8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, //the consumption of bandwidth or STB while creating an account, using together with #7
 - 9: ALLOW_CREATION_OF_CONTRACTS, //to enable the VM
@@ -141,7 +141,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 # 4. Network Node
 ## 4.1 Governor
 ### 4.1.1 Governor Introduction
-Governor(abbr: SR) is the block producer in STABILA network, there are 27 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
+Governor(abbr: SR) is the block producer in STABILA network, there are 21 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
 ### 4.1.2 Governor Deployment
 [Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
 

@@ -22,11 +22,11 @@ Let's see how it's realized in the context of STABILA:
 
 - Executives candidates: nodes eligible for becoming executives in STABILA.
 
-- Executives: nodes in STABILA qualified for book-keeping. They are usually called executives in DPoS consensus. In STABILA, there will be 27 executives, which are also called super nodes (or SR). Here, we will not distinguish between bookkeeper, executive, supernode, SR, etc.
+- Executives: nodes in STABILA qualified for book-keeping. They are usually called executives in DPoS consensus. In STABILA, there will be 21 executives, which are also called super nodes (or SR). Here, we will not distinguish between bookkeeper, executive, supernode, SR, etc.
 
 - Bookkeeping: the process of verifying transactions and recording them in a ledger. Because ledgers in STABILA are carried by blocks, the bookkeeping process is also called block generation. We will not distinguish between bookkeeping and block generation in the document.
 
-- Bookkeeping order: block generation order. The descending order of the 27 executives based on the number of votes they receive.
+- Bookkeeping order: block generation order. The descending order of the 21 executives based on the number of votes they receive.
 
 - Block time: STABILA sets block time to be 3 seconds. This means a block is generated every 3 seconds.
 
@@ -49,10 +49,10 @@ In STABILA, voting for executives is a special transaction. Nodes can vote for e
 
 3. Vote counting
 
-During each maintenance period, the votes for executives will be counted. The top 27 executives with the most votes will be the Governors for the next Epoch.
+During each maintenance period, the votes for executives will be counted. The top 21 executives with the most votes will be the Governors for the next Epoch.
 
 ## Block generation mechanism
-During each Epoch, the 27 executives will take turns to generate blocks according to the bookkeeping order. Each executive can only generate blocks when it is their turn. Executives package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The executive will sign the data of this block with his/her private key and fill in executive_signature, along with the address of the executive, the block height, and the time that block is generated, etc.
+During each Epoch, the 21 executives will take turns to generate blocks according to the bookkeeping order. Each executive can only generate blocks when it is their turn. Executives package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The executive will sign the data of this block with his/her private key and fill in executive_signature, along with the address of the executive, the block height, and the time that block is generated, etc.
 
 Through storing the hash of the previous block, blocks are logically connected. Eventually, they form a chain. A typical blockchain structure is shown in the following picture:
 
@@ -72,14 +72,14 @@ As mentioned above, the basis for the blockchain system to operate normally is t
 
 **The confirmed block principle**
 
-The newly produced blocks are in unconfirmed state, and only those blocks that are "approved" by more than 70% (i.e. 27 * 70% = 18, rounded down) of the 27 Executives are considered to be irreversible blocks, commonly referred to as solidified blocks, and the transactions contained in the solidified blocks have been confirmed by the entire blockchain network.  The way to "approve" the unconfirmed state block is that the Executive producing subsequent blocks after it, as shown in Figure d, the Executive C produces block 103, the Executive E produces 104' on the basis of block 103, the block 105', 106', and 107' produced respectively by the Executive G, A and B, are also subsequent blocks of the 103rd block, which means these four blocks approve the 103rd block. It can be seen that when the block of height 121 is produced, the 103rd block becomes a solidified block, since by this time the 103rd block has 18 subsequent blocks, and the point to be emphasized here is that the Executives producing these 18 blocks must be different from each other and from the Executives producing the 103rd block.
+The newly produced blocks are in unconfirmed state, and only those blocks that are "approved" by more than 70% (i.e. 21 * 70% = 14, rounded down) of the 21 Executives are considered to be irreversible blocks, commonly referred to as solidified blocks, and the transactions contained in the solidified blocks have been confirmed by the entire blockchain network.  The way to "approve" the unconfirmed state block is that the Executive producing subsequent blocks after it, as shown in Figure d, the Executive C produces block 103, the Executive E produces 104' on the basis of block 103, the block 105', 106', and 107' produced respectively by the Executive G, A and B, are also subsequent blocks of the 103rd block, which means these four blocks approve the 103rd block. It can be seen that when the block of height 121 is produced, the 103rd block becomes a solidified block, since by this time the 103rd block has 18 subsequent blocks, and the point to be emphasized here is that the Executives producing these 18 blocks must be different from each other and from the Executives producing the 103rd block.
 
 **The longest chain principle**
 
 When a fork occurs, an honest executive would always choose to produce blocks on the longest chain.
 
 ## Incentive model
-To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
+To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 100th executives with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.
 
 ## Proposal-based parameter adjustment
 An important characteristic of DPoS is that any parameter adjustment can be proposed on the chain, and executives will decide whether to approve the proposal by starting a vote. The advantage of this method is that it avoids hard fork upgrades when adding new features. Currently, STABILA supports the following parameter adjustments:
@@ -96,7 +96,7 @@ An important characteristic of DPoS is that any parameter adjustment can be prop
 
 6. The rewards for producing each block
 
-7. The total amount of STB that is proportionately awarded to the first 127th executives with the most votes
+7. The total amount of STB that is proportionately awarded to the first 100th executives with the most votes
 
 8. The STB cost of account activation through system contract
 

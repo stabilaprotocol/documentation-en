@@ -54,4 +54,4 @@ The creation and operation of a smart contract consume CPU resources. It takes t
 
 **Super Representative(SR)**
 
-The current block producing Top 27 nodes.
+The current block producing Top 21 nodes.

@@ -157,7 +157,7 @@ CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 20T
 ### 4.2.1 FullNode Introduction
 FullNode has the complete block chain data, can update data in real time. It can broadcast the transactions and provide api service.
 ### 4.2.2 FullNode Deployment
-please refer to [STABILA-Deployment](https://github.com/stabilaprotocol/stabila-deployment)
+For Docker installation and deployment please refer to [STABILA-Deployment](https://github.com/stabilaprotocol/stabila-deployment)
 ### 4.2.3 Recommended Hardware Configuration
 Minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
@@ -168,7 +168,7 @@ CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 20T
 ### 4.3.1 SolidityNode Introduction
 SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provie api service.
 ### 4.3.2 SolidityNode Deployment
-Please refer to [STABILA-Deployment](https://github.com/stabilaprotocol/stabila-deployment)
+For Docker installation and deployment please refer to [STABILA-Deployment](https://github.com/stabilaprotocol/stabila-deployment)
 ### 4.3.3 Recommended Hardware Configuration
 Minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T

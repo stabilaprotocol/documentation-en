@@ -208,10 +208,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -220,15 +216,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -248,10 +236,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -318,25 +302,25 @@
               
                 <h1 id="account-model">Account Model<a class="headerlink" href="#account-model" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>STABILA uses account model. An account's identity is address. It needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transfered from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a super representative candidate, vote, etc. All STABILA's activities are based on account.</p>
+<p>STABILA uses account model. An account's identity is address. It needs private key signature to operate an account. An account has many attributes, like STB balance, tokens balance, bandwidth, etc. STB and tokens can be transfered from account to account and it costs bandwidth. An account can also issue a smart contract, apply to become a governor candidate, vote, etc. All STABILA's activities are based on account.</p>
 <h2 id="how-to-create-an-account">How to Create an Account<a class="headerlink" href="#how-to-create-an-account" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Use a wallet to generate the address and private key. To active the account, you need to transfer STB or transfer token to the new created account. <a href="https://stabilascan.org/#/wallet/new">Generate an account</a></li>
+<li>Use a wallet to generate the address and private key. To activate the account, you need to transfer STB or transfer token to the new created account. <a href="https://stabilascan.org/signup">Generate an account</a></li>
 <li>Use an account already existed in STABILA network to create an account</li>
 </ol>
 <p>If you have enough staked BandWidth Points, creating an account only consume your staked BandWidth Points, otherwise, it burns 0.1 STB.</p>
 <h2 id="key-pair-generation">Key-pair Generation<a class="headerlink" href="#key-pair-generation" title="Permanent link">&para;</a></h2>
-<p>Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random bumber, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then caculate P = d * G as the public key, G is the elliptic curve base point.</p>
+<p>Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random number, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then calculate P = d * G as the public key, G is the elliptic curve base point.</p>
 <h2 id="address-format">Address Format<a class="headerlink" href="#address-format" title="Permanent link">&para;</a></h2>
 <p>Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x41 in front of it, then the address come out. Do basecheck to address, here is the final address. All addresses start with 'T'.</p>
-<p>basecheck process: first do sha256 caculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.</p>
+<p>basecheck process: first do sha256 calculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.</p>
 <p>character map:
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"</p>
 <h2 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h2>
 <h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Get the rawdata of the transaction, then transfer it to <code>byte[]</code></li>
-<li>Do sha256 calculation to the rawdata</li>
+<li>Get the raw data of the transaction, then transfer it to <code>byte[]</code></li>
+<li>Do sha256 calculation to the raw data</li>
 <li>Use the private key to sign the result gained from step 2</li>
 <li>Add the signature back into the transaction</li>
 </ol>

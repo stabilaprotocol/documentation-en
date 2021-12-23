@@ -188,10 +188,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../resources/">Resources</a>
                 </li>
                 <li class=" current">
@@ -203,13 +199,9 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#getting-started-as-stabila-community-developers">Getting Started as STABILA Community Developers</a></li>
+            <li><a class="toctree-l4" href="#contribution-guidelines">Contribution guidelines</a></li>
         
-            <li><a class="toctree-l4" href="#submitting-a-tip">Submitting a TIP</a></li>
-        
-            <li><a class="toctree-l4" href="#coding-java-stabila">Coding java-stabila</a></li>
-        
-            <li><a class="toctree-l4" href="#reporting-vulnerabilities">Reporting Vulnerabilities</a></li>
+            <li><a class="toctree-l4" href="#community-developers-incentives-programme">Community Developers Incentives Programme</a></li>
         
             <li><a class="toctree-l4" href="#writing-documentation">Writing Documentation</a></li>
         
@@ -220,15 +212,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -248,10 +232,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -317,39 +297,80 @@
             <div class="section">
               
                 <h1 id="how-to-contribute">How to contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h1>
-<h2 id="getting-started-as-stabila-community-developers">Getting Started as STABILA Community Developers<a class="headerlink" href="#getting-started-as-stabila-community-developers" title="Permanent link">&para;</a></h2>
-<p>STABILA is a global, open-source platform for decentralized applications.</p>
-<p>Thank you for considering to help out with the source code! We welcome contributions from anyone on the internet, and are grateful for even the smallest of fixes!</p>
-<p>GitHub is used to track issues and contribute code, suggestions, feature requests or documentation.</p>
-<p>If you'd like to contribute to STABILA, please fork, fix, commit and send a pull request (PR) for the maintainers to review and merge into the main base. If you wish to submit more complex changes though, please check up with the core developers first on our channel to ensure those changes are in line with the general philosophy of the project and/or get some early feedback which can make both your efforts much lighter as well as our review and merge procedures quick and simple.</p>
-<p>Your PR will be reviewed according to the Code Review Guidelines.</p>
-<p>We encourage a PR early approach, meaning you create the PR the earliest even without the fix/feature. This will let core developers and other volunteers know you picked up an issue. These early PRs should indicate 'in progress' status.</p>
-<p><strong> Developer Community </strong></p>
+<p>java-stabila is an open source project.</p>
+<p>It is the work of contributors. We appreciate your help!</p>
+<p>Here are instructions to get you started. They are not perfect, so
+please let us know if anything feels wrong or incomplete.</p>
+<h2 id="contribution-guidelines">Contribution guidelines<a class="headerlink" href="#contribution-guidelines" title="Permanent link">&para;</a></h2>
+<p>First of all, java-stabila follows GitFlow, the branches description in the java-stabila project are listed as follow:</p>
 <ul>
-<li><a href="https://gitter.im/stabilaprotocol/allcoredev">java-stabila gitter channel</a>
-This channel is for STABILA network issues.</li>
-<li><a href="https://gitter.im/stabilaprotocol/wallet-cli">wallet-cli gitter channel</a>
-This channel is for the client of STABILA network issues.</li>
-<li><a href="https://gitter.im/stabilaprotocol/documentation">documentation gitter channel</a>
-This channel is for STABILA docunentation issues.</li>
-<li><a href="https://gitter.im/stabilaprotocol/TIPs">tips gitter channel</a>
-This channel is for STABILA improment proposal issues.</li>
+<li>
+<p><code>master</code> branch:
+  This branch contains the latest code released to the production environment. It can only be merged, and can not be modified directly in this branch.</p>
+</li>
+<li>
+<p><code>develop</code> branch:
+  This branch is the main development branch. It contains the complete code that is going to release. It can only be merged, and can not be modified directly in this branch.</p>
+</li>
+<li>
+<p><code>feature</code> branch:
+  This branch is used to develop new features. It is created based on <code>develop</code> branch. Once the development is finished, it should be merged into <code>develop</code> branch, and then delete the branch.</p>
+</li>
+<li>
+<p><code>release</code> branch:
+  This is the branch that is going to be released. It is created based on <code>develop</code> branch. In this branch, small fix and modification of final version of metadata is allowed. When the code is released, this branch should be merged into <code>master</code> branch (tag needed) and <code>develop</code> branch. The final test before release uses this branch.</p>
+</li>
+<li>
+<p><code>hotfix</code> branch:
+  This branch is used to fix a bug when an online bug is found. It is created based on <code>master</code> branch. When bug fix is done, it should be merged into <code>master</code> branch(as a new release) and <code>develop</code> and then delete the branch. branch.</p>
+</li>
 </ul>
-<p>Check <a href="../incentives/">STABILA Incentives Policy</a></p>
-<h2 id="submitting-a-tip">Submitting a TIP<a class="headerlink" href="#submitting-a-tip" title="Permanent link">&para;</a></h2>
-<p>Please check <a href="../tips/">Submitting a TIP</a></p>
-<h2 id="coding-java-stabila">Coding java-stabila<a class="headerlink" href="#coding-java-stabila" title="Permanent link">&para;</a></h2>
-<p>Please check <a href="../java-stabila/">Coding java-stabila</a></p>
-<h2 id="reporting-vulnerabilities">Reporting Vulnerabilities<a class="headerlink" href="#reporting-vulnerabilities" title="Permanent link">&para;</a></h2>
-<p>We think highly of all the security bugs in the STABILA project seriously. Thank you for improving the security of STABILA project. We really appreciate your efforts and responsible disclosure. We will make every effort to acknowledge your contributions.</p>
-<p>Report security bugs at <a href="https://hackerone.com/stabilafoundation">https://hackerone.com/stabilafoundation</a></p>
-<p>A developer from the core devs will follow up the issue. Firstly, we will confirm the bug and determine the affected versions. Secondly, we will try to find any potential similar bugs. Then we will do the fix and prepare for the release.</p>
-<p>After the initial reply to your report is sent, we will try to keep you informed on the progress towards the fix. The core devs may ask you for additional information or guidance.</p>
-<p>If you have suggestions on how this process could be improved, please submit a pull request.</p>
+<h3 id="pull-requests">Pull requests<a class="headerlink" href="#pull-requests" title="Permanent link">&para;</a></h3>
+<p>If you'd like to contribute to java-stabila, you should follow the steps below:
+- <strong>Fork</strong> a repository from <strong>stabilaprotocol/java-stabila</strong> allows you to freely experiment with changes without affecting the original project
+- <strong>Fix</strong> some code and <strong>Commit</strong> your modified code.
+- <strong>Send</strong> a Pull Request（PR）for the maintainers to review and merge into the main code base.
+  <em>notice</em>：When you create a new PR，please choose the <strong>stabilaprotocol/java-stabila</strong> as the base repository and choose <strong>your fork/java-stabila</strong> as the head repository.
+  And you must choose <strong>develop</strong> as the base repository branch, which means we will merge the PR into our <strong>develop</strong> branch when reviewed and approved.
+  Additionally, if you are writing a new feature, please ensure you add appropriate test cases under <code>/src/test</code>.</p>
+<p>After the PR is checked by our Sonar check procedure and Travis CI continuous-integration check procedure automaticly,
+we maintainers will review the code changed and give some advices for modifying if necessary.Once approved,
+we will close the PR and merge into the protocol/java-stabila's develop branch.</p>
+<p>We are always happy to receive pull requests, and do our best to
+review them as fast as possible. Not sure if that typo is worth a pull
+request? Do it! We would appreciate it.</p>
+<p>If your pull request is not accepted on the first try, don't be
+discouraged as it can be a possible oversight. Please explain your code as
+detailed as possible to make it easier for us to understand.</p>
+<p>Please make sure your contributions adhere to our coding guidelines:</p>
+<ul>
+<li>Code must be documented adhering to the <a href="https://google.github.io/styleguide/javaguide.html">Google Style</a></li>
+<li>Code must pass Sonar detection.</li>
+<li>Pull requests need to be based on and opened against the develop branch.</li>
+<li>Commit messages should be started with verb, and the first letter should be a lowercase.The length of commit message
+  must be limited in 50 words.</li>
+</ul>
+<h3 id="create-issues">Create issues<a class="headerlink" href="#create-issues" title="Permanent link">&para;</a></h3>
+<p>Any significant improvement should be documented as <a href="https://github.com/stabilaprotocol/java-stabila/issues">a GitHub
+issue</a> before anyone
+starts working on it.</p>
+<p>When filing an issue, make sure to answer these three questions:</p>
+<ul>
+<li>What did you do?</li>
+<li>What did you expect to see?</li>
+<li>What did you see instead?</li>
+</ul>
+<h3 id="please-check-existing-issues-and-docs-first">Please check existing issues and docs first!<a class="headerlink" href="#please-check-existing-issues-and-docs-first" title="Permanent link">&para;</a></h3>
+<p>Please take a moment to check that your bug report or improvement proposal
+doesn't already exist. If it does, please add a quick "+1" or "I have this problem too".
+This will help prioritize the most common problems and requests.</p>
+<h2 id="community-developers-incentives-programme">Community Developers Incentives Programme<a class="headerlink" href="#community-developers-incentives-programme" title="Permanent link">&para;</a></h2>
+<p>Bonus point applies in STABILA incentives programme. Developers can earn points by contributing to STABILA.</p>
+<p>You can find your points ranking at  <a href="https://stabilascan.org/#/developersreward">Stabilascan</a>.</p>
+<p>The Top 5 scored developers (for every month, quarter and year) can win a cash reward.</p>
 <h2 id="writing-documentation">Writing Documentation<a class="headerlink" href="#writing-documentation" title="Permanent link">&para;</a></h2>
-<p>There are two documentation repositories:
-<a href="https://github.com/stabilaprotocol/documentation-en">documentation-en</a> is the English version.
-<a href="https://github.com/stabilaprotocol/documentation-zh">documentation-zh</a> is the Chinese version.</p>
+<p>Documentation repository located at:
+<a href="https://github.com/stabilaprotocol/documentation-en">documentation-en</a> is the English version.</p>
 <p>We use MkDocs to build documentation project. Documentation source files are written in Markdown, and configured with a single YAML configuration file.</p>
 <p>You can edit or add a documentation file in /docs/ folder.</p>
               
@@ -359,7 +380,7 @@ This channel is for STABILA improment proposal issues.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../incentives/" class="btn btn-neutral float-right" title="Incentive Policy">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../java-stabila/" class="btn btn-neutral float-right" title="Java-Stabila">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../resources/" class="btn btn-neutral" title="Resources"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -393,7 +414,7 @@ This channel is for STABILA improment proposal issues.</li>
         <span><a href="../resources/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../incentives/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../java-stabila/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

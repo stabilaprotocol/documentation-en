@@ -197,8 +197,6 @@
         
             <li><a class="toctree-l4" href="#event-subscribe-plugin-deployment">Event Subscribe plugin Deployment</a></li>
         
-            <li><a class="toctree-l4" href="#event-query-service-deployment">Event query service deployment</a></li>
-        
             <li><a class="toctree-l4" href="#advanced-configurations">Advanced Configurations</a></li>
         
         </ul>
@@ -216,10 +214,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../resources/">Resources</a>
                 </li>
                 <li class="">
@@ -228,15 +222,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -256,10 +242,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -357,9 +339,9 @@ New developers should deploy FullNode only.</p>
 
 
 <p>2.&nbsp;Copy the FullNode.jar and SolidityNode.jar along with configuration files into the respective directories</p>
-<div class="codehilite"><pre><span></span>download your needed configuration file from https://github.com/stabilaprotocol/StabilaDeployment.
+<div class="codehilite"><pre><span></span>download your needed configuration file from https://github.com/stabilaprotocol/stabila-deployment.
 
-main_net_config.conf is the configuration for MainNet, and test_net_config.conf is the configuration for TestNet.
+main_net_config.conf is the configuration for MainNet.
 
 please rename the configuration file to `config.conf` and use this config.conf to start FullNode and SoliditNode.
 
@@ -370,7 +352,7 @@ cp build/libs/SolidityNode.jar ../soliditynode
 
 
 <p>3.&nbsp;You can now run your FullNode using the following command</p>
-<div class="codehilite"><pre><span></span>java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+<div class="codehilite"><pre><span></span>java -jar FullNode.jar -c config.conf // make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
 </pre></div>
 
 
@@ -383,7 +365,7 @@ cp build/libs/SolidityNode.jar ../soliditynode
 
 
 <p>5.&nbsp;You can now run your SolidityNode using the following command：</p>
-<div class="codehilite"><pre><span></span>java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/StabilaDeployment
+<div class="codehilite"><pre><span></span>java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
 </pre></div>
 
 
@@ -449,7 +431,7 @@ done
 Just Support FullNode and SolidityNode.</p>
 <h3>Download and run script</h3>
 
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
+<div class="codehilite"><pre><span></span>wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_stabila.sh -O deploy_stabila.sh
 </pre></div>
 
 
@@ -479,7 +461,7 @@ bash deploy_stabila.sh
 <h3> Deployment of SolidityNode on the one host </h3>
 
 <div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
-<span class="c1"># User can self-configure the IP and Port of GRPC service in the turst-node field of SolidityNode. trust-node is the fullnode you just deploy.</span>
+<span class="c1"># User can self-configure the IP and Port of GRPC service in the trust-node field of SolidityNode. trust-node is the fullnode you just deploy.</span>
 bash deploy_stabila.sh --app SolidityNode --trust-node &lt;grpc-ip:grpc-port&gt;
 </pre></div>
 
@@ -503,7 +485,7 @@ bash deploy_stabila.sh --app SolidityNode --rpc-port <span class="m">50041</span
 Install Golang, Protoc, and set $GOPATH environment variable according to your requirement.</p>
 <h3> Download and run script </h3>
 
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
+<div class="codehilite"><pre><span></span>wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_grpc_gateway.sh -O deploy_grpc_gateway.sh
 </pre></div>
 
 
@@ -757,7 +739,7 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 <li>db.createUser({user:"stabila",pwd:"123456",roles:[{role:"dbOwner",db:"eventlog"}]})</li>
 </ul>
 <blockquote>
-<p>database: eventlog, username:stabila, password: 123456</p>
+<p>database: eventlog, username: stabila, password: 123456</p>
 </blockquote>
 <p><strong> Firewall rule: </strong>
 - iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 27017 -j ACCEPT</p>
@@ -776,37 +758,6 @@ Create data, log subfolder in mongodb directory,  and add their absolute path to
 <p><strong> Set database index to speedup query: </strong></p>
 <p>cd /{projectPath}
 sh insertIndex.sh</p>
-<h2 id="event-query-service-deployment">Event query service deployment<a class="headerlink" href="#event-query-service-deployment" title="Permanent link">&para;</a></h2>
-<h3>Download sourcecode</h3>
-
-<p>Download sourcecode</p>
-<p>git clone https://github.com/stabilaprotocol/stabila-eventquery.git
-cd stabilaeventquery</p>
-<h3> Build </h3>
-
-<ul>
-<li>mvn package</li>
-</ul>
-<p>After the build command is executed successfully, stabilaeventquery jar to release will be generated under stabilaeventquery/target directory.</p>
-<p>Configuration of mongodb "config.conf" should be created for storing mongodb configuration, such as database name, username, password, and so on. We provided an example in sourcecode, which is " stabilaeventquery/config.conf ". Replace with your specified configuration if needed.</p>
-<p><strong>Note</strong>:</p>
-<p>Make sure the relative path of config.conf and stabilaeventquery jar. The config.conf 's path is the parent of stabilaeventquery jar.</p>
-<ul>
-<li>mongo.host=IP</li>
-<li>mongo.port=27017</li>
-<li>mongo.dbname=eventlog</li>
-<li>mongo.username=stabila</li>
-<li>mongo.password=123456</li>
-<li>mongo.connectionsPerHost=8</li>
-<li>mongo.threadsAllowedToBlockForConnectionMultiplier=4</li>
-</ul>
-<p>Any configuration could be modified except <strong>mongo.dbname</strong>, "<strong>eventlog</strong>" is the specified database name for event subscribe.</p>
-<h3> Run </h3>
-
-<ul>
-<li>stabilaeventquery/deploy.sh is used to deploy stabilaeventquery</li>
-<li>stabilaeventquery/insertIndex.sh is used to setup mongodb index to speedup query.</li>
-</ul>
 <h2 id="advanced-configurations">Advanced Configurations<a class="headerlink" href="#advanced-configurations" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="../advanced-configuration/">Advanced Configuration</a></p>
               

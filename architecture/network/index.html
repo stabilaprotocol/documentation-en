@@ -137,13 +137,13 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#supernode">SuperNode</a></li>
+            <li><a class="toctree-l4" href="#governor">Governor</a></li>
         
             <li><a class="toctree-l4" href="#fullnode">FullNode</a></li>
         
             <li><a class="toctree-l4" href="#soliditynode">SolidityNode</a></li>
         
-            <li><a class="toctree-l4" href="#mainnet-testnet-and-privatenet">MainNet, TestNet and PrivateNet</a></li>
+            <li><a class="toctree-l4" href="#mainnet-and-privatenet">MainNet and PrivateNet</a></li>
         
         </ul>
     
@@ -206,10 +206,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -218,15 +214,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -246,10 +234,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -315,10 +299,10 @@
             <div class="section">
               
                 <h1 id="stabila-network-instructure">Stabila Network Instructure<a class="headerlink" href="#stabila-network-instructure" title="Permanent link">&para;</a></h1>
-<p>Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: SuperNode, FullNode, SolidityNode. SuperNode produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.</p>
+<p>Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.</p>
 <p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png" /></p>
-<h2 id="supernode">SuperNode<a class="headerlink" href="#supernode" title="Permanent link">&para;</a></h2>
-<p>Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using <a href="https://stabilascan.org/#/sr/representatives">Stabilascan</a>.</p>
+<h2 id="governor">Governor<a class="headerlink" href="#governor" title="Permanent link">&para;</a></h2>
+<p>Super Representative(abbr: SR) is the block producer in STABILA network, there are 27 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using <a href="https://stabilascan.org/representatives">Stabilascan</a>.</p>
 <p>Recommended Hardware Configuration:</p>
 <div class="codehilite"><pre><span></span>minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
@@ -338,7 +322,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 
 
 <h2 id="soliditynode">SolidityNode<a class="headerlink" href="#soliditynode" title="Permanent link">&para;</a></h2>
-<p>SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provie api service.</p>
+<p>SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provides api service.</p>
 <blockquote>
 <p>NOTE: SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode.
 New developers should deploy FullNode only.</p>
@@ -351,21 +335,19 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 </pre></div>
 
 
-<h2 id="mainnet-testnet-and-privatenet">MainNet, TestNet and PrivateNet<a class="headerlink" href="#mainnet-testnet-and-privatenet" title="Permanent link">&para;</a></h2>
-<p>MainNet, TestNet, PrivateNet all use the same code, only the node start configuration varies.</p>
+<h2 id="mainnet-and-privatenet">MainNet and PrivateNet<a class="headerlink" href="#mainnet-and-privatenet" title="Permanent link">&para;</a></h2>
+<p>MainNet and PrivateNet all use the same code, only the node start configuration varies.</p>
 <h3 id="mainnet">MainNet<a class="headerlink" href="#mainnet" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf">MainNet configuration: main_net_config.conf</a></p>
-<h3 id="testnet">TestNet<a class="headerlink" href="#testnet" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/test_net_config.conf">TestNet configuration: test_net_config.conf</a></p>
 <h3 id="privatenet">PrivateNet<a class="headerlink" href="#privatenet" title="Permanent link">&para;</a></h3>
 <h4 id="preconditions">Preconditions<a class="headerlink" href="#preconditions" title="Permanent link">&para;</a></h4>
 <ul>
-<li>at least two accounts <a href="https://stabilascan.org/#/wallet/new">generate an account</a></li>
-<li>at least one SuperNode to produce blocks</li>
+<li>at least two accounts <a href="https://stabilascan.org/signup">generate an account</a></li>
+<li>at least one Governor to produce blocks</li>
 <li>deploy serval FullNodes to synchronize blocks and broadcast transactions</li>
-<li>SuperNode and FullNode comprise the private network</li>
+<li>Governor and FullNode comprise the private network</li>
 </ul>
-<h4 id="deploy-the-supernode">Deploy the SuperNode<a class="headerlink" href="#deploy-the-supernode" title="Permanent link">&para;</a></h4>
+<h4 id="deploy-the-governor">Deploy the Governor<a class="headerlink" href="#deploy-the-governor" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>download private_net_config.conf</p>
@@ -423,7 +405,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <ol>
 <li>set <code>seed.node.ip.list</code> to SR's ip and port</li>
 <li>set <code>needSyncCheck</code> true</li>
-<li>modify <code>listen.port</code>, <code>http.port</code> and <code>rpc.port</code> if SuperNode and FullNode are deployed on the same server.</li>
+<li>modify <code>listen.port</code>, <code>http.port</code> and <code>rpc.port</code> if Governor and FullNode are deployed on the same server.</li>
 <li>do not need a private key in <code>localexecutive</code></li>
 </ol>
 <p>The parameters in configuration file that need to modify:</p>

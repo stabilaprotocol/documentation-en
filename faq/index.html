@@ -188,10 +188,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -200,15 +196,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -228,10 +216,6 @@
                 <li class="">
                     
     <a class="" href="../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -265,8 +249,6 @@
             <li><a class="toctree-l3" href="#deployment">Deployment</a></li>
         
             <li><a class="toctree-l3" href="#running-a-node">Running a Node</a></li>
-        
-            <li><a class="toctree-l3" href="#test-net">Test Net</a></li>
         
             <li><a class="toctree-l3" href="#smart-contract">Smart Contract</a></li>
         
@@ -334,10 +316,10 @@
 <li><a href="#how-can-i-generate-an-account">How can I generate an account?</a></li>
 <li><a href="#what-is-the-network-flow">What is the network flow?</a></li>
 <li><a href="#after-you-create-a-token-how-to-change-its-status-from-not-started-yet-to-participate">After you create a token, how to change its status from 'not started yet' to 'participate'?</a></li>
-<li><a href="#is-there-a-place-to-see-if-all-the-supernodes-are-producing-blocks">Is there a place to see if all the SuperNodes are producing blocks?</a></li>
+<li><a href="#is-there-a-place-to-see-if-all-the-governors-are-producing-blocks">Is there a place to see if all the Governors are producing blocks?</a></li>
 <li><a href="#is-the-block-producing-time-interval-always-remain-the-same">Is the block producing time interval always remain the same?</a></li>
 <li><a href="#will-the-block-producing-reward-reduce-half">Will the block producing reward reduce half?</a></li>
-<li><a href="#if-one-of-the-top-27-supernodes-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 27 SuperNodes goes wrong, will it be removed from the SRs list?</a></li>
+<li><a href="#if-one-of-the-top-27-governors-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 27 Governors goes wrong, will it be removed from the SRs list?</a></li>
 <li><a href="#is-there-a-threshold-to-become-a-sr">Is there a threshold to become a SR?</a></li>
 <li><a href="#27-srs-shares-the-block-producing-reward-equally-or-by-their-computing-power">27 SRs shares the block producing reward equally or by their computing power?</a></li>
 <li><a href="#will-there-be-an-over-50-computing-power-issue-in-stabila-network">Will there be an over 50% computing power issue in STABILA network?</a></li>
@@ -345,7 +327,6 @@
 <li><a href="#how-long-does-srs-power-last">How long does SR's power last?</a></li>
 <li><a href="#what-is-the-proof-of-a-transaction">What is the proof of a transaction？</a></li>
 <li><a href="#why-i-cant-stake-stb-longer-than-3-days">Why I Can't stake STB longer than 3 days</a></li>
-<li><a href="#how-to-watch-my-account-for-transactions">How to watch my account for transactions</a></li>
 <li><a href="#how-to-calculate-the-transaction-fee">How to calculate the transaction fee?</a></li>
 <li><a href="#how-to-calculate-the-number-of-bytes-of-transactions">How to calculate the number of bytes of transactions?</a></li>
 <li><a href="#how-to-reset-my-vote">How to reset my vote?</a></li>
@@ -354,8 +335,6 @@
 <li><a href="#node-configuration">Node Configuration</a><ul>
 <li><a href="#if-i-replace-the-field-value-of-genesisblockexecutives-with-the-address-generated-in-stabilascan-in-configconf-do-i-need-to-delete-other-addresses-do-i-need-to-delete-the-field-url-and-votecount">If I replace the field value of 'genesis.block.executives' with the address generated in Stabilascan in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?</a></li>
 <li><a href="#how-can-i-specify-the-data-storage-path-when-start-a-node">How can I specify the data storage path when start a node?</a></li>
-<li><a href="#is-there-any-config-file-option-which-i-can-use-for-sending-logs-to-stdout">Is there any config file option, which I can use for sending logs to stdout?</a></li>
-<li><a href="#how-to-change-log-level">How to change log level</a></li>
 <li><a href="#how-can-i-get-asset-from-private-net">How can I get asset from private net?</a></li>
 </ul>
 </li>
@@ -365,29 +344,22 @@
 </li>
 <li><a href="#deployment">Deployment</a><ul>
 <li><a href="#how-to-test-if-the-deployment-works-normally-if-there-is-a-test-api-or-command-like-redis-get-ping-return-pong">How to test if the deployment works normally, if there is a test api or command like redis: get ping return pong?</a></li>
-<li><a href="#when-to-deploy-private-environment-whats-the-relationship-of-supernode-and-fullnode-should-i-firstly-deploy-a-supernode-and-then-deploy-a-fullnode">When to deploy private environment, what's the relationship of SuperNode and FullNode? Should I firstly deploy a SuperNode, and then deploy a FullNode？</a></li>
-<li><a href="#how-to-know-wether-my-test-supernode-is-running-or-not">How to know wether my test SuperNode is running or not?</a></li>
+<li><a href="#when-to-deploy-private-environment-whats-the-relationship-of-governor-and-fullnode-should-i-firstly-deploy-a-governor-and-then-deploy-a-fullnode">When to deploy private environment, what's the relationship of Governor and FullNode? Should I firstly deploy a Governor, and then deploy a FullNode？</a></li>
+<li><a href="#how-to-know-whether-my-test-governor-is-running-or-not">How to know whether my test Governor is running or not?</a></li>
 <li><a href="#can-soliditynode-and-fullnode-be-deployed-in-one-machine-will-they-share-the-data">Can SolidityNode and FullNode be deployed in one machine? Will they share the data?</a></li>
 </ul>
 </li>
 <li><a href="#running-a-node">Running a Node</a><ul>
 <li><a href="#as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment">As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？</a></li>
 <li><a href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr">Under private environment, should I submit application information to STABILA to become a SR?</a></li>
-<li><a href="#at-the-worst-scenario-if-the-supernode-can-not-be-connected-the-maximum-time-it-allows-the-supernode-to-recover-its-service">At the worst scenario, if the SuperNode can not be connected, the maximum time it allows the SuperNode to recover its service？</a></li>
+<li><a href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？</a></li>
 <li><a href="#does-soliditynode-sync-data-from-fullnode">Does SolidityNode sync data from FullNode?</a></li>
 <li><a href="#does-a-node-have-wallet-function">Does a node have wallet function?</a></li>
 <li><a href="#why-does-the-block-process-time-take-so-long">Why does the block process time take so long?</a></li>
 </ul>
 </li>
-<li><a href="#test-net">Test Net</a><ul>
-<li><a href="#we-want-to-test-our-supernodes-performance-under-test-environment-do-we-need-to-be-voted-to-become-a-sr-under-test-environment">We want to test our SuperNode's performance under test environment, do we need to be voted to become a SR under test environment?</a></li>
-<li><a href="#what-is-the-defferent-between-shasta-and-test-net">What is the defferent between Shasta and Test Net?</a></li>
-<li><a href="#where-can-i-get-the-test-stb">Where can I get the test STB?</a></li>
-</ul>
-</li>
 <li><a href="#smart-contract">Smart Contract</a></li>
 <li><a href="#rpc-client-and-api">RPC Client and API</a><ul>
-<li><a href="#how-to-sign-transaction-from-offline-node-and-broadcast-to-online-node">How to sign transaction from offline node and broadcast to online node?</a></li>
 <li><a href="#how-to-sync-wallet-cli-with-wallet-on-stabilascan">How to sync wallet-cli with wallet on Stabilascan?</a></li>
 <li><a href="#is-gateway-connected-to-soliditynode">Is gateway connected to SolidityNode？</a></li>
 <li><a href="#what-is-the-different-between-gettransactionbyid-and-gettransactioninfobyid">What is the different between 'getTransactionById' and 'getTransactionInfoById'?</a></li>
@@ -407,18 +379,18 @@
 </div>
 <h2 id="network-design-and-protocol">Network Design and Protocol<a class="headerlink" href="#network-design-and-protocol" title="Permanent link">&para;</a></h2>
 <h3 id="how-can-i-generate-an-account">How can I generate an account?<a class="headerlink" href="#how-can-i-generate-an-account" title="Permanent link">&para;</a></h3>
-<p>You can use <a href="https://github.com/stabilaprotocol/wallet-cli">wallet-cli</a> or <a href="https://stabilascan.org/#/wallet/new">Stabilascan</a>.</p>
+<p>You can use <a href="https://github.com/stabilaprotocol/wallet-cli">wallet-cli</a> or <a href="https://stabilascan.org/signup">Stabilascan</a>.</p>
 <h3 id="what-is-the-network-flow">What is the network flow?<a class="headerlink" href="#what-is-the-network-flow" title="Permanent link">&para;</a></h3>
 <p>Network flow depends on transaction volume. As a reference, the average size of a transaction currently is 200 bytes.</p>
 <h3 id="after-you-create-a-token-how-to-change-its-status-from-not-started-yet-to-participate">After you create a token, how to change its status from 'not started yet' to 'participate'?<a class="headerlink" href="#after-you-create-a-token-how-to-change-its-status-from-not-started-yet-to-participate" title="Permanent link">&para;</a></h3>
 <p>You need to wait till the time reaches the start time of participation you set when create a token. After a token is created, only the token url and description can be modified.</p>
-<h3 id="is-there-a-place-to-see-if-all-the-supernodes-are-producing-blocks">Is there a place to see if all the SuperNodes are producing blocks?<a class="headerlink" href="#is-there-a-place-to-see-if-all-the-supernodes-are-producing-blocks" title="Permanent link">&para;</a></h3>
-<p>Please refer to <a href="https://stabilascan.org/#/sr/representatives">Stabilascan</a></p>
+<h3 id="is-there-a-place-to-see-if-all-the-governors-are-producing-blocks">Is there a place to see if all the Governors are producing blocks?<a class="headerlink" href="#is-there-a-place-to-see-if-all-the-governors-are-producing-blocks" title="Permanent link">&para;</a></h3>
+<p>Please refer to <a href="https://stabilascan.org/representatives">Stabilascan</a></p>
 <h3 id="is-the-block-producing-time-interval-always-remain-the-same">Is the block producing time interval always remain the same?<a class="headerlink" href="#is-the-block-producing-time-interval-always-remain-the-same" title="Permanent link">&para;</a></h3>
 <p>The current block producing time interval is 3 seconds. In the future, it may be improved to 1 second.</p>
 <h3 id="will-the-block-producing-reward-reduce-half">Will the block producing reward reduce half?<a class="headerlink" href="#will-the-block-producing-reward-reduce-half" title="Permanent link">&para;</a></h3>
 <p>No.</p>
-<h3 id="if-one-of-the-top-27-supernodes-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 27 SuperNodes goes wrong, will it be removed from the SRs list?<a class="headerlink" href="#if-one-of-the-top-27-supernodes-goes-wrong-will-it-be-removed-from-the-srs-list" title="Permanent link">&para;</a></h3>
+<h3 id="if-one-of-the-top-27-governors-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 27 Governors goes wrong, will it be removed from the SRs list?<a class="headerlink" href="#if-one-of-the-top-27-governors-goes-wrong-will-it-be-removed-from-the-srs-list" title="Permanent link">&para;</a></h3>
 <p>If people stop voting for it, it will drop out of the top 27 SRs.</p>
 <h3 id="is-there-a-threshold-to-become-a-sr">Is there a threshold to become a SR?<a class="headerlink" href="#is-there-a-threshold-to-become-a-sr" title="Permanent link">&para;</a></h3>
 <p>When the amount of votes you get ranks into top 27, you will become a SR.</p>
@@ -434,8 +406,6 @@
 <p>Transaction hash.</p>
 <h3 id="why-i-cant-stake-stb-longer-than-3-days">Why I Can't stake STB longer than 3 days<a class="headerlink" href="#why-i-cant-stake-stb-longer-than-3-days" title="Permanent link">&para;</a></h3>
 <p>Staked duration must be 3 days now. It means you can not unstake until the 3 days duration expires. If you don't unstake after 3 days, the staked STB will remain in staked status until you unstake it.</p>
-<h3 id="how-to-watch-my-account-for-transactions">How to watch my account for transactions<a class="headerlink" href="#how-to-watch-my-account-for-transactions" title="Permanent link">&para;</a></h3>
-<p>To meet your needs, you can use STABILA event subscription plugin. For more detail, please refer to <a href="https://stabilaprotocol.github.io/documentation-en/architecture/plugin/#stabila-event-subscription">https://stabilaprotocol.github.io/documentation-en/architecture/plugin/#stabila-event-subscription</a></p>
 <h3 id="how-to-calculate-the-transaction-fee">How to calculate the transaction fee?<a class="headerlink" href="#how-to-calculate-the-transaction-fee" title="Permanent link">&para;</a></h3>
 <p>please refer to <a href="https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/resource/">https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/resource/</a></p>
 <h3 id="how-to-calculate-the-number-of-bytes-of-transactions">How to calculate the number of bytes of transactions?<a class="headerlink" href="#how-to-calculate-the-number-of-bytes-of-transactions" title="Permanent link">&para;</a></h3>
@@ -449,42 +419,6 @@ Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be 
 <h3 id="how-can-i-specify-the-data-storage-path-when-start-a-node">How can I specify the data storage path when start a node?<a class="headerlink" href="#how-can-i-specify-the-data-storage-path-when-start-a-node" title="Permanent link">&para;</a></h3>
 <p>You can add the data storage path when you start the node, like:</p>
 <div class="codehilite"><pre><span></span>java -jar FullNode.jar -c config.conf -d /data/output
-</pre></div>
-
-
-<h3 id="is-there-any-config-file-option-which-i-can-use-for-sending-logs-to-stdout">Is there any config file option, which I can use for sending logs to stdout?<a class="headerlink" href="#is-there-any-config-file-option-which-i-can-use-for-sending-logs-to-stdout" title="Permanent link">&para;</a></h3>
-<p>Steps to send logs to stdout:</p>
-<p>Download <a href="https://github.com/stabilaprotocol/java-stabila/blob/develop/src/main/resources/logback.xml">https://github.com/stabilaprotocol/java-stabila/blob/develop/src/main/resources/logback.xml</a></p>
-<p>Uncomment the configuration:</p>
-<p>appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"</p>
-<p>Go to the configuration: root level="INFO"
-uncomment the configuration: appender-ref ref="STDOUT"
-comment the configuration: appender-ref ref="ASYNC"</p>
-<p>Move logback.xml to the same directory with FullNode.jar</p>
-<p>Launch FullNode.jar with additional parameter: --log-config logback.xml, for example:</p>
-<div class="codehilite"><pre><span></span>java -jar FullNode.jar --log-config logback.xml
-</pre></div>
-
-
-<h3 id="how-to-change-log-level">How to change log level<a class="headerlink" href="#how-to-change-log-level" title="Permanent link">&para;</a></h3>
-<p>The log level is defined in logback.xml. Please set the root level to "ERROR" if you want to filter only error logs. Please refer to the configuration below.</p>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!--&lt;appender-ref ref=&quot;STDOUT&quot;/&gt;--&gt;</span>
-    <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">&quot;ASYNC&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/root&gt;</span>
-
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;app&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;net&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;backup&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;discover&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;crypto&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;utils&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;actuator&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;API&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;executive&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;DB&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;capsule&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;VM&quot;</span> <span class="na">level=</span><span class="s">&quot;ERROR&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 
 
@@ -525,9 +459,9 @@ comment the configuration: appender-ref ref="ASYNC"</p>
 </pre></div>
 
 
-<h3 id="when-to-deploy-private-environment-whats-the-relationship-of-supernode-and-fullnode-should-i-firstly-deploy-a-supernode-and-then-deploy-a-fullnode">When to deploy private environment, what's the relationship of SuperNode and FullNode? Should I firstly deploy a SuperNode, and then deploy a FullNode？<a class="headerlink" href="#when-to-deploy-private-environment-whats-the-relationship-of-supernode-and-fullnode-should-i-firstly-deploy-a-supernode-and-then-deploy-a-fullnode" title="Permanent link">&para;</a></h3>
-<p>Under private environment, there should be at least one SuperNode, there is no amount limit for FullNode.</p>
-<h3 id="how-to-know-wether-my-test-supernode-is-running-or-not">How to know wether my test SuperNode is running or not?<a class="headerlink" href="#how-to-know-wether-my-test-supernode-is-running-or-not" title="Permanent link">&para;</a></h3>
+<h3 id="when-to-deploy-private-environment-whats-the-relationship-of-governor-and-fullnode-should-i-firstly-deploy-a-governor-and-then-deploy-a-fullnode">When to deploy private environment, what's the relationship of Governor and FullNode? Should I firstly deploy a Governor, and then deploy a FullNode？<a class="headerlink" href="#when-to-deploy-private-environment-whats-the-relationship-of-governor-and-fullnode-should-i-firstly-deploy-a-governor-and-then-deploy-a-fullnode" title="Permanent link">&para;</a></h3>
+<p>Under private environment, there should be at least one Governor, there is no amount limit for FullNode.</p>
+<h3 id="how-to-know-whether-my-test-governor-is-running-or-not">How to know whether my test Governor is running or not?<a class="headerlink" href="#how-to-know-whether-my-test-governor-is-running-or-not" title="Permanent link">&para;</a></h3>
 <p>Using the following command</p>
 <div class="codehilite"><pre><span></span>&gt; tail -f logs/stabila.log |grep &quot;Try Produce Block&quot;
 </pre></div>
@@ -537,30 +471,21 @@ comment the configuration: appender-ref ref="ASYNC"</p>
 <p>They can be deployed in one machine. You can specify the data storage path in configuration file <code>db.directory = "database"，index.directory = "index"</code>. You can run FullNode.jar and SolidityNode.jar in different paths to separate the data and log. Remember to change the port in <code>config.conf</code>, because two nodes can not work using the same port. SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode. New developers should deploy FullNode only.</p>
 <h2 id="running-a-node">Running a Node<a class="headerlink" href="#running-a-node" title="Permanent link">&para;</a></h2>
 <h3 id="as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment">As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？<a class="headerlink" href="#as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment" title="Permanent link">&para;</a></h3>
-<p>If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash. If they are the same as MainNet or TestNet, and the computer is connected to internet, the node will sync data from public node.</p>
+<p>If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash.</p>
 <h3 id="under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr">Under private environment, should I submit application information to STABILA to become a SR?<a class="headerlink" href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr" title="Permanent link">&para;</a></h3>
 <p>Under private environment, no need to submit application information to STABILA to become a SR.</p>
 <p>Ask：Which service port should be public to public network?</p>
 <p>Default port 18888, 50051</p>
-<h3 id="at-the-worst-scenario-if-the-supernode-can-not-be-connected-the-maximum-time-it-allows-the-supernode-to-recover-its-service">At the worst scenario, if the SuperNode can not be connected, the maximum time it allows the SuperNode to recover its service？<a class="headerlink" href="#at-the-worst-scenario-if-the-supernode-can-not-be-connected-the-maximum-time-it-allows-the-supernode-to-recover-its-service" title="Permanent link">&para;</a></h3>
-<p>The internet connection recovery time only depends on the recovery of SuperNode itself, has nothing to do with internet situation.</p>
+<h3 id="at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？<a class="headerlink" href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service" title="Permanent link">&para;</a></h3>
+<p>The internet connection recovery time only depends on the recovery of Governor itself, has nothing to do with internet situation.</p>
 <h3 id="does-soliditynode-sync-data-from-fullnode">Does SolidityNode sync data from FullNode?<a class="headerlink" href="#does-soliditynode-sync-data-from-fullnode" title="Permanent link">&para;</a></h3>
 <p>Yes.</p>
 <h3 id="does-a-node-have-wallet-function">Does a node have wallet function?<a class="headerlink" href="#does-a-node-have-wallet-function" title="Permanent link">&para;</a></h3>
 <p>No, but the node provides wallet rpc api.</p>
 <h3 id="why-does-the-block-process-time-take-so-long">Why does the block process time take so long?<a class="headerlink" href="#why-does-the-block-process-time-take-so-long" title="Permanent link">&para;</a></h3>
 <p>Java-stabila need more RAM to process transactions.</p>
-<h2 id="test-net">Test Net<a class="headerlink" href="#test-net" title="Permanent link">&para;</a></h2>
-<h3 id="we-want-to-test-our-supernodes-performance-under-test-environment-do-we-need-to-be-voted-to-become-a-sr-under-test-environment">We want to test our SuperNode's performance under test environment, do we need to be voted to become a SR under test environment?<a class="headerlink" href="#we-want-to-test-our-supernodes-performance-under-test-environment-do-we-need-to-be-voted-to-become-a-sr-under-test-environment" title="Permanent link">&para;</a></h3>
-<p>Yes. Under test environment, we can vote you to become SR.</p>
-<h3 id="what-is-the-defferent-between-shasta-and-test-net">What is the defferent between Shasta and Test Net?<a class="headerlink" href="#what-is-the-defferent-between-shasta-and-test-net" title="Permanent link">&para;</a></h3>
-<p>to be answered</p>
-<h3 id="where-can-i-get-the-test-stb">Where can I get the test STB?<a class="headerlink" href="#where-can-i-get-the-test-stb" title="Permanent link">&para;</a></h3>
-<p><a href="http://testnet.stabilaex.io/join/getJoinPage">http://testnet.stabilaex.io/join/getJoinPage</a></p>
 <h2 id="smart-contract">Smart Contract<a class="headerlink" href="#smart-contract" title="Permanent link">&para;</a></h2>
 <h2 id="rpc-client-and-api">RPC Client and API<a class="headerlink" href="#rpc-client-and-api" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-sign-transaction-from-offline-node-and-broadcast-to-online-node">How to sign transaction from offline node and broadcast to online node?<a class="headerlink" href="#how-to-sign-transaction-from-offline-node-and-broadcast-to-online-node" title="Permanent link">&para;</a></h3>
-<p>You can use <a href="https://developers.stabila.network/docs/api-sign-flow">stabilaweb</a></p>
 <h3 id="how-to-sync-wallet-cli-with-wallet-on-stabilascan">How to sync wallet-cli with wallet on Stabilascan?<a class="headerlink" href="#how-to-sync-wallet-cli-with-wallet-on-stabilascan" title="Permanent link">&para;</a></h3>
 <p>By using wallet-cli api 'ImportWallet'.</p>
 <h3 id="is-gateway-connected-to-soliditynode">Is gateway connected to SolidityNode？<a class="headerlink" href="#is-gateway-connected-to-soliditynode" title="Permanent link">&para;</a></h3>
@@ -577,12 +502,12 @@ comment the configuration: appender-ref ref="ASYNC"</p>
 
 <h2 id="error-log">Error Log<a class="headerlink" href="#error-log" title="Permanent link">&para;</a></h2>
 <h3 id="what-does-the-following-error-message-mean">What does the following error message mean?<a class="headerlink" href="#what-does-the-following-error-message-mean" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>17:02:42.699 INFO [o.t.c.s.WitnessService] Try Produce Block
-17:02:42.699 INFO [o.t.c.s.WitnessService] Not sync
+<div class="codehilite"><pre><span></span>17:02:42.699 INFO [o.t.c.s.ExecutiveService] Try Produce Block
+17:02:42.699 INFO [o.t.c.s.ExecutiveService] Not sync
 </pre></div>
 
 
-<p>This message means your node does not sync with the network. Before producing blocks, it needs to sync data. You can use the following command to chek the block height.</p>
+<p>This message means your node does not sync with the network. Before producing blocks, it needs to sync data. You can use the following command to check the block height.</p>
 <div class="codehilite"><pre><span></span>&gt; tail -f logs/stabila.log |grep &quot;MyheadBlockNumber&quot;
 </pre></div>
 
@@ -648,5 +573,5 @@ comment the configuration: appender-ref ref="ASYNC"</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2021-12-21 09:10:38
+Build Date UTC : 2021-12-23 06:55:40
 -->

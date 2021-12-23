@@ -132,13 +132,13 @@
         
             <li><a class="toctree-l4" href="#transferassetcontract">TransferAssetContract</a></li>
         
-            <li><a class="toctree-l4" href="#votewitnesscontract">VoteWitnessContract</a></li>
+            <li><a class="toctree-l4" href="#voteexecutivecontract">VoteExecutiveContract</a></li>
         
-            <li><a class="toctree-l4" href="#witnesscreatecontract">WitnessCreateContract</a></li>
+            <li><a class="toctree-l4" href="#executivecreatecontract">ExecutiveCreateContract</a></li>
         
             <li><a class="toctree-l4" href="#assetissuecontract">AssetIssueContract</a></li>
         
-            <li><a class="toctree-l4" href="#witnessupdatecontract">WitnessUpdateContract</a></li>
+            <li><a class="toctree-l4" href="#executiveupdatecontract">ExecutiveUpdateContract</a></li>
         
             <li><a class="toctree-l4" href="#participateassetissuecontract">ParticipateAssetIssueContract</a></li>
         
@@ -258,10 +258,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -270,15 +266,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -298,10 +286,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -411,8 +395,8 @@
 <li><code>to_address</code>: The target address to transfer.</li>
 <li><code>amount</code>: The amount of token to transfer.</li>
 </ul>
-<h2 id="votewitnesscontract">VoteWitnessContract<a class="headerlink" href="#votewitnesscontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>message VoteWitnessContract {
+<h2 id="voteexecutivecontract">VoteExecutiveContract<a class="headerlink" href="#voteexecutivecontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message VoteExecutiveContract {
   message Vote {
     bytes vote_address = 1;
     int64 vote_count = 2;
@@ -426,12 +410,12 @@
 
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
-<li><code>vote_address</code>: The SR or candidate's address.</li>
+<li><code>vote_address</code>: The Governor or candidate's address.</li>
 <li><code>vote_count</code>: The votes number.</li>
 <li><code>support</code>: Constant true, not used.</li>
 </ul>
-<h2 id="witnesscreatecontract">WitnessCreateContract<a class="headerlink" href="#witnesscreatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>message WitnessCreateContract {
+<h2 id="executivecreatecontract">ExecutiveCreateContract<a class="headerlink" href="#executivecreatecontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message ExecutiveCreateContract {
   bytes owner_address = 1;
   bytes url = 2;
 }
@@ -488,8 +472,8 @@
 <li><code>public_free_asset_net_usage</code>: The free bandwidth usage of all the accounts.</li>
 <li><code>public_latest_free_net_time</code>: The latest bandwidth consumption time of token transfer.</li>
 </ul>
-<h2 id="witnessupdatecontract">WitnessUpdateContract<a class="headerlink" href="#witnessupdatecontract" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>message WitnessUpdateContract {
+<h2 id="executiveupdatecontract">ExecutiveUpdateContract<a class="headerlink" href="#executiveupdatecontract" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>message ExecutiveUpdateContract {
   bytes owner_address = 1;
   bytes update_url = 12;
 }
@@ -663,8 +647,8 @@ message SetAccountIdContract {
 <ul>
 <li><code>owner_address</code>: The owner of the current account.</li>
 <li><code>new_contract</code>: the smart contract.</li>
-<li><code>call_token_value</code> : The amount of TRC-10 token to send to the contract when triggers.</li>
-<li><code>token_id</code> : The id of the TRC-10 token to be sent to the contract.</li>
+<li><code>call_token_value</code> : The amount of SRC-10 token to send to the contract when triggers.</li>
+<li><code>token_id</code> : The id of the SRC-10 token to be sent to the contract.</li>
 </ul>
 <h2 id="triggersmartcontract">TriggerSmartContract<a class="headerlink" href="#triggersmartcontract" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>message TriggerSmartContract {
@@ -683,8 +667,8 @@ message SetAccountIdContract {
 <li><code>contract_address</code>: The contract address.</li>
 <li><code>call_value</code>: The amount of STB to send to the contract when triggers.</li>
 <li><code>data</code>: The parameters to trigger the contract.</li>
-<li><code>call_token_value</code> : The amount of TRC-10 token to send to the contract when triggers.</li>
-<li><code>token_id</code> : The id of the TRC-10 token to be sent to the contract.</li>
+<li><code>call_token_value</code> : The amount of SRC-10 token to send to the contract when triggers.</li>
+<li><code>token_id</code> : The id of the SRC-10 token to be sent to the contract.</li>
 </ul>
 <h2 id="updatesettingcontract">UpdateSettingContract<a class="headerlink" href="#updatesettingcontract" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>message UpdateSettingContract {

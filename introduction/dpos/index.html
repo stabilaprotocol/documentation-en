@@ -84,8 +84,6 @@
         
             <li><a class="toctree-l4" href="#proposal-based-parameter-adjustment">Proposal-based parameter adjustment</a></li>
         
-            <li><a class="toctree-l4" href="#bandwidth-and-ucr-mechanism">Bandwidth and ucr mechanism</a></li>
-        
             <li><a class="toctree-l4" href="#appendix-reference-documentations">Appendix: Reference Documentations</a></li>
         
         </ul>
@@ -218,10 +216,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -230,15 +224,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -258,10 +244,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -334,7 +316,7 @@
 <p>The executives of the blockchain network collect the newly generated transactions in the blockchain network and verify the legality of these transactions, then package the transactions in a block, record them as a new page on the ledger, and broadcast the page to the entire blockchain network. Other nodes will receive the new page and verify the legality of the transaction data on the page and add it to their own ledger. The executives will repeat this process so all new transaction data in the blockchain system can be recorded in the ledger.</p>
 <h2 id="dpos-overview">DPoS overview<a class="headerlink" href="#dpos-overview" title="Permanent link">&para;</a></h2>
 <p>The role of consensus is to select the executives in the blockchain system. The executives verify the transaction data and keep the account in order to broadcast new accounts to other nodes in the network and obtains the approval of the new accounts from other nodes. As a specific implementation of consensus, DPoS works in the following way:</p>
-<p>The DPoS consensus selects some nodes as executives in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a executives candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these candidates. Every t period of time, the votes for all the candidates will be counted. Top N candidate nodes with the most votes will become executives for the next t period. After t period of time, the votes will be counted again to elect the new executives, and the cycle continues.</p>
+<p>The DPoS consensus selects some nodes as executives in the blockchain system based on the number of votes they receive. First, when the blockchain system starts to operate, a certain number of tokens will be issued, and then the tokens will be given to nodes in the blockchain system. A node can apply to be a executives candidate in the blockchain system with a portion of the tokens. Any token-holding node in the blockchain system can vote for these executives. Every t period of time, the votes for all the executives will be counted. Top N candidate nodes with the most votes will become executives for the next t period. After t period of time, the votes will be counted again to elect the new executives, and the cycle continues.</p>
 <p>Let's see how it's realized in the context of STABILA:</p>
 <h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
 <ul>
@@ -366,7 +348,7 @@
 <p>Epoch: STABILA sets an Epoch to be 6 hours. The last 2 block time of an Epoch is the maintenance period, during which block generating order for the next Epoch will be decided.</p>
 </li>
 <li>
-<p>The maintenance period: STABILA sets the period to be 2 block time, which is 6 seconds. This period of time is used to count the votes for candidates. There are 4 Epochs in 24 hours, and naturally, 4 maintenance periods. During the maintenance period, no block is generated and block generation order for the next Epoch is decided.</p>
+<p>The maintenance period: STABILA sets the period to be 2 block time, which is 6 seconds. This period of time is used to count the votes for executives. There are 4 Epochs in 24 hours, and naturally, 4 maintenance periods. During the maintenance period, no block is generated and block generation order for the next Epoch is decided.</p>
 </li>
 </ul>
 <p><img alt="image" src="https://github.com/stabilaprotocol/documentation-en/raw/master/images/sequence_en.jpg" /></p>
@@ -378,11 +360,11 @@
 <ol>
 <li>Voting process</li>
 </ol>
-<p>In STABILA, voting for candidates is a special transaction. Nodes can vote for candidates through generating a voting transaction.</p>
+<p>In STABILA, voting for executives is a special transaction. Nodes can vote for executives through generating a voting transaction.</p>
 <ol>
 <li>Vote counting</li>
 </ol>
-<p>During each maintenance period, the votes for candidates will be counted. The top 27 candidates with the most votes will be the executives for the next Epoch.</p>
+<p>During each maintenance period, the votes for executives will be counted. The top 27 executives with the most votes will be the Governors for the next Epoch.</p>
 <h2 id="block-generation-mechanism">Block generation mechanism<a class="headerlink" href="#block-generation-mechanism" title="Permanent link">&para;</a></h2>
 <p>During each Epoch, the 27 executives will take turns to generate blocks according to the bookkeeping order. Each executive can only generate blocks when it is their turn. Executives package the data of multiple verified transactions into each block. The hash of the previous block will be included in each new block as the parentHash. The executive will sign the data of this block with his/her private key and fill in executive_signature, along with the address of the executive, the block height, and the time that block is generated, etc.</p>
 <p>Through storing the hash of the previous block, blocks are logically connected. Eventually, they form a chain. A typical blockchain structure is shown in the following picture:</p>
@@ -399,7 +381,7 @@
 <p><strong>The longest chain principle</strong></p>
 <p>When a fork occurs, an honest executive would always choose to produce blocks on the longest chain.</p>
 <h2 id="incentive-model">Incentive model<a class="headerlink" href="#incentive-model" title="Permanent link">&para;</a></h2>
-<p>To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives (including executive candidates) with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.</p>
+<p>To ensure the safe and efficient operation of the blockchain system, STABILA sets up an incentive model to encourage node participation and network expansion. Executives who complete block production tasks will be rewarded with STB. The model also specifies that for every confirmed block produced by a executive, the executive will receive 32 STB. For the first 127th executives with the most votes, they will receive proportional rewards during the maintenance period of each Epoch.</p>
 <h2 id="proposal-based-parameter-adjustment">Proposal-based parameter adjustment<a class="headerlink" href="#proposal-based-parameter-adjustment" title="Permanent link">&para;</a></h2>
 <p>An important characteristic of DPoS is that any parameter adjustment can be proposed on the chain, and executives will decide whether to approve the proposal by starting a vote. The advantage of this method is that it avoids hard fork upgrades when adding new features. Currently, STABILA supports the following parameter adjustments:</p>
 <ol>
@@ -422,7 +404,7 @@
 <p>The rewards for producing each block</p>
 </li>
 <li>
-<p>The total amount of STB that is proportionately awarded to the first 127th executives (including bookkeeper candidates) with the most votes</p>
+<p>The total amount of STB that is proportionately awarded to the first 127th executives with the most votes</p>
 </li>
 <li>
 <p>The STB cost of account activation through system contract</p>
@@ -434,7 +416,7 @@
 <p>The exchange rate between Ucr and Unit</p>
 </li>
 <li>
-<p>The STB cost for building a TRC-10 token-based decentralized trading pair</p>
+<p>The STB cost for building a SRC-10 token-based decentralized trading pair</p>
 </li>
 <li>
 <p>The maximum CPU time allowed for a single transaction execution</p>
@@ -452,7 +434,7 @@
 <p>The upper limit for Ucr in STABILA blockchain</p>
 </li>
 <li>
-<p>Whether to allow TRC-10 asset transfer in smart contracts</p>
+<p>Whether to allow SRC-10 asset transfer in smart contracts</p>
 </li>
 <li>
 <p>Whether to allow adjustment to Ucr upper limit</p>
@@ -470,14 +452,11 @@
 <p>Whether to verify block and transaction protobuf message</p>
 </li>
 </ol>
-<h2 id="bandwidth-and-ucr-mechanism">Bandwidth and ucr mechanism<a class="headerlink" href="#bandwidth-and-ucr-mechanism" title="Permanent link">&para;</a></h2>
-<p>To be continued...</p>
 <h2 id="appendix-reference-documentations">Appendix: Reference Documentations<a class="headerlink" href="#appendix-reference-documentations" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.coinbureau.com/education/delegated-proof-stake-dpos/">Delegated Proof of Stake (DPoS) – Total Beginners Guide</a></li>
 <li><a href="https://www.nichanank.com/blog/2018/6/4/consensus-algorithms-pos-dpos">Consensus Algorithms: Proof-of-Stake &amp; Cryptoeconomics</a></li>
 <li><a href="http://docs.bitshares.org/en/master/technology/dpos.html#role-of-delegates">Role of Delegates</a></li>
-<li><a href="https://hackernoon.com/what-is-delegated-proof-of-stake-897a2f0558f9">What is Delegated Proof of Stake?</a></li>
 </ul>
               
             </div>

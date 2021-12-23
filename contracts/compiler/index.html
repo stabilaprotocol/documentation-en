@@ -162,8 +162,6 @@
         
             <li><a class="toctree-l4" href="#tools">Tools</a></li>
         
-            <li><a class="toctree-l4" href="#development">Development</a></li>
-        
         </ul>
     
 
@@ -202,10 +200,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -214,15 +208,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -242,10 +228,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -312,28 +294,9 @@
               
                 <h1 id="compiler">Compiler<a class="headerlink" href="#compiler" title="Permanent link">&para;</a></h1>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
-<h3> 1. StabilaStudio </h3>
-
-<p>Support the build, debug, run, etc. for solidity language written smart contract.
-<a href="https://developers.stabila.network/docs/stabila-studio-intro">https://developers.stabila.network/docs/stabila-studio-intro</a></p>
-<h3> 2. StabilaIDE </h3>
-
-<p>Support the build, debug, run, etc. for solidity language written smart contract.
-<a href="http://www.stabilaide.io">http://www.stabilaide.io</a></p>
-<h3> 3. StabilaBox </h3>
-
-<p>Support the build, deploy, transplant, etc. for solidity language written smart contract.
-<a href="https://developers.stabila.network/docs/stabila-box-user-guide">https://developers.stabila.network/docs/stabila-box-user-guide</a></p>
-<h3> 4. StabilaWeb </h3>
-
-<p>Provide http api service for the usage of smart contract.
-<a href="https://developers.stabila.network/docs/stabila-web-intro">https://developers.stabila.network/docs/stabila-web-intro</a></p>
-<h3> 5. StabilaGrid </h3>
-
-<p>Provide smart contract event query service.
-<a href="https://developers.stabila.network/docs/stabila-grid-intro">https://developers.stabila.network/docs/stabila-grid-intro</a></p>
-<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h2>
-<p>First you can use StabilaStudio to write, build and debug the smart contract. After you finish the development of the contract, you can copy it to <a href="https://github.com/stabilaprotocol/stabila-demo/tree/master/SmartContractTools/SimpleWebCompiler">SimpleWebCompiler</a> to compile to get ABI and ByteCode. We provide a simple data read/write smart contract code example to demonstrate:</p>
+<p><strong> Build and install the Solidity compiler </strong></p>
+<p>Instructions about how to build and install the Solidity compiler can be found at https://github.com/stabilaprotocol/solidity</p>
+<p><strong> Write your first smart contract </strong></p>
 <div class="codehilite"><pre><span></span>pragma solidity ^0.4.0;
 contract DataStore {
 
@@ -350,26 +313,31 @@ contract DataStore {
 </pre></div>
 
 
-<p><strong> Start a Private Net </strong></p>
-<p>Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log</p>
-<p><strong> Develop a Smart Contract </strong></p>
-<p>Copy the code example above to remix to debug.</p>
-<p><strong> Compile in SimpleWebCompiler for ABI and ByteCode </strong></p>
-<p>Copy the code example above to SimpleWebCompiler to get ABI and ByteCode.
-Because STABILA's compiler is a little different from Ethereum, so you can not get ABI and ByteCode by using Remix. But it will soon be supported.</p>
-<p><strong> Using Wallet-cli to Deploy </strong></p>
-<p>Download Wallet-Cli and build</p>
+<p><strong> Compile smart contract </strong></p>
 <div class="codehilite"><pre><span></span>shell
-# download cource code
-git clone https://github.com/stabilaprotocol/wallet-cli
-cd  wallet-cli
-# build
-./gradlew build
-cd  build/libs
+cd solidity/build/solc
+./solc --bin --abi -o {outputFolder} {contractFileName}
+# example
+./solc --bin --abi -o /home/user/solidity/build/solc/dataStore DataStore.sol
+If it is compiled successfully /test folder will contain DataStore.api and DataStore.bin files.
 </pre></div>
 
 
-<p>Note: You need to change the node ip and port in config.conf</p>
+<p><strong> Start a Private Net </strong></p>
+<p>Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log</p>
+<p><strong> Using Wallet-cli to Deploy </strong></p>
+<p>Download Wallet-Cli and build</p>
+<div class="codehilite"><pre><span></span>shell
+# download source code
+git clone https://github.com/stabilaprotocol/wallet-cli
+cd wallet-cli
+# build
+./gradlew build
+cd build/libs
+</pre></div>
+
+
+<p>Note: You need to change the node ip and port in config.conf, details can be found at https://github.com/stabilaprotocol/wallet-cli</p>
 <p>start wallet-cli</p>
 <div class="codehilite"><pre><span></span>java -jar wallet-cli.jar
 </pre></div>
@@ -392,8 +360,8 @@ DeployContract contractName ABI byteCode constructor params isHex fee_limit cons
 
 # parameters
 contract_name: Contract name
-ABI: ABI from SimpleWebCompiler
-bytecode: ByteCode from SimpleWebCompiler
+ABI: ABI generated by Solidity compiler
+bytecode: ByteCode generated by Solidity compiler
 constructor: When deploy contract, this will be called. If is needed, write as constructor(uint256,string). If not, just write #
 params: The parameters of the constructor, use &#39;,&#39; to split, like  1, &quot;test&quot;, if no constructor, just write #
 fee_limit: The STB consumption limit for the deployment, unit is UNIT(1 UNIT = 10^-6 STB)

@@ -118,7 +118,7 @@
     <a class="current" href="./">Shielded TRC20 Contract</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#shielded-trc-20-contract">Shielded TRC-20 Contract</a></li>
+    <li class="toctree-l3"><a href="#shielded-src-20-contract">Shielded SRC-20 Contract</a></li>
     
         <ul>
         
@@ -200,10 +200,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -212,15 +208,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -240,10 +228,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -308,33 +292,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="shielded-trc-20-contract">Shielded TRC-20 Contract<a class="headerlink" href="#shielded-trc-20-contract" title="Permanent link">&para;</a></h1>
+                <h1 id="shielded-src-20-contract">Shielded SRC-20 Contract<a class="headerlink" href="#shielded-src-20-contract" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>TRC-20 token contract allows users to issue and transfer tokens, but it can not guarantee the privacy since it leaks the token ownership. When transferring the token, the source address, destination address, and the token amount are  public. The shielded TRC-20 contract (<a href="https://github.com/stabilaprotocol/tips/blob/master/tip-135.md">TIP-135</a>) aims to solve this problem and provides users better privacy of token ownership and transactions.</p>
-<p>The shielded TRC-20 contract has three core functions: <code>mint</code>, <code>transfer</code> and <code>burn</code>.</p>
+<p>SRC-20 token contract allows users to issue and transfer tokens, but it can not guarantee the privacy since it leaks the token ownership. When transferring the token, the source address, destination address, and the token amount are  public. The shielded SRC-20 contract aims to solve this problem and provides users better privacy of token ownership and transactions.</p>
+<p>The shielded SRC-20 contract has three core functions: <code>mint</code>, <code>transfer</code> and <code>burn</code>.</p>
 <ul>
-<li><code>mint</code> is used to transform the public TRC-20 token to shielded token, which makes token ownership invisible. <code>mint</code> has only one transparent input and one shielded output.</li>
+<li><code>mint</code> is used to transform the public SRC-20 token to shielded token, which makes token ownership invisible. <code>mint</code> has only one transparent input and one shielded output.</li>
 <li><code>transfer</code> is used for shielded token transactions, which can hide the source address, the destination address, and the transaction amount. <code>transfer</code> has at most two shielded input and two shielded output.</li>
-<li><code>burn</code> is used to transform the shielded token to the public TRC-20 token. <code>burn</code> has only one shielded input, one transparent output and zero or one shielded output.</li>
+<li><code>burn</code> is used to transform the shielded token to the public SRC-20 token. <code>burn</code> has only one shielded input, one transparent output and zero or one shielded output.</li>
 </ul>
 <p>The technical implementation is based on zk-SNARK(Zero-Knowledge Succinct Non-Interactive Argument of Knowledge) proof system, which is secure and efficient.</p>
-<h3 id="contract-deployment">Contract Deployment<a class="headerlink" href="#contract-deployment" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Use <code>deployContract</code> method in the wallet-cli to deploy the TRC-20 contract.</li>
-</ol>
-<p>Note: the deployed TRC-20 contract address of <code>TokenTRC20</code> on Nile Testnet is:  <a href="https://nile.stabilascan.org/#/contract/TFUD8x3iAZ9dF7NDCGBtSjznemEomE5rP9/code">TFUD8x3iAZ9dF7NDCGBtSjznemEomE5rP9</a>.</p>
-<ol>
-<li>Use the <code>deployContract</code> method to deploy the shielded TRC-20 contract. The shielded TRC-20 contract will bind the TRC-20 contract. The <code>scalingFactor</code> is also specified when deploying the the shielded TRC-20 contract. For more details about <code>scalingFactor</code>, please refer <a href="https://github.com/stabilaprotocol/tips/blob/master/tip-135.md">TIP-135</a>.</li>
-</ol>
-<p>Note: the deployed shielded TRC-20 contract address of <code>ShieldedTRC20</code> on Nile Testnet is:  <a href="https://nile.stabilascan.org/#/contract/TPcKtz5TRfP4xUZSos81RmXB9K2DBqj2iu/code">TPcKtz5TRfP4xUZSos81RmXB9K2DBqj2iu</a> and the corresponding <code>scalingFactor</code> is set 10.</p>
 <h3 id="usage-guide">Usage Guide<a class="headerlink" href="#usage-guide" title="Permanent link">&para;</a></h3>
-<p>1.&nbsp;The sender needs to create an ordianry account by api. The account is used to trigger the shielded TRC-20 contract, so it should has some stb to pay the transaction fee.</p>
-<p>2.&nbsp;The sender should create the shielded address, which is used to send and receive the shielded TRC-20 notes.</p>
-<p>3.&nbsp;The sender calls the api to create shielded TRC-20 contract parameters for <code>mint</code>, <code>transfer</code> and <code>burn</code>.</p>
-<p>4.&nbsp;The sender triggers the shielded TRC-20 contract by using the generated parameters and generates the shielded TRC-20 transaction.</p>
-<p>5.&nbsp;The sender broadcasts the shielded TRC-20 transaction.</p>
+<p>1.&nbsp;The sender needs to create an ordinary account by api. The account is used to trigger the shielded SRC-20 contract, so it should have some stb to pay the transaction fee.</p>
+<p>2.&nbsp;The sender should create the shielded address, which is used to send and receive the shielded SRC-20 notes.</p>
+<p>3.&nbsp;The sender calls the api to create shielded SRC-20 contract parameters for <code>mint</code>, <code>transfer</code> and <code>burn</code>.</p>
+<p>4.&nbsp;The sender triggers the shielded SRC-20 contract by using the generated parameters and generates the shielded SRC-20 transaction.</p>
+<p>5.&nbsp;The sender broadcasts the shielded SRC-20 transaction.</p>
 <p>6.&nbsp;The receiver scans to get the received shielded notes.</p>
-<p>The document below describes how to use STABILA Shielded TRC-20 contract with http api.</p>
+<p>The document below describes how to use STABILA Shielded SRC-20 contract with http api.</p>
 <h3 id="create-the-account">Create the account<a class="headerlink" href="#create-the-account" title="Permanent link">&para;</a></h3>
 <p><strong>1. Call api: wallet/createaccount to generate the account</strong></p>
 <p>Method: Post</p>
@@ -510,7 +485,7 @@
 </pre></div>
 
 
-<h3 id="create-shielded-trc-20-contract-parameters-for-mint">Create shielded TRC-20 contract parameters for <code>mint</code><a class="headerlink" href="#create-shielded-trc-20-contract-parameters-for-mint" title="Permanent link">&para;</a></h3>
+<h3 id="create-shielded-src-20-contract-parameters-for-mint">Create shielded SRC-20 contract parameters for <code>mint</code><a class="headerlink" href="#create-shielded-src-20-contract-parameters-for-mint" title="Permanent link">&para;</a></h3>
 <p><strong>1. Call api: wallet/createshieldedcontractparameters to build the parameters</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -524,12 +499,12 @@
           <span class="nt">&quot;rcm&quot;</span><span class="p">:</span> <span class="s2">&quot;74baec30dfac8ed59968955ff245ae002009005194e5b824c35ab88c52e5170e&quot;</span>
        <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41f3392eaa7d38749176e0671dbc6912f8ef956943&quot;</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41f3392eaa7d38749176e0671dbc6912f8ef956943&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Note: 1. the shielded TRC-20 contract should be deployed befor calling the api; 2. the <code>from_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded TRC-20 contract, namely <code>from_amount</code> = <code>value</code> * <code>scalingFactor</code>. In this example, the value of <code>scalingFactor</code> is 100; 3. the <code>rcm</code> is a random field element with the length of 32 bytes,  which should be generated by <code>GetRcm</code> api.</p>
+<p>Note: 1. the shielded SRC-20 contract should be deployed befor calling the api; 2. the <code>from_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded SRC-20 contract, namely <code>from_amount</code> = <code>value</code> * <code>scalingFactor</code>. In this example, the value of <code>scalingFactor</code> is 100; 3. the <code>rcm</code> is a random field element with the length of 32 bytes,  which should be generated by <code>GetRcm</code> api.</p>
 <p>Return:</p>
 <div class="codehilite"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;receive_description&quot;</span>: <span class="o">[</span>
@@ -549,8 +524,8 @@
 </pre></div>
 
 
-<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>mint</code> function of the shielded token contract. Before triggering the shielded TRC-20 contract, the user should trigger the <code>approve</code> method   of TRC-20 contract, to authorize the shielded TRC-20 contract to transfer the token from TRC-20 contract to shielded TRC-20 contract.</p>
-<p>Note: when the shielded TRC-20 contract is deployed, it will bind the corresponding TRC-20 contract.</p>
+<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>mint</code> function of the shielded token contract. Before triggering the shielded SRC-20 contract, the user should trigger the <code>approve</code> method   of SRC-20 contract, to authorize the shielded SRC-20 contract to transfer the token from SRC-20 contract to shielded SRC-20 contract.</p>
+<p>Note: when the shielded SRC-20 contract is deployed, it will bind the corresponding SRC-20 contract.</p>
 <p><strong>2. Call api: wallet/createshieldedcontractparameterswithoutask to build the parameters</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -564,12 +539,12 @@
           <span class="nt">&quot;rcm&quot;</span><span class="p">:</span> <span class="s2">&quot;499e73f2f8aaf05fac41a35b8343bde27f6629cbe66d35da5364a99b94a55a06&quot;</span>
        <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41f3392eaa7d38749176e0671dbc6912f8ef956943&quot;</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41f3392eaa7d38749176e0671dbc6912f8ef956943&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Note: the <code>from_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded TRC-20 contract, namely <code>from_amount</code> = <code>value</code> * <code>scalingFactor</code>. In this example, the value of <code>scalingFactor</code> is 100.</p>
+<p>Note: the <code>from_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded SRC-20 contract, namely <code>from_amount</code> = <code>value</code> * <code>scalingFactor</code>. In this example, the value of <code>scalingFactor</code> is 100.</p>
 <p>Return:</p>
 <div class="codehilite"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;receive_description&quot;</span>: <span class="o">[</span>
@@ -589,7 +564,7 @@
 </pre></div>
 
 
-<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>mint</code> function of the shielded TRC-20 contract.</p>
+<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>mint</code> function of the shielded SRC-20 contract.</p>
 <h3 id="create-shielded-contract-parameters-for-transfer">Create shielded contract parameters for <code>transfer</code><a class="headerlink" href="#create-shielded-contract-parameters-for-transfer" title="Permanent link">&para;</a></h3>
 <p><strong>1. Call api: wallet/createshieldedcontractparameters to build the parameters</strong></p>
 <p>Method: Post</p>
@@ -638,7 +613,7 @@
         <span class="p">}</span>
      <span class="p">}</span>
    <span class="p">]</span><span class="err">,</span>
-    <span class="s2">&quot;shielded_TRC20_contract_address&quot;</span><span class="err">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
+    <span class="s2">&quot;shielded_SRC20_contract_address&quot;</span><span class="err">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
 <span class="err">}</span>
 </pre></div>
 
@@ -687,8 +662,8 @@
 </pre></div>
 
 
-<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>transfer</code> function of the shielded TRC-20 contract.</p>
-<p>Note: 1. the notes in <code>shielded_spends</code> is obtained by <code>scanshieldedtrc20notesbyivk</code> api; 2. the <code>root</code> and <code>path</code> is obtained by triggering the <code>getPath</code> function of the shielded TRC-20 contract.</p>
+<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>transfer</code> function of the shielded SRC-20 contract.</p>
+<p>Note: 1. the notes in <code>shielded_spends</code> is obtained by <code>scanshieldedsrc20notesbyivk</code> api; 2. the <code>root</code> and <code>path</code> is obtained by triggering the <code>getPath</code> function of the shielded SRC-20 contract.</p>
 <p><strong>2. Call api: wallet/createshieldedcontractparameterswithoutask to build the parameters</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -736,7 +711,7 @@
         <span class="p">}</span>
      <span class="p">}</span>
    <span class="p">]</span><span class="err">,</span>
-    <span class="s2">&quot;shielded_TRC20_contract_address&quot;</span><span class="err">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
+    <span class="s2">&quot;shielded_SRC20_contract_address&quot;</span><span class="err">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
 <span class="err">}</span>
 </pre></div>
 
@@ -805,11 +780,11 @@
 <p>The returned <code>value</code> is the <code>spend_authority_signature</code>. If the <code>transfer</code> has two inputs, the users needs to generate the two corresponding <code>spend_authority_signatures</code>.</p>
 <p>Note: in order to guarantee the security,  the user should be better to generate the <code>spend_authority_signature</code> by itself instead of calling  the api.</p>
 <p>Then the user need to call the api to generate the triggering contract input:</p>
-<p><strong>wallet/gettriggerinputforshieldedtrc20contract</strong></p>
+<p><strong>wallet/gettriggerinputforshieldedsrc20contract</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span>{
-    &quot;shielded_TRC20_Parameters&quot;: {
+    &quot;shielded_SRC20_Parameters&quot;: {
         &quot;spend_description&quot;: [
             {
                 &quot;value_commitment&quot;: &quot;68b6f57d972dfeef1784017d0a669b45a367091671c098ea99fc9654d7bdc0e7&quot;,
@@ -865,8 +840,8 @@
 </pre></div>
 
 
-<p>The <code>value</code> can be used as the input data to trigger the <code>transfer</code> function of the shielded TRC-20 contract.</p>
-<h3 id="create-shielded-trc-20-contract-parameters-for-burn">Create shielded TRC-20 contract parameters for <code>burn</code><a class="headerlink" href="#create-shielded-trc-20-contract-parameters-for-burn" title="Permanent link">&para;</a></h3>
+<p>The <code>value</code> can be used as the input data to trigger the <code>transfer</code> function of the shielded SRC-20 contract.</p>
+<h3 id="create-shielded-src-20-contract-parameters-for-burn">Create shielded SRC-20 contract parameters for <code>burn</code><a class="headerlink" href="#create-shielded-src-20-contract-parameters-for-burn" title="Permanent link">&para;</a></h3>
 <p><strong>1. Call api: wallet/createshieldedcontractparameters to build the parameters</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -884,7 +859,7 @@
         <span class="nt">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;b6de1a3a40764bd7a24147f155011624805bfcd6d21283c69a3f21aea9401201&quot;</span><span class="p">,</span>
         <span class="nt">&quot;root&quot;</span><span class="p">:</span>  <span class="s2">&quot;b0b6f5be533b99be38bc9a3c2f3c75a9be263c42500a9e13ffb00df15cda126f&quot;</span><span class="p">,</span>
         <span class="nt">&quot;path&quot;</span><span class="p">:</span>  <span class="s2">&quot;b2eed031d4d6a4f02a097f80b54cc1541d4163c6b6f5971f88b6e41d35c5381412935f14b676509b81eb49ef25f39269ed72309238b4c145803544b646dca62de1f34b034d4a3cd28557e2907ebf990c918f64ecb50a94f01d6fda5ca5c7ef7228e7b841dcbc47cceb69d7cb8d94245fb7cb2ba3a7a6bc18f13f945f7dbd6e2aa5122c08ff9c161d9ca6fc462073396c7d7d38e8ee48cdb3bea7e2230134ed6ad2e1642c9a462229289e5b0e3b7f9008e0301cbb93385ee0e21da2545073cb5816d6252968971a83da8521d65382e61f0176646d771c91528e3276ee45383e4afee0e52802cb0c46b1eb4d376c62697f4759f6c8917fa352571202fd778fd7124c6937d78f42685f84b43ad3b7b00f81285662f85c6a68ef11d62ad1a3ee08500769557bc682b1bf308646fd0b22e648e8b9e98f57e29f5af40f6edb833e2c4908eeab0c13abd6069e6310197bf80f9c1ea6de78fd19cbae24d4a520e6cf30238d5fa43e5a10d11605ac7430ba1f5d81fb1b68d29a640405767749e8415276736aca8448d8263e547d5ff2950e2ed3839e998d31cbc6ac9fd57bc6002b159216cd1c8dbf6e3acc7a80439bc4962cf25b9dce7c896f3a5bd70803fc5a0e33cf006edb16d01907b759977d7650dad7e3ec049af1a3d875380b697c862c9ec5d51c1ea6675f9551eeb9dfaaa9247bc9858270d3d3a4c5afa7177a984d5ed1be2451d6acdedf95f608e09fa53fb43dcd0990475726c5131210c9e5caeab97f0e642fbd74b25aacb92378a871bf27d225cfc26baca344a1ea35fdd94510f3d157082c1b77dac4d24fb7258c3c528704c59430b630718bec486421837021cf75dab651ec677114c27206f5debc1c1ed66f95e2b1885da5b7be3d736b1de985794730484777c8776a3b1e69b73a62fa701fa4f7a6282d9aee2c7a6b82e7937d7081c23cba49b659fbd0b7334211ea6a9d9df185c757e70aa81da562fb912b84f49bce7243ff5457f13b926b61df552d4e402ee6dc1463f99a535f9a713439264d5b616b7b99abdc3730991cc9274727d7d82d28cb794edbc7034b4f0053ff7c4b680444d6c639ac24b46bd19341c91b13fdcab31581ddaf7f1411336a271f3d0aa528138ac9cf9c391e3fd42891d27238a81a8a5c1d3a72b1bcbea8cf44a58ce7389613912d82b2c2bca231f71efcf61737fbf0a08befa0416215aeef53e8bb6d23390a93a022931b1f10886401d5fc249cbc9d0158945f4ecc0509041abc868077545d091e115b68c44341eec6fd6862140898e7399401f2ec319e3daefd931dcf1a3fffe9fc03f18b176c998806439ff0bb8ad193afdb27b2ccbc88856916dd804e34adfa6682c546a5f87ac883fa09f6954b50fb7330f8e6b080a9a417548ab062674fc4565e1c6027648d10d91b1708cb4456f2e09220ab8f155c41ef790ea9b562&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="mi">27</span>
+        <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="mi">21</span>
       <span class="p">}</span>
    <span class="p">],</span>
 
@@ -899,13 +874,13 @@
    <span class="p">],</span>
    <span class="nt">&quot;transparent_to_address&quot;</span><span class="p">:</span><span class="s2">&quot;TBaBXpRAeBhs75TZT751LwyhrcR25XeUot&quot;</span><span class="p">,</span>
    <span class="nt">&quot;to_amount&quot;</span><span class="p">:</span><span class="s2">&quot;2000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
     <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Note: the <code>to_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded TRC-20 contract. In this example, the value of <code>scalingFactor</code> is 100. , namely 60 * 100 =  40 * 100 + 2000.</p>
+<p>Note: the <code>to_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded SRC-20 contract. In this example, the value of <code>scalingFactor</code> is 100. , namely 60 * 100 =  40 * 100 + 2000.</p>
 <p>Return:</p>
 <div class="codehilite"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;spend_description&quot;</span>: <span class="o">[</span>
@@ -934,7 +909,7 @@
 </pre></div>
 
 
-<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>burn</code> function of the shielded TRC-20 contract.</p>
+<p>The <code>trigger_contract_input</code> can be used as the input data to trigger the <code>burn</code> function of the shielded SRC-20 contract.</p>
 <p><strong>2. Call api: wallet/createshieldedcontractparameterswithoutask to build the parameters</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -952,7 +927,7 @@
         <span class="nt">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;b6de1a3a40764bd7a24147f155011624805bfcd6d21283c69a3f21aea9401201&quot;</span><span class="p">,</span>
         <span class="nt">&quot;root&quot;</span><span class="p">:</span>  <span class="s2">&quot;b0b6f5be533b99be38bc9a3c2f3c75a9be263c42500a9e13ffb00df15cda126f&quot;</span><span class="p">,</span>
         <span class="nt">&quot;path&quot;</span><span class="p">:</span>  <span class="s2">&quot;b2eed031d4d6a4f02a097f80b54cc1541d4163c6b6f5971f88b6e41d35c5381412935f14b676509b81eb49ef25f39269ed72309238b4c145803544b646dca62de1f34b034d4a3cd28557e2907ebf990c918f64ecb50a94f01d6fda5ca5c7ef7228e7b841dcbc47cceb69d7cb8d94245fb7cb2ba3a7a6bc18f13f945f7dbd6e2aa5122c08ff9c161d9ca6fc462073396c7d7d38e8ee48cdb3bea7e2230134ed6ad2e1642c9a462229289e5b0e3b7f9008e0301cbb93385ee0e21da2545073cb5816d6252968971a83da8521d65382e61f0176646d771c91528e3276ee45383e4afee0e52802cb0c46b1eb4d376c62697f4759f6c8917fa352571202fd778fd7124c6937d78f42685f84b43ad3b7b00f81285662f85c6a68ef11d62ad1a3ee08500769557bc682b1bf308646fd0b22e648e8b9e98f57e29f5af40f6edb833e2c4908eeab0c13abd6069e6310197bf80f9c1ea6de78fd19cbae24d4a520e6cf30238d5fa43e5a10d11605ac7430ba1f5d81fb1b68d29a640405767749e8415276736aca8448d8263e547d5ff2950e2ed3839e998d31cbc6ac9fd57bc6002b159216cd1c8dbf6e3acc7a80439bc4962cf25b9dce7c896f3a5bd70803fc5a0e33cf006edb16d01907b759977d7650dad7e3ec049af1a3d875380b697c862c9ec5d51c1ea6675f9551eeb9dfaaa9247bc9858270d3d3a4c5afa7177a984d5ed1be2451d6acdedf95f608e09fa53fb43dcd0990475726c5131210c9e5caeab97f0e642fbd74b25aacb92378a871bf27d225cfc26baca344a1ea35fdd94510f3d157082c1b77dac4d24fb7258c3c528704c59430b630718bec486421837021cf75dab651ec677114c27206f5debc1c1ed66f95e2b1885da5b7be3d736b1de985794730484777c8776a3b1e69b73a62fa701fa4f7a6282d9aee2c7a6b82e7937d7081c23cba49b659fbd0b7334211ea6a9d9df185c757e70aa81da562fb912b84f49bce7243ff5457f13b926b61df552d4e402ee6dc1463f99a535f9a713439264d5b616b7b99abdc3730991cc9274727d7d82d28cb794edbc7034b4f0053ff7c4b680444d6c639ac24b46bd19341c91b13fdcab31581ddaf7f1411336a271f3d0aa528138ac9cf9c391e3fd42891d27238a81a8a5c1d3a72b1bcbea8cf44a58ce7389613912d82b2c2bca231f71efcf61737fbf0a08befa0416215aeef53e8bb6d23390a93a022931b1f10886401d5fc249cbc9d0158945f4ecc0509041abc868077545d091e115b68c44341eec6fd6862140898e7399401f2ec319e3daefd931dcf1a3fffe9fc03f18b176c998806439ff0bb8ad193afdb27b2ccbc88856916dd804e34adfa6682c546a5f87ac883fa09f6954b50fb7330f8e6b080a9a417548ab062674fc4565e1c6027648d10d91b1708cb4456f2e09220ab8f155c41ef790ea9b562&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="mi">27</span>
+        <span class="nt">&quot;pos&quot;</span><span class="p">:</span> <span class="mi">21</span>
       <span class="p">}</span>
    <span class="p">],</span>
    <span class="nt">&quot;shielded_receives&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -966,13 +941,13 @@
    <span class="p">],</span>
    <span class="nt">&quot;transparent_to_address&quot;</span><span class="p">:</span><span class="s2">&quot;TBaBXpRAeBhs75TZT751LwyhrcR25XeUot&quot;</span><span class="p">,</span>
    <span class="nt">&quot;to_amount&quot;</span><span class="p">:</span><span class="s2">&quot;2000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
     <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<p>Note: the <code>to_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded TRC-20 contract. In this example, the value of <code>scalingFactor</code> is 100, namely 60 * 100 =  40 * 100 + 2000.</p>
+<p>Note: the <code>to_amount</code> is the real value, the <code>value</code> in note is the scaled value by <code>scalingFactor</code> set in the shielded SRC-20 contract. In this example, the value of <code>scalingFactor</code> is 100, namely 60 * 100 =  40 * 100 + 2000.</p>
 <p>Return:</p>
 <div class="codehilite"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;spend_description&quot;</span>: <span class="o">[</span>
@@ -1000,7 +975,7 @@
 </pre></div>
 
 
-<p>Because of lacking the <code>ask</code>, the api can not generate the <code>spend_authority_signature</code>. Here, the <code>trigger_contract_input</code> is some ciphertext used to generate the trigger shielded TRC-20 contract input for <code>burn</code>. To generate the <code>trigger_contract_input</code>, the user first needs to generate the spend <code>spend_authority_signature</code> by calling the api:</p>
+<p>Because of lacking the <code>ask</code>, the api can not generate the <code>spend_authority_signature</code>. Here, the <code>trigger_contract_input</code> is some ciphertext used to generate the trigger shielded SRC-20 contract input for <code>burn</code>. To generate the <code>trigger_contract_input</code>, the user first needs to generate the spend <code>spend_authority_signature</code> by calling the api:</p>
 <p><strong>wallet/createspendauthsig</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -1020,11 +995,11 @@
 
 
 <p>The returned <code>value</code> is the <code>spend_authority_signature</code>. Then the user need to call the api:</p>
-<p><strong>wallet/gettriggerinputforshieldedtrc20contract</strong></p>
+<p><strong>wallet/gettriggerinputforshieldedsrc20contract</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span>{
-    &quot;shielded_TRC20_Parameters&quot;: {
+    &quot;shielded_SRC20_Parameters&quot;: {
         &quot;spend_description&quot;: [
             {
                 &quot;value_commitment&quot;: &quot;c8565a546d8922f7b5fdba99504961ccf827fc3ffa23905e50ac2f4eef819766&quot;,
@@ -1066,9 +1041,9 @@
 </pre></div>
 
 
-<p>The <code>value</code> can be used as the input data to trigger the <code>burn</code> function of the shielded TRC-20 contract.</p>
-<h3 id="trigger-the-shielded-trc-20-contract">Trigger the shielded TRC-20 contract<a class="headerlink" href="#trigger-the-shielded-trc-20-contract" title="Permanent link">&para;</a></h3>
-<p><strong>Call api: wallet/triggersmartcontract to trigger the shielded TRC-20 contract and geneate the shielded TRC-20 transaction</strong></p>
+<p>The <code>value</code> can be used as the input data to trigger the <code>burn</code> function of the shielded SRC-20 contract.</p>
+<h3 id="trigger-the-shielded-src-20-contract">Trigger the shielded SRC-20 contract<a class="headerlink" href="#trigger-the-shielded-src-20-contract" title="Permanent link">&para;</a></h3>
+<p><strong>Call api: wallet/triggersmartcontract to trigger the shielded SRC-20 contract and geneate the shielded SRC-20 transaction</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1118,7 +1093,7 @@
 
 
 <p>Note: the above is an example for triggering the <code>mint</code> function. For <code>transfer</code> and <code>burn</code>, it's similar.</p>
-<h3 id="broadcast-the-shielded-trc-20-transaction">Broadcast the shielded TRC-20 transaction<a class="headerlink" href="#broadcast-the-shielded-trc-20-transaction" title="Permanent link">&para;</a></h3>
+<h3 id="broadcast-the-shielded-src-20-transaction">Broadcast the shielded SRC-20 transaction<a class="headerlink" href="#broadcast-the-shielded-src-20-transaction" title="Permanent link">&para;</a></h3>
 <p><strong>Call api: wallet/broadcasttransaction to broadcast this transaction</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
@@ -1155,14 +1130,14 @@
 
 
 <p>Note: before broadcasting the transaction, the sender should sign the transaction by its private key to generate the signature and add it to the transaction.</p>
-<h3 id="scan-shielded-trc-20-notes-by-ivk">Scan shielded TRC-20 notes by <code>ivk</code><a class="headerlink" href="#scan-shielded-trc-20-notes-by-ivk" title="Permanent link">&para;</a></h3>
-<p><strong>Call api: wallet/scanshieldedtrc20notesbyivk to scan the shielded TRC-20 notes</strong></p>
+<h3 id="scan-shielded-src-20-notes-by-ivk">Scan shielded SRC-20 notes by <code>ivk</code><a class="headerlink" href="#scan-shielded-src-20-notes-by-ivk" title="Permanent link">&para;</a></h3>
+<p><strong>Call api: wallet/scanshieldedsrc20notesbyivk to scan the shielded SRC-20 notes</strong></p>
 <p>Method: Post and Get</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;start_block_index&quot;</span><span class="p">:</span> <span class="mi">46079</span><span class="p">,</span>
     <span class="nt">&quot;end_block_index&quot;</span><span class="p">:</span> <span class="mi">46091</span><span class="p">,</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
     <span class="nt">&quot;ivk&quot;</span><span class="p">:</span> <span class="s2">&quot;c1898b84ced7e5c8840632ad1203d56b4a8ebbaa8425dd8b5a5b3d43578e1006&quot;</span><span class="p">,</span>
     <span class="nt">&quot;ak&quot;</span><span class="p">:</span> <span class="s2">&quot;66fda71a704eb463a13b6f43be7e296dd7ff3e6075e64badf462eca042f0b269&quot;</span><span class="p">,</span>
     <span class="nt">&quot;nk&quot;</span><span class="p">:</span> <span class="s2">&quot;b5f558a783c968b624f7cfc9a4f2c909332c0c514a8a419e552337e82e073f66&quot;</span><span class="p">,</span>
@@ -1189,14 +1164,14 @@
 </pre></div>
 
 
-<h3 id="scan-shielded-trc-20-notes-by-ovk">Scan shielded TRC-20 notes by <code>ovk</code><a class="headerlink" href="#scan-shielded-trc-20-notes-by-ovk" title="Permanent link">&para;</a></h3>
-<p><strong>Call api: wallet/scanshieldedtrc20notesbyovk to scan the shileded TRC-20 notes</strong></p>
+<h3 id="scan-shielded-src-20-notes-by-ovk">Scan shielded SRC-20 notes by <code>ovk</code><a class="headerlink" href="#scan-shielded-src-20-notes-by-ovk" title="Permanent link">&para;</a></h3>
+<p><strong>Call api: wallet/scanshieldedsrc20notesbyovk to scan the shileded SRC-20 notes</strong></p>
 <p>Method: Post and Get</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;start_block_index&quot;</span><span class="p">:</span> <span class="mi">46079</span><span class="p">,</span>
     <span class="nt">&quot;end_block_index&quot;</span><span class="p">:</span> <span class="mi">46091</span><span class="p">,</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;TDxka3zetrpWsWoeWWjSAQDwM186UmzwQn&quot;</span><span class="p">,</span>
     <span class="nt">&quot;ovk&quot;</span><span class="p">:</span> <span class="s2">&quot;4364c875deeb663781a2f1530f9e4f87ea81cc3c757ca2a30fa4768940de2f98&quot;</span><span class="p">,</span>
     <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
@@ -1234,8 +1209,8 @@
 </pre></div>
 
 
-<h3 id="check-the-shielded-trc-20-note-status">Check the shielded TRC-20 note status<a class="headerlink" href="#check-the-shielded-trc-20-note-status" title="Permanent link">&para;</a></h3>
-<p><strong>Call api: wallet/isshieldedtrc20contractNoteSpent to check the shielded TRC-20 note status whether it is spent</strong></p>
+<h3 id="check-the-shielded-src-20-note-status">Check the shielded SRC-20 note status<a class="headerlink" href="#check-the-shielded-src-20-note-status" title="Permanent link">&para;</a></h3>
+<p><strong>Call api: wallet/isshieldedsrc20contractNoteSpent to check the shielded SRC-20 note status whether it is spent</strong></p>
 <p>Method: Post</p>
 <p>Parameters:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -1247,7 +1222,7 @@
     <span class="nt">&quot;ak&quot;</span><span class="p">:</span> <span class="s2">&quot;8072d9110c9de9d9ade33d5d0f5890a7aa65b0cde42af7816d187297caf2fd64&quot;</span><span class="p">,</span>
     <span class="nt">&quot;nk&quot;</span><span class="p">:</span> <span class="s2">&quot;590bf33f93f792be659fd404df91e75c3b08d38d4e08ee226c3f5219cf598f14&quot;</span><span class="p">,</span>
     <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;shielded_TRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
+    <span class="nt">&quot;shielded_SRC20_contract_address&quot;</span><span class="p">:</span> <span class="s2">&quot;41e6e90fbc958ba09483550882b1f0327e0193250a&quot;</span>
 <span class="p">}</span>
 </pre></div>
 

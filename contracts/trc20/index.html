@@ -164,7 +164,7 @@
     <a class="current" href="./">TRC-20</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#trc-20">TRC-20</a></li>
+    <li class="toctree-l3"><a href="#src-20">SRC-20</a></li>
     
         <ul>
         
@@ -202,10 +202,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -214,15 +210,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -242,10 +230,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -310,8 +294,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="trc-20">TRC-20<a class="headerlink" href="#trc-20" title="Permanent link">&para;</a></h1>
-<p>TRC‌-20 is a technical standard used for smart contracts on the STABILA blockchain for implementing tokens with the STABILA Virtual Machine (SVM). It is fully compatible to ERC‌-20.</p>
+                <h1 id="src-20">SRC-20<a class="headerlink" href="#src-20" title="Permanent link">&para;</a></h1>
+<p>SRC‌-20 is a technical standard used for smart contracts on the STABILA blockchain for implementing tokens with the STABILA Virtual Machine (SVM). It is fully compatible to ERC‌-20.</p>
 <h2 id="implementation-rules">Implementation Rules<a class="headerlink" href="#implementation-rules" title="Permanent link">&para;</a></h2>
 <p><strong>3 Optional Items</strong></p>
 <ul>
@@ -336,7 +320,7 @@
 
 
 <p><strong>6 Required Items</strong></p>
-<div class="codehilite"><pre><span></span>contract TRC20 {
+<div class="codehilite"><pre><span></span>contract SRC20 {
     function totalSupply() constant returns (uint theTotalSupply);
     function balanceOf(address _owner) constant returns (uint balance);
     function transfer(address _to, uint _value) returns (bool success);
@@ -389,7 +373,7 @@
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
-contract TokenTRC20 {
+contract TokenSRC20 {
     // Public variables of the token
     string public name;
     string public symbol;
@@ -412,7 +396,7 @@ contract TokenTRC20 {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    function TokenTRC20(
+    function TokenSRC20(
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol

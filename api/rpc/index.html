@@ -194,10 +194,6 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/archive-manifest/">Leveldb Startup Optimization Plugins</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/resources/">Resources</a>
                 </li>
                 <li class="">
@@ -206,15 +202,7 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../developers/incentives/">Incentive Policy</a>
-                </li>
-                <li class="">
-                    
     <a class="" href="../../developers/java-stabila/">Java-Stabila</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/tips/">TIPs</a>
                 </li>
                 <li class="">
                     
@@ -234,10 +222,6 @@
                 <li class="">
                     
     <a class="" href="../../clients/wallet-cli/">Wallet-cli</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../clients/stabila-grid/">StabilaGrid</a>
                 </li>
     </ul>
 	    </li>
@@ -304,8 +288,7 @@
               
                 <h1 id="rpc-list">RPC List<a class="headerlink" href="#rpc-list" title="Permanent link">&para;</a></h1>
 <p><strong>For the specific definition of API, please refer to the following link:</strong>
-<a href="https://github.com/stabilaprotocol/protocol/blob/master/api/api.proto">api/api.proto</a>
-<a href="https://github.com/stabilaprotocol/protocol/blob/master/core/Contract.proto">core/Contract.proto</a>.</p>
+<a href="https://github.com/stabilaprotocol/protocol/blob/master/api/api.proto">api/api.proto</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode. New developers should deploy FullNode only.</p>
@@ -342,8 +325,8 @@ Transfer, vote, issuance of token, or participation in token offering. Sending s
 
 
 <p>Nodes: Fullnode</p>
-<p><strong>6.&nbsp;Vote for super representative candidates</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">VoteWitnessAccount</span> <span class="p">(</span><span class="n">VoteWitnessContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>6.&nbsp;Vote for Governor candidates</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">VoteExecutiveAccount</span> <span class="p">(</span><span class="n">VoteExecutiveContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
@@ -372,22 +355,22 @@ Transfer, vote, issuance of token, or participation in token offering. Sending s
 
 
 <p>Nodes: FullNode</p>
-<p><strong>11.&nbsp;Query of list of super representative candidates</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ListWitnesses</span> <span class="p">(</span><span class="n">EmptyMessage</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">WitnessList</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>11.&nbsp;Query of list of executives</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ListExecutivees</span> <span class="p">(</span><span class="n">EmptyMessage</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ExecutiveList</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode and SolidityNode</p>
 <p><strong>12.&nbsp;Application for super representative</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateWitness</span> <span class="p">(</span><span class="n">WitnessCreateContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateExecutive</span> <span class="p">(</span><span class="n">ExecutiveCreateContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode</p>
 <p>Description:
 To apply to become STABILA’s Super Representative candidate.</p>
-<p><strong>13.&nbsp;Information update of Super Representative candidates</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">UpdateWitness</span> <span class="p">(</span><span class="n">WitnessUpdateContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>13.&nbsp;Information update of executives</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">UpdateExecutive</span> <span class="p">(</span><span class="n">ExecutiveUpdateContract</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">Transaction</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
@@ -672,37 +655,37 @@ Token update can only be initiated by the token issuer to update token descripti
 
 <p>Nodes: FullNode</p>
 <p><strong>60.&nbsp;Create shielded contract parameters</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateShieldedContractParameters</span> <span class="p">(</span><span class="n">PrivateShieldedTRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ShieldedTRC20Parameters</span><span class="p">)</span> <span class="p">{}</span>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateShieldedContractParameters</span> <span class="p">(</span><span class="n">PrivateShieldedSRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ShieldedSRC20Parameters</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode</p>
 <p><strong>61.&nbsp;Create shielded contract parameters without ask</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateShieldedContractParametersWithoutAsk</span> <span class="p">(</span><span class="n">PrivateShieldedTRC20ParametersWithoutAsk</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ShieldedTRC20Parameters</span><span class="p">)</span> <span class="p">{}</span>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">CreateShieldedContractParametersWithoutAsk</span> <span class="p">(</span><span class="n">PrivateShieldedSRC20ParametersWithoutAsk</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ShieldedSRC20Parameters</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode</p>
-<p><strong>62.&nbsp;Scan shielded TRC20 notes by ivk</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ScanShieldedTRC20NotesbyIvk</span> <span class="p">(</span><span class="n">IvkDecryptTRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">DecryptNotesTRC20</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>62.&nbsp;Scan shielded SRC20 notes by ivk</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ScanShieldedSRC20NotesbyIvk</span> <span class="p">(</span><span class="n">IvkDecryptSRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">DecryptNotesSRC20</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode, SolidityNode</p>
-<p><strong>63.&nbsp;Scan shielded TRC20 notes by ovk</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ScanShieldedTRC20NotesbyOvk</span> <span class="p">(</span><span class="n">OvkDecryptTRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">DecryptNotesTRC20</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>63.&nbsp;Scan shielded SRC20 notes by ovk</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">ScanShieldedSRC20NotesbyOvk</span> <span class="p">(</span><span class="n">OvkDecryptSRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">DecryptNotesSRC20</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode, SolidityNode</p>
-<p><strong>64.&nbsp;Get the status of shielded TRC20 note of spent or not</strong></p>
-<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">IsShieldedTRC20ContractNoteSpent</span> <span class="p">(</span><span class="n">NfTRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">NullifierResult</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>64.&nbsp;Get the status of shielded SRC20 note of spent or not</strong></p>
+<div class="codehilite"><pre><span></span><span class="k">rpc</span> <span class="n">IsShieldedSRC20ContractNoteSpent</span> <span class="p">(</span><span class="n">NfSRC20Parameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">NullifierResult</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Nodes: FullNode, SolidityNode</p>
-<p><strong>65.&nbsp;Get the trigger input for the shielded TRC20</strong></p>
-<div class="codehilite"><pre><span></span>  <span class="k">rpc</span> <span class="n">GetTriggerInputForShieldedTRC20Contract</span> <span class="p">(</span><span class="n">ShieldedTRC20TriggerContractParameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">BytesMessage</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>65.&nbsp;Get the trigger input for the shielded SRC20</strong></p>
+<div class="codehilite"><pre><span></span>  <span class="k">rpc</span> <span class="n">GetTriggerInputForShieldedSRC20Contract</span> <span class="p">(</span><span class="n">ShieldedSRC20TriggerContractParameters</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">BytesMessage</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 
 

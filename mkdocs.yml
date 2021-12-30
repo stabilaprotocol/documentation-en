@@ -12,13 +12,13 @@ nav:
         - HTTP API: api/http.md
         - RPC API: api/rpc.md
     - Mechanism & Algorithm:
-        - SR and Committee: mechanism-algorithm/sr.md
-        - TRC-10: mechanism-algorithm/trc10.md
+        - GOV and Committee: mechanism-algorithm/sr.md
+        - SRC-10: mechanism-algorithm/src10.md
         - Account Model: mechanism-algorithm/account.md
         - Resource Model: mechanism-algorithm/resource.md
         - Decentralized Exchange: mechanism-algorithm/dex.md
         - Multi-Signature: mechanism-algorithm/multi-signatures.md
-        - Shielded TRC20 Contract: mechanism-algorithm/shielded-TRC20-contract.md
+        - Shielded SRC20 Contract: mechanism-algorithm/shielded-SRC20-contract.md
         - System Contracts:  mechanism-algorithm/system-contracts.md
     - Architecture:
         - Network: architecture/network.md
@@ -28,7 +28,7 @@ nav:
         - SVM: contracts/svm.md
         - Compiler: contracts/compiler.md
         - Contract: contracts/contract.md
-        - TRC-20: contracts/trc20.md
+        - SRC-20: contracts/src20.md
     - Developers:
         - Official Public Nodes: developers/official-public-nodes.md
         - Deployment: developers/deployment.md

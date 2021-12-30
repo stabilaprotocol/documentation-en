@@ -414,7 +414,7 @@
 <a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf">https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf</a></p>
 <h1 id="2-srs-and-committee">2. SRs and Committee<a class="headerlink" href="#2-srs-and-committee" title="Permanent link">&para;</a></h1>
 <h2 id="21-how-to-become-a-governor">2.1 How to Become a Governor<a class="headerlink" href="#21-how-to-become-a-governor" title="Permanent link">&para;</a></h2>
-<p>In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.</p>
+<p>In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Governors can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.</p>
 <p>To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.</p>
 <h2 id="22-governors-election">2.2 Governors Election<a class="headerlink" href="#22-governors-election" title="Permanent link">&para;</a></h2>
 <p>To vote, you need to have STABILA Power(SP). To get STABILA Power, you need to stake STB. Every 1 staked STB accounts for one STABILA Power(SP). Every account in STABILA network has the right to vote for a governor candidate. After you unstake your staked STB, you will lose the responding STABILA Power(SP), so your previous vote will be invalid.</p>
@@ -510,7 +510,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"</p>
 <h1 id="4-network-node">4. Network Node<a class="headerlink" href="#4-network-node" title="Permanent link">&para;</a></h1>
 <h2 id="41-governor">4.1 Governor<a class="headerlink" href="#41-governor" title="Permanent link">&para;</a></h2>
 <h3 id="411-governor-introduction">4.1.1 Governor Introduction<a class="headerlink" href="#411-governor-introduction" title="Permanent link">&para;</a></h3>
-<p>Governor(abbr: SR) is the block producer in STABILA network, there are 21 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using <a href="https://stabilascan.org/representatives">stabilascan</a>.</p>
+<p>Governor(abbr: GOV) is the block producer in STABILA network, there are 21 GOV. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using <a href="https://stabilascan.org/representatives">stabilascan</a>.</p>
 <h3 id="412-governor-deployment">4.1.2 Governor Deployment<a class="headerlink" href="#412-governor-deployment" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet">Governor Deployment</a></p>
 <h3 id="413-recommended-hardware-configuration">4.1.3 Recommended Hardware Configuration<a class="headerlink" href="#413-recommended-hardware-configuration" title="Permanent link">&para;</a></h3>
@@ -566,7 +566,7 @@ please refer to <a href="https://github.com/stabilaprotocol/stabila-deployment#d
 <p>2.&nbsp;add your private key in localexecutive
  3.&nbsp;set genesis.block.executives as the private key's corresponding address
  4.&nbsp;set p2p.version, any positive integer but 11111
- 5.&nbsp;set the first SR needSyncCheck = false, others can be set true
+ 5.&nbsp;set the first GOV needSyncCheck = false, others can be set true
  6.&nbsp;set node.discovery.enable = true
  7.&nbsp;run the script</p>
 <div class="codehilite"><pre><span></span>nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --executive  -c private_net_config.conf
@@ -596,7 +596,7 @@ please refer to <a href="https://github.com/stabilaprotocol/stabila-deployment#d
 </pre></div>
 
 
-<p>2.&nbsp;set seed.node ip.list with SR's ip and port</p>
+<p>2.&nbsp;set seed.node ip.list with GOV's ip and port</p>
 <p>3.&nbsp;set p2p.version the same as Governor's p2p.version</p>
 <p>4.&nbsp;set genesis.block the same as genesis.block</p>
 <p>5.&nbsp;set needSyncCheck true</p>

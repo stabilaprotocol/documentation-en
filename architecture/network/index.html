@@ -302,7 +302,7 @@
 <p>Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.</p>
 <p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png" /></p>
 <h2 id="governor">Governor<a class="headerlink" href="#governor" title="Permanent link">&para;</a></h2>
-<p>Super Representative(abbr: SR) is the block producer in STABILA network, there are 21 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using <a href="https://stabilascan.org/representatives">Stabilascan</a>.</p>
+<p>Governor(abbr: GOV) is the block producer in STABILA network, there are 21 GOVs. They verify the transactions and write the transactions into the blocks in turn. The Governors' information is public to everyone in Stabila network. The best way to browse is using <a href="https://stabilascan.org/representatives">Stabilascan</a>.</p>
 <p>Recommended Hardware Configuration:</p>
 <div class="codehilite"><pre><span></span>minimum requirement:
 CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
@@ -362,7 +362,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 </li>
 <li>set <code>genesis.block.executives</code> as the private key's corresponding address</li>
 <li>set <code>p2p.version</code>, any positive integer except <code>11111</code></li>
-<li>set for first SR <code>needSyncCheck = false</code>, others can be set true</li>
+<li>set for first GOV <code>needSyncCheck = false</code>, others can be set true</li>
 <li>set <code>node.discovery.enable = true</code></li>
 <li>
 <p>run the following command</p>
@@ -403,7 +403,7 @@ CPU: &gt; 32 cores RAM: &gt; 48G, Bandwidth: &gt; 500M, Disk: &gt; 2T
 <h4 id="deploy-the-fullnode">Deploy the FullNode<a class="headerlink" href="#deploy-the-fullnode" title="Permanent link">&para;</a></h4>
 <p>Same as above except for:</p>
 <ol>
-<li>set <code>seed.node.ip.list</code> to SR's ip and port</li>
+<li>set <code>seed.node.ip.list</code> to GOV's ip and port</li>
 <li>set <code>needSyncCheck</code> true</li>
 <li>modify <code>listen.port</code>, <code>http.port</code> and <code>rpc.port</code> if Governor and FullNode are deployed on the same server.</li>
 <li>do not need a private key in <code>localexecutive</code></li>

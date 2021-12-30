@@ -320,11 +320,11 @@
 <li><a href="#is-the-block-producing-time-interval-always-remain-the-same">Is the block producing time interval always remain the same?</a></li>
 <li><a href="#will-the-block-producing-reward-reduce-half">Will the block producing reward reduce half?</a></li>
 <li><a href="#if-one-of-the-top-21-governors-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 21 Governors goes wrong, will it be removed from the SRs list?</a></li>
-<li><a href="#is-there-a-threshold-to-become-a-sr">Is there a threshold to become a SR?</a></li>
+<li><a href="#is-there-a-threshold-to-become-a-gov">Is there a threshold to become a GOV?</a></li>
 <li><a href="#21-srs-shares-the-block-producing-reward-equally-or-by-their-computing-power">21 SRs shares the block producing reward equally or by their computing power?</a></li>
 <li><a href="#will-there-be-an-over-50-computing-power-issue-in-stabila-network">Will there be an over 50% computing power issue in STABILA network?</a></li>
 <li><a href="#will-voting-burns-stb">Will voting burns STB?</a></li>
-<li><a href="#how-long-does-srs-power-last">How long does SR's power last?</a></li>
+<li><a href="#how-long-does-govs-power-last">How long does GOV's power last?</a></li>
 <li><a href="#what-is-the-proof-of-a-transaction">What is the proof of a transaction？</a></li>
 <li><a href="#why-i-cant-stake-stb-longer-than-3-days">Why I Can't stake STB longer than 3 days</a></li>
 <li><a href="#how-to-calculate-the-transaction-fee">How to calculate the transaction fee?</a></li>
@@ -351,7 +351,7 @@
 </li>
 <li><a href="#running-a-node">Running a Node</a><ul>
 <li><a href="#as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment">As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？</a></li>
-<li><a href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr">Under private environment, should I submit application information to STABILA to become a SR?</a></li>
+<li><a href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-gov">Under private environment, should I submit application information to STABILA to become a GOV?</a></li>
 <li><a href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？</a></li>
 <li><a href="#does-soliditynode-sync-data-from-fullnode">Does SolidityNode sync data from FullNode?</a></li>
 <li><a href="#does-a-node-have-wallet-function">Does a node have wallet function?</a></li>
@@ -392,16 +392,16 @@
 <p>No.</p>
 <h3 id="if-one-of-the-top-21-governors-goes-wrong-will-it-be-removed-from-the-srs-list">If one of the top 21 Governors goes wrong, will it be removed from the SRs list?<a class="headerlink" href="#if-one-of-the-top-21-governors-goes-wrong-will-it-be-removed-from-the-srs-list" title="Permanent link">&para;</a></h3>
 <p>If people stop voting for it, it will drop out of the top 21 SRs.</p>
-<h3 id="is-there-a-threshold-to-become-a-sr">Is there a threshold to become a SR?<a class="headerlink" href="#is-there-a-threshold-to-become-a-sr" title="Permanent link">&para;</a></h3>
-<p>When the amount of votes you get ranks into top 21, you will become a SR.</p>
+<h3 id="is-there-a-threshold-to-become-a-gov">Is there a threshold to become a GOV?<a class="headerlink" href="#is-there-a-threshold-to-become-a-gov" title="Permanent link">&para;</a></h3>
+<p>When the amount of votes you get ranks into top 21, you will become a GOV.</p>
 <h3 id="21-srs-shares-the-block-producing-reward-equally-or-by-their-computing-power">21 SRs shares the block producing reward equally or by their computing power?<a class="headerlink" href="#21-srs-shares-the-block-producing-reward-equally-or-by-their-computing-power" title="Permanent link">&para;</a></h3>
 <p>It has nothing to do with computing power. The reward is a fixed 32 STB for each block produced.</p>
 <h3 id="will-there-be-an-over-50-computing-power-issue-in-stabila-network">Will there be an over 50% computing power issue in STABILA network?<a class="headerlink" href="#will-there-be-an-over-50-computing-power-issue-in-stabila-network" title="Permanent link">&para;</a></h3>
 <p>No.</p>
 <h3 id="will-voting-burns-stb">Will voting burns STB?<a class="headerlink" href="#will-voting-burns-stb" title="Permanent link">&para;</a></h3>
 <p>No.</p>
-<h3 id="how-long-does-srs-power-last">How long does SR's power last?<a class="headerlink" href="#how-long-does-srs-power-last" title="Permanent link">&para;</a></h3>
-<p>Every 6 hours, the votes will be counted to check the qualifications of all the SRs.</p>
+<h3 id="how-long-does-govs-power-last">How long does GOV's power last?<a class="headerlink" href="#how-long-does-govs-power-last" title="Permanent link">&para;</a></h3>
+<p>Every 6 hours, the votes will be counted to check the qualifications of all the GOVs.</p>
 <h3 id="what-is-the-proof-of-a-transaction">What is the proof of a transaction？<a class="headerlink" href="#what-is-the-proof-of-a-transaction" title="Permanent link">&para;</a></h3>
 <p>Transaction hash.</p>
 <h3 id="why-i-cant-stake-stb-longer-than-3-days">Why I Can't stake STB longer than 3 days<a class="headerlink" href="#why-i-cant-stake-stb-longer-than-3-days" title="Permanent link">&para;</a></h3>
@@ -472,8 +472,8 @@ Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be 
 <h2 id="running-a-node">Running a Node<a class="headerlink" href="#running-a-node" title="Permanent link">&para;</a></h2>
 <h3 id="as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment">As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？<a class="headerlink" href="#as-under-private-environment-why-the-log-keeps-updating-with-all-other-public-nodes-whats-the-difference-of-private-and-public-environment" title="Permanent link">&para;</a></h3>
 <p>If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash.</p>
-<h3 id="under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr">Under private environment, should I submit application information to STABILA to become a SR?<a class="headerlink" href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-sr" title="Permanent link">&para;</a></h3>
-<p>Under private environment, no need to submit application information to STABILA to become a SR.</p>
+<h3 id="under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-gov">Under private environment, should I submit application information to STABILA to become a GOV?<a class="headerlink" href="#under-private-environment-should-i-submit-application-information-to-stabila-to-become-a-gov" title="Permanent link">&para;</a></h3>
+<p>Under private environment, no need to submit application information to STABILA to become a GOV.</p>
 <p>Ask：Which service port should be public to public network?</p>
 <p>Default port 18888, 50051</p>
 <h3 id="at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？<a class="headerlink" href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service" title="Permanent link">&para;</a></h3>
@@ -573,5 +573,5 @@ Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be 
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2021-12-23 09:08:35
+Build Date UTC : 2021-12-30 15:07:55
 -->

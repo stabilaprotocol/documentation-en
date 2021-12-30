@@ -369,7 +369,7 @@ cp build/libs/SolidityNode.jar ../soliditynode
 </pre></div>
 
 
-<p>6.&nbsp;Running a Super Representative Node for mainnet</p>
+<p>6.&nbsp;Running a Governor Node for mainnet</p>
 <div class="codehilite"><pre><span></span>java -jar FullNode.jar -p your private key --executive -c your config.conf(Example：/data/java-stabila/config.conf)
 Example:
 java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --executive -c /data/java-stabila/config.conf
@@ -377,12 +377,12 @@ java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F
 
 
 <p>This is similar to running a private testnet, except that the IPs in the <code>config.conf</code> are officially declared by STABILA.</p>
-<p>7.&nbsp;Running a Super Representative Node for private testnet</p>
+<p>7.&nbsp;Running a Governor Node for private testnet</p>
 <p>You should modify the config.conf:</p>
 <ul>
 <li>Replace existing entry in genesis.block.executives with your address</li>
 <li>Replace existing entry in seed.node ip.list with your ip list</li>
-<li>The first Super Node start, needSyncCheck should be set false</li>
+<li>The first Governor Node start, needSyncCheck should be set false</li>
 <li>Set p2pversion to 61</li>
 </ul>
 <div class="codehilite"><pre><span></span>cd build/libs

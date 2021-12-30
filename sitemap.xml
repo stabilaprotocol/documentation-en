@@ -36,7 +36,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/trc10/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/src10/</loc>
      <lastmod>2021-12-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -61,7 +61,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/shielded-TRC20-contract/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/mechanism-algorithm/shielded-SRC20-contract/</loc>
      <lastmod>2021-12-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -101,7 +101,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/trc20/</loc>
+     <loc>https://stabilaprotocol.github.io/documentation-en/contracts/src20/</loc>
      <lastmod>2021-12-30</lastmod>
      <changefreq>daily</changefreq>
     </url>

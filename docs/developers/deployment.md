@@ -66,7 +66,7 @@ rpc {
 java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
 ```
 
-6.&nbsp;Running a Super Representative Node for mainnet
+6.&nbsp;Running a Governor Node for mainnet
 ```text
 java -jar FullNode.jar -p your private key --executive -c your config.conf(Example：/data/java-stabila/config.conf)
 Example:
@@ -75,13 +75,13 @@ java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F
 
 This is similar to running a private testnet, except that the IPs in the `config.conf` are officially declared by STABILA.
 
-7.&nbsp;Running a Super Representative Node for private testnet
+7.&nbsp;Running a Governor Node for private testnet
 
 You should modify the config.conf:
 
 - Replace existing entry in genesis.block.executives with your address
 - Replace existing entry in seed.node ip.list with your ip list
-- The first Super Node start, needSyncCheck should be set false
+- The first Governor Node start, needSyncCheck should be set false
 - Set p2pversion to 61
 
 ```text

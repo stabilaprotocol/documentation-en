@@ -6,7 +6,7 @@ Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equ
 
 ## Governor
 
-Super Representative(abbr: SR) is the block producer in STABILA network, there are 21 SRs. They verify the transactions and write the transactions into the blocks in turn. The super Representatives' information is public to everyone in Stabila network. The best way to browse is using [Stabilascan](https://stabilascan.org/representatives).
+Governor(abbr: GOV) is the block producer in STABILA network, there are 21 GOVs. They verify the transactions and write the transactions into the blocks in turn. The Governors' information is public to everyone in Stabila network. The best way to browse is using [Stabilascan](https://stabilascan.org/representatives).
 
 Recommended Hardware Configuration:
 
@@ -74,7 +74,7 @@ MainNet and PrivateNet all use the same code, only the node start configuration 
 2. add your private key in `localexecutive`
 3. set `genesis.block.executives` as the private key's corresponding address
 4. set `p2p.version`, any positive integer except `11111`
-5. set for first SR `needSyncCheck = false`, others can be set true
+5. set for first GOV `needSyncCheck = false`, others can be set true
 6. set `node.discovery.enable = true`
 7. run the following command
 
@@ -113,7 +113,7 @@ enable:
 
 Same as above except for:
 
-1. set `seed.node.ip.list` to SR's ip and port
+1. set `seed.node.ip.list` to GOV's ip and port
 2. set `needSyncCheck` true
 3. modify `listen.port`, `http.port` and `rpc.port` if Governor and FullNode are deployed on the same server.
 4. do not need a private key in `localexecutive`

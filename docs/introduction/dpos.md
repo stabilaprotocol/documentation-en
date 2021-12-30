@@ -22,7 +22,7 @@ Let's see how it's realized in the context of STABILA:
 
 - Executives candidates: nodes eligible for becoming executives in STABILA.
 
-- Executives: nodes in STABILA qualified for book-keeping. They are usually called executives in DPoS consensus. In STABILA, there will be 21 executives, which are also called super nodes (or SR). Here, we will not distinguish between bookkeeper, executive, supernode, SR, etc.
+- Executives: nodes in STABILA qualified for book-keeping. They are usually called executives in DPoS consensus. In STABILA, there will be 21 executives, which are also called Governor nodes (or GOV). Here, we will not distinguish between bookkeeper, executive, supernode, GOV, etc.
 
 - Bookkeeping: the process of verifying transactions and recording them in a ledger. Because ledgers in STABILA are carried by blocks, the bookkeeping process is also called block generation. We will not distinguish between bookkeeping and block generation in the document.
 

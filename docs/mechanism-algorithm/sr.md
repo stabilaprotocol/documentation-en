@@ -1,6 +1,6 @@
-# Super Representative
+# Governor
 
-## How to Become a Super Representative
+## How to Become a Governor
 
 In STABILA network, any account can apply to become a executive. Every account can vote for executives.
 
@@ -10,7 +10,7 @@ The votes will be counted every 6 hours, so governors may also change every 6 ho
 
 To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.
 
-## Super Representative Election
+## Governor Election
 
 To vote, you need to have STABILA Power(TP). To get STABILA Power, you need to stake STB. Every 1 staked STB accounts for one STABILA Power(TP). Every account in STABILA network has the right to vote for a governor candidate. After you unstake your staked STB, you will lose the responding STABILA Power(TP), so your previous vote will be invalid.
 
@@ -48,13 +48,13 @@ Every time after a governor produces a block, the 16 STB block producing reward 
 
 $16 (\mathsf{STB}/block) \times 28,800 (blocks/day) = 460,800 (\mathsf{STB}/day)$
 
-For each governor, the daily block $Rewards_{sr} = (460,800 / 21) \times 20 \% \mathsf{STB}$.
+For each governor, the daily block $Rewards_{gov} = (460,800 / 21) \times 20 \% \mathsf{STB}$.
 
 Reward may be less than the theoretical number due to missed blocks and maintenance period.
 
 ## Reward for Voters
 
-If you vote for a Super Representative:
+If you vote for a Governor:
 
 the daily Voter Rewards = (((the number of votes you vote to an executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 21) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB
 

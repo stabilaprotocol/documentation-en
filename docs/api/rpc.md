@@ -79,14 +79,14 @@ rpc ListExecutivees (EmptyMessage) returns (ExecutiveList) {}
 ```
 Nodes: FullNode and SolidityNode
 
-**12.&nbsp;Application for super representative**
+**12.&nbsp;Application for Governor**
 ```protobuf
 rpc CreateExecutive (ExecutiveCreateContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 
 Description:
-To apply to become STABILA’s Super Representative candidate.
+To apply to become STABILA’s Governor candidate.
 
 **13.&nbsp;Information update of executives**
 ```protobuf
@@ -94,7 +94,7 @@ rpc UpdateExecutive (ExecutiveUpdateContract) returns (Transaction) {}
 ```
 Nodes: FullNode
 
-Description: Update the website url of the SR.
+Description: Update the website url of the GOV.
 
 **14.&nbsp;Token transfer**
 ```protobuf

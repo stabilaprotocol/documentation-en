@@ -34,9 +34,9 @@ No.
 
 If people stop voting for it, it will drop out of the top 21 SRs.
 
-### Is there a threshold to become a SR?
+### Is there a threshold to become a GOV?
 
-When the amount of votes you get ranks into top 21, you will become a SR.
+When the amount of votes you get ranks into top 21, you will become a GOV.
 
 ### 21 SRs shares the block producing reward equally or by their computing power?
 
@@ -50,9 +50,9 @@ No.
 
 No.
 
-### How long does SR's power last?
+### How long does GOV's power last?
 
-Every 6 hours, the votes will be counted to check the qualifications of all the SRs.
+Every 6 hours, the votes will be counted to check the qualifications of all the GOVs.
 
 ### What is the proof of a transaction？
 
@@ -156,9 +156,9 @@ They can be deployed in one machine. You can specify the data storage path in co
 
 If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash.
 
-### Under private environment, should I submit application information to STABILA to become a SR?
+### Under private environment, should I submit application information to STABILA to become a GOV?
 
-Under private environment, no need to submit application information to STABILA to become a SR.
+Under private environment, no need to submit application information to STABILA to become a GOV.
 
 Ask：Which service port should be public to public network?
 

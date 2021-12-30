@@ -13,7 +13,7 @@ MainNet Configuration:
 
 ## 2.1 How to Become a Governor
 
- In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Super representatives can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.
+ In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Governors can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.
 
  To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.
 
@@ -141,7 +141,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 # 4. Network Node
 ## 4.1 Governor
 ### 4.1.1 Governor Introduction
-Governor(abbr: SR) is the block producer in STABILA network, there are 21 SR. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
+Governor(abbr: GOV) is the block producer in STABILA network, there are 21 GOV. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
 ### 4.1.2 Governor Deployment
 [Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
 
@@ -212,7 +212,7 @@ wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master
  2.&nbsp;add your private key in localexecutive
  3.&nbsp;set genesis.block.executives as the private key's corresponding address
  4.&nbsp;set p2p.version, any positive integer but 11111
- 5.&nbsp;set the first SR needSyncCheck = false, others can be set true
+ 5.&nbsp;set the first GOV needSyncCheck = false, others can be set true
  6.&nbsp;set node.discovery.enable = true
  7.&nbsp;run the script
 
@@ -251,7 +251,7 @@ command line parameters introduction:
 wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
 ```
 
- 2.&nbsp;set seed.node ip.list with SR's ip and port
+ 2.&nbsp;set seed.node ip.list with GOV's ip and port
 
  3.&nbsp;set p2p.version the same as Governor's p2p.version
 

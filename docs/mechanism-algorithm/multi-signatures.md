@@ -124,7 +124,7 @@ Owner permission's features:
 
 ### Executive Permission
 
-Super representatives can use this permission to manage block producing. Only executive account has this permission.
+Governors can use this permission to manage block producing. Only executive account has this permission.
 
 Usage scenario example:
 A governor deploys a executive node on cloud server. In order to keep the account on the cloud server safe, you can only give the block producing permission to the account you put on cloud server. Because this account only owns  block producing permission, no STB transfer permission, so even if the account on the cloud server is leaked, the STB will not be lost.

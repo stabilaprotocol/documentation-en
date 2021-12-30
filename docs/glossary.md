@@ -52,6 +52,6 @@ The creation and operation of a smart contract consume CPU resources. It takes t
 
 1 staked STB = 1 TP, TP can be used to vote, 1 TP = 1 vote.
 
-**Super Representative(SR)**
+**Governor(GOV)**
 
 The current block producing Top 21 nodes.

@@ -506,7 +506,61 @@ id: proposal id
 <p>Character map:
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"</p>
 <h2 id="35-signature">3.5 Signature<a class="headerlink" href="#35-signature" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/stabilaprotocol/documentation/blob/master/English_Documentation/Procedures_of_transaction_signature_generation.md">Signature introduction</a></p>
+<h3 id="351-signing-steps-for-grpc">3.5.1   Signing Steps for GRPC<a class="headerlink" href="#351-signing-steps-for-grpc" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Convert the transaction’s raw data to byte[].</li>
+<li>Hash the raw data using sha256.  This gives you the Transaction ID.</li>
+<li>Sign the results of sha256 with the private key.</li>
+<li>Add the signed result to transaction.</li>
+</ol>
+<h3 id="352-signing-steps">3.5.2   Signing Steps<a class="headerlink" href="#352-signing-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Use the transaction ID included in the return data of an http request.</li>
+<li>Sign the transaction ID with the private key.</li>
+<li>Add the signed result to transaction.</li>
+</ol>
+<h3 id="353-signature-algorithm">3.5.3   Signature algorithm<a class="headerlink" href="#353-signature-algorithm" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>ECDSA algorithm, SECP256K.</p>
+</li>
+<li>
+<p>Example of signature data</p>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span>    priKey:::8e812436a0e3323166e1f0e8ba79e19e217b2c4a53c970d4cca0cfb1078979df
+    pubKey::04a5bb3b28466f578e6e93fbfd5f75cee1ae86033aa4bbea690e3312c087181eb366f9a1d1d6a437a9bf9fc65ec853b9fd60fa322be3997c47144eb20da658b3d1
+    hash:::159817a085f113d099d3d93c051410e9bfe043cc5c20e43aa9a083bf73660145
+    r:::38b7dac5ee932ac1bf2bc62c05b792cd93c3b4af61dc02dbb4b93dacb758123f
+    s:::08bf123eabe77480787d664ca280dc1f20d9205725320658c39c6c143fd5642d
+    v:::0
+
+   Note: the signed result should be 65 byte in size—r 32 bytes, s 32 bytes and v 1 byte.
+</pre></div>
+
+
+<ol>
+<li>Signature verification</li>
+</ol>
+<p>When a full node receives the transaction, it will verify the signature, comparing an address calculated with hash, r, s and v with the address of the contract. Signature is successfully verified if the two addresses match.</p>
+<h3 id="354-example-of-code">3.5.4   Example of code<a class="headerlink" href="#354-example-of-code" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Transaction</span> <span class="nf">sign</span><span class="o">(</span><span class="n">Transaction</span> <span class="n">transaction</span><span class="o">,</span> <span class="n">ECKey</span> <span class="n">myKey</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="n">Transaction</span><span class="o">.</span><span class="na">Builder</span> <span class="n">transactionBuilderSigned</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">.</span><span class="na">toBuilder</span><span class="o">();</span>  
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">sha256</span><span class="o">(</span><span class="n">transaction</span><span class="o">.</span><span class="na">getRawData</span><span class="o">().</span><span class="na">toByteArray</span><span class="o">());</span>  
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Contract</span><span class="o">&gt;</span> <span class="n">listContract</span> <span class="o">=</span> <span class="n">transaction</span><span class="o">.</span><span class="na">getRawData</span><span class="o">().</span><span class="na">getContractList</span><span class="o">();</span>  
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">listContract</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+                <span class="n">ECDSASignature</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">myKey</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">hash</span><span class="o">);</span>    
+                <span class="n">ByteString</span> <span class="n">bsSign</span> <span class="o">=</span> <span class="n">ByteString</span><span class="o">.</span><span class="na">copyFrom</span><span class="o">(</span><span class="n">signature</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">());</span>    
+                <span class="c1">//Each contract may be signed with a different private key in the future.</span>
+                <span class="n">transactionBuilderSigned</span><span class="o">.</span><span class="na">addSignature</span><span class="o">(</span> <span class="n">bsSign</span> <span class="o">);</span>
+                 
+                <span class="o">}</span>
+</pre></div>
+
+
 <h1 id="4-network-node">4. Network Node<a class="headerlink" href="#4-network-node" title="Permanent link">&para;</a></h1>
 <h2 id="41-governor">4.1 Governor<a class="headerlink" href="#41-governor" title="Permanent link">&para;</a></h2>
 <h3 id="411-governor-introduction">4.1.1 Governor Introduction<a class="headerlink" href="#411-governor-introduction" title="Permanent link">&para;</a></h3>
@@ -583,7 +637,7 @@ please refer to <a href="https://github.com/stabilaprotocol/stabila-deployment#d
  <logger name="net" level="WARN"/>
  The parameters in configuration file that need to modify:
  localexecutive:</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.jpg" />
+<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.png" />
  executives:</p>
 <p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png" />
  version:</p>

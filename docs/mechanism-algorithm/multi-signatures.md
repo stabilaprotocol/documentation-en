@@ -6,7 +6,7 @@
     **Since v3.5** In the past version, the transactions created in one account can only be signed by one private key, an account can only be managed by one private key. Since V3.5, an account can be managed by several private keys, and the transactions created in one account can be signed by several private keys.
 ## Concept
 
-There are three types of permission: owner、executive and active. Owner permission has the right to execute all the contracts. Executive permission is for Governor. Active permission contains a set of contracts selected execution permissions.
+There are three types of permission: owner, executive and active. Owner permission has the right to execute all the contracts. Executive permission is for Governor. Active permission contains a set of contracts selected execution permissions.
 
 ### Protocol Definition
 

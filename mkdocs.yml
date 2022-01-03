@@ -12,7 +12,7 @@ nav:
         - HTTP API: api/http.md
         - RPC API: api/rpc.md
     - Mechanism & Algorithm:
-        - GOV and Committee: mechanism-algorithm/sr.md
+        - GOV and Committee: mechanism-algorithm/gov.md
         - SRC-10: mechanism-algorithm/src10.md
         - Account Model: mechanism-algorithm/account.md
         - Resource Model: mechanism-algorithm/resource.md

@@ -297,7 +297,7 @@
 <p><strong> Build and install the Solidity compiler </strong></p>
 <p>Instructions about how to build and install the Solidity compiler can be found at https://github.com/stabilaprotocol/solidity</p>
 <p><strong> Write your first smart contract </strong></p>
-<div class="codehilite"><pre><span></span>pragma solidity ^0.4.0;
+<div class="codehilite"><pre><span></span>pragma solidity &lt;=0.8.0;
 contract DataStore {
 
     mapping(uint256 =&gt; uint256) data;
@@ -323,8 +323,8 @@ If it is compiled successfully /test folder will contain DataStore.api and DataS
 </pre></div>
 
 
-<p><strong> Start a Private Net </strong></p>
-<p>Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log</p>
+<p><strong> Deploy pricing </strong></p>
+<p>Deploying smart contract costs 1000 STB.</p>
 <p><strong> Using Wallet-cli to Deploy </strong></p>
 <p>Download Wallet-Cli and build</p>
 <div class="codehilite"><pre><span></span>shell
@@ -412,8 +412,8 @@ If it contains library, before deploy the contract you need to deploy the librar
 </pre></div>
 
 
-<p>The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
-When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.</p>
+<p>The address of the library deployed before is: SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
+When you deploy, you need to use browser/oneLibrary.sol.Math3:SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.</p>
               
             </div>
           </div>

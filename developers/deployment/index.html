@@ -376,8 +376,7 @@ java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F
 </pre></div>
 
 
-<p>This is similar to running a private testnet, except that the IPs in the <code>config.conf</code> are officially declared by STABILA.</p>
-<p>7.&nbsp;Running a Governor Node for private testnet</p>
+<p>7.&nbsp;Running a Governor Node</p>
 <p>You should modify the config.conf:</p>
 <ul>
 <li>Replace existing entry in genesis.block.executives with your address</li>
@@ -437,7 +436,7 @@ Just Support FullNode and SolidityNode.</p>
 
 <h3>Parameter Illustration</h3>
 
-<div class="codehilite"><pre><span></span>bash deploy_stabila.sh --app <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="p">|</span>testnet<span class="p">|</span>privatenet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
+<div class="codehilite"><pre><span></span>bash deploy_stabila.sh --app <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
 
 --app Optional, Running application. The default node is Fullnode and it could be FullNode or SolidityNode.
 --net Optional, Connecting network. The default network is mainnet and it could be mainnet, testnet.

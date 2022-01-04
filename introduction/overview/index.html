@@ -428,14 +428,12 @@ voteexecutive executive1 3 executive2 7 // Vote 3 votes for executive1, 7 votes 
 
 <p>The final output above is: Vote 3 votes for executive1, 7 votes for executive2</p>
 <h2 id="23-reward-for-governors">2.3 Reward for Governors<a class="headerlink" href="#23-reward-for-governors" title="Permanent link">&para;</a></h2>
-<p><strong>Votes Reward:</strong>
-Every 6 hours, the top 100 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.</p>
-<p><strong>Block Producing Reward:</strong>
-Every time after a governor produces a block, it will be reward 32 STB. The 21 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.</p>
-<p>Every time after a governor produces a block, the 32 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.</p>
+<p>The top 21 Executives (Gs) that are elected every round (6 hours) will divide around 1,596 STB as mined, also known as Governor Reward. The prize will be distributed evenly among the 21 Gs.</p>
+<p>Total reward per round = 221,714 Unit/block x 20 block/min x 60 mins/hr x 6 hrs/round .</p>
+<p>A total of 2,330,657 STB will be awarded annually to the 21 Gs. It should be noted that every two years the reward for mining Stabila is halved.</p>
 <h2 id="24-committee">2.4 Committee<a class="headerlink" href="#24-committee" title="Permanent link">&para;</a></h2>
 <h3 id="241-what-is-committee">2.4.1 What is Committee<a class="headerlink" href="#241-what-is-committee" title="Permanent link">&para;</a></h3>
-<p>Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the governors and will become valid in the next maintenance period.</p>
+<p>Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 15 approves from the governors and will become valid in the next maintenance period.</p>
 <h3 id="242-create-a-proposal">2.4.2 Create a Proposal<a class="headerlink" href="#242-create-a-proposal" title="Permanent link">&para;</a></h3>
 <p>Only the account of a governor can create a proposal.
 The network parameters can be modified([min,max]):</p>
@@ -951,10 +949,10 @@ if (X + Y) / 40% &lt; Z / 60%, the ucr A can use is (X + Y) / 40%</p>
 <p>Note: when developer create a contract, do not set consume_user_resource_percent to 0, which means developer will undertake all the ucr consumption. If Assert-style error comes out, it will consume all ucr from the developer itsef.</p>
 <p>To avoid unnecessary lost, 10 - 100 is recommended for consume_user_resource_percent.</p>
 <h2 id="54-smart-contract-development-tool">5.4 Smart Contract Development Tool<a class="headerlink" href="#54-smart-contract-development-tool" title="Permanent link">&para;</a></h2>
-<p><strong>Start a Private Net</strong></p>
+<p><strong>Start a 21</strong></p>
 <p>Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log</p>
 <p><strong> Write your first smart contract </strong></p>
-<p>pragma solidity ^0.4.0;
+<p>pragma solidity &lt;=0.8.0;
 contract DataStore {</p>
 <div class="codehilite"><pre><span></span><span class="nx">mapping</span><span class="p">(</span><span class="nx">uint256</span> <span class="o">=&gt;</span> <span class="nx">uint256</span><span class="p">)</span> <span class="nx">data</span><span class="p">;</span>
 
@@ -1055,8 +1053,8 @@ If it contains library, before deploy the contract you need to deploy the librar
 </pre></div>
 
 
-<p>The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
-When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.</p>
+<p>The address of the library deployed before is: SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
+When you deploy, you need to use browser/oneLibrary.sol.Math3:SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.</p>
 <h1 id="6-src-10-token-introduction">6. SRC-10 Token Introduction<a class="headerlink" href="#6-src-10-token-introduction" title="Permanent link">&para;</a></h1>
 <p>STABILA network support two types of token, one is SRC-20 token issued by smart contract, the other one is SRC-10 token issued by system contract.</p>
 <h2 id="61-how-to-issue-a-src-10-token">6.1 How to Issue a SRC-10 Token<a class="headerlink" href="#61-how-to-issue-a-src-10-token" title="Permanent link">&para;</a></h2>

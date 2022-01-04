@@ -2,7 +2,7 @@
 
 # 1. Project Repository
 
-Github Url: [https://github.com/stabilaprotocol](https://github.com/stabilaprotocol)\
+Github Url: [https://github.com/stabilaprotocol](https://github.com/stabilaprotocol)  
 
 [java-stabila](https://github.com/stabilaprotocol/java-stabila) is the source code of the MainNet.
 

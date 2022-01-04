@@ -774,7 +774,7 @@ get the contract address
 Your smart contract address will be: <contract address>
 
 # in this example
-Your smart contract address will be: TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
+Your smart contract address will be: STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
 ```
 
 call the contract to store data, query data
@@ -785,7 +785,7 @@ Shell
 triggercontract <contract_address> <method> <args> <is_hex> <fee_limit> <value>
 
 # parameters
-contract_address: Contract address, like TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
+contract_address: Contract address, like STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
 method: The method called, like set(uint256,uint256) or fool(), use ',' to split the parameters. Do not leave space between parameters
 args: The parameters passed to the method called, use ',' to split the parameters. Do not leave space between parameters
 is_hex: whether the input parameters is Hex, false or true
@@ -794,10 +794,10 @@ value: The amount of STB transfer to the contract when trigger
 
 # trigger example
 ## set mapping 1->1
-triggercontract TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 set(uint256,uint256) 1,1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
+triggercontract STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 set(uint256,uint256) 1,1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
 
 ## get mapping key = 1
-triggercontract TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 get(uint256) 1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
+triggercontract STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 get(uint256) 1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
 ```
 
 If the function called is constant or view, wallet-cli will return the result directly.

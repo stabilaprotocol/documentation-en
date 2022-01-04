@@ -1,9 +1,5 @@
 # Releases
 
-## Binary Integrity Check
-
-All released files after 3.7 will provide signatures signed by the Stabila Account: `TKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2`.
-
 ### Signature Verification
 
 You can verify the signature by stabilaweb.
@@ -29,7 +25,7 @@ sha256sum FullNode.jar  # or shasum -a 256 FullNode.jar (macOS)
 npm install -g stabilaweb
 node -e 'console.log(require("stabilaweb").Stb.verifySignature(
     "2fca93b09da4ac62641e03838e77fce99b4711ddb0c09aa91656c80fc9556d2e",
-    "TKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2",
+    "SKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2",
     "21435e32131feb6d00ba8048df04e112e02569ec851064d8ecad2d4dd5da44b7628ddce16823dadfff6fd683fc58cee74964970621a845ee459e2c96a750de551b"
   ))'
 # true

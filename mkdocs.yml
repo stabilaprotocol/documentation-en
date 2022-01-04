@@ -38,7 +38,6 @@ nav:
         - Contribution: developers/contribution.md
         - Java-Stabila: developers/java-stabila.md
         - Advanced Configuration: developers/advanced-configuration.md
-        - Contact Us (GPG Key): developers/gpg.md
     - Clients:
         - Wallet-cli: clients/wallet-cli.md
     - Releases:

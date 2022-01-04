@@ -725,7 +725,7 @@ The rest of the users will be granted
 ```
 
 The account SRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ gives the owner access to itself, active access to
-SNhXo1GbRNCuorvYu5JFWN3m2NYr9QQpVR and TKwhcDup8L2PH5r6hxp5CQvQzZqJLmKvZP. Active access will
+SNhXo1GbRNCuorvYu5JFWN3m2NYr9QQpVR and SKwhcDup8L2PH5r6hxp5CQvQzZqJLmKvZP. Active access will
 need signatures from both accounts in order to take effect.
 
 If the account is not a executive, it's not necessary to set executive_permission, otherwise an error will occur.

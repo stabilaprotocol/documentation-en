@@ -292,10 +292,10 @@ command line parameters introduction:
 
 **4.6.3.2.2  Step 2: FullNode Deployment**
 
- 1.&nbsp;Download private_net_config.conf
+ 1.&nbsp;Download main_net_config.conf
 
 ```shell
-wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
+wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf
 ```
 
  2.&nbsp;set seed.node ip.list with GOV's ip and port
@@ -312,7 +312,7 @@ wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master
 
 
 ```shell
- nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  -c private_net_config.conf
+ nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  -c main_net_config.conf
 
  command lines parameters
  --log-config: specify the log configuration file path, i.e.: --log-config logback.xml

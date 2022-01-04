@@ -3,9 +3,13 @@
 # 1. Project Repository
 
 Github Url: [https://github.com/stabilaprotocol](https://github.com/stabilaprotocol)
+
 [java-stabila](https://github.com/stabilaprotocol/java-stabila) is the source code of the MainNet.
+
 [protocol](https://github.com/stabilaprotocol/protocol) is the definition of the api and data structure.
+
 [wallet-cli](https://github.com/stabilaprotocol/wallet-cli) is the official command line wallet.
+
 
 MainNet Configuration:
 [https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)

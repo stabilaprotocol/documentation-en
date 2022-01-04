@@ -202,10 +202,6 @@
                     
     <a class="" href="../developers/advanced-configuration/">Advanced Configuration</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../developers/gpg/">Contact Us (GPG Key)</a>
-                </li>
     </ul>
 	    </li>
           
@@ -233,7 +229,9 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#binary-integrity-check">Binary Integrity Check</a></li>
+            <li><a class="toctree-l4" href="#signature-verification">Signature Verification</a></li>
+        
+            <li><a class="toctree-l4" href="#version-signature">Version Signature</a></li>
         
         </ul>
     
@@ -293,8 +291,6 @@
             <div class="section">
               
                 <h1 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h1>
-<h2 id="binary-integrity-check">Binary Integrity Check<a class="headerlink" href="#binary-integrity-check" title="Permanent link">&para;</a></h2>
-<p>All released files after 3.7 will provide signatures signed by the Stabila Account: <code>TKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2</code>.</p>
 <h3 id="signature-verification">Signature Verification<a class="headerlink" href="#signature-verification" title="Permanent link">&para;</a></h3>
 <p>You can verify the signature by stabilaweb.</p>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">Stb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;stabilaweb&#39;</span><span class="p">).</span><span class="nx">Stb</span><span class="p">;</span>
@@ -315,7 +311,7 @@ sha256sum FullNode.jar  <span class="c1"># or shasum -a 256 FullNode.jar (macOS)
 npm install -g stabilaweb
 node -e <span class="s1">&#39;console.log(require(&quot;stabilaweb&quot;).Stb.verifySignature(</span>
 <span class="s1">    &quot;2fca93b09da4ac62641e03838e77fce99b4711ddb0c09aa91656c80fc9556d2e&quot;,</span>
-<span class="s1">    &quot;TKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2&quot;,</span>
+<span class="s1">    &quot;SKeAcHxgErbVXrG3N3TZiSV6AT566BHTj2&quot;,</span>
 <span class="s1">    &quot;21435e32131feb6d00ba8048df04e112e02569ec851064d8ecad2d4dd5da44b7628ddce16823dadfff6fd683fc58cee74964970621a845ee459e2c96a750de551b&quot;</span>
 <span class="s1">  ))&#39;</span>
 <span class="c1"># true</span>

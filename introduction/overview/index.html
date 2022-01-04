@@ -326,10 +326,6 @@
                     
     <a class="" href="../../developers/advanced-configuration/">Advanced Configuration</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../developers/gpg/">Contact Us (GPG Key)</a>
-                </li>
     </ul>
 	    </li>
           
@@ -1020,7 +1016,7 @@ If it is deployed successfully, it will return &#39;Deploy the contract successf
 <div class="codehilite"><pre><span></span>Your smart contract address will be: &lt;contract address&gt;
 
 # in this example
-Your smart contract address will be: TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
+Your smart contract address will be: STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
 </pre></div>
 
 
@@ -1030,7 +1026,7 @@ Your smart contract address will be: TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
 triggercontract &lt;contract_address&gt; &lt;method&gt; &lt;args&gt; &lt;is_hex&gt; &lt;fee_limit&gt; &lt;value&gt;
 
 # parameters
-contract_address: Contract address, like TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
+contract_address: Contract address, like STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6
 method: The method called, like set(uint256,uint256) or fool(), use &#39;,&#39; to split the parameters. Do not leave space between parameters
 args: The parameters passed to the method called, use &#39;,&#39; to split the parameters. Do not leave space between parameters
 is_hex: whether the input parameters is Hex, false or true
@@ -1039,10 +1035,10 @@ value: The amount of STB transfer to the contract when trigger
 
 # trigger example
 ## set mapping 1-&gt;1
-triggercontract TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 set(uint256,uint256) 1,1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
+triggercontract STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 set(uint256,uint256) 1,1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
 
 ## get mapping key = 1
-triggercontract TTWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 get(uint256) 1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
+triggercontract STWq4vMEYB2yibAbPV7gQ4mrqTyX92fha6 get(uint256) 1 false 1000000  0000000000000000000000000000000000000000000000000000000000000000
 </pre></div>
 
 

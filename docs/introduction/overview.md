@@ -161,7 +161,7 @@ STABILA uses account model. An account's identity is address, it needs private k
 Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random bumber, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then calculate P = d * G as the public key, G is the elliptic curve base point.
 
 ## 3.4 Address Format
-Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x41 in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'T'.
+Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x3f in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'T'.
 
 basecheck process: first do sha256 calculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.
 
@@ -514,7 +514,7 @@ This is similar with the grammar of the conversion from other types converted to
 Solidity has address constant judgement, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
 ```text
 function compareAddress(address stabilaAddress) public view returns (uint256){
-        // if (stabilaAddress == 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
+        // if (stabilaAddress == 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
         if (stabilaAddress == 0xca35b7d915458ef540ade6068dfe2f44e8fa733c) { // right
             return 1;
         } else {
@@ -529,12 +529,12 @@ But if you are using wallet-cli, you can use 21 bytes address, like 000000000000
 Solidity has address constant assignment, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
 ```text
 function assignAddress() public view {
-        // address newAddress = 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
+        // address newAddress = 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
         address newAddress = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
         // do something
 }
 ```
-If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).
+If you want to use STABILA address of string type (SLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).
 
 ## 5.3 Ucr Introduction
 Each command of smart contract consume system resource while running, we use 'Ucr' as the unit of the consumption of the resource.

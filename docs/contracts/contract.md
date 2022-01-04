@@ -151,7 +151,7 @@ This is similar with the grammar of the conversion from other types converted to
 Solidity has address constant judgement, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
 ```text
 function compareAddress(address stabilaAddress) public view returns (uint256){
-        // if (stabilaAddress == 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
+        // if (stabilaAddress == 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
         if (stabilaAddress == 0xca35b7d915458ef540ade6068dfe2f44e8fa733c) { // right
             return 1;
         } else {
@@ -166,9 +166,9 @@ But if you are using wallet-cli, you can use 21 bytes address, like 000000000000
 Solidity has address constant assignment, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:
 ```text
 function assignAddress() public view {
-        // address newAddress = 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
+        // address newAddress = 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
         address newAddress = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
         // do something
 }
 ```
-If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).
+If you want to use STABILA address of string type (SLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).

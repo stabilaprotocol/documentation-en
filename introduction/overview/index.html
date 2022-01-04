@@ -74,7 +74,7 @@
     <li class="toctree-l3"><a href="#1-project-repository">1. Project Repository</a></li>
     
 
-    <li class="toctree-l3"><a href="#2-srs-and-committee">2. SRs and Committee</a></li>
+    <li class="toctree-l3"><a href="#2-govs-and-committee">2. GOVs and Committee</a></li>
     
         <ul>
         
@@ -120,7 +120,7 @@
         
             <li><a class="toctree-l4" href="#45-fullnode-and-soliditynode-fast-deployment">4.5 FullNode and SolidityNode Fast Deployment</a></li>
         
-            <li><a class="toctree-l4" href="#46-mainnet-privatenet">4.6 MainNet, PrivateNet</a></li>
+            <li><a class="toctree-l4" href="#46-mainnet">4.6 MainNet</a></li>
         
             <li><a class="toctree-l4" href="#47-db-engine">4.7 DB Engine</a></li>
         
@@ -406,13 +406,13 @@
               
                 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
 <h1 id="1-project-repository">1. Project Repository<a class="headerlink" href="#1-project-repository" title="Permanent link">&para;</a></h1>
-<p>Github Url: <a href="https://github.com/stabilaprotocol">https://github.com/stabilaprotocol</a>
-<a href="https://github.com/stabilaprotocol/java-stabila">java-stabila</a> is the source code of the MainNet.
-<a href="https://github.com/stabilaprotocol/protocol">protocol</a> is the definition of the api and data structure.
-<a href="https://github.com/stabilaprotocol/wallet-cli">wallet-cli</a> is the official command line wallet.</p>
+<p>Github Url: <a href="https://github.com/stabilaprotocol">https://github.com/stabilaprotocol</a>  1</p>
+<p><a href="https://github.com/stabilaprotocol/java-stabila">java-stabila</a> is the source code of the MainNet.</p>
+<p><a href="https://github.com/stabilaprotocol/protocol">protocol</a> is the definition of the api and data structure.</p>
+<p><a href="https://github.com/stabilaprotocol/wallet-cli">wallet-cli</a> is the official command line wallet.</p>
 <p>MainNet Configuration:
 <a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf">https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf</a></p>
-<h1 id="2-srs-and-committee">2. SRs and Committee<a class="headerlink" href="#2-srs-and-committee" title="Permanent link">&para;</a></h1>
+<h1 id="2-govs-and-committee">2. GOVs and Committee<a class="headerlink" href="#2-govs-and-committee" title="Permanent link">&para;</a></h1>
 <h2 id="21-how-to-become-a-governor">2.1 How to Become a Governor<a class="headerlink" href="#21-how-to-become-a-governor" title="Permanent link">&para;</a></h2>
 <p>In STABILA network, any account can apply to become a governor candidate. Every account can vote for executives. The top 21 candidates with the most votes are Governors. Governors can produce blocks. The votes will be counted every 6 hours, so governors may also change every 6 hours.</p>
 <p>To prevent vicious attack, STABILA network burns 9999 STB from the account that applies to become a governor candidate.</p>
@@ -440,25 +440,54 @@ Every time after a governor produces a block, it will be reward 32 STB. The 21 g
 <p>Only the account of a governor can create a proposal.
 The network parameters can be modified([min,max]):</p>
 <ul>
-<li>0: MAINTENANCE_TIME_INTERVAL, [3 * 21* 1000, 24 * 3600 * 1000] //governor votes count time interval, currently 6 * 3600 * 1000 ms</li>
-<li>1: ACCOUNT_UPGRADE_COST, [0, 100 000 000 000 000 000]  //the fee to apply to become a governor candidate, currently 9999_000_000 UNIT</li>
-<li>2: CREATE_ACCOUNT_FEE, [0, 100 000 000 000  000 000] //the fee to create an account, currently 100_000 UNIT</li>
-<li>3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte</li>
-<li>4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT</li>
-<li>5: EXECUTIVE_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT</li>
-<li>6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 100 Governor candidates, currently 115_200_000_000 UNIT</li>
-<li>7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, //the fee to create an account in system, currently 1_000_000 UNIT</li>
-<li>8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, //the consumption of bandwidth or STB while creating an account, using together with #7</li>
-<li>9: ALLOW_CREATION_OF_CONTRACTS, //to enable the VM</li>
-<li>10: REMOVE_THE_POWER_OF_THE_GR, //to clear the votes of GR</li>
-<li>11: UCR_FEE, [0,100 000 000 000 000 000] //UNIT</li>
-<li>12: EXCHANGE_CREATE_FEE, [0, 100 000 000 000 000 000] //UNIT</li>
-<li>13: MAX_CPU_TIME_OF_ONE_TX, [0, 1000] //ms</li>
-<li>14: ALLOW_UPDATE_ACCOUNT_NAME, //to allow users to change account name and allow account duplicate name, currently 0, means false</li>
-<li>15: ALLOW_SAME_TOKEN_NAME, //to allow create a token with duplicate name, currently 1, means true</li>
-<li>16: ALLOW_DELEGATE_RESOURCE, //to enable the resource delegation</li>
-<li>17: TOTAL_UCR_LIMIT, //to modify the ucr limit</li>
-<li>18: ALLOW_SVM_TRANSFER_SRC10, //to allow smart contract to transfer SRC-10 token, currently 0, means false</li>
+<li>0: MAINTENANCE_TIME_INTERVAL, 21600000 ms //governor votes count time interval</li>
+<li>1: ACCOUNT_UPGRADE_COST, 1000000000 UNIT //the fee to apply to become a governor candidate</li>
+<li>2: CREATE_ACCOUNT_FEE, 1385 UNIT //the fee to create an account</li>
+<li>3: TRANSACTION_FEE, 40 UNIT/byte //the fee for bandwidth</li>
+<li>4: ASSET_ISSUE_FEE, 1000000000 UNIT //the fee to issue an asset</li>
+<li>5: EXECUTIVE_PAY_PER_BLOCK, 221714 UNIT //the block producing reward</li>
+<li>6: EXECUTIVE_STANDBY_ALLOWANCE, 0</li>
+<li>7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, 0</li>
+<li>8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, 1</li>
+<li>9: ALLOW_CREATION_OF_CONTRACTS, 0 //to enable the VM</li>
+<li>10: REMOVE_THE_POWER_OF_THE_GR, 0 //to clear the votes of GR</li>
+<li>11: UCR_FEE, 40 //UNIT</li>
+<li>12: EXCHANGE_CREATE_FEE, 14000000 //UNIT</li>
+<li>13: MAX_CPU_TIME_OF_ONE_TX, 80 //ms</li>
+<li>14: ALLOW_UPDATE_ACCOUNT_NAME, 0 //to allow users to change account name and allow account duplicate name, 0 means false</li>
+<li>15: ALLOW_SAME_TOKEN_NAME, 0 //to allow create a token with duplicate name, 0 means false</li>
+<li>16: ALLOW_DELEGATE_RESOURCE, 0 //to enable the resource delegation, 0 means false</li>
+<li>17: TOTAL_UCR_LIMIT, 30000000000 //to modify the ucr limit</li>
+<li>18: ALLOW_SVM_TRANSFER_SRC10, 0 //to allow smart contract to transfer SRC-10 token, 0 means false</li>
+<li>19: TOTAL_CURRENT_UCR_LIMIT, 30000000000</li>
+<li>20: ALLOW_MULTI_SIGN, 0, 0 means false</li>
+<li>21: ALLOW_ADAPTIVE_UCR, 0, 0 means false</li>
+<li>22: UPDATE_ACCOUNT_PERMISSION_FEE, 1385000</li>
+<li>23: MULTI_SIGN_FEE, 13857</li>
+<li>24: ALLOW_PROTO_FILTER_NUM, 0, 0 means false</li>
+<li>25: ALLOW_ACCOUNT_STATE_ROOT, 0, 0 means false</li>
+<li>26: ALLOW_SVM_CONSTANTINOPLE, 0, 0 means false</li>
+<li>29: ADAPTIVE_RESOURCE_LIMIT_MULTIPLIER, 1000</li>
+<li>30: ALLOW_CHANGE_DELEGATION, 0, 0 means false</li>
+<li>31: EXECUTIVE_100_PAY_PER_BLOCK, 10972</li>
+<li>32: ALLOW_SVM_SOLIDITY_059, 0, 0 means false</li>
+<li>33: ADAPTIVE_RESOURCE_LIMIT_TARGET_RATIO, 10</li>
+<li>35: FORBID_TRANSFER_TO_CONTRACT, 0, 0 means false</li>
+<li>39: ALLOW_SHIELDED_SRC20_TRANSACTION, 0, 0 means false</li>
+<li>40: ALLOW_PBFT,   0, 0 means false</li>
+<li>41: ALLOW_SVM_ISTANBUL, 0, 0 means false</li>
+<li>44: ALLOW_MARKET_TRANSACTION, 0, 0 means false</li>
+<li>45: MARKET_SELL_FEE,  0</li>
+<li>46: MARKET_CANCEL_FEE,    0</li>
+<li>47: MAX_FEE_LIMIT,    15000000</li>
+<li>48: ALLOW_TRANSACTION_FEE_POOL, 0, 0 means false</li>
+<li>49: ALLOW_BLACKHOLE_OPTIMIZATION, 0, 0 means false</li>
+<li>51: ALLOW_NEW_RESOURCE_MODEL, 0, 0 means false</li>
+<li>52: ALLOW_SVM_CD, 0, 0 means false</li>
+<li>53: ALLOW_ACCOUNT_ASSET_OPTIMIZATION, 0, 0 means false</li>
+<li>59: ALLOW_SVM_VOTE, 0, 0 means false</li>
+<li>61: FREE_NET_LIMIT, 500</li>
+<li>62: TOTAL_NET_LIMIT, 28800000</li>
 </ul>
 <p>Example (Using wallet-cli):</p>
 <div class="codehilite"><pre><span></span>createproposal id value
@@ -501,7 +530,7 @@ id: proposal id
 <h2 id="33-key-pair-generation-algorithm">3.3 Key-pair Generation Algorithm<a class="headerlink" href="#33-key-pair-generation-algorithm" title="Permanent link">&para;</a></h2>
 <p>Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random bumber, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then calculate P = d * G as the public key, G is the elliptic curve base point.</p>
 <h2 id="34-address-format">3.4 Address Format<a class="headerlink" href="#34-address-format" title="Permanent link">&para;</a></h2>
-<p>Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x41 in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'T'.</p>
+<p>Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x3f in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'T'.</p>
 <p>basecheck process: first do sha256 calculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.</p>
 <p>Character map:
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"</p>
@@ -598,55 +627,10 @@ CPU: &gt; 64 cores RAM: &gt; 64G, Bandwidth: &gt; 500M, Disk: &gt; 20T</p>
 <h2 id="45-fullnode-and-soliditynode-fast-deployment">4.5 FullNode and SolidityNode Fast Deployment<a class="headerlink" href="#45-fullnode-and-soliditynode-fast-deployment" title="Permanent link">&para;</a></h2>
 <p>Download fast deployment script, run the script according to different types of node.
 please refer to <a href="https://github.com/stabilaprotocol/stabila-deployment#deployment-of-soliditynode-on-the-one-host">Node Fast Deployment</a></p>
-<h2 id="46-mainnet-privatenet">4.6 MainNet, PrivateNet<a class="headerlink" href="#46-mainnet-privatenet" title="Permanent link">&para;</a></h2>
-<p>MainNet, PrivateNet all use the same code, only the node start configuration varies.</p>
-<h3 id="461-mainnet">4.6.1 MainNet<a class="headerlink" href="#461-mainnet" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf">MainNet configuration</a></p>
-<h3 id="463-privatenet">4.6.3 PrivateNet<a class="headerlink" href="#463-privatenet" title="Permanent link">&para;</a></h3>
-<p><strong>4.6.3.1 Preconditions</strong></p>
-<ul>
-<li>at least two accounts</li>
-<li>at least deploy one Governor to produce blocks</li>
-<li>deploy serval FullNodes to synchronize blocks and broadcast transactions</li>
-<li>Governor and FullNode comprise the private network</li>
-</ul>
-<p><strong>4.6.3.2 Deployment</strong></p>
-<p><strong>4.6.3.2.1 Step 1: Governor Deployment</strong></p>
-<p>1.&nbsp;download private_net_config.conf</p>
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
-</pre></div>
-
-
-<p>2.&nbsp;add your private key in localexecutive
- 3.&nbsp;set genesis.block.executives as the private key's corresponding address
- 4.&nbsp;set p2p.version, any positive integer but 11111
- 5.&nbsp;set the first GOV needSyncCheck = false, others can be set true
- 6.&nbsp;set node.discovery.enable = true
- 7.&nbsp;run the script</p>
-<div class="codehilite"><pre><span></span>nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --executive  -c private_net_config.conf
-
-<span class="nb">command</span> line parameters introduction:
---executive: start executive <span class="k">function</span>. For Governor, this parameter is required, i.e.: --executive
---log-config: specify the log configuration file path, i.e.: --log-config logback.xml
--c: specify the configuration file path, i.e.: -c config.conf
-</pre></div>
-
-
-<p>The usage of the log file:
- You can change the level of the module to control the log output. The default level of each module is INFO, for example: only print the message with the level higher than warn:
- <logger name="net" level="WARN"/>
- The parameters in configuration file that need to modify:
- localexecutive:</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.png" />
- executives:</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png" />
- version:</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png" />
- enable:</p>
-<p><img alt="image" src="https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/discovery_enable.png" /></p>
-<p><strong>4.6.3.2.2  Step 2: FullNode Deployment</strong></p>
-<p>1.&nbsp;Download private_net_config.conf</p>
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
+<h2 id="46-mainnet">4.6 MainNet<a class="headerlink" href="#46-mainnet" title="Permanent link">&para;</a></h2>
+<h3 id="461-fullnode-deployment">4.6.1 FullNode Deployment<a class="headerlink" href="#461-fullnode-deployment" title="Permanent link">&para;</a></h3>
+<p>1.&nbsp;Download main_net_config.conf</p>
+<div class="codehilite"><pre><span></span>wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf
 </pre></div>
 
 
@@ -656,7 +640,7 @@ please refer to <a href="https://github.com/stabilaprotocol/stabila-deployment#d
 <p>5.&nbsp;set needSyncCheck true</p>
 <p>6.&nbsp;set node.discovery.enable true</p>
 <p>7.&nbsp;run the script</p>
-<div class="codehilite"><pre><span></span> nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  -c private_net_config.conf
+<div class="codehilite"><pre><span></span> nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  -c main_net_config.conf
 
  <span class="nb">command</span> lines parameters
  --log-config: specify the log configuration file path, i.e.: --log-config logback.xml
@@ -838,7 +822,7 @@ function convertFromStabilaInt(uint256 stabilaAddress) public view returns(addre
 <p>2.&nbsp;address judgement</p>
 <p>Solidity has address constant judgement, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:</p>
 <div class="codehilite"><pre><span></span>function compareAddress(address stabilaAddress) public view returns (uint256){
-        // if (stabilaAddress == 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
+        // if (stabilaAddress == 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c) { // compile error
         if (stabilaAddress == 0xca35b7d915458ef540ade6068dfe2f44e8fa733c) { // right
             return 1;
         } else {
@@ -852,14 +836,14 @@ function convertFromStabilaInt(uint256 stabilaAddress) public view returns(addre
 <p>3.&nbsp;variable assignment</p>
 <p>Solidity has address constant assignment, if using 21 bytes address the compiler will throw out an error, so you should use 20 bytes address, like:</p>
 <div class="codehilite"><pre><span></span>function assignAddress() public view {
-        // address newAddress = 0x41ca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
+        // address newAddress = 0x3fca35b7d915458ef540ade6068dfe2f44e8fa733c; // compile error
         address newAddress = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
         // do something
 }
 </pre></div>
 
 
-<p>If you want to use STABILA address of string type (TLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).</p>
+<p>If you want to use STABILA address of string type (SLLM21wteSPs4hKjbxgmH1L6poyMjeTbHm) please refer to (2-4-7,2-4-8).</p>
 <h2 id="53-ucr-introduction">5.3 Ucr Introduction<a class="headerlink" href="#53-ucr-introduction" title="Permanent link">&para;</a></h2>
 <p>Each command of smart contract consume system resource while running, we use 'Ucr' as the unit of the consumption of the resource.</p>
 <h3 id="531-how-to-get-ucr">5.3.1 How to Get Ucr<a class="headerlink" href="#531-how-to-get-ucr" title="Permanent link">&para;</a></h3>

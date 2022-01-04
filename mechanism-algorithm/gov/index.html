@@ -104,8 +104,6 @@
         
             <li><a class="toctree-l4" href="#reward-for-executives">Reward for Executives</a></li>
         
-            <li><a class="toctree-l4" href="#reward-for-voters">Reward for Voters</a></li>
-        
             <li><a class="toctree-l4" href="#committee">Committee</a></li>
         
         </ul>
@@ -321,20 +319,9 @@
 <p>The default ratio is 20%, which can be modified by the executives.</p>
 <p>If a executive get 20% of the reward, and the other 80% will be awarded to the voters. If the brokerage ratio is set to 100%, the rewards are all obtained by the executive; if set to 0, the rewards are all sent to the voters.</p>
 <h2 id="reward-for-executives">Reward for Executives<a class="headerlink" href="#reward-for-executives" title="Permanent link">&para;</a></h2>
-<h3 id="votes-reward">Votes Reward<a class="headerlink" href="#votes-reward" title="Permanent link">&para;</a></h3>
-<p>Vote rewards are 160 STB every block, with a block generated every 3 seconds, the total vote rewards per day is  4,608,000 STB.</p>
-<p>For each Governor and Partner, the daily Vote Rewards = 4,608,000 * ( votes /  total votes) x 20%  STB</p>
-<h3 id="block-producing-reward">Block Producing Reward<a class="headerlink" href="#block-producing-reward" title="Permanent link">&para;</a></h3>
-<p>Every time after a governor produces a block, it will be reward 16 STB. The 21 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 168,192,000 STB in total.</p>
-<p>Every time after a governor produces a block, the 16 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.</p>
-<p>$16 (\mathsf{STB}/block) \times 28,800 (blocks/day) = 460,800 (\mathsf{STB}/day)$</p>
-<p>For each governor, the daily block $Rewards_{gov} = (460,800 / 21) \times 20 \% \mathsf{STB}$.</p>
-<p>Reward may be less than the theoretical number due to missed blocks and maintenance period.</p>
-<h2 id="reward-for-voters">Reward for Voters<a class="headerlink" href="#reward-for-voters" title="Permanent link">&para;</a></h2>
-<p>If you vote for a Governor:</p>
-<p>the daily Voter Rewards = (((the number of votes you vote to an executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 21) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB</p>
-<p>If you vote for a Partner:</p>
-<p>the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) STB</p>
+<p>Often referred as Executive Reward, the topmost 79 Executives will split 78 STB as earned once per round (6 hours). The prize will be divided according on the vote percentage each Executive earns.</p>
+<p>Total E reward per round = 10,972 Unit/block × 20 blocks/min × 60 mins/hr × 6 hrs/round.</p>
+<p>A total of 28,834 STB will be given out every year to the 79 Gs.</p>
 <h2 id="committee">Committee<a class="headerlink" href="#committee" title="Permanent link">&para;</a></h2>
 <h3 id="1-what-is-committee">1. What is Committee<a class="headerlink" href="#1-what-is-committee" title="Permanent link">&para;</a></h3>
 <p>Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the governors and will become valid in the next maintenance period.</p>

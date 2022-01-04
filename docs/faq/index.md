@@ -32,7 +32,7 @@ No.
 
 ### If one of the top 21 Governors goes wrong, will it be removed from the Governors' node list?
 
-If people stop voting for it, it will drop out of the top 21 SRs.
+If people stop voting for it, it will drop out of the top 21 GOVs.
 
 ### Is there a threshold to become a GOV?
 

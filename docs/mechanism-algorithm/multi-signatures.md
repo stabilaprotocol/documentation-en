@@ -244,7 +244,11 @@ Demo HTTP request:
 ```java
 public static void main(String[] args) {
 
-  //you need to specify the id of the contract you need to give permission to by referring to the definition of Transaction.ContractType in proto to get the id of the contract, below includes all the contract except AccountPermissionUpdateContract(id=46)
+  //you need to specify the id of the contract you need
+
+  // to give permission to by referring to the definition of Transaction.ContractType
+        
+  // in proto to get the id of the contract, below includes all the contract except AccountPermissionUpdateContract(id=46)
 
   Integer[] contractId = {0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 31,
       32, 33, 41, 42, 43, 44, 45};

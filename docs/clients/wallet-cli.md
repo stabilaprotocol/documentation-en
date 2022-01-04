@@ -58,37 +58,37 @@ We can configure java-stabila node IP and port in ``src/main/resources/config.co
 Following is a list of Stabila Wallet-cli commands:
 For more information on a specific command, just type the command on terminal when you start your Wallet-cli.
 
-| [AddTransactionSign](#How-to-use-the-multi-signature-feature-of-wallet-cli) | [ApproveProposal](#How-to-operate-with-proposal) | [AssetIssue](#How-to-issue-a-SRC10-token) |
-| :---------:|:---------:|:--------: |
-| [BackupShieldedSRC20Wallet](#BackupShieldedSRC20Wallet) | [BackupWallet](#Wallet-related-commands)| [BackupWallet2Base64](#Wallet-related-commands) |
-| [BroadcastTransaction](#Some-others) | [ChangePassword](#Wallet-related-commands)| [CreateProposal](#How-to-operate-with-proposal)
-| [DeleteProposal](#Delete-an-existing-proposal) | [DeployContract](#How-to-use-smart-contract) | [ExchangeCreate](#How-to-trade-on-the-exchange) |
-| [ExchangeInject](#Capital-injection) | [ExchangeTransaction](#Transactions) | [ExchangeWithdraw](#Capital-Withdrawal) |
-| [CdBalance](#How-to-cd/uncd-balance) | [GenerateAddress](#Account-related-commands) | [GenerateShieldedSRC20Address](#How-to-transfer-shielded-SRC20-token)|
-| [GetAccount](#Account-related-commands) |[GetAccountNet](#Account-related-commands) | [GetAccountResource](#Account-related-commands) | 
-| [GetAddress](#Account-related-commands) | [GetAkFromAsk](#How-to-transfer-shielded-SRC20-token) |[GetAssetIssueByAccount](#Update-parameters-of-SRC10-token) | 
-| [GetAssetIssueById](#How-to-obtain-SRC10-token-information) | [GetAssetIssueByName](#How-to-obtain-SRC10-token-information) |[GetAssetIssueListByName](#How-to-obtain-SRC10-token-information) | 
-| [GetBalance](#Account-related-commands) | [GetBlock](#How-to-get-block-information) |[GetBlockById](#How-to-get-block-information) | 
-| [GetBlockByLatestNum](#How-to-get-block-information) | [GetBlockByLimitNext](#How-to-get-block-information) | [GetBrokerage](#Brokerage) | 
-| [GetContract](#get-details-of-a-smart-contract) | [GetDelegatedResource](#How-to-delegate-resource) |[GetDelegatedResourceAccountIndex](#get-resource-delegation-information) | 
-| [GetDiversifier](#GetDiversifier)| [GetExpandedSpendingKey](#How-to-transfer-shielded-SRC20-token)| [GetIncomingViewingKey](#GetIncomingViewingKey)  | 
-| [GetMarketOrderByAccount](#GetMarketOrderByAccount)| [GetMarketOrderById](#GetMarketOrderById)| [GetMarketOrderListByPair](#GetMarketOrderListByPair)  | 
-| [GetMarketPairList](#GetMarketPairList)| [GetMarketPriceByPair](#GetMarketPriceByPair)| [GetNextMaintenanceTime](#Some-others) | 
-| [GetNkFromNsk](#How-to-transfer-shielded-SRC20-token) | [GetProposal](#Obtain-proposal-information) | [GetShieldedPaymentAddress](#How-to-transfer-shielded-SRC20-token)| 
-| [GetSpendingKey](#How-to-transfer-shielded-SRC20-token) | [GetReward](#Brokerage) |  [GetTransactionApprovedList](#Get-signature-information-according-to-transactions) |
-| [GetTransactionById](#How-to-get-transaction-information) | [GetTransactionCountByBlockNum](#How-to-get-transaction-information) | [GetTransactionInfoByBlockNum](#How-to-get-transaction-information) | 
-| [GetTransactionInfoById](#How-to-get-transaction-information) | [GetTransactionSignWeight](#How-to-use-the-multi-signature-feature-of-wallet-cli) | [ImportShieldedSRC20Wallet](#ImportShieldedSRC20Wallet) | 
-| [ImportWallet](#Wallet-related-commands) | [ImportWalletByBase64](#Wallet-related-commands) | [ListAssetIssue](#How-to-obtain-SRC10-token-information) | 
-| [ListExchanges](#Obtain-information-on-trading-pairs) | [ListExchangesPaginated](#Obtain-information-on-trading-pairs) | [ListNodes](#Some-others) | 
-| [ListShieldedSRC20Address](#ListShieldedSRC20Address) | [ListShieldedSRC20Note](#ListShieldedSRC20Note) | [ListProposals](#Obtain-proposal-information) | 
-| [ListProposalsPaginated](#Obtain-proposal-information) | [ListExecutives](#Some-others) | [LoadShieldedSRC20Wallet](#LoadShieldedSRC20Wallet) | 
-| [Login](#Command-line-operation-flow-example) | [MarketCancelOrder](#MarketCancelOrder) | [MarketSellAsset](#MarketSellAsset)| 
-| [ParticipateAssetIssue](#Participating-in-the-issue-of-SRC10-token) | [RegisterWallet](#Wallet-related-commands) | [ResetShieldedSRC20Note](#ResetShieldedSRC20Note) | 
-| [ScanShieldedSRC20NoteByIvk](#ScanShieldedSRC20NoteByIvk) |  [ScanShieldedSRC20NoteByOvk](#ScanShieldedSRC20NoteByOvk) |[SendCoin](#How-to-use-the-multi-signature-feature-of-wallet-cli) | 
-| [SendShieldedSRC20Coin](#SendShieldedSRC20Coin) | [SendShieldedSRC20CoinWithoutAsk](#SendShieldedSRC20CoinWithoutAsk) | [SetShieldedSRC20ContractAddress](#SetShieldedSRC20ContractAddress) | 
-| [ShowShieldedSRC20AddressInfo](#ShowShieldedSRC20AddressInfo) | [TransferAsset](#SRC10-token-transfer) | [TriggerContract](#trigger-smart-contarct) |
-| [UncdAsset](#Uncd-SRC10-token) | [UncdBalance](#How-to-delegate-resource) |[UpdateAsset](#Update-parameters-of-SRC10-token) | 
-| [UpdateBrokerage](#Brokerage) | [UpdateUcrLimit](#update-smart-contract-parameters) |[UpdateSetting](#update-smart-contract-parameters) | 
+| [AddTransactionSign](#How-to-use-the-multi-signature-feature-of-wallet-cli) | [ApproveProposal](#How-to-operate-with-proposal) |                     [AssetIssue](#How-to-issue-a-SRC10-token)                      |
+| :---------:|:---------:|:----------------------------------------------------------------------------------:|
+| [BackupShieldedSRC20Wallet](#BackupShieldedSRC20Wallet) | [BackupWallet](#Wallet-related-commands)|                  [BackupWallet2Base64](#Wallet-related-commands)                   |
+| [BroadcastTransaction](#Some-others) | [ChangePassword](#Wallet-related-commands)|                  [CreateProposal](#How-to-operate-with-proposal)                   
+| [DeleteProposal](#Delete-an-existing-proposal) | [DeployContract](#How-to-use-smart-contract) |                  [ExchangeCreate](#How-to-trade-on-the-exchange)                   |
+| [ExchangeInject](#Capital-injection) | [ExchangeTransaction](#Transactions) |                      [ExchangeWithdraw](#Capital-Withdrawal)                       |
+| [CdBalance](#How-to-cd/uncd-balance) | [GenerateAddress](#Account-related-commands) |       [GenerateShieldedSRC20Address](#How-to-transfer-shielded-SRC20-token)        |
+| [GetAccount](#Account-related-commands) |[GetAccountNet](#Account-related-commands) |                  [GetAccountResource](#Account-related-commands)                   | 
+| [GetAddress](#Account-related-commands) | [GetAkFromAsk](#How-to-transfer-shielded-SRC20-token) |            [GetAssetIssueByAccount](#Update-parameters-of-SRC10-token)             | 
+| [GetAssetIssueById](#How-to-obtain-SRC10-token-information) | [GetAssetIssueByName](#How-to-obtain-SRC10-token-information) |         [GetAssetIssueListByName](#How-to-obtain-SRC10-token-information)          | 
+| [GetBalance](#Account-related-commands) | [GetBlock](#How-to-get-block-information) |                   [GetBlockById](#How-to-get-block-information)                    | 
+| [GetBlockByLatestNum](#How-to-get-block-information) | [GetBlockByLimitNext](#How-to-get-block-information) |                             [GetBrokerage](#Brokerage)                             | 
+| [GetContract](#get-details-of-a-smart-contract) | [GetDelegatedResource](#How-to-delegate-resource) |      [GetDelegatedResourceAccountIndex](#get-resource-delegation-information)      | 
+| [GetDiversifier](#GetDiversifier)| [GetExpandedSpendingKey](#How-to-transfer-shielded-SRC20-token)|                  [GetIncomingViewingKey](#GetIncomingViewingKey)                   | 
+| [GetMarketOrderByAccount](#GetMarketOrderByAccount)| [GetMarketOrderById](#GetMarketOrderById)|               [GetMarketOrderListByPair](#GetMarketOrderListByPair)                | 
+| [GetMarketPairList](#GetMarketPairList)| [GetMarketPriceByPair](#GetMarketPriceByPair)|                       [GetNextMaintenanceTime](#Some-others)                       | 
+| [GetNkFromNsk](#How-to-transfer-shielded-SRC20-token) | [GetProposal](#Obtain-proposal-information) |         [GetShieldedPaymentAddress](#How-to-transfer-shielded-SRC20-token)         | 
+| [GetSpendingKey](#How-to-transfer-shielded-SRC20-token) | [GetReward](#Brokerage) | [GetTransactionApprovedList](#Get-signature-information-according-to-transactions) |
+| [GetTransactionById](#How-to-get-transaction-information) | [GetTransactionCountByBlockNum](#How-to-get-transaction-information) |        [GetTransactionInfoByBlockNum](#How-to-get-transaction-information)         | 
+| [GetTransactionInfoById](#How-to-get-transaction-information) | [GetTransactionSignWeight](#How-to-use-the-multi-signature-feature-of-wallet-cli) |              [ImportShieldedSRC20Wallet](#ImportShieldedSRC20Wallet)               | 
+| [ImportWallet](#Wallet-related-commands) | [ImportWalletByBase64](#Wallet-related-commands) |              [ListAssetIssue](#How-to-obtain-SRC10-token-information)              | 
+| [ListExchanges](#Obtain-information-on-trading-pairs) | [ListExchangesPaginated](#Obtain-information-on-trading-pairs) |                             [ListNodes](#Some-others)                              | 
+| [ListShieldedSRC20Address](#ListShieldedSRC20Address) | [ListShieldedSRC20Note](#ListShieldedSRC20Note) |                   [ListProposals](#Obtain-proposal-information)                    | 
+| [ListProposalsPaginated](#Obtain-proposal-information) | [ListExecutives](#Some-others) |                [LoadShieldedSRC20Wallet](#LoadShieldedSRC20Wallet)                 | 
+| [Login](#Command-line-operation-flow-example) | [MarketCancelOrder](#MarketCancelOrder) |                        [MarketSellAsset](#MarketSellAsset)                         | 
+| [ParticipateAssetIssue](#Participating-in-the-issue-of-SRC10-token) | [RegisterWallet](#Wallet-related-commands) |                 [ResetShieldedSRC20Note](#ResetShieldedSRC20Note)                  | 
+| [ScanShieldedSRC20NoteByIvk](#ScanShieldedSRC20NoteByIvk) |  [ScanShieldedSRC20NoteByOvk](#ScanShieldedSRC20NoteByOvk) |         [SendCoin](#How-to-use-the-multi-signature-feature-of-wallet-cli)          | 
+| [SendShieldedSRC20Coin](#SendShieldedSRC20Coin) | [SendShieldedSRC20CoinWithoutAsk](#SendShieldedSRC20CoinWithoutAsk) |        [SetShieldedSRC20ContractAddress](#SetShieldedSRC20ContractAddress)         | 
+| [ShowShieldedSRC20AddressInfo](#ShowShieldedSRC20AddressInfo) | [TransferAsset](#SRC10-token-transfer) |                     [TriggerContract](#trigger-smart-contract)                     |
+| [UncdAsset](#Uncd-SRC10-token) | [UncdBalance](#How-to-delegate-resource) |                  [UpdateAsset](#Update-parameters-of-SRC10-token)                  | 
+| [UpdateBrokerage](#Brokerage) | [UpdateUcrLimit](#update-smart-contract-parameters) |                 [UpdateSetting](#update-smart-contract-parameters)                 | 
 | [UpdateAccountPermission](#How-to-use-the-multi-signature-feature-of-wallet-cli) | [VoteExecutive](#How-to-vote) |
 
 ## How to cd/uncd balance
@@ -936,7 +936,7 @@ Get the result of the contract execution with the getTransactionInfoById command
 }
 ```
 
-### trigger smart contarct
+### trigger smart contract
 
     > TriggerContract [ownerAddress] contractAddress method args isHex fee_limit value token_value token_id
 
@@ -944,7 +944,7 @@ OwnerAddress
 > The address of the account that initiated the transaction, optional, default is the address of the login account.
 
 contractAddress
-> Smart contarct address
+> Smart contract address
 
 method
 > The name of function and parameters, please refer to the example

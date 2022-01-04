@@ -58,25 +58,26 @@ Committee can modify the STABILA network parameters, like transaction fees, bloc
 Only the account of a governor can create a proposal.
 The network parameters can be modified([min,max]):
 
-- 0: MAINTENANCE_TIME_INTERVAL, [3 * 21* 1000, 24 * 3600 * 1000] //governor votes count time interval, currently 6 * 3600 * 1000 ms
-- 1: ACCOUNT_UPGRADE_COST, [0, 100 000 000 000 000 000]  //the fee to apply to become a governor candidate, currently 9999_000_000 UNIT
-- 2: CREATE_ACCOUNT_FEE, [0, 100 000 000 000  000 000] //the fee to create an account, currently 100_000 UNIT
-- 3: TRANSACTION_FEE, [0, 100 000 000 000 000 000] //the fee for bandwidth, currently 1_000 UNIT/byte
-- 4: ASSET_ISSUE_FEE, [0, 100 000 000 000 000 000] //the fee to issue an asset, currently 1024_000_000 UNIT
-- 5: EXECUTIVE_PAY_PER_BLOCK, [0, 100 000 000 000 000 000] //the block producing reward, currently 32_000_000 UNIT
-- 6: EXECUTIVE_STANDBY_ALLOWANCE, [0, 100 000 000 000 000 000] //the votes reward for top 100 Governor candidates, currently 115_200_000_000 UNIT
-- 7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, //the fee to create an account in system, currently 1_000_000 UNIT
-- 8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, //the consumption of bandwidth or STB while creating an account, using together with #7
-- 9: ALLOW_CREATION_OF_CONTRACTS, //to enable the VM
-- 10: REMOVE_THE_POWER_OF_THE_GR, //to clear the votes of GR
-- 11: UCR_FEE, [0,100 000 000 000 000 000] //UNIT
-- 12: EXCHANGE_CREATE_FEE, [0, 100 000 000 000 000 000] //UNIT
-- 13: MAX_CPU_TIME_OF_ONE_TX, [0, 1000] //ms
-- 14: ALLOW_UPDATE_ACCOUNT_NAME, //to allow users to change account name and allow account duplicate name, currently 0, means false
-- 15: ALLOW_SAME_TOKEN_NAME, //to allow create a token with duplicate name, currently 1, means true
-- 16: ALLOW_DELEGATE_RESOURCE, //to enable the resource delegation
-- 17: TOTAL_UCR_LIMIT, //to modify the ucr limit
-- 18: ALLOW_SVM_TRANSFER_SRC10, //to allow smart contract to transfer SRC-10 token, currently 0, means false
+- 0: MAINTENANCE_TIME_INTERVAL, 21600000 ms //governor votes count time interval
+- 1: ACCOUNT_UPGRADE_COST, 1000000000 UNIT //the fee to apply to become a governor candidate
+- 2: CREATE_ACCOUNT_FEE, 1385 UNIT //the fee to create an account
+- 3: TRANSACTION_FEE, 40 UNIT/byte //the fee for bandwidth
+- 4: ASSET_ISSUE_FEE, 1000000000 UNIT //the fee to issue an asset
+- 5: EXECUTIVE_PAY_PER_BLOCK, 221714 UNIT //the block producing reward
+- 6: EXECUTIVE_STANDBY_ALLOWANCE, 0
+- 7: CREATE_NEW_ACCOUNT_FEE_IN_SYSTEM_CONTRACT, 0
+- 8: CREATE_NEW_ACCOUNT_BANDWIDTH_RATE, 1
+- 9: ALLOW_CREATION_OF_CONTRACTS, 0 //to enable the VM
+- 10: REMOVE_THE_POWER_OF_THE_GR, 0 //to clear the votes of GR
+- 11: UCR_FEE, 40 //UNIT
+- 12: EXCHANGE_CREATE_FEE, 14000000 //UNIT
+- 13: MAX_CPU_TIME_OF_ONE_TX, 80 //ms
+- 14: ALLOW_UPDATE_ACCOUNT_NAME, 0 //to allow users to change account name and allow account duplicate name, 0 means false
+- 15: ALLOW_SAME_TOKEN_NAME, 0 //to allow create a token with duplicate name, 0 means false
+- 16: ALLOW_DELEGATE_RESOURCE, 0 //to enable the resource delegation, 0 means false
+- 17: TOTAL_UCR_LIMIT, 30000000000 //to modify the ucr limit
+- 18: ALLOW_SVM_TRANSFER_SRC10, 0 //to allow smart contract to transfer SRC-10 token, 0 means false
+
 
 Example (Using wallet-cli):
 ```text

@@ -36,9 +36,9 @@ If a executive get 20% of the reward, and the other 80% will be awarded to the v
 
 ### Votes Reward
 
-Vote rewards are 160 STB every block, with a block generated every 3 seconds, the total vote rewards per day is  4,608,000 STB.
-
-For each Governor and Partner, the daily Vote Rewards = 4,608,000 * ( votes /  total votes) x 20%  STB
+Often referred as Executive Reward, the topmost 79 Executives will split 78 STB as earned once per round (6 hours). The prize will be divided according on the vote percentage each Executive earns.
+Total E reward per round = 10,972 Unit/block × 20 blocks/min × 60 mins/hr × 6 hrs/round.
+A total of 28,834 STB will be given out every year to the 79 Gs.
 
 ### Block Producing Reward
 

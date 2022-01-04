@@ -34,35 +34,11 @@ If a executive get 20% of the reward, and the other 80% will be awarded to the v
 
 ## Reward for Executives
 
-### Votes Reward
-
 Often referred as Executive Reward, the topmost 79 Executives will split 78 STB as earned once per round (6 hours). The prize will be divided according on the vote percentage each Executive earns.
 
 Total E reward per round = 10,972 Unit/block × 20 blocks/min × 60 mins/hr × 6 hrs/round.
 
 A total of 28,834 STB will be given out every year to the 79 Gs.
-
-### Block Producing Reward
-
-Every time after a governor produces a block, it will be reward 16 STB. The 21 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 168,192,000 STB in total.
-
-Every time after a governor produces a block, the 16 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.
-
-$16 (\mathsf{STB}/block) \times 28,800 (blocks/day) = 460,800 (\mathsf{STB}/day)$
-
-For each governor, the daily block $Rewards_{gov} = (460,800 / 21) \times 20 \% \mathsf{STB}$.
-
-Reward may be less than the theoretical number due to missed blocks and maintenance period.
-
-## Reward for Voters
-
-If you vote for a Governor:
-
-the daily Voter Rewards = (((the number of votes you vote to an executive) * 4,608,000 / total votes) * 80%) + ((460,800 / 21) * 80%) * (the number of votes you vote to a executive) / (the total number of votes a executive receives) STB
-
-If you vote for a Partner:
-
-the daily Voter Rewards = (((the number of votes you vote to a executive) * 4,608,000 / total votes) * 80%) STB
 
 ## Committee
 

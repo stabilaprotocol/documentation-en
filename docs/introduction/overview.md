@@ -77,7 +77,35 @@ The network parameters can be modified([min,max]):
 - 16: ALLOW_DELEGATE_RESOURCE, 0 //to enable the resource delegation, 0 means false
 - 17: TOTAL_UCR_LIMIT, 30000000000 //to modify the ucr limit
 - 18: ALLOW_SVM_TRANSFER_SRC10, 0 //to allow smart contract to transfer SRC-10 token, 0 means false
-
+- 19: TOTAL_CURRENT_UCR_LIMIT, 30000000000
+- 20: ALLOW_MULTI_SIGN, 0, 0 means false
+- 21: ALLOW_ADAPTIVE_UCR, 0, 0 means false
+- 22: UPDATE_ACCOUNT_PERMISSION_FEE, 1385000
+- 23: MULTI_SIGN_FEE, 13857
+- 24: ALLOW_PROTO_FILTER_NUM, 0, 0 means false
+- 25: ALLOW_ACCOUNT_STATE_ROOT, 0, 0 means false
+- 26: ALLOW_SVM_CONSTANTINOPLE, 0, 0 means false
+- 29: ADAPTIVE_RESOURCE_LIMIT_MULTIPLIER, 1000
+- 30: ALLOW_CHANGE_DELEGATION, 0, 0 means false
+- 31: EXECUTIVE_100_PAY_PER_BLOCK, 10972
+- 32: ALLOW_SVM_SOLIDITY_059, 0, 0 means false
+- 33: ADAPTIVE_RESOURCE_LIMIT_TARGET_RATIO, 10
+- 35: FORBID_TRANSFER_TO_CONTRACT, 0, 0 means false
+- 39: ALLOW_SHIELDED_SRC20_TRANSACTION, 0, 0 means false
+- 40: ALLOW_PBFT,	0, 0 means false
+- 41: ALLOW_SVM_ISTANBUL, 0, 0 means false
+- 44: ALLOW_MARKET_TRANSACTION,	0, 0 means false
+- 45: MARKET_SELL_FEE,	0
+- 46: MARKET_CANCEL_FEE,	0
+- 47: MAX_FEE_LIMIT,	15000000
+- 48: ALLOW_TRANSACTION_FEE_POOL, 0, 0 means false
+- 49: ALLOW_BLACKHOLE_OPTIMIZATION, 0, 0 means false
+- 51: ALLOW_NEW_RESOURCE_MODEL, 0, 0 means false
+- 52: ALLOW_SVM_CD, 0, 0 means false
+- 53: ALLOW_ACCOUNT_ASSET_OPTIMIZATION, 0, 0 means false
+- 59: ALLOW_SVM_VOTE, 0, 0 means false
+- 61: FREE_NET_LIMIT, 500
+- 62: TOTAL_NET_LIMIT, 28800000
 
 Example (Using wallet-cli):
 ```text

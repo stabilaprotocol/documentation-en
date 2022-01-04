@@ -37,7 +37,9 @@ If a executive get 20% of the reward, and the other 80% will be awarded to the v
 ### Votes Reward
 
 Often referred as Executive Reward, the topmost 79 Executives will split 78 STB as earned once per round (6 hours). The prize will be divided according on the vote percentage each Executive earns.
+
 Total E reward per round = 10,972 Unit/block × 20 blocks/min × 60 mins/hr × 6 hrs/round.
+
 A total of 28,834 STB will be given out every year to the 79 Gs.
 
 ### Block Producing Reward

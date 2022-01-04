@@ -9,7 +9,7 @@ Github Url: [https://github.com/stabilaprotocol](https://github.com/stabilaproto
 
 MainNet Configuration:
 [https://github.com/stabilaprotocol/StabilaDeployment/blob/master/main_net_config.conf](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
-# 2. SRs and Committee
+# 2. GOVs and Committee
 
 ## 2.1 How to Become a Governor
 

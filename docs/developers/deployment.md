@@ -73,9 +73,7 @@ Example:
 java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --executive -c /data/java-stabila/config.conf
 ```
 
-This is similar to running a private testnet, except that the IPs in the `config.conf` are officially declared by STABILA.
-
-7.&nbsp;Running a Governor Node for private testnet
+7.&nbsp;Running a Governor Node
 
 You should modify the config.conf:
 
@@ -142,7 +140,7 @@ wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_st
 <h3>Parameter Illustration</h3>
 
 ```shell
-bash deploy_stabila.sh --app [FullNode|SolidityNode] --net [mainnet|testnet|privatenet] --db [keep|remove|backup] --heap-size <heapsize>
+bash deploy_stabila.sh --app [FullNode|SolidityNode] --net [mainnet] --db [keep|remove|backup] --heap-size <heapsize>
 
 --app Optional, Running application. The default node is Fullnode and it could be FullNode or SolidityNode.
 --net Optional, Connecting network. The default network is mainnet and it could be mainnet, testnet.

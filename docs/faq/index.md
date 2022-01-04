@@ -40,7 +40,7 @@ When the amount of votes you get ranks into top 21, you will become a GOV.
 
 ### 21 GOVs shares the block producing reward equally or by their computing power?
 
-It has nothing to do with computing power. The reward is a fixed 32 STB for each block produced.
+It has nothing to do with computing power. The reward is a fixed 0.23 STB for each block produced.
 
 ### Will there be an over 50% computing power issue in STABILA network?
 
@@ -79,7 +79,7 @@ You need to vote again, set your votes number to 0.
 ### If I replace the field value of 'genesis.block.executives' with the address generated in [Stabilascan](https://stabilascan.org/) in config.conf, do I need to delete other addresses? Do I need to delete the field 'url' and 'voteCount'?
 
 No need to delete other addresses, these addresses will be a part of your net, but if you do not own the private keys of these addresses, they will act like abandoned addresses.
-Note: The addresses of Zion、Unit and Blackhole can not be deleted, but can be modified.
+Note: The addresses of Stabila, Unit, Moneta and Blackhole can not be deleted, but can be modified.
 
 ### How can I specify the data storage path when start a node?
 
@@ -87,35 +87,6 @@ You can add the data storage path when you start the node, like:
 
 ```text
 java -jar FullNode.jar -c config.conf -d /data/output
-```
-
-### How can I get asset from private net?
-
-In private network, you can set the initial account balance in config file. Please refer to below settings:
-
-```text
-genesis.block = {
-  # Reserve balance
-  assets = [
-    {
-      accountName = "TestA"
-      accountType = "AssetIssue"
-      address = "THRR7uvFbRLfNzpKPXEyQa8KCJqi59V59e"
-      balance = "1000000000000000"
-    },
-    {
-      accountName = "TestB"
-      accountType = "AssetIssue"
-      address = "TBLZaw93rsnLJ1SWTvoPkr7GVg5ixn2Jv1"
-      balance = "1000000000000000"
-    },
-    {
-      accountName = "TestC"
-      accountType = "AssetIssue"
-      address = "TJg8yZ4Co8RXsHmTWissmSL1VpL7dCybY1"
-      balance = "1000000000000000"
-    }
-  ]
 ```
 
 ## Compile and Build
@@ -131,19 +102,15 @@ Please use './gradlew build -x test' to skip the test cases.
 Java-stabila does not provide a default api to test. Once the service start, grpc commands can be sent. Based on that, there are several ways to test if the deployment is successful. You can also use the following command to test:
 
 ```text
-> tail -f logs/stabila.log |grep "MyheadBlockNumber"
+> tail -f logs/stabila.log | grep "MyheadBlockNumber"
 ```
-
-### When to deploy private environment, what's the relationship of Governor and FullNode? Should I firstly deploy a Governor, and then deploy a FullNode？
-
-Under private environment, there should be at least one Governor, there is no amount limit for FullNode.
 
 ### How to know whether my test Governor is running or not?
 
 Using the following command
 
 ```text
-> tail -f logs/stabila.log |grep "Try Produce Block"
+> tail -f logs/stabila.log | grep "Try Produce Block"
 ```
 
 ### Can SolidityNode and FullNode be deployed in one machine? Will they share the data?
@@ -152,15 +119,7 @@ They can be deployed in one machine. You can specify the data storage path in co
 
 ## Running a Node
 
-### As under private environment, why the log keeps updating with all other public nodes? What's the difference of private and public environment？
-
-If it is related to ip list: You need to update 'seed.ip' in config.conf, if it is the same as your public ip, and your computer is connected to the internet, it will try to connect other nodes, even if it fails to connect, the ip list will be stored into DB. If it is related to block and transaction: Under private environment, you need to modify the p2p version and parent hash.
-
-### Under private environment, should I submit application information to STABILA to become a GOV?
-
-Under private environment, no need to submit application information to STABILA to become a GOV.
-
-Ask：Which service port should be public to public network?
+### Which service port should be public to public network?
 
 Default port 18888, 50051
 

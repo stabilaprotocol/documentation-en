@@ -49,7 +49,7 @@ ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 
     Note: The size of the signature result is 65 bytes. r 32 bytes, s 32 bytes, v 1 bytes.
 
-3. fullnode will verify the signature, it generates an address with the value of hash and r、s、v, then it compares with the address in the transaction.
+3. fullnode will verify the signature, it generates an address with the value of hash and r,s,v then it compares with the address in the transaction.
 
 ### Demo
 

@@ -39,19 +39,17 @@ The final output above is: Vote 3 votes for executive1, 7 votes for executive2
 
 ## 2.3 Reward for Governors
 
-**Votes Reward:**
-Every 6 hours, the top 100 Governor candidates with the most votes will share a total amount of 115,200 STB according to their votes percentage. The annual votes reward is 168,192,000 STB in total.
+The top 21 Executives (Gs) that are elected every round (6 hours) will divide around 1,596 STB as mined, also known as Governor Reward. The prize will be distributed evenly among the 21 Gs.
 
-**Block Producing Reward:**
-Every time after a governor produces a block, it will be reward 32 STB. The 21 governors take turns to produce blocks every 3 seconds. The annual block producing reward is 336,384,000 STB in total.
+Total reward per round = 221,714 Unit/block x 20 block/min x 60 mins/hr x 6 hrs/round .
 
-Every time after a governor produces a block, the 32 STB block producing reward will be sent to it's sub-account. The sub-account is a read-only account, it allows a withdraw action from sub-account to governor account every 24 hours.
+A total of 2,330,657 STB will be awarded annually to the 21 Gs. It should be noted that every two years the reward for mining Stabila is halved.
 
 ## 2.4 Committee
 
 ### 2.4.1 What is Committee
 
-Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 19 approves from the governors and will become valid in the next maintenance period.
+Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 15 approves from the governors and will become valid in the next maintenance period.
 
 ### 2.4.2 Create a Proposal
 
@@ -695,13 +693,13 @@ To avoid unnecessary lost, 10 - 100 is recommended for consume_user_resource_per
 
 ## 5.4 Smart Contract Development Tool
 
-**Start a Private Net**
+**Start a 21**
 
 Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log
 
 ** Write your first smart contract **
 
-pragma solidity ^0.4.0;
+pragma solidity <=0.8.0;
 contract DataStore {
 
     mapping(uint256 => uint256) data;
@@ -810,8 +808,8 @@ If it contains library, before deploy the contract you need to deploy the librar
 608060405234801561001057600080fd5b5061013f806100206000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063f75dac5a14610046575b600080fd5b34801561005257600080fd5b5061005b610071565b6040518082815260200191505060405180910390f35b600073<b>__browser/oneLibrary.sol.Math3__________<\b>634f2be91f6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b1580156100d357600080fd5b505af41580156100e7573d6000803e3d6000fd5b505050506040513d60208110156100fd57600080fd5b81019080805190602001909291905050509050905600a165627a7a7230582052333e136f236d95e9d0b59c4490a39e25dd3a3dcdc16285820ee0a7508eb8690029
 ```
 
-The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
-When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.
+The address of the library deployed before is: SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
+When you deploy, you need to use browser/oneLibrary.sol.Math3:SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.
 
 # 6. SRC-10 Token Introduction
 STABILA network support two types of token, one is SRC-20 token issued by smart contract, the other one is SRC-10 token issued by system contract.

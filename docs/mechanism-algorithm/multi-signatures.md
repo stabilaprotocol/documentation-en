@@ -21,7 +21,7 @@ message Account {
 }
 ```
 
-Three attributes are added, owner_permission、executive_permission and active_permission. active_permission is a list, the length can not be bigger than 8.
+Three attributes are added, owner_permission, executive_permission and active_permission. active_permission is a list, the length can not be bigger than 8.
 
 #### ContractType
 

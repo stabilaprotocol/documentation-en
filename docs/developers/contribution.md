@@ -72,13 +72,6 @@ Please take a moment to check that your bug report or improvement proposal
 doesn't already exist. If it does, please add a quick "+1" or "I have this problem too".
 This will help prioritize the most common problems and requests.
 
-## Community Developers Incentives Programme
-
-Bonus point applies in STABILA incentives programme. Developers can earn points by contributing to STABILA.
-
-You can find your points ranking at  [Stabilascan](https://stabilascan.org/#/developersreward).
-
-The Top 5 scored developers (for every month, quarter and year) can win a cash reward.
 ## Writing Documentation
 
 Documentation repository located at:

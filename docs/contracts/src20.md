@@ -87,7 +87,7 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ## Example
 
 ```text
-pragma solidity ^0.4.16;
+pragma solidity <=0.8.0;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 

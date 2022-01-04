@@ -7,7 +7,7 @@ Instructions about how to build and install the Solidity compiler can be found a
 
 ** Write your first smart contract **
 ```text
-pragma solidity ^0.4.0;
+pragma solidity <=0.8.0;
 contract DataStore {
 
     mapping(uint256 => uint256) data;
@@ -32,9 +32,9 @@ cd solidity/build/solc
 If it is compiled successfully /test folder will contain DataStore.api and DataStore.bin files.
 ```
 
-** Start a Private Net **
+** Deploy pricing **
 
-Make sure the fullnode code has been deployed locally, you can check if 'Produce block successfully' log appears in FullNode/logs/stabila.log
+Deploying smart contract costs 1000 STB.
 
 ** Using Wallet-cli to Deploy **
 
@@ -132,5 +132,5 @@ If it contains library, before deploy the contract you need to deploy the librar
 608060405234801561001057600080fd5b5061013f806100206000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063f75dac5a14610046575b600080fd5b34801561005257600080fd5b5061005b610071565b6040518082815260200191505060405180910390f35b600073<b>__browser/oneLibrary.sol.Math3__________<\b>634f2be91f6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b1580156100d357600080fd5b505af41580156100e7573d6000803e3d6000fd5b505050506040513d60208110156100fd57600080fd5b81019080805190602001909291905050509050905600a165627a7a7230582052333e136f236d95e9d0b59c4490a39e25dd3a3dcdc16285820ee0a7508eb8690029
 ```
 
-The address of the library deployed before is: TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
-When you deploy, you need to use browser/oneLibrary.sol.Math3:TSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.
+The address of the library deployed before is: SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54
+When you deploy, you need to use browser/oneLibrary.sol.Math3:SSEJ29gnBkxQZR3oDdLdeQtQQykpVLSk54 as the parameter of deploycontract.

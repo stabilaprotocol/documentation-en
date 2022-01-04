@@ -230,67 +230,9 @@ STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equ
 Download fast deployment script, run the script according to different types of node.
 please refer to [Node Fast Deployment](https://github.com/stabilaprotocol/stabila-deployment#deployment-of-soliditynode-on-the-one-host)
 
-## 4.6 MainNet, PrivateNet
+## 4.6 MainNet
 
-MainNet, PrivateNet all use the same code, only the node start configuration varies.
-
-### 4.6.1 MainNet
-
-[MainNet configuration](https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_config.conf)
-
-### 4.6.3 PrivateNet
-
-**4.6.3.1 Preconditions**
-
-- at least two accounts
-- at least deploy one Governor to produce blocks
-- deploy serval FullNodes to synchronize blocks and broadcast transactions
-- Governor and FullNode comprise the private network
-
-**4.6.3.2 Deployment**
-
-**4.6.3.2.1 Step 1: Governor Deployment**
-
- 1.&nbsp;download private_net_config.conf
-
-```text
-wget https://raw.githubusercontent.com/stabilaprotocol/stabila-deployment/master/private_net_config.conf
-```
- 2.&nbsp;add your private key in localexecutive
- 3.&nbsp;set genesis.block.executives as the private key's corresponding address
- 4.&nbsp;set p2p.version, any positive integer but 11111
- 5.&nbsp;set the first GOV needSyncCheck = false, others can be set true
- 6.&nbsp;set node.discovery.enable = true
- 7.&nbsp;run the script
-
-```shell
-nohup java -Xmx6g -XX:+HeapDumpOnOutOfMemoryError -jar FullNode.jar  --executive  -c private_net_config.conf
-
-command line parameters introduction:
---executive: start executive function. For Governor, this parameter is required, i.e.: --executive
---log-config: specify the log configuration file path, i.e.: --log-config logback.xml
--c: specify the configuration file path, i.e.: -c config.conf
-```
-
- The usage of the log file:
- You can change the level of the module to control the log output. The default level of each module is INFO, for example: only print the message with the level higher than warn:
- <logger name="net" level="WARN"/>
- The parameters in configuration file that need to modify:
- localexecutive:
-
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/localexecutive.png)
- executives:
-
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/executive.png)
- version:
-
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/p2p_version.png)
- enable:
-
- ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/discovery_enable.png)
-
-
-**4.6.3.2.2  Step 2: FullNode Deployment**
+### 4.6.1 FullNode Deployment
 
  1.&nbsp;Download main_net_config.conf
 

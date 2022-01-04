@@ -190,7 +190,7 @@ When a full node receives the transaction, it will verify the signature, compari
 ### 4.1.1 Governor Introduction
 Governor(abbr: GOV) is the block producer in STABILA network, there are 21 GOV. They verify the transactions and write the transactions into the blocks, they take turns to produce blocks. The governors' information is public to everyone in STABILA network. The best way to browse is using [stabilascan](https://stabilascan.org/representatives).
 ### 4.1.2 Governor Deployment
-[Governor Deployment](https://github.com/stabilaprotocol/java-stabila/blob/develop/run.md#running-a-super-representative-node-for-mainnet)
+[Governor Deployment](https://github.com/stabilaprotocol/stabila-deployment)
 
 ### 4.1.3 Recommended Hardware Configuration
 

@@ -159,7 +159,7 @@ STABILA uses account model. An account's identity is address, it needs private k
 Stabila signature algorithm is ECDSA, curve used is SECP256K1. Private key is a random bumber, public key is a point in the elliptic curve. The process is: first generate a random number d to be the private key, then calculate P = d * G as the public key, G is the elliptic curve base point.
 
 ## 3.4 Address Format
-Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x3f in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'T'.
+Use the public key P as the input, by SHA3 get the result H. The length of the public key is 64 bytes, SHA3 uses Keccak256. Use the last 20 bytes of H, and add a byte of 0x3f in front of it, then the address comes out. Do basecheck to address, here is the final address. All addresses start with 'S'.
 
 basecheck process: first do sha256 calculation to address to get h1, then do sha256 to h1 to get h2, use the first 4 bytes as check to add it to the end of the address to get address||check, do base58 encode to address||check to get the final result.
 
@@ -372,7 +372,7 @@ Example:
 
 Smart contract is a computerized transaction protocol that automatically implements its terms. Smart contract is the same as common contract, they all define the terms and rules related to the participants. Once the contract is started, it can run in the way it is designed.
 
-STABILA smart contract support Solidity language in (Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
+STABILA smart contract support Solidity language in (Ethereum). Currently recommend Solidity language version is 0.8.0. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
 
 ## 5.2 STABILA Smart Contract Features
 STABILA virtual machine is based on Ethereum solidity language, it also has STABILA's own features.
@@ -462,7 +462,7 @@ There is a special type of message call, delegate call. The difference with comm
 
 4.&nbsp;CREATE command
 
-This command will create a new contract with a new address. The only difference with Ethereum is the newly generated STABILA address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the definition of nonce is the comtract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
+This command will create a new contract with a new address. The only difference with Ethereum is the newly generated STABILA address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the definition of nonce is the contract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
 Note: Different from creating a contract by grpc's deploycontract, contract created by CREATE command does not store contract abi.
 
 5.&nbsp;built-in function and built-in function attribute (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)
@@ -657,7 +657,7 @@ So during this trigger the ucr A can use is from two parts:
 - A's ucr by staking STB;
 - The ucr converted from the amount of STB burning according to a fixed rate;
 
-If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.
+If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.
 
 Finally, in this call, the ucr A can use is (100000 + 200000) = 300000 ucr.
 
@@ -677,8 +677,8 @@ A triggers C, the fee limit set is 200000000 (unit UNIT, 200 STB).
 
 So during this trigger the ucr A can use is from three parts:
 - A's ucr by staking STB -- X;
-- The ucr converted from the amount of STB bruning according to a fixed rate -- Y;
-If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;
+- The ucr converted from the amount of STB burning according to a fixed rate -- Y;
+If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;
 - D's ucr by staking STB -- Z;
 
 There are two situation:
@@ -880,7 +880,8 @@ HTTP API:
 ```text
 wallet/transferasset
 Description: Transfer token
-demo: curl -X POST  http://127.0.0.1:8090/wallet/transferasset -d '{"owner_address":"41d1e7a6bc354106cb410e65ff8b181c600ff14292", "to_address": "41e552f6487585c2b58bc2c9bb4492bc1f17132cd0", "asset_name": "31303030303031", "amount": 100}'
+demo: curl -X POST  http://127.0.0.1:8090/wallet/transferasset 
+-d '{"owner_address":"41d1e7a6bc354106cb410e65ff8b181c600ff14292", "to_address": "41e552f6487585c2b58bc2c9bb4492bc1f17132cd0", "asset_name": "31303030303031", "amount": 100}'
 Parameter owner_address: Owner address, default hexString
 Parameter to_address: To address, default hexString
 Parameter asset_name: Token id, default hexString

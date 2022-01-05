@@ -44,7 +44,7 @@ A total of 28,834 STB will be given out every year to the 79 Gs.
 
 ### 1. What is Committee
 
-Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the governors and will become valid in the next maintenance period.
+Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets 15 or more approves from the governors and will become valid in the next maintenance period.
 
 ### 2. Create a Proposal
 
@@ -54,40 +54,55 @@ The network parameters can be modified([min,max]).
 
 {0,1}: 1 means 'allowed' or 'actived', 0 means 'disallow', 'disable' or 'no'.
 
-|  #    | Command  |  Value  |
-|  ----  | ----    | ---- |
-|  0     | MaintenanceTimeInterval <br> (To modify the maintenance interval of Governor)  | 6  Hours <br> [3 * 21, 24 * 3600] s |
-|  1     | AccountUpgradeCost <br> (To modify the cost of applying for Governor account) | 9999  STB <br> [0, 100000000000] STB |
-|  2     | CreateAccountFee <br> (To modify the account creation fee) | 0.1  STB <br> [0, 100000000000] STB |
-|  3     | TransactionFee <br> (To modify the amount of STB used to gain extra bandwidth) | 1000  Unit/Byte <br> [0, 100000000000] STB |
-|  4     | AssetIssueFee <br> (To modify asset issuance fee) | 1024  STB <br> [0, 100000000000] STB|
-|  5     | ExecutivePayPerBlock <br> (To modify Governor block generation reward) | 16 STB <br> [0, 100000000000] STB |
-|  6     | ExecutiveStandbyAllowance <br> (To modify the rewards given to the top 21 Governors and <br> the following 100 executives) | 115200  STB <br> [0, 100000000000] STB |
-|  7     | CreateNewAccountFeeInSystemContract <br> (To modify the cost of account creation) | 1 STB  |
-|  8     | CreateNewAccountBandwidthRate <br> (To modify the consumption of bandwidth of account creation) | 1&nbsp;Bandwidth/Byte |
-|  9     | AllowCreationOfContracts <br> (To activate the Virtual Machine (VM)) | 1 <br> {0, 1} |
-|  10   | RemoveThePowerOfTheGr <br> (To remove the GR Genesis votes) |  1 <br> {0, 1}|
-|  11   | UcrFee <br> (To modify the fee of 1 ucr) | 140 Unit <br> [0, 100000000000] STB |
-|  12   | ExchangeCreateFee <br> (To modify the cost of trading pair creation) | 1024 STB <br> [0, 100000000000] STB |
-|  13   | MaxCpuTimeOfOneTx <br> (To modify the maximum execution time of one transaction) | 50 ms <br> [0, 1000] ms |
-|  14   | AllowUpdateAccountName <br> (To allow to change the account name) | 0 <br> {0, 1} |
-|  15   | AllowSameTokenName <br> (To allow the same token name) | 1 <br> {0, 1} |
-|  16   | AllowDelegateResource <br> (To allow resource delegation) | 1 <br> {0, 1} |
-|  18   | AllowSvmTransferSrc10 <br> (To allow the SRC-10 token transfer in smart contracts) | 1 <br> {0, 1} |
-|  19   | TotalUcrCurrentLimit <br> (To modify current total ucr limit) | 50000000000 |
-|  20   | AllowMultiSign <br> (To allow the initiation of multi-signature) | 1 <br> {0, 1} |
-|  21   | AllowAdaptiveUcr <br> (To allow adaptive adjustment for total Ucr) | 0 <br> {0, 1} |
-|  22   | UpdateAccountPermissionFee <br> (To modify the fee for updating account permission) | 100 STB |
-|  23   | MultiSignFee <br> (To modify the fee for multi-signature) | 1 STB |
-|  24   | AllowProtoFilterNum <br> (To enable protocol optimization) | 0 <br> {0, 1} |
-|  26   | AllowSvmConstantinople <br> (To support the new commands of Constantinople) | 1 <br> {0, 1} |
-|  21   | AllowShieldedTransaction <br> (To enable shielded transaction) | 0 <br> {0, 1} |
-|  28   | ShieldedTransactionFee <br> (To modify shielded transaction fee) | 10 STB <br> [0, 10000] STB |
-|  29   | AdaptiveResourceLimitMultiplier <br> (To modify the adaptive ucr limit multiplier) | 1000 <br> [1, 10000] |
-|  30    | ChangeDelegation <br> (Propose to support the decentralized vote dividend) | 1 <br> {0, 1} |
-|  31    | Executive127PayPerBlock <br> (Propose to modify the block voting rewards given to <br> the top 21 Governors and the following 100 executives) | 160  STB <br> [0, 100000000000] STB |
-|  32    | AllowSvmSolidity059 <br> (To allow SVM to support solidity compiler 0.5.9) | 0 <br> {0, 1} |
-|  33    | AdaptiveResourceLimitTargetRatio <br> (To modify the target ucr limit) | 10 <br> [1, 1000] |
+| #  | Command                                                                                                                                       | Value                 |
+|----|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| 0  | MaintenanceTimeInterval <br> (To modify the maintenance interval of Governor)                                                                 | 21600000 ms           |
+| 1  | AccountUpgradeCost <br> (To modify the cost of applying for Governor account)                                                                 | 1000000000 STB        |
+| 2  | CreateAccountFee <br> (To modify the account creation fee)                                                                                    | 1385 STB              |
+| 3  | TransactionFee <br> (To modify the amount of STB used to gain extra bandwidth)                                                                | 40 STB                |
+| 4  | AssetIssueFee <br> (To modify asset issuance fee)                                                                                             | 1000000000 STB        |
+| 5  | ExecutivePayPerBlock <br> (To modify Governor block generation reward)                                                                        | 221714 STB            |
+| 6  | ExecutiveStandbyAllowance <br> (To modify the rewards given to the top 21 Governors and <br> the following 100 executives)                    | 0 STB                 |
+| 7  | CreateNewAccountFeeInSystemContract <br> (To modify the cost of account creation)                                                             | 0 STB                 |
+| 8  | CreateNewAccountBandwidthRate <br> (To modify the consumption of bandwidth of account creation)                                               | 1&nbsp;Bandwidth/Byte |
+| 9  | AllowCreationOfContracts <br> (To activate the Virtual Machine (VM))                                                                          | 0 <br> {0, 1}         |
+| 10 | RemoveThePowerOfTheGr <br> (To remove the GR Genesis votes)                                                                                   | 0                     |
+| 11 | UcrFee <br> (To modify the fee of 1 ucr)                                                                                                      | 40 UNIT               |                            |
+| 12 | ExchangeCreateFee <br> (To modify the cost of trading pair creation)                                                                          | 14000000 STB          |
+| 13 | MaxCpuTimeOfOneTx <br> (To modify the maximum execution time of one transaction)                                                              | 80 ms                 |
+| 14 | AllowUpdateAccountName <br> (To allow to change the account name)                                                                             | 0                     |
+| 15 | AllowSameTokenName <br> (To allow the same token name)                                                                                        | 0  <br> {0, 1}        |
+| 16 | AllowDelegateResource <br> (To allow resource delegation)                                                                                     | 0 <br> {0, 1}         |
+| 18 | AllowSvmTransferSrc10 <br> (To allow the SRC-10 token transfer in smart contracts)                                                            | 0 <br> {0, 1}         |
+| 19 | TotalUcrCurrentLimit <br> (To modify current total ucr limit)                                                                                 | 30000000000           |
+| 20 | AllowMultiSign <br> (To allow the initiation of multi-signature)                                                                              | 0 <br> {0, 1}         |
+| 21 | AllowAdaptiveUcr <br> (To allow adaptive adjustment for total Ucr)                                                                            | 0 <br> {0, 1}         |
+| 22 | UpdateAccountPermissionFee <br> (To modify the fee for updating account permission)                                                           | 1385000               |
+| 23 | MultiSignFee <br> (To modify the fee for multi-signature)                                                                                     | 13857                 |
+| 24 | AllowProtoFilterNum <br> (To enable protocol optimization)                                                                                    | 0 <br> {0, 1}         |
+| 26 | AllowSvmConstantinople <br> (To support the new commands of Constantinople)                                                                   | 0 <br> {0, 1}         |
+| 21 | AllowShieldedTransaction <br> (To enable shielded transaction)                                                                                | 0 <br> {0, 1}         |
+| 29 | AdaptiveResourceLimitMultiplier <br> (To modify the adaptive ucr limit multiplier)                                                            | 1000                  |
+| 30 | ChangeDelegation <br> (Propose to support the decentralized vote dividend)                                                                    | 0 <br> {0, 1}         |
+| 31 | Executive127PayPerBlock <br> (Propose to modify the block voting rewards given to <br> the top 21 Governors and the following 100 executives) | 10972 STB             |
+| 32 | AllowSvmSolidity059 <br> (To allow SVM to support solidity compiler 0.5.9)                                                                    | 0 <br> {0, 1}         |
+| 33 | AdaptiveResourceLimitTargetRatio <br> (To modify the target ucr limit)                                                                        | 10                    |
+| 35 | ForbidTransferToContract                                                                                                                      | 0                     | 
+| 39 | AllowShieldedSrc20Transaction                                                                                                                 | 0                     | 
+| 40 | AllowPbft	                                                                                                                                    | 0                     | 
+| 41 | AllowSvmIstanbul                                                                                                                              | 0                     |                                                                                                                         
+| 44 | AllowMarketTransaction                                                                                                                        | 0                     |
+| 45 | MarketSellFee                                                                                                                                 | 0                     |
+| 46 | MarketCancelFee                                                                                                                               | 0                     |
+| 47 | MaxFeeLimit                                                                                                                                   | 15000000              |
+| 48 | AllowTransactionFeePool                                                                                                                       | 0                     |
+| 49 | AllowBlackholeOptimization                                                                                                                    | 0                     |
+| 51 | AllowNewResourceModel                                                                                                                         | 0                     |
+| 52 | AllowSvmCd                                                                                                                                    | 0                     | 
+| 53 | AllowAccountAssetOptimization	                                                                                                                | 0 |
+| 59 | AllowSvmVote                                                                                                                                  | 0 |
+| 61 | FreeNetLimit                                                                                                                                  | 500 |
+| 62 | TotalNetLimit                                                                                                              | 28800000 |
 
 Example (Using wallet-cli):
 

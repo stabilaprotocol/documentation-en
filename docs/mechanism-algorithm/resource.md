@@ -169,7 +169,7 @@ So during this trigger the ucr A can use is from two parts:
 - A's ucr by staking STB;
 - The ucr converted from the amount of STB burning according to a fixed rate;
 
-If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.
+If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.
 
 Finally, in this call, the ucr A can use is (100000 + 200000) = 300000 ucr.
 
@@ -192,7 +192,7 @@ So during this trigger the ucr A can use is from three parts:
 - A's ucr by staking STB -- X;
 - The ucr converted from the amount of STB burning according to a fixed rate -- Y;
 
-    If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;
+    If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;
 
 - D's ucr by staking STB -- Z;
 

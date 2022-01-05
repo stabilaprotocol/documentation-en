@@ -4,7 +4,7 @@
 
 Smart contract is a computerized transaction protocol that automatically implements its terms. Smart contract is the same as common contract, they all define the terms and rules related to the participants. Once the contract is started, it can run in the way it is designed.
 
-STABILA smart contract support Solidity language (from Ethereum). Currently recommend Solidity language version is 0.4.24 ~ 0.4.25. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
+STABILA smart contract support Solidity language (from Ethereum). Currently recommend Solidity language version is 0.8.0. Write a smart contract, then build the smart contract and deploy it to STABILA network. When the smart contract is triggered, the corresponding function will be executed automatically.
 
 ## Smart Contract Features
 STABILA virtual machine is based on Ethereum solidity language, it also has STABILA's own features.
@@ -91,7 +91,7 @@ There is a special type of message call, delegate call. The difference with comm
 
 * **CREATE command**
 
-This command will create a new contract with a new address. The only difference with Ethereum is the newly generated STABILA address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the defination of nonce is the comtract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
+This command will create a new contract with a new address. The only difference with Ethereum is the newly generated STABILA address used the smart contract creation transaction id and the hash of nonce called combined. Different from Ethereum, the definition of nonce is the contract sequence number of the creation of the root call. Even there are many CREATE commands calls, contract number in sequence from 1. Refer to the source code for more detail.
 Note: Different from creating a contract by grpc's deploycontract, contract created by CREATE command does not store contract abi.
 
 * **built-in function and built-in function attribute (Since Odyssey-v3.1.1, SVM built-in function is not supported temporarily)**

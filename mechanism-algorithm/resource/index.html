@@ -446,7 +446,7 @@ one hour later, the ucr consumption amount will be 72_000_000 - (72_000_000 * (6
 <li>A's ucr by staking STB;</li>
 <li>The ucr converted from the amount of STB burning according to a fixed rate;</li>
 </ul>
-<p>If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.</p>
+<p>If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (30 - 10) STB = 20 STB available, so the ucr it can keep consuming is 20 STB / 100 UNIT = 200000 ucr.</p>
 <p>Finally, in this call, the ucr A can use is (100000 + 200000) = 300000 ucr.</p>
 <p>If contract executes successfully without any exception, the ucr needed for the execution will be deducted. Generally, it is far less than the amount of ucr this trigger can use.</p>
 <p>If Assert-style error come out, it will consume the whole number of ucr set for fee limit.</p>
@@ -460,7 +460,7 @@ one hour later, the ucr consumption amount will be 72_000_000 - (72_000_000 * (6
 <li>A's ucr by staking STB -- X;</li>
 <li>
 <p>The ucr converted from the amount of STB burning according to a fixed rate -- Y;</p>
-<p>If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 100 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;</p>
+<p>If fee limit is greater than the ucr obtained from staking STB, then it will burn STB to get ucr. The fixed rate is: 1 Ucr = 40 UNIT, fee limit still has (200 - 10) STB = 190 STB available, but A only has 90 STB left, so the ucr it can keep consuming is 90 STB / 100 UNIT = 900000 ucr;</p>
 </li>
 <li>
 <p>D's ucr by staking STB -- Z;</p>

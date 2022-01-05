@@ -320,7 +320,7 @@
 <p>A total of 28,834 STB will be given out every year to the 79 Gs.</p>
 <h2 id="committee">Committee<a class="headerlink" href="#committee" title="Permanent link">&para;</a></h2>
 <h3 id="1-what-is-committee">1. What is Committee<a class="headerlink" href="#1-what-is-committee" title="Permanent link">&para;</a></h3>
-<p>Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets more than 18 approves from the governors and will become valid in the next maintenance period.</p>
+<p>Committee can modify the STABILA network parameters, like transaction fees, block producing reward amount, etc. Committee is composed of the current 21 governors. Every governor has the right to start a proposal. The proposal will be passed after it gets 15 or more approves from the governors and will become valid in the next maintenance period.</p>
 <h3 id="2-create-a-proposal">2. Create a Proposal<a class="headerlink" href="#2-create-a-proposal" title="Permanent link">&para;</a></h3>
 <p>Only Governors, Partners and Candidates can create a proposal.</p>
 <p>The network parameters can be modified([min,max]).</p>
@@ -337,42 +337,42 @@
 <tr>
 <td>0</td>
 <td>MaintenanceTimeInterval <br> (To modify the maintenance interval of Governor)</td>
-<td>6  Hours <br> [3 * 21, 24 * 3600] s</td>
+<td>21600000 ms</td>
 </tr>
 <tr>
 <td>1</td>
 <td>AccountUpgradeCost <br> (To modify the cost of applying for Governor account)</td>
-<td>9999  STB <br> [0, 100000000000] STB</td>
+<td>1000000000 STB</td>
 </tr>
 <tr>
 <td>2</td>
 <td>CreateAccountFee <br> (To modify the account creation fee)</td>
-<td>0.1  STB <br> [0, 100000000000] STB</td>
+<td>1385 STB</td>
 </tr>
 <tr>
 <td>3</td>
 <td>TransactionFee <br> (To modify the amount of STB used to gain extra bandwidth)</td>
-<td>1000  Unit/Byte <br> [0, 100000000000] STB</td>
+<td>40 STB</td>
 </tr>
 <tr>
 <td>4</td>
 <td>AssetIssueFee <br> (To modify asset issuance fee)</td>
-<td>1024  STB <br> [0, 100000000000] STB</td>
+<td>1000000000 STB</td>
 </tr>
 <tr>
 <td>5</td>
 <td>ExecutivePayPerBlock <br> (To modify Governor block generation reward)</td>
-<td>16 STB <br> [0, 100000000000] STB</td>
+<td>221714 STB</td>
 </tr>
 <tr>
 <td>6</td>
 <td>ExecutiveStandbyAllowance <br> (To modify the rewards given to the top 21 Governors and <br> the following 100 executives)</td>
-<td>115200  STB <br> [0, 100000000000] STB</td>
+<td>0 STB</td>
 </tr>
 <tr>
 <td>7</td>
 <td>CreateNewAccountFeeInSystemContract <br> (To modify the cost of account creation)</td>
-<td>1 STB</td>
+<td>0 STB</td>
 </tr>
 <tr>
 <td>8</td>
@@ -382,57 +382,57 @@
 <tr>
 <td>9</td>
 <td>AllowCreationOfContracts <br> (To activate the Virtual Machine (VM))</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>10</td>
 <td>RemoveThePowerOfTheGr <br> (To remove the GR Genesis votes)</td>
-<td>1 <br> {0, 1}</td>
+<td>0</td>
 </tr>
 <tr>
 <td>11</td>
 <td>UcrFee <br> (To modify the fee of 1 ucr)</td>
-<td>140 Unit <br> [0, 100000000000] STB</td>
+<td>40 UNIT</td>
 </tr>
 <tr>
 <td>12</td>
 <td>ExchangeCreateFee <br> (To modify the cost of trading pair creation)</td>
-<td>1024 STB <br> [0, 100000000000] STB</td>
+<td>14000000 STB</td>
 </tr>
 <tr>
 <td>13</td>
 <td>MaxCpuTimeOfOneTx <br> (To modify the maximum execution time of one transaction)</td>
-<td>50 ms <br> [0, 1000] ms</td>
+<td>80 ms</td>
 </tr>
 <tr>
 <td>14</td>
 <td>AllowUpdateAccountName <br> (To allow to change the account name)</td>
-<td>0 <br> {0, 1}</td>
+<td>0</td>
 </tr>
 <tr>
 <td>15</td>
 <td>AllowSameTokenName <br> (To allow the same token name)</td>
-<td>1 <br> {0, 1}</td>
+<td>0  <br> {0, 1}</td>
 </tr>
 <tr>
 <td>16</td>
 <td>AllowDelegateResource <br> (To allow resource delegation)</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>18</td>
 <td>AllowSvmTransferSrc10 <br> (To allow the SRC-10 token transfer in smart contracts)</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>19</td>
 <td>TotalUcrCurrentLimit <br> (To modify current total ucr limit)</td>
-<td>50000000000</td>
+<td>30000000000</td>
 </tr>
 <tr>
 <td>20</td>
 <td>AllowMultiSign <br> (To allow the initiation of multi-signature)</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>21</td>
@@ -442,12 +442,12 @@
 <tr>
 <td>22</td>
 <td>UpdateAccountPermissionFee <br> (To modify the fee for updating account permission)</td>
-<td>100 STB</td>
+<td>1385000</td>
 </tr>
 <tr>
 <td>23</td>
 <td>MultiSignFee <br> (To modify the fee for multi-signature)</td>
-<td>1 STB</td>
+<td>13857</td>
 </tr>
 <tr>
 <td>24</td>
@@ -457,7 +457,7 @@
 <tr>
 <td>26</td>
 <td>AllowSvmConstantinople <br> (To support the new commands of Constantinople)</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>21</td>
@@ -465,24 +465,19 @@
 <td>0 <br> {0, 1}</td>
 </tr>
 <tr>
-<td>28</td>
-<td>ShieldedTransactionFee <br> (To modify shielded transaction fee)</td>
-<td>10 STB <br> [0, 10000] STB</td>
-</tr>
-<tr>
 <td>29</td>
 <td>AdaptiveResourceLimitMultiplier <br> (To modify the adaptive ucr limit multiplier)</td>
-<td>1000 <br> [1, 10000]</td>
+<td>1000</td>
 </tr>
 <tr>
 <td>30</td>
 <td>ChangeDelegation <br> (Propose to support the decentralized vote dividend)</td>
-<td>1 <br> {0, 1}</td>
+<td>0 <br> {0, 1}</td>
 </tr>
 <tr>
 <td>31</td>
 <td>Executive127PayPerBlock <br> (Propose to modify the block voting rewards given to <br> the top 21 Governors and the following 100 executives)</td>
-<td>160  STB <br> [0, 100000000000] STB</td>
+<td>10972 STB</td>
 </tr>
 <tr>
 <td>32</td>
@@ -492,7 +487,87 @@
 <tr>
 <td>33</td>
 <td>AdaptiveResourceLimitTargetRatio <br> (To modify the target ucr limit)</td>
-<td>10 <br> [1, 1000]</td>
+<td>10</td>
+</tr>
+<tr>
+<td>35</td>
+<td>ForbidTransferToContract</td>
+<td>0</td>
+</tr>
+<tr>
+<td>39</td>
+<td>AllowShieldedSrc20Transaction</td>
+<td>0</td>
+</tr>
+<tr>
+<td>40</td>
+<td>AllowPbft</td>
+<td>0</td>
+</tr>
+<tr>
+<td>41</td>
+<td>AllowSvmIstanbul</td>
+<td>0</td>
+</tr>
+<tr>
+<td>44</td>
+<td>AllowMarketTransaction</td>
+<td>0</td>
+</tr>
+<tr>
+<td>45</td>
+<td>MarketSellFee</td>
+<td>0</td>
+</tr>
+<tr>
+<td>46</td>
+<td>MarketCancelFee</td>
+<td>0</td>
+</tr>
+<tr>
+<td>47</td>
+<td>MaxFeeLimit</td>
+<td>15000000</td>
+</tr>
+<tr>
+<td>48</td>
+<td>AllowTransactionFeePool</td>
+<td>0</td>
+</tr>
+<tr>
+<td>49</td>
+<td>AllowBlackholeOptimization</td>
+<td>0</td>
+</tr>
+<tr>
+<td>51</td>
+<td>AllowNewResourceModel</td>
+<td>0</td>
+</tr>
+<tr>
+<td>52</td>
+<td>AllowSvmCd</td>
+<td>0</td>
+</tr>
+<tr>
+<td>53</td>
+<td>AllowAccountAssetOptimization</td>
+<td>0</td>
+</tr>
+<tr>
+<td>59</td>
+<td>AllowSvmVote</td>
+<td>0</td>
+</tr>
+<tr>
+<td>61</td>
+<td>FreeNetLimit</td>
+<td>500</td>
+</tr>
+<tr>
+<td>62</td>
+<td>TotalNetLimit</td>
+<td>28800000</td>
 </tr>
 </tbody>
 </table>

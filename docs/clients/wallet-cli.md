@@ -19,16 +19,6 @@ fullnode = {
   ]
 }
 
-soliditynode = {
-  // the IPs in this list can only be totally set to solidity or pBFT.
-  ip.list = [
-    "ip : solidity port" // default solidity
-  ]
-#  ip.list = [
-#    "ip : pBFT port" // or pBFT
-#  ]
-} // NOTE: solidity node is optional
-
 blockNumberStartToScan = 22690588 // NOTE: this field is optional
 ```
 

@@ -1,6 +1,6 @@
-# Stabila Network Instructure
+ # Stabila Network Instructure
 
-Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join Stabila network as a node.
+Stabila network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are two types of node: Governor and FullNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions. Any device that deploy the java-stabila code can join Stabila network as a node.
 
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png)
 
@@ -19,23 +19,7 @@ CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 2T
 
 ## FullNode
 
-FullNode has the complete block chain data, can update data in real time. It can broadcast the transactions and provide api service.
-
-Recommended Hardware Configuration:
-
-```text
-minimum requirement:
-CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
-Recommended requirement:
-CPU: > 32 cores RAM: > 48G, Bandwidth: > 500M, Disk: > 2T
-```
-
-## SolidityNode
-
-SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provides api service.
-
-> NOTE: SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode.
-> New developers should deploy FullNode only.
+FullNode has the complete blockchain data, can update data in real time. It can broadcast the transactions and provide api service.
 
 Recommended Hardware Configuration:
 

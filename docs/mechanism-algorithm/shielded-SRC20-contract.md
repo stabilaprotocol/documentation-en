@@ -851,7 +851,7 @@ Return:
 The `value` can be used as the input data to trigger the `burn` function of the shielded SRC-20 contract.
 
 ### Trigger the shielded SRC-20 contract
-**Call api: wallet/triggersmartcontract to trigger the shielded SRC-20 contract and geneate the shielded SRC-20 transaction**
+**Call api: wallet/triggersmartcontract to trigger the shielded SRC-20 contract and generate the shielded SRC-20 transaction**
 
 Method: Post
 

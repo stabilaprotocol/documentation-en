@@ -113,10 +113,6 @@ Using the following command
 > tail -f logs/stabila.log | grep "Try Produce Block"
 ```
 
-### Can SolidityNode and FullNode be deployed in one machine? Will they share the data?
-
-They can be deployed in one machine. You can specify the data storage path in configuration file `db.directory = "database"，index.directory = "index"`. You can run FullNode.jar and SolidityNode.jar in different paths to separate the data and log. Remember to change the port in `config.conf`, because two nodes can not work using the same port. SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode. New developers should deploy FullNode only.
-
 ## Running a Node
 
 ### Which service port should be public to public network?
@@ -126,10 +122,6 @@ Default port 18888, 50051
 ### At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？
 
 The internet connection recovery time only depends on the recovery of Governor itself, has nothing to do with internet situation.
-
-### Does SolidityNode sync data from FullNode?
-
-Yes.
 
 ### Does a node have wallet function?
 
@@ -147,10 +139,6 @@ Java-stabila need more RAM to process transactions.
 ### How to sync wallet-cli with wallet on Stabilascan?
 
 By using wallet-cli api 'ImportWallet'.
-
-### Is gateway connected to SolidityNode？
-
-Gateway can connect to SolidityNode and FullNode.
 
 ### What is the different between 'getTransactionById' and 'getTransactionInfoById'?
 

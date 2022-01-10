@@ -242,28 +242,13 @@ CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
 Recommended requirement:
 CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 20T
 
-## 4.3 SolidityNode
-### 4.3.1 SolidityNode Introduction
-SolidityNode only synchronize solidified blocks data from the fullNode it specifies, It also provie api service.
-### 4.3.2 SolidityNode Deployment
-For Docker installation and deployment please refer to [STABILA-Deployment](https://github.com/stabilaprotocol/stabila-deployment)
-### 4.3.3 Recommended Hardware Configuration
-Minimum requirement:
-CPU: 16 cores, RAM: 32G, Bandwidth: 100M, Disk: 1T
-Recommended requirement:
-CPU: > 64 cores RAM: > 64G, Bandwidth: > 500M, Disk: > 20T
-
-## 4.4 STABILA Network Instructure
-STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are three types of node: Governor, FullNode, SolidityNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions, SolidityNode synchronizes solidified blocks. Any device that deploy the java-stabila code can join STABILA network as a node.
+## 4.3 STABILA Network Instructure
+STABILA network uses Peer-to-Peer(P2P) network instructure, all nodes status equal. There are two types of node: Governor and FullNode. Governor produces blocks, FullNode synchronizes blocks and broadcasts transactions. Any device that deploy the java-stabila code can join STABILA network as a node.
 ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/network.png)
 
-## 4.5 FullNode and SolidityNode Fast Deployment
-Download fast deployment script, run the script according to different types of node.
-please refer to [Node Fast Deployment](https://github.com/stabilaprotocol/stabila-deployment#deployment-of-soliditynode-on-the-one-host)
+## 4.4 MainNet
 
-## 4.6 MainNet
-
-### 4.6.1 FullNode Deployment
+### 4.4.1 FullNode Deployment
 
  1.&nbsp;Download main_net_config.conf
 
@@ -312,9 +297,9 @@ wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_
 
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/discovery_enable.png)
 
-## 4.7 DB Engine
-### 4.7.1 Rocksdb
-**4.7.1.1 Configuration**
+## 4.5 DB Engine
+### 4.5.1 Rocksdb
+**4.5.1.1 Configuration**
 
  Use rocksdb as the data storage engine, need to set db.engine to "ROCKSDB"
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/db_engine.png)
@@ -323,14 +308,14 @@ wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/main_net_
  The optimization parameters rocksdb support:
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/rocksdb_tuning_parameters.png)
 
-**4.7.1.2 Use rocksdb's data backup function**
+**4.6.1.2 Use rocksdb's data backup function**
 
  Choose rocksdb to be the data storage engine, you can use it's data backup function while running
  ![image](https://raw.githubusercontent.com/stabilaprotocol/documentation-en/master/images/db_backup.png)
 
  Note: FullNode can use data backup function. In order not to affect Governor's block producing performance, Governor does not support backup service, but Governor's backup service node can use this function.
 
-**4.7.1.3 Convert leveldb data to rocksdb data**
+**4.6.1.3 Convert leveldb data to rocksdb data**
 
  The data storage structure of leveldb and rocksdb is not compatible, please make sure the node use the same type of data engine all the time. We provide data conversion script which can convert leveldb data to rocksdb data.
 
@@ -365,7 +350,7 @@ Example:
 ```
  All the whole data conversion process may take 10 hours.
 
-**4.7.1.4 rocksdb vs leveldb**
+**4.5.1.4 rocksdb vs leveldb**
 
 # 5. Smart Contract
 ## 5.1 STABILA Smart Contract Introduction

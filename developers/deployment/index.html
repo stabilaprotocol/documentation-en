@@ -191,7 +191,7 @@
         
             <li><a class="toctree-l4" href="#stop-node-gracefully">Stop Node Gracefully</a></li>
         
-            <li><a class="toctree-l4" href="#fullnode-and-soliditynode-fast-deployment">FullNode and SolidityNode Fast Deployment</a></li>
+            <li><a class="toctree-l4" href="#fullnode-fast-deployment">FullNode Fast Deployment</a></li>
         
             <li><a class="toctree-l4" href="#grpc-gateway-deployment">Grpc Gateway Deployment</a></li>
         
@@ -304,17 +304,7 @@
               
                 <h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
 <h2 id="premise">Premise<a class="headerlink" href="#premise" title="Permanent link">&para;</a></h2>
-<p>Create separate directories for fullnode and soliditynode</p>
-<blockquote>
-<p>NOTE: SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode.
-New developers should deploy FullNode only.</p>
-</blockquote>
-<div class="codehilite"><pre><span></span>/deploy/fullnode
-/deploy/soliditynode
-</pre></div>
-
-
-<p>Create two folders for fullnode and soliditynode.</p>
+<p>Create a folder for fullnode.</p>
 <p>Clone the latest master branch of <a href="https://github.com/stabilaprotocol/java-stabila">https://github.com/stabilaprotocol/java-stabila</a> and extract it to</p>
 <div class="codehilite"><pre><span></span>/deploy/java-stabila
 </pre></div>
@@ -334,16 +324,14 @@ New developers should deploy FullNode only.</p>
 </pre></div>
 
 
-<p>2.&nbsp;Copy the FullNode.jar and SolidityNode.jar along with configuration files into the respective directories</p>
+<p>2.&nbsp;Copy the FullNode.jar along with configuration files into the respective directories</p>
 <div class="codehilite"><pre><span></span>download your needed configuration file from https://github.com/stabilaprotocol/stabila-deployment.
 
 main_net_config.conf is the configuration for MainNet.
 
-please rename the configuration file to `config.conf` and use this config.conf to start FullNode and SoliditNode.
+please rename the configuration file to `config.conf` and use this config.conf to start FullNode.
 
 cp build/libs/FullNode.jar ../fullnode
-
-cp build/libs/SolidityNode.jar ../soliditynode
 </pre></div>
 
 
@@ -352,27 +340,14 @@ cp build/libs/SolidityNode.jar ../soliditynode
 </pre></div>
 
 
-<p>4.&nbsp;Configure the SolidityNode configuration file</p>
-<p>You need to edit <code>config.conf</code> to connect to your local FullNode. Change  <code>trustNode</code> in <code>node</code> to local <code>127.0.0.1:50051</code>, which is the default rpc port. Set <code>listen.port</code> to any number within the range of 1024-65535. Please don't use any ports between 0-1024 since you'll most likely hit conflicts with other system services. Also change <code>rpc port</code> to <code>50052</code> or something to avoid conflicts. <strong>Please forward the UDP port 18888 for FullNode.</strong></p>
-<div class="codehilite"><pre><span></span>rpc {
-      port = 50052
-    }
-</pre></div>
-
-
-<p>5.&nbsp;You can now run your SolidityNode using the following command：</p>
-<div class="codehilite"><pre><span></span>java -jar SolidityNode.jar -c config.conf //make sure that your config.conf is downloaded from https://github.com/stabilaprotocol/stabila-deployment
-</pre></div>
-
-
-<p>6.&nbsp;Running a Governor Node for mainnet</p>
+<p>4.&nbsp;Running a Governor Node for mainnet</p>
 <div class="codehilite"><pre><span></span>java -jar FullNode.jar -p your private key --executive -c your config.conf(Example：/data/java-stabila/config.conf)
 Example:
 java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F02295BD812 --executive -c /data/java-stabila/config.conf
 </pre></div>
 
 
-<p>7.&nbsp;Running a Governor Node</p>
+<p>5.&nbsp;Running a Governor Node</p>
 <p>You should modify the config.conf:</p>
 <ul>
 <li>Replace existing entry in genesis.block.executives with your address</li>
@@ -395,13 +370,8 @@ java -jar FullNode.jar -p 650950B193DDDDB35B6E48912DD28F7AB0E7140C1BFDEFD493348F
 </pre></div>
 
 
-<p><strong>SolidityNode</strong></p>
-<div class="codehilite"><pre><span></span>12:00:40.691 INFO  [pool-17-thread-1] [o.t.p.SolidityNode](SolidityNode.java:88) sync solidity block, lastSolidityBlockNum:209671, remoteLastSolidityBlockNum:211823
-</pre></div>
-
-
 <h2 id="stop-node-gracefully">Stop Node Gracefully<a class="headerlink" href="#stop-node-gracefully" title="Permanent link">&para;</a></h2>
-<p>Create file stop.sh，use kill -15 to close FullNode.jar(or SolidityNode.jar).
+<p>Create file stop.sh，use kill -15 to close FullNode.jar.
 You need to modify pid=<code>ps -ef |grep FullNode.jar |grep -v grep |awk '{print $2}'</code> to find the correct pid.</p>
 <div class="codehilite"><pre><span></span>#!/bin/bash
 while true; do
@@ -418,12 +388,12 @@ done
 </pre></div>
 
 
-<h2 id="fullnode-and-soliditynode-fast-deployment">FullNode and SolidityNode Fast Deployment<a class="headerlink" href="#fullnode-and-soliditynode-fast-deployment" title="Permanent link">&para;</a></h2>
+<h2 id="fullnode-fast-deployment">FullNode Fast Deployment<a class="headerlink" href="#fullnode-fast-deployment" title="Permanent link">&para;</a></h2>
 <p>Download fast deployment script, run the script according to different types of node.</p>
 <h3>Scope of use</h3>
 
 <p>This script could be used on Linux/MacOS, but not on Windows.
-Just Support FullNode and SolidityNode.</p>
+Supported just by FullNode.</p>
 <h3>Download and run script</h3>
 
 <div class="codehilite"><pre><span></span>wget https://github.com/stabilaprotocol/stabila-deployment/blob/master/deploy_stabila.sh -O deploy_stabila.sh
@@ -432,13 +402,12 @@ Just Support FullNode and SolidityNode.</p>
 
 <h3>Parameter Illustration</h3>
 
-<div class="codehilite"><pre><span></span>bash deploy_stabila.sh --app <span class="o">[</span>FullNode<span class="p">|</span>SolidityNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
+<div class="codehilite"><pre><span></span>bash deploy_stabila.sh --app <span class="o">[</span>FullNode<span class="o">]</span> --net <span class="o">[</span>mainnet<span class="o">]</span> --db <span class="o">[</span>keep<span class="p">|</span>remove<span class="p">|</span>backup<span class="o">]</span> --heap-size &lt;heapsize&gt;
 
---app Optional, Running application. The default node is Fullnode and it could be FullNode or SolidityNode.
+--app Optional, Running application. The default node is Fullnode.
 --net Optional, Connecting network. The default network is mainnet and it could be mainnet, testnet.
 --db  Optional, The way of data processing could be keep, remove and backup. Default is keep. If you launch two different networks, like from mainnet to testnet or from testnet to mainnet, you need to delete database.
---trust-node  Optional, It only works when deploying SolidityNode. Default is <span class="m">127</span>.0.0.1:50051. The specified gRPC service of Fullnode, like <span class="m">127</span>.0.0.1:50051 or <span class="m">13</span>.125.249.129:50051.
---rpc-port  Optional, Port of grpc. Default is <span class="m">50051</span>. If you deploy SolidityNode and FullNode on the same host，you need to configure different ports.
+--rpc-port  Optional, Port of grpc. Default is <span class="m">50051</span>.
 --commit  Optional, commitid of project.
 --branch  Optional, branch of project.  Mainnet default is latest release and Testnet default is master.
 --heap-size  Optional, jvm option: Xmx. The default heap-size is <span class="m">0</span>.8 * memory size.
@@ -450,23 +419,6 @@ Just Support FullNode and SolidityNode.</p>
 
 <div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
 bash deploy_stabila.sh
-</pre></div>
-
-
-<h3> Deployment of SolidityNode on the one host </h3>
-
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
-<span class="c1"># User can self-configure the IP and Port of GRPC service in the trust-node field of SolidityNode. trust-node is the fullnode you just deploy.</span>
-bash deploy_stabila.sh --app SolidityNode --trust-node &lt;grpc-ip:grpc-port&gt;
-</pre></div>
-
-
-<h3> Deployment of FullNode and SolidityNode on the same host </h3>
-
-<div class="codehilite"><pre><span></span><span class="c1"># You need to configure different gRPC ports on the same host because gRPC port is available on SolidityNode and FullNodeConfigure and it cannot be set as default value 50051. In this case the default value of rpc port is set as 50041.</span>
-wget https://raw.githubusercontent.com/stabilaprotocol/StabilaDeployment/master/deploy_stabila.sh -O deploy_stabila.sh
-bash deploy_stabila.sh --app FullNode
-bash deploy_stabila.sh --app SolidityNode --rpc-port <span class="m">50041</span>
 </pre></div>
 
 
@@ -488,8 +440,8 @@ Install Golang, Protoc, and set $GOPATH environment variable according to your r
 
 <div class="codehilite"><pre><span></span>bash deploy_grpc_gateway.sh --rpchost <span class="o">[</span>rpc host ip<span class="o">]</span> --rpcport <span class="o">[</span>rpc port number<span class="o">]</span> --httpport <span class="o">[</span>http port number<span class="o">]</span>
 
---rpchost The fullnode or soliditynode IP where the grpc service is provided. Default value is <span class="s2">&quot;localhost&quot;</span>.
---rpcport The fullnode or soliditynode port number grpc service is consuming. Default value is <span class="m">50051</span>.
+--rpchost The fullnode IP where the grpc service is provided. Default value is <span class="s2">&quot;localhost&quot;</span>.
+--rpcport The fullnode port number grpc service is consuming. Default value is <span class="m">50051</span>.
 --httpport The port intends to provide http service provided by grpc gateway. Default value is <span class="m">18890</span>.
 </pre></div>
 

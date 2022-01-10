@@ -340,13 +340,11 @@
 <li><a href="#deployment">Deployment</a><ul>
 <li><a href="#how-to-test-if-the-deployment-works-normally-if-there-is-a-test-api-or-command-like-redis-get-ping-return-pong">How to test if the deployment works normally, if there is a test api or command like redis: get ping return pong?</a></li>
 <li><a href="#how-to-know-whether-my-test-governor-is-running-or-not">How to know whether my test Governor is running or not?</a></li>
-<li><a href="#can-soliditynode-and-fullnode-be-deployed-in-one-machine-will-they-share-the-data">Can SolidityNode and FullNode be deployed in one machine? Will they share the data?</a></li>
 </ul>
 </li>
 <li><a href="#running-a-node">Running a Node</a><ul>
 <li><a href="#which-service-port-should-be-public-to-public-network">Which service port should be public to public network?</a></li>
 <li><a href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？</a></li>
-<li><a href="#does-soliditynode-sync-data-from-fullnode">Does SolidityNode sync data from FullNode?</a></li>
 <li><a href="#does-a-node-have-wallet-function">Does a node have wallet function?</a></li>
 <li><a href="#why-does-the-block-process-time-take-so-long">Why does the block process time take so long?</a></li>
 </ul>
@@ -354,7 +352,6 @@
 <li><a href="#smart-contract">Smart Contract</a></li>
 <li><a href="#rpc-client-and-api">RPC Client and API</a><ul>
 <li><a href="#how-to-sync-wallet-cli-with-wallet-on-stabilascan">How to sync wallet-cli with wallet on Stabilascan?</a></li>
-<li><a href="#is-gateway-connected-to-soliditynode">Is gateway connected to SolidityNode？</a></li>
 <li><a href="#what-is-the-different-between-gettransactionbyid-and-gettransactioninfobyid">What is the different between 'getTransactionById' and 'getTransactionInfoById'?</a></li>
 <li><a href="#how-to-broadcast-raw-transaction">How to broadcast raw transaction？</a></li>
 <li><a href="#how-to-get-token-balance-of-an-account">How to get token balance of an account?</a></li>
@@ -431,15 +428,11 @@ Note: The addresses of Stabila, Unit, Moneta and Blackhole can not be deleted, b
 </pre></div>
 
 
-<h3 id="can-soliditynode-and-fullnode-be-deployed-in-one-machine-will-they-share-the-data">Can SolidityNode and FullNode be deployed in one machine? Will they share the data?<a class="headerlink" href="#can-soliditynode-and-fullnode-be-deployed-in-one-machine-will-they-share-the-data" title="Permanent link">&para;</a></h3>
-<p>They can be deployed in one machine. You can specify the data storage path in configuration file <code>db.directory = "database"，index.directory = "index"</code>. You can run FullNode.jar and SolidityNode.jar in different paths to separate the data and log. Remember to change the port in <code>config.conf</code>, because two nodes can not work using the same port. SolidityNode is deprecated. Now a FullNode supports all RPCs of a SolidityNode. New developers should deploy FullNode only.</p>
 <h2 id="running-a-node">Running a Node<a class="headerlink" href="#running-a-node" title="Permanent link">&para;</a></h2>
 <h3 id="which-service-port-should-be-public-to-public-network">Which service port should be public to public network?<a class="headerlink" href="#which-service-port-should-be-public-to-public-network" title="Permanent link">&para;</a></h3>
 <p>Default port 18888, 50051</p>
 <h3 id="at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service">At the worst scenario, if the Governor can not be connected, the maximum time it allows the Governor to recover its service？<a class="headerlink" href="#at-the-worst-scenario-if-the-governor-can-not-be-connected-the-maximum-time-it-allows-the-governor-to-recover-its-service" title="Permanent link">&para;</a></h3>
 <p>The internet connection recovery time only depends on the recovery of Governor itself, has nothing to do with internet situation.</p>
-<h3 id="does-soliditynode-sync-data-from-fullnode">Does SolidityNode sync data from FullNode?<a class="headerlink" href="#does-soliditynode-sync-data-from-fullnode" title="Permanent link">&para;</a></h3>
-<p>Yes.</p>
 <h3 id="does-a-node-have-wallet-function">Does a node have wallet function?<a class="headerlink" href="#does-a-node-have-wallet-function" title="Permanent link">&para;</a></h3>
 <p>No, but the node provides wallet rpc api.</p>
 <h3 id="why-does-the-block-process-time-take-so-long">Why does the block process time take so long?<a class="headerlink" href="#why-does-the-block-process-time-take-so-long" title="Permanent link">&para;</a></h3>
@@ -448,8 +441,6 @@ Note: The addresses of Stabila, Unit, Moneta and Blackhole can not be deleted, b
 <h2 id="rpc-client-and-api">RPC Client and API<a class="headerlink" href="#rpc-client-and-api" title="Permanent link">&para;</a></h2>
 <h3 id="how-to-sync-wallet-cli-with-wallet-on-stabilascan">How to sync wallet-cli with wallet on Stabilascan?<a class="headerlink" href="#how-to-sync-wallet-cli-with-wallet-on-stabilascan" title="Permanent link">&para;</a></h3>
 <p>By using wallet-cli api 'ImportWallet'.</p>
-<h3 id="is-gateway-connected-to-soliditynode">Is gateway connected to SolidityNode？<a class="headerlink" href="#is-gateway-connected-to-soliditynode" title="Permanent link">&para;</a></h3>
-<p>Gateway can connect to SolidityNode and FullNode.</p>
 <h3 id="what-is-the-different-between-gettransactionbyid-and-gettransactioninfobyid">What is the different between 'getTransactionById' and 'getTransactionInfoById'?<a class="headerlink" href="#what-is-the-different-between-gettransactionbyid-and-gettransactioninfobyid" title="Permanent link">&para;</a></h3>
 <p>The data they return is from different data modules. 'getTransactionById' focuses on general transaction data, while 'getTransactionInfoById' focuses on transaction fee data.</p>
 <h3 id="how-to-broadcast-raw-transaction">How to broadcast raw transaction？<a class="headerlink" href="#how-to-broadcast-raw-transaction" title="Permanent link">&para;</a></h3>
@@ -533,5 +524,5 @@ Note: The addresses of Stabila, Unit, Moneta and Blackhole can not be deleted, b
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2022-01-05 07:50:23
+Build Date UTC : 2022-01-10 07:33:06
 -->

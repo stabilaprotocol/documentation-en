@@ -215,13 +215,13 @@ The funds in allowance cannot be locked or traded.
 
 ## How to create executive
 
-Applying to become a executive account needs to consume **100_000STB**.
+Applying to become a executive account needs to consume **1000STB**.
 This part of the funds will be burned directly.
 
 ## How to create account
 
 It is not allowed to create accounts directly. You can only create accounts by transferring funds to non-existing accounts.
-Transferring to a non-existent account has minimum restriction amount of **1STB**.
+Transferring to a non-existent account has minimum restriction amount of **1386 UNIT**.
 
 ## Command line operation flow example
 
@@ -301,7 +301,7 @@ CdedAmount0 CdedDays0
 Example:
 
 ```console
-> AssetIssue TestSTB STB 75000000000000000 1 1 2 "2019-10-02 15:10:00" "2020-07-11" "just for test121212" www.test.com 100 100000 10000 10 10000 1
+> AssetIssue TestSTB STB 75000000 1 1 2 "2019-10-02 15:10:00" "2020-07-11" "just for test121212" www.test.com 100 100000 10000 10 10000 1
 > GetAssetIssueByAccount SRGhNNfnmgLegT4zHNjEqDSADjgmnHvubJ  # View published information
 {
     "assetIssue": [
